@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useEffect, Suspense } from 'react'
 import ChampionPage from '../../ui/ChampionPage'
 import { useState } from 'react';
 import {StatsProvider} from '../../hooks/useStats';
@@ -18,7 +18,9 @@ const Page = () => {
   return (
     <div className='calculator-wrap'>
       <StatsProvider>
-       <nav>
+
+        <Suspense>
+        <nav>
           {pages.map((page, index) => (
             <button key={index} onClick={() => setActivePageIndex(index)}>
               {page.label}
@@ -36,6 +38,8 @@ const Page = () => {
             </div>
           ))}
         </div>
+        </Suspense>
+       
       </StatsProvider>
     </div>
     
