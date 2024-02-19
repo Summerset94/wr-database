@@ -1,0 +1,16 @@
+summary {
+  font-weight: bold;
+}
+
+table {
+  background-color: rgba(27, 26, 26, 0.801);
+  padding: 5px;
+}
+
+td {
+  border: 2px solid rgba(255, 255, 255, 0.514);
+  border-radius: 8px;
+  padding: 1px;
+  gap: 3px;
+  width: 10%;
+}

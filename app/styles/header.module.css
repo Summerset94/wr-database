@@ -1,0 +1,18 @@
+.header {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: rgba(37, 37, 37, 0.4)
+}
+
+.sitename {
+  color: rgb(252, 218, 68)
+}
+
+.p {
+  color: white;
+}
