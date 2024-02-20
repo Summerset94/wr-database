@@ -32,3 +32,7 @@
 .abilityDescription > h4 {
   background-color: rgb(42, 42, 78);
 }
+
+ul, ol {
+  list-style-position: inside;
+}

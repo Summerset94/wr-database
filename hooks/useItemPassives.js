@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-const useItemPassives = (itemEffects, baseStats, itemBonus, championModifier, currentLevel) => {
+const useItemPassives = (itemEffects, baseStats, itemBonus, championModifier, currentLevel, runesEffects) => {
   const itemEffectsMemo = useMemo(() =>{
     
   const steraks = itemEffects.steraks ? baseStats.attack / 2 : 0;

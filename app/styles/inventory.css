@@ -1,0 +1,102 @@
+.inventory-wrap {  display: grid;
+  grid-template-columns: 0.1fr 1fr 0.6fr;
+  grid-template-rows: 1fr 0.1fr 400px;
+  gap: 10px 6px;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    ". . ."
+    ". . .";
+
+  border: 4px solid rgba(255, 255, 255, 0.4);
+
+  width: 100%;
+  padding: 8px;
+}
+
+.category-selector, .item-list, .item-description {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  
+}
+
+.category-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inventory-list {  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  height: 40vh;  
+}
+
+.item-description {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 40vh; 
+  min-width: 20%;
+  width: 100%;
+}
+
+.equipped-items{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+  gap: 10px;
+}
+
+.inventoryButton {
+  width: 40%;
+  height: 54px;
+  margin: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  min-width: fit-content;
+  padding: 2px;
+}
+
+.inventory-itemIcon{
+  width: 50px;
+  height: 50px;
+}
+
+.inventroy-equippedTile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.inventory-deletebtn {
+  color: red;
+  font-weight: 800;
+  border-radius: 75%;
+  width: 10px;
+  height: 10px;
+}
+
+.focused-item{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  height: 100%;
+  overflow-y: scroll;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input { 
+  color: black;
+}

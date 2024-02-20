@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useStats } from '../hooks/useStats';
 import {useRouter, useSearchParams} from 'next/navigation';
 import useStorage from '../hooks/UseStorage';
@@ -17,6 +17,8 @@ import BaseStats from '../ui/BaseStats';
 import DinamicStats from '../ui/DinamicStats';
 import DerivativeStats from '../ui/DerivativeStats';
 import Abilities from '../ui/Abilities';
+import Inventory from '../ui/Inventory';
+import Runes from '../ui/Runes';
 
 const ChampionPage = ({index}) => {
   const {getItem, setItem} = useStorage();
@@ -155,7 +157,7 @@ const [itemEffects, setItemEffects] = useState(itemEffectsTemplate);
 
 
 // bonuses from various item effect passive effects
-const itemEffectsMemo = useItemPassives(itemEffects, baseStats, itemBonus, championModifier, currentLevel);
+const itemEffectsMemo = useItemPassives(itemEffects, baseStats, itemBonus, championModifier, currentLevel, runesEffects);
 
 // total combined bonus stats
 const bonusStats = useCombinedBonusStats(itemBonus, championModifier, currentLevel, itemEffectsMemo, runesEffects, champ, abilitiesBonus, baseStats);
@@ -197,6 +199,52 @@ const atk = totalStats[index];
 const def = totalStats[index === 0 ? 1 : 0];
 
 const statsComparison = useStatsComparison(atk, def);
+
+const [activePageIndex, setActivePageIndex] = useState(0);
+
+  const pages = [
+    {component: <Abilities
+      index={index}
+      champ={champ}
+      currentLevel={currentLevel}
+      base={baseStats}
+      bonus={bonusStats}
+      mod={statsComparison}       
+      atk={atk}
+      def={def}    
+      updateAbilitiesBonus={updateAbilitiesBonus}
+    />, label: 'Abilities' },
+
+    {component: <Inventory
+      index={index}
+      champ={champ}
+      currentLevel={currentLevel}
+      base={baseStats}
+      bonus={bonusStats}
+      total={totalMemo}      
+      mod={statsComparison}       
+      atk={atk}
+      def={def}    
+      handleBonusChange={updateitemBonus}
+      updateItemEffects={updateItemEffects}
+      itemEffects={itemEffects}
+
+    />, label: 'Inventory' },
+
+    {component: <Runes
+      base={baseStats}
+      bonus={bonusStats}
+      total={totalMemo}
+      index={index}
+      champ={champ}
+      currentLevel={currentLevel}   
+      mod={statsComparison}       
+      atk={atk}
+      def={def}
+      itemEffects={itemEffects}
+      updateRunesEffects={updateRunesEffects}
+    />, label: 'Runes' },
+  ]
 
 
   return (
@@ -262,28 +310,29 @@ const statsComparison = useStatsComparison(atk, def);
     <DerivativeStats
       totalMemo={totalMemo}
       formula={statsComparison}
-    />
+    />   
 
-    <div className='windowPicker'>
-      <button>Abilities</button>
-      <button>Items</button>
-      <button>Runes</button>
-    </div>
+    <Suspense>
+      <div className="window-wrap">
+        <nav className='windowPicker'>
+          {pages.map((page, index) => (
+            <button key={index} onClick={() => setActivePageIndex(index)}>
+              {page.label}
+            </button>
+          ))}
+        </nav>
 
-    <div className='window-wrap'>
-      <Abilities
-        index={index}
-        champ={champ}
-        currentLevel={currentLevel}
-        base={baseStats}
-        bonus={bonusStats}
-        mod={statsComparison}       
-        atk={atk}
-        def={def}    
-        updateAbilitiesBonus={updateAbilitiesBonus}
-      />
-    </div>
-
+        {pages.map((page, index) => (
+          <div
+            key={index}
+            className={`page ${activePageIndex === index ? 'active' : 'hidden'}`}
+          >
+            {page.component}
+          </div>
+        ))}
+      </div>      
+    </Suspense>
+    
     </> 
   )
 }

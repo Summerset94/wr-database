@@ -1,0 +1,43 @@
+.runeWrapper {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr;
+  gap: 5px 8px;
+  grid-auto-flow: row;
+  justify-items: stretch;
+  align-items: start;
+  grid-template-areas:
+    "keystoneSelector keystoneSelector keystoneSelector"
+    "keystoneTile keystoneTile keystoneTile"
+    "pathSelector pathSelector pathSelector"
+    ". . ."
+    "secondarySelector secondarySelector secondarySelector"
+    "secondaryTile secondaryTile secondaryTile";
+
+  overflow-y: scroll;
+
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+
+  width: 100%;
+  padding: 8px;
+}
+
+.keystoneSelector { grid-area: keystoneSelector; }
+
+.keystoneTile { grid-area: keystoneTile; }
+
+.pathSelector { grid-area: pathSelector; }
+
+.secondarySelector { grid-area: secondarySelector; }
+
+.secondaryTile { grid-area: secondaryTile; }
+
+
+.keystoneTile, .runeTile, .secondaryTile {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 3px;
+  height: 100%;
+  background-color: rgb(26, 26, 26);
+}
