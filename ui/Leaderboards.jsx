@@ -109,7 +109,7 @@ function Leaderboards({champions, winRateData}) {
         {/* <button onClick={() => dispatch({type: 'elohell'})}>Emerald and below</button> */}
           <button onClick={() => changeLeaderboards({rank: 'diamond'})}>Diamond</button>          
           <button onClick={() => changeLeaderboards({rank: 'masters'})}>Masters and above</button>
-          <button onClick={() => changeLeaderboards({rank: 'sovereign'})}>Sovereign</button>
+          <button onClick={() => changeLeaderboards({rank: 'challenger'})}>Challenger</button>
           <button onClick={() => changeLeaderboards({rank: 'legendary'})}>Legendary Queue</button>
       </div>
 

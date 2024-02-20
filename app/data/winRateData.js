@@ -13,7 +13,7 @@ const fullWinRateList = async() => {
 
 const fetchedHeroData = await fullWinRateList();
 // response comes in a format of res.data[rank][line]
-// 1 dia, 2 masters, 3 sovereign, 4 Legendary Que
+// 1 dia, 2 masters, 3 challenger, 4 Legendary Que
 // 2 top, 5 jungle, 1 mid, 3 bot 4 support
 
 const formArray = (object) => {
@@ -50,7 +50,7 @@ const winRateObject =  {
     'support': formArray(fetchedHeroData.data[2][4]),
   },
 
-  'sovereign': {
+  'challenger': {
     'top': formArray(fetchedHeroData.data[3][2]),
     'jungle': formArray(fetchedHeroData.data[3][5]),
     'mid': formArray(fetchedHeroData.data[3][1]),
