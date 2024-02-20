@@ -1,0 +1,34 @@
+.abilitiesGrid {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.marker--ability {
+  padding: 2px 5px;
+  background-color: rgb(110, 126, 39);
+}
+
+.abilityDescription {
+  margin: 8px;
+  border: 4px solid rgba(243, 243, 87, 0.4);
+  border-radius: 8px;
+  padding: 4px;
+  background: rgb(37, 37, 37);  
+}
+
+.abilityDescription > h5, .abilityDescription > p, .abilityDescription > h4 {
+  padding-top: 3px;
+}
+
+.abilityDescription > p, li {
+  font-size:13px
+}
+
+.abilityDescription > h5 {
+  font-size: 15px;
+}
+
+.abilityDescription > h4 {
+  background-color: rgb(42, 42, 78);
+}

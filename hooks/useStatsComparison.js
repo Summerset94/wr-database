@@ -65,16 +65,23 @@ return {
   attackerMagReduction: magicalReductionAttacker,
   attackerEffectivePhysHealth: ((atk.health)/(100/(100 + (postMitigationArmorAttacker)))),
   attackerEffectiveMagHealth: ((atk.health)/(100/(100 + (postMitigationMresAttacker)))),
+  atkcdr:(1 - atk.cdr),
+  atkPhysRed: physicalReductionAttacker/100,
+  atkMagRed: magicalReductionAttacker/100,
+
 
   defenderArmor: postMitigationArmorDefender,
   defenderMres: postMitigationMresDefender,
   defenderPhysReduction: physicalReductionDefender,
   defenderMagReduction: magicalReductionDefender,
+  defPhysRed: physicalReductionDefender/100,
+  defMagRed: magicalReductionDefender/100,
+  defcdr:(1 - def.cdr)
 }
 
 
 },
-[atk, def, ]);
+[atk, def]);
 
 return formula
 }

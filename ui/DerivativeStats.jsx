@@ -22,7 +22,7 @@ export default function DerivativeStats({totalMemo, formula}) {
             <td >Magical</td>
             <td className='stat--magres'>{totalMemo.dmgReductMag.toFixed(0)}%</td>
             <td >Magical</td>
-            <td className='stat--magres'>{(formula.defenderPhysReduction)}%</td>
+            <td className='stat--magres'>{(formula.attackerMagReduction)}%</td>
           </tr>
 
           <tr>

@@ -16,6 +16,7 @@ import VisitCard from '../ui/VisitCard';
 import BaseStats from '../ui/BaseStats';
 import DinamicStats from '../ui/DinamicStats';
 import DerivativeStats from '../ui/DerivativeStats';
+import Abilities from '../ui/Abilities';
 
 const ChampionPage = ({index}) => {
   const {getItem, setItem} = useStorage();
@@ -262,6 +263,26 @@ const statsComparison = useStatsComparison(atk, def);
       totalMemo={totalMemo}
       formula={statsComparison}
     />
+
+    <div className='windowPicker'>
+      <button>Abilities</button>
+      <button>Items</button>
+      <button>Runes</button>
+    </div>
+
+    <div className='window-wrap'>
+      <Abilities
+        index={index}
+        champ={champ}
+        currentLevel={currentLevel}
+        base={baseStats}
+        bonus={bonusStats}
+        mod={statsComparison}       
+        atk={atk}
+        def={def}    
+        updateAbilitiesBonus={updateAbilitiesBonus}
+      />
+    </div>
 
     </> 
   )

@@ -60,3 +60,11 @@ nav, .champSelector {
   gap: 5px;
   margin: 10px 0
 }
+
+.windowPicker {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  gap: 5px;
+  justify-content: center;
+}
