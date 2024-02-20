@@ -6,8 +6,8 @@ import Header from "../ui/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Wild Rift Database",
-  description: "Wild Rift and all info on it. Created with Next-js",
+  title: "Wild Rift QUick Maths",
+  description: "League of Legends: Wild Rift Winrates and interactive build calculator",
 };
 
 export default function RootLayout({ children }) {
