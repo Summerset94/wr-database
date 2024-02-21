@@ -40,17 +40,17 @@ export default function karma({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((70)+(atk.ap * 40 / 100)))} / 
-            {' '}{Math.round(((110)+(atk.ap * 40 / 100)))} / 
-            {' '}{Math.round(((150)+(atk.ap * 40 / 100)))} / 
-            {' '}{Math.round(((190)+(atk.ap * 40 / 100)))}
+            {' '}{Math.round(((60)+(atk.ap * 40 / 100)))} / 
+            {' '}{Math.round(((100)+(atk.ap * 40 / 100)))} / 
+            {' '}{Math.round(((140)+(atk.ap * 40 / 100)))} / 
+            {' '}{Math.round(((180)+(atk.ap * 40 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((70)+(atk.ap * 40 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((110)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((150)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((190)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((60)+(atk.ap * 40 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((100)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((140)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((180)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))}          
           </p>
 
           <h5 className="stat--magres">
@@ -58,26 +58,26 @@ export default function karma({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((70)+(atk.ap * 50 / 100)))} + {Math.round(((40)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((150)+(atk.ap * 50 / 100)))} + {Math.round(((80)+(atk.ap * 50 / 100)))}  / 
-            {' '}{Math.round(((230)+(atk.ap * 50 / 100)))} + {Math.round(((120)+(atk.ap * 50 / 100)))}  / 
-            {' '}{Math.round(((310)+(atk.ap * 50 / 100)))} + {Math.round(((160)+(atk.ap * 50 / 100)))} 
+            {' '}{Math.round(((65)+(atk.ap * 50 / 100)))} + {Math.round(((40)+(atk.ap * 50 / 100)))} / 
+            {' '}{Math.round(((140)+(atk.ap * 50 / 100)))} + {Math.round(((80)+(atk.ap * 50 / 100)))}  / 
+            {' '}{Math.round(((215)+(atk.ap * 50 / 100)))} + {Math.round(((120)+(atk.ap * 50 / 100)))}  / 
+            {' '}{Math.round(((290)+(atk.ap * 50 / 100)))} + {Math.round(((160)+(atk.ap * 50 / 100)))} 
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((70)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} + {Math.round(((40)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((150)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} + {Math.round(((80)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((230)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} + {Math.round(((120)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((310)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} + {Math.round(((160)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))}          
+            {' '}{Math.round(((65)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} + {Math.round(((40)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((140)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} + {Math.round(((80)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((215)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} + {Math.round(((120)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((290)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} + {Math.round(((160)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Fires a blast of energy, dealing <span className="stat--ap">70 / 110 / 150 / 190 (+40% AP) magic damage</span> to the first target hit and surrounding enemies, and slowing them by <span className="stat--moveSpeed">35%</span> for 1.5 seconds.
+          Fires a blast of energy, dealing <span className="stat--ap">60 / 100 / 140 / 180 (+40% AP) magic damage</span> to the first target hit and surrounding enemies, and slowing them by <span className="stat--moveSpeed">35%</span> for 1.5 seconds.
           </p>
 
           <p>
-            <b>Mantra:</b> Increases the destructive power of the blast, dealing <span className="stat--ap">70 / 150 / 230 / 310 (+50% AP) magic damage</span>
-             to the first target hit and surrounding enemies. The blast leaves a field for 1.5 seconds, slowing targets by 50%, after wich it explodes and deals <span className="stat--ap">40 / 80 / 120 / 160 (+50% AP) magic damage</span>.
+            <b>Mantra:</b> Increases the destructive power of the blast, dealing <span className="stat--ap">65 / 140 / 215 / 290 (+50% AP) magic damage</span>
+             to the first target hit and surrounding enemies. The blast leaves a field for 1.5 seconds, slowing targets by <span className="stat--moveSpeed">42.5% / 45% / 47.5% / 50%</span>, after wich it explodes and deals <span className="stat--ap">40 / 80 / 120 / 160 (+50% AP) magic damage</span>.
           </p>
         </div>
     },
@@ -161,8 +161,8 @@ export default function karma({currentLevel, mod, bonus, atk, def, champ}) {
           Cooldown: 
             {' '}{(10*mod.atkcdr).toFixed(1)} / 
             {' '}{(9*mod.atkcdr).toFixed(1)} / 
-            {' '}{(9*mod.atkcdr).toFixed(1)} / 
-            {' '}{(8*mod.atkcdr).toFixed(1)} 
+            {' '}{(8*mod.atkcdr).toFixed(1)} / 
+            {' '}{(7*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 

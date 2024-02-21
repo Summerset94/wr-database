@@ -52,11 +52,11 @@ export default function tryndamere({currentLevel, mod, bonus, atk, def, champ, u
     
           <br />
           <p>
-            <b>Passive:</b> Gains <span className="stat--ad">5 / 10 / 15 / 20 Attack Damage</span>  plus an additional <span className="stat--ad"> 0.25 / 0.30 / 0.35 / 0.4 Attack Damage</span> per 1% of missing Health.
+            <b>Passive:</b> Gains <span className="stat--ad">10 / 15 / 20 / 25 Attack Damage</span>  plus an additional <span className="stat--ad"> 0.25 / 0.30 / 0.35 / 0.4 Attack Damage</span> per 1% of missing Health.
           </p>
 
           <p>
-            <b>Active:</b> Consumes all Fury to heal for <span className="stat--hp">55 / 65 / 75 / 85 (<span className="stat--ap">+30% AP</span>)</span> plus  <span className="stat--hp">1 / 1.6 / 2.2 / 2.8 (<span className="stat--ap">+1.2%  AP</span>)</span> per point of Fury consumed.
+            <b>Active:</b> Consumes all Fury to heal for <span className="stat--hp">55 / 65 / 75 / 85 (<span className="stat--ap">+30% AP</span>)</span> plus  <span className="stat--hp">1.5 / 2.1 / 2.7 / 3.3 (<span className="stat--ap">+1.2%  AP</span>)</span> per point of Fury consumed.
           </p>
         </div>
     },

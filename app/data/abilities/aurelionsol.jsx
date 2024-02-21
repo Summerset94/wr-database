@@ -27,7 +27,7 @@ export default function aurelionsol({currentLevel, mod, bonus, atk, def, champ, 
       burst: {
         base: 55,
         growth: 10,
-        modifier: (15+(5*Math.floor((currentLevel-1)/4))) +  (atk.ap * 35 / 100) + (def.health * (stardust * 3 / 100)/100)
+        modifier: (15+(5*Math.floor((currentLevel-1)/4))) +  (atk.ap * 35 / 100) + (def.health * (stardust * 2.5 / 100)/100)
       }
     };
 
@@ -54,10 +54,10 @@ export default function aurelionsol({currentLevel, mod, bonus, atk, def, champ, 
       damage: {
         base: 4,
         growth: 1.5,
-        modifier: (atk.ap * 5 / 100)
+        modifier: (atk.ap * 3 / 100)
       },
       execution: {
-        treshold: (def.health * (5 + (stardust * 2.6 / 100))/100)
+        treshold: (def.health * (5 + (stardust * 2.1 / 100))/100)
       }
     };
 
@@ -206,7 +206,7 @@ export default function aurelionsol({currentLevel, mod, bonus, atk, def, champ, 
         text: {
           damage: <span className="stat--ap">{e.damage.base} / {e.damage.base + e.damage.growth} / {e.damage.base + e.damage.growth * 2} / {e.damage.base + e.damage.growth * 3} (+5% AP) Magic damage</span>,
           
-          execution: <span className="stat--hp">5 (<span className="stat--armor">+2.6% Stardust stacks</span> )% of Max Health</span>,
+          execution: <span className="stat--hp">5 (<span className="stat--armor">+2.1% Stardust stacks</span> )% of Max Health</span>,
         }
       },
 
@@ -303,13 +303,13 @@ export default function aurelionsol({currentLevel, mod, bonus, atk, def, champ, 
 
           <ol>
             <li>
-              <b>Breath of Light</b>: This ability's burst deal additional magic damage equal to (<span className="stat--armor">3% of Stardust stacks</span>)% of target's <span className="stat--hp">maximum Health</span>.
+              <b>Breath of Light</b>: This ability's burst deal additional magic damage equal to (<span className="stat--armor">2.5% of Stardust stacks</span>)% of target's <span className="stat--hp">maximum Health</span>.
             </li>
             <li>
               <b>Astral Flight</b>: Increases the maximum flight distance by (<span className="stat--armor">62.5% of Stardust stacks</span>)%.
             </li>
             <li>
-              <b>Singularity</b>: Increases the ability's execution threshold by (<span className="stat--armor">2.6% of Stardust stacks</span>)% and its impact area.
+              <b>Singularity</b>: Increases the ability's execution threshold by (<span className="stat--armor">2.1% of Stardust stacks</span>)% and its impact area.
             </li>
             <li>
               <b>Falling Star/The Skies Descend:</b> Increases the ability's impact area.

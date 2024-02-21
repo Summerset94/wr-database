@@ -1379,7 +1379,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3>+20 Ability Haste</h3>
           <h3 className="stat--magres">+7% Magic penetration</h3>
 
-        <p><b>Safeguard: </b>Grant a spell shield that blocks the next enemy ability. When the shield is broken, reduce incoming damage by <span>70% for 1s</span> (40s cooldown).</p>
+        <p><b>Safeguard: </b>Grant a spell shield that blocks the next enemy ability. When the shield is broken, reduce incoming damage by <span>50% for 1s</span> (40s cooldown).</p>
 
         <p>
           <b>Poise:</b> Provide <abbr title="included in calculations" className="stat--ap">20 Ability Power</abbr>  while safeguarded. If you deal magic damage to enemy champions while using an active ability, it will reduce Safeguard's cooldown.

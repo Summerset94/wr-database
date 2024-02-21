@@ -81,7 +81,7 @@ export default function sett({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--hp">
-            {Math.round(((def.health * 50 / 100)))}
+            {Math.round(((def.health * 45 / 100)))}
           </p>
 
           <h5 className="stat--ad">
@@ -89,21 +89,21 @@ export default function sett({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((80)+((def.health * 50 / 100) * (25 + bonus.attack * 25/100)/100)))} / 
-            {' '}{Math.round(((105)+((def.health * 50 / 100) * (25 + bonus.attack * 25/100)/100)))} / 
-            {' '}{Math.round(((130)+((def.health * 50 / 100) * (25 + bonus.attack * 25/100)/100)))} / 
-            {' '}{Math.round(((155)+((def.health * 50 / 100) * (25 + bonus.attack * 25/100)/100)))}
+            {' '}{Math.round(((80)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100)))} / 
+            {' '}{Math.round(((105)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100)))} / 
+            {' '}{Math.round(((130)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100)))} / 
+            {' '}{Math.round(((155)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((80)+((def.health * 50 / 100) * (25 + bonus.attack * 25/100)/100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((105)+((def.health * 50 / 100) * (25 + bonus.attack * 25/100)/100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((130)+((def.health * 50 / 100) * (25 + bonus.attack * 25/100)/100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((155)+((def.health * 50 / 100) * (25 + bonus.attack * 25/100)/100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((80)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((105)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((130)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((155)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100))* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
-           <b>Passive:</b> Stores 100% of post-mitigated damage taken as Grit, up to <abbr className="stat--hp" title='50% Max Health'>{Math.round(atk.health/2)} damage</abbr>. Grit decays quickly 4 seconds after the damage was taken.
+           <b>Passive:</b> Stores 100% of post-mitigated damage taken as Grit, up to <abbr className="stat--hp" title='45% Max Health'>{Math.round(atk.health * 45 / 100)} damage</abbr>. Grit decays quickly 4 seconds after the damage was taken.
           </p>
 
           <p>
@@ -181,7 +181,7 @@ export default function sett({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-            Grab an enemy champion and suppresses them as he carries them forward, then slams them into the ground, dealing <span className="stat--ad">200 / 300 / 400 (+100% bonus AD)(<span className="stat--hp">+40 / 50 / 60% target's bonus health</span>) physical damage</span> to surrounding enemies and <span className="stat--moveSpeed">Slowing them by 99%</span> for 1 second. Enemies take up to 25% less damage the further they are from where Sett lands.
+            Grab an enemy champion and suppresses them as he carries them forward, then slams them into the ground, dealing <span className="stat--ad">200 / 300 / 400 (+100% bonus AD)(<span className="stat--hp">+35 / 45 / 55% target's bonus health</span>) physical damage</span> to surrounding enemies and <span className="stat--moveSpeed">Slowing them by 99%</span> for 1 second. Enemies take up to 25% less damage the further they are from where Sett lands.
           </p>
         </div>
     }

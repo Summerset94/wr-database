@@ -69,7 +69,7 @@ export default function gragas({currentLevel, mod, bonus, atk, def, champ}) {
       description:
         <div className="abilityDescription">
           <h4>
-          <span className="marker--ability">2</span> DRUNDKEN RAGE
+          <span className="marker--ability">2</span> DRUNKEN RAGE
           </h4>
     
           <h5>
@@ -100,23 +100,23 @@ export default function gragas({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((20)+(atk.ap * 75 / 100) + (def.health * 7 / 100)))} / 
-            {' '}{Math.round(((60)+(atk.ap * 75 / 100) + (def.health * 7 / 100)))} / 
-            {' '}{Math.round(((100)+(atk.ap * 75 / 100) + (def.health * 7 / 100)))} / 
-            {' '}{Math.round(((140)+(atk.ap * 75 / 100) + (def.health * 7 / 100)))}
+            {' '}{Math.round(((20)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))} / 
+            {' '}{Math.round(((60)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))} / 
+            {' '}{Math.round(((100)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))} / 
+            {' '}{Math.round(((140)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((20)+(atk.ap * 75 / 100) + (def.health * 7 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((60)+(atk.ap * 75 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((100)+(atk.ap * 75 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((140)+(atk.ap * 75 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((20)+(atk.ap * 90 / 100) + (def.health * 7 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((60)+(atk.ap * 90 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((100)+(atk.ap * 90 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((140)+(atk.ap * 90 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
           Reduces damage taken by <span className="stat--armor">8% / 11% / 14% / 17% (<span className="stat--ap">+0.04% AP</span>)</span>  for 2.5 seconds. <br />
 
-        The next attack within 5 seconds after drinking is empowered to splash enemies for bonus <span className="stat--ap">20 / 60 / 100 /140 (+75% AP) <span className="stat--hp">(+7% target's Max Health)</span> magic damage</span>.
+        The next attack within 5 seconds after drinking is empowered to splash enemies for bonus <span className="stat--ap">20 / 60 / 100 /140 (+90% AP) <span className="stat--hp">(+7% target's Max Health)</span> magic damage</span>.
           </p>
         </div>
     },
@@ -148,21 +148,21 @@ export default function gragas({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((80)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((145)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((210)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((275)+(atk.ap * 70 / 100)))}
+            {' '}{Math.round(((80)+(atk.ap * 80 / 100)))} / 
+            {' '}{Math.round(((145)+(atk.ap * 80 / 100)))} / 
+            {' '}{Math.round(((210)+(atk.ap * 80 / 100)))} / 
+            {' '}{Math.round(((275)+(atk.ap * 80 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((80)+(atk.ap * 70 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((145)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((210)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((275)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((80)+(atk.ap * 80 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((145)+(atk.ap * 80 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((210)+(atk.ap * 80 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((275)+(atk.ap * 80 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Charges forward, colliding with the first enemy hit to deal <span className="stat--ap">80 / 145 / 210 / 275 (+70% AP) magic damage</span> to nearby enemies. Enemies hit are also bumped backwards, stunning them for <b>1</b> second. <br />
+          Charges forward, colliding with the first enemy hit to deal <span className="stat--ap">80 / 145 / 210 / 275 (+80% AP) magic damage</span> to nearby enemies. Enemies hit are also bumped backwards, stunning them for <b>1</b> second. <br />
           Body Slam's cooldown is reduced by 3 seconds if it succesfully collides with an enemy.
           </p>
         </div>
@@ -193,19 +193,19 @@ export default function gragas({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((200)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((300)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((400)+(atk.ap * 70 / 100)))}
+            {' '}{Math.round(((200)+(atk.ap * 80 / 100)))} / 
+            {' '}{Math.round(((300)+(atk.ap * 80 / 100)))} / 
+            {' '}{Math.round(((400)+(atk.ap * 80 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((200)+(atk.ap * 70 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((300)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((400)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))}
+            {' '}{Math.round(((200)+(atk.ap * 80 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((300)+(atk.ap * 80 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((400)+(atk.ap * 80 / 100))* (1 - mod.defMagRed))}
           </p>
     
           <p>
-            Hurls a potent cask that explodes when it lands, dealing <span className="stat--ap">200 / 300 / 400 (+70% AP) magic damage</span> and knocking enemies away from the explosion's center. The cask has a fixed travel time.
+            Hurls a potent cask that explodes when it lands, dealing <span className="stat--ap">200 / 300 / 400 (+80% AP) magic damage</span> and knocking enemies away from the explosion's center. The cask has a fixed travel time.
           </p>
         </div>
     }

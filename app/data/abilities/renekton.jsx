@@ -221,18 +221,18 @@ export default function renekton({currentLevel, mod, bonus, atk, def, champ}) {
 
           <p className="stat--ap">Pre-mitigation: 
             {' '}{Math.round(((70)+(atk.ap * 20 / 100)))} / 
-            {' '}{Math.round(((110)+(atk.ap * 20 / 100)))} / 
-            {' '}{Math.round(((150)+(atk.ap * 20 / 100)))}
+            {' '}{Math.round(((120)+(atk.ap * 20 / 100)))} / 
+            {' '}{Math.round(((170)+(atk.ap * 20 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
             {' '}{Math.round(((70)+(atk.ap * 20 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((110)+(atk.ap * 20 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((150)+(atk.ap * 20 / 100))* (1 - mod.defMagRed))}
+            {' '}{Math.round(((120)+(atk.ap * 20 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((170)+(atk.ap * 20 / 100))* (1 - mod.defMagRed))}
           </p>
     
           <p>
-            Gain <span className="stat--vamp">20 Fury</span> and <span className="stat--hp">300 / 525 / 750 Health</span> for 12 seconds. Every second after casting, gain <span className="stat--vamp">5 Fury</span> and deal <span className="stat--ap">70 / 110 / 150 (+20% AP) magic damage</span> to nearby enemies.
+            Gain <span className="stat--vamp">20 Fury</span> and <span className="stat--hp">300 / 575 / 850 Health</span> for 12 seconds. Every second after casting, gain <span className="stat--vamp">5 Fury</span> and deal <span className="stat--ap">70 / 120 / 170 (+20% AP) magic damage</span> to nearby enemies.
           </p>
         </div>
     }

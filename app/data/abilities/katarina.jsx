@@ -105,21 +105,21 @@ export default function katarina({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((15)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))} / 
-            {' '}{Math.round(((35)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))} / 
-            {' '}{Math.round(((55)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))} / 
-            {' '}{Math.round(((75)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))}
+            {' '}{Math.round(((20)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))} / 
+            {' '}{Math.round(((45)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))} / 
+            {' '}{Math.round(((70)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))} / 
+            {' '}{Math.round(((95)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((15)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((35)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((55)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((75)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((20)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((45)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((70)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((95)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Blink to a location near a Dagger or unit, dealing <span className="stat--ap">15 / 35 / 55 / 75
+          Blink to a location near a Dagger or unit, dealing <span className="stat--ap">20 / 45 / 70 / 95
           (<span className="stat--ad">+50% AD</span> +25% AP) magic damage</span>  to the nearest enemy.
           </p>
 

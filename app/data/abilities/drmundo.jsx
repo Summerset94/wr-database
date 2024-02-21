@@ -95,22 +95,22 @@ export default function drmundo({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((20)+(bonus.health * 7 / 100)))} / 
-            {' '}{Math.round(((40)+(bonus.health * 7 / 100)))} / 
-            {' '}{Math.round(((60)+(bonus.health * 7 / 100)))} / 
-            {' '}{Math.round(((80)+(bonus.health * 7 / 100)))}
+            {' '}{Math.round(((20)+(bonus.health * 5 / 100)))} / 
+            {' '}{Math.round(((40)+(bonus.health * 5 / 100)))} / 
+            {' '}{Math.round(((60)+(bonus.health * 5 / 100)))} / 
+            {' '}{Math.round(((80)+(bonus.health * 5 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((20)+(bonus.health * 7 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((40)+(bonus.health * 7 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((60)+(bonus.health * 7 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((80)+(bonus.health * 7 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((20)+(bonus.health * 5 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((40)+(bonus.health * 5 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((60)+(bonus.health * 5 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((80)+(bonus.health * 5 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
             Charges a defibrillator for 4 seconds, dealing <span className="stat--ap">20 / 40 / 60 / 80 magic damage</span> per second to nearby enemies.
-            <b>RECAST:</b> Detonates the defibrillator, dealing <span className="stat--ap">20 / 40 / 60 / 80 <span className="stat--hp">(+7% bonus HP) </span>magic damage</span> to nearby enemies. If the detonation damaged an enemy, Dr. Mundo heals for <span className="stat--hp">15%</span> of the damage taken <u>during Heart Zapper's duration</u>.  If it damaged a champion or monster he heals <span className="stat--hp">30% / 35% / 40% / 45%</span> instead.
+            <b>RECAST:</b> Detonates the defibrillator, dealing <span className="stat--ap">20 / 40 / 60 / 80 <span className="stat--hp">(+5% bonus HP) </span>magic damage</span> to nearby enemies. If the detonation damaged an enemy, Dr. Mundo heals for <span className="stat--hp">15%</span> of the damage taken <u>during Heart Zapper's duration</u>.  If it damaged a champion or monster he heals <span className="stat--hp">30% / 35% / 40% / 45%</span> instead.
           </p>
         </div>
     },
@@ -142,17 +142,17 @@ export default function drmundo({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((5)+(bonus.health * 7 / 100)))} / 
-            {' '}{Math.round(((20)+(bonus.health * 7 / 100)))} / 
-            {' '}{Math.round(((35)+(bonus.health * 7 / 100)))} / 
-            {' '}{Math.round(((50)+(bonus.health * 7 / 100)))}
+            {' '}{Math.round(((5)+(bonus.health * 5 / 100)))} / 
+            {' '}{Math.round(((20)+(bonus.health * 5 / 100)))} / 
+            {' '}{Math.round(((35)+(bonus.health * 5 / 100)))} / 
+            {' '}{Math.round(((50)+(bonus.health * 5 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((5)+(bonus.health * 7 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((20)+(bonus.health * 7 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((35)+(bonus.health * 7 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((50)+(bonus.health * 7 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((5)+(bonus.health * 5 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((20)+(bonus.health * 5 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((35)+(bonus.health * 5 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((50)+(bonus.health * 5 / 100))* (1 - mod.defPhysRed))}          
           </p>
 
           <h5 className="stat--ad">
@@ -160,23 +160,23 @@ export default function drmundo({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((5)+(bonus.health * 7 / 100))*(160/100))} / 
-            {' '}{Math.round(((20)+(bonus.health * 7 / 100))*(160/100))} / 
-            {' '}{Math.round(((35)+(bonus.health * 7 / 100))*(160/100))} / 
-            {' '}{Math.round(((50)+(bonus.health * 7 / 100))*(160/100))}
+            {' '}{Math.round(((5)+(bonus.health * 5 / 100))*(160/100))} / 
+            {' '}{Math.round(((20)+(bonus.health * 5 / 100))*(160/100))} / 
+            {' '}{Math.round(((35)+(bonus.health * 5 / 100))*(160/100))} / 
+            {' '}{Math.round(((50)+(bonus.health * 5 / 100))*(160/100))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((5)+(bonus.health * 7 / 100)*(160/100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((20)+(bonus.health * 7 / 100)*(160/100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((35)+(bonus.health * 7 / 100)*(160/100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((50)+(bonus.health * 7 / 100)*(160/100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((5)+(bonus.health * 5 / 100)*(160/100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((20)+(bonus.health * 5 / 100)*(160/100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((35)+(bonus.health * 5 / 100)*(160/100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((50)+(bonus.health * 5 / 100)*(160/100))* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
           Passive: Dr. Mundo gains <span className="stat--ad">15 / 20 / 25 / 30, plus up to 30 / 45 / 50 / 60 Attack Damage</span> based on his missing health.
 
-          Active: Empowers his next attack to deal an addition <span className="stat--ad">5 / 20 / 35 / 50 <span className="stat--hp">(+7% bonus HP)</span> physical damage</span>, increased by up to <abbr title="max bonus at 40% missing health">60%</abbr> based on Dr. Mundo's missing heath.
+          Active: Empowers his next attack to deal an addition <span className="stat--ad">5 / 20 / 35 / 50 <span className="stat--hp">(+5% bonus HP)</span> physical damage</span>, increased by up to <abbr title="max bonus at 40% missing health">60%</abbr> based on Dr. Mundo's missing heath.
 
           Dr. Mundo swats the target away if it was killed or was a small monster, dealing the same damage to enemies.
           </p>

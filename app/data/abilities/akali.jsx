@@ -9,8 +9,8 @@ export default function akali({currentLevel, mod, bonus, atk, def}) {
     const cdr = mod.atkcdr
 
     const P = {
-      base: 20,
-      growth: Number(8 * currentLevel),
+      base: 25,
+      growth: Number(10 * currentLevel),
       mod: (atk.attack * 60 / 100)+(atk.ap * 50 / 100)
     };
 

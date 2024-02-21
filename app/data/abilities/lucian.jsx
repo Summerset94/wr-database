@@ -111,9 +111,9 @@ export default function lucian({currentLevel, mod, bonus, atk, def, champ}) {
           <h5>
           Cooldown: 
             {' '}{(13*mod.atkcdr).toFixed(1)} / 
-            {' '}{(12*mod.atkcdr).toFixed(1)} / 
-            {' '}{(11*mod.atkcdr).toFixed(1)} / 
-            {' '}{(10*mod.atkcdr).toFixed(1)} 
+            {' '}{(11.5*mod.atkcdr).toFixed(1)} / 
+            {' '}{(10*mod.atkcdr).toFixed(1)} / 
+            {' '}{(8.5*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
@@ -126,20 +126,20 @@ export default function lucian({currentLevel, mod, bonus, atk, def, champ}) {
 
           <p className="stat--ap">Pre-mitigation: 
             {' '}{Math.round(((75)+(atk.ap * 90 / 100)))} / 
-            {' '}{Math.round(((120)+(atk.ap * 90 / 100)))} / 
-            {' '}{Math.round(((165)+(atk.ap * 90 / 100)))} / 
-            {' '}{Math.round(((210)+(atk.ap * 90 / 100)))}
+            {' '}{Math.round(((125)+(atk.ap * 90 / 100)))} / 
+            {' '}{Math.round(((175)+(atk.ap * 90 / 100)))} / 
+            {' '}{Math.round(((225)+(atk.ap * 90 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
             {' '}{Math.round(((75)+(atk.ap * 90 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((120)+(atk.ap * 90 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((165)+(atk.ap * 90 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((210)+(atk.ap * 90 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((125)+(atk.ap * 90 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((175)+(atk.ap * 90 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((225)+(atk.ap * 90 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Fires a shot that explodes at the end of its range or on the first enemy hit, dealing <span className="stat--ap">75 / 120 / 165 / 210 (+90% AP) magic damage</span>, briefly revealing enemies and marking them for 6 seconds.
+          Fires a shot that explodes at the end of its range or on the first enemy hit, dealing <span className="stat--ap">75 / 125 / 175 / 225 (+90% AP) magic damage</span>, briefly revealing enemies and marking them for 6 seconds.
           </p>
 
           <p>
