@@ -1,7 +1,7 @@
 const championsData = process.env.RANK_LIST;
 
 const fullWinRateList = async() => {
-  const res = await fetch(championsData, {next: {revalidate: 3600}})
+  const res = await fetch(championsData, {cache: "no-store"})
  
   if (!res.ok) {
 
