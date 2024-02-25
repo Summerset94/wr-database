@@ -8,7 +8,7 @@ export default function kayle({currentLevel, mod, bonus, atk, def, champ}) {
           </h4>
 
           <h5 className="stat--as">Attack speed stack / full:</h5>
-          <p className="stat--as">{((champ.asBase * 4 / 100)+(champ.asBase * (atk.ap /100))).toFixed(3)} / {(((champ.asBase * 4 / 100)+(champ.asBase * (atk.ap /100)))*5).toFixed(3)}</p>
+          <p className="stat--as">{((champ.asBase * (4 + atk.ap /100) / 100)).toFixed(3)} / {(((champ.asBase * (4 + atk.ap /100) / 100))*5).toFixed(3)}</p>
     
           <p>
             Kayle ascends as she gains levels.
