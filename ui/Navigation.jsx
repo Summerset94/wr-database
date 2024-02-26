@@ -10,17 +10,14 @@ const Navigation = () => {
   return (
     <nav className={styles.nav}>
       <Link href='/rankings/?rank=diamond&lane=top' className={styles.btn}>
-        <button>Champion perfomance statistics</button>
+        <button>Champions Win rates</button>
       </Link>
 
-     <CalculatorLink />
-
-      <Link 
-        href='https://summerset94.github.io/wrquickmaths/'
-        target='_blank'
-      >
-        <button>Build Calculator (Legacy version)</button>
+      <Link href='/tierlist' className={styles.btn}>
+        <button>Champions tierlist</button>
       </Link>
+
+     <CalculatorLink />      
 
       <Link
         href='/resources'

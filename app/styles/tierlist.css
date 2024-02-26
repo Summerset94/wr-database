@@ -1,0 +1,68 @@
+* {
+  color: white;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+.rank-tile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px;
+  background: rgb(37,37,37);
+  background: linear-gradient(0deg, rgba(37,37,37,0.8) 0%, rgba(37,37,37,0.4) 50%);
+  gap: 12px;
+  padding: 5px;
+}
+
+.record-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 4px solid gray;
+  border-radius: 8px;
+  background-color: rgb(26, 26, 26);
+  gap: 3px;
+}
+
+.disclaimer {
+  text-align: center;
+  margin: 20px 5px;
+  background-color: rgb(37, 37, 37);
+  border-radius: 8px;
+  padding: 7px;
+}
+
+.tier-mark {
+  width: 100%;
+  padding: 10px;
+}
+
+#splus {
+  background: rgb(227,25,0);
+  background: linear-gradient(0deg, rgba(227,25,0,1) 0%, rgba(240,122,44,1) 50%);
+}
+
+#s {
+  background: rgb(25,185,128);
+  background: linear-gradient(0deg, rgba(25,185,128,0.8) 0%, rgba(13,168,108,0.4) 50%);
+}
+
+#a {
+  background: rgb(10,61,117);
+  background: linear-gradient(0deg, rgba(10,61,117,1) 0%, rgba(13,42,181,1) 50%);
+}
+
+#b{
+  background: rgb(62,10,117);
+  background: linear-gradient(0deg, rgba(62,10,117,1) 0%, rgba(173,13,181,1) 50%);
+}
+
+#c{
+  background: rgb(128,0,41);
+  background: linear-gradient(0deg, rgba(128,0,41,1) 0%, rgba(33,0,8,1) 50%);
+}
