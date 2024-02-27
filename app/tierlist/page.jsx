@@ -12,17 +12,17 @@ const page = () => {
   //  data from winrates
   const winRatesBase = JSON.parse(winRateData);
 
+  const lanes = {
+    2: "Baron lane",
+    5: "Jungle",
+    1: "Middle",
+    3: "Duo lane (carry)",
+    4: "Support",
+  };
   
   const processedList = (rank = 'diamond') => {
-    const extractedRank = { ...winRatesBase[rank] };
-  
-    const lanes = {
-      2: "Baron lane",
-      5: "Jungle",
-      1: "Middle",
-      3: "Duo lane (carry)",
-      4: "Support",
-    };
+    const extractedRank = { ...winRatesBase[rank] }; 
+    
 
     const laneIcons = {
       2: "/images/laneIcons/laneBaron.webp",
@@ -141,7 +141,9 @@ const page = () => {
       return summedUpList.filter(record => record.position === lane).reduce((sum, record) => sum + record.compositeScore, 0) / Number(summedUpList.filter(record => record.position === lane).length)}
 
     const getTier = (compositeScore, lane) => {
-      if (compositeScore > compositeDivider(lane) * 2) {
+      if (compositeScore > compositeDivider(lane) * 3) {
+        return 'FOTM';
+      } else if (compositeScore > compositeDivider(lane) * 2 && compositeScore <= compositeDivider(lane) * 3) {
         return 'S+';
       } else if (compositeScore > compositeDivider(lane) * 1.3 && compositeScore <= compositeDivider(lane) * 2) {
         return 'S';
@@ -149,8 +151,10 @@ const page = () => {
         return 'A';
       } else if (compositeScore > compositeDivider(lane) * 0.7 && compositeScore <= compositeDivider(lane) * 0.9) {
         return 'B';
-      } else if (compositeScore <= compositeDivider(lane) * 0.7) {
+      } else if (compositeScore > compositeDivider(lane) * 0.2 && compositeScore <= compositeDivider(lane) * 0.7) {
         return 'C';
+      } else if (compositeScore <= compositeDivider(lane) * 0.2) {
+        return 'D';
       } else {
         return 'Unknown';
       }
@@ -167,17 +171,29 @@ const page = () => {
   const rankingslist = summedUp();
 
   const tiers = {
+    FOTM: rankingslist.filter(record => record.tier === "FOTM"),
     SS: rankingslist.filter(record => record.tier === "S+"),
     S: rankingslist.filter(record => record.tier === "S"),
     A: rankingslist.filter(record => record.tier === "A"),
     B: rankingslist.filter(record => record.tier === "B"),
-    C: rankingslist.filter(record => record.tier === "C")
+    C: rankingslist.filter(record => record.tier === "C"),
+    D: rankingslist.filter(record => record.tier === "D"),
   };
 
-  const baronLane = rankingslist.filter(record => record.position === "Baron lane");
+  const formTiles = (tier) => {
+    const splitLanes = [
+      tier.filter(record => record.position === lanes[2]),
+      tier.filter(record => record.position === lanes[5]),
+      tier.filter(record => record.position === lanes[1]),
+      tier.filter(record => record.position === lanes[3]),
+      tier.filter(record => record.position === lanes[4]),
+    ];
 
-  const formTiles = (tier) => {    
-    return tier.map(record => {
+    return (
+
+      <>
+        <h4>Baron Lane</h4>
+        <div className="lane-tile">{splitLanes[0].map(record => {
     return <div key={record.id} className='record-tile'>
       <p>{record.name}</p>
       <Image
@@ -186,48 +202,130 @@ const page = () => {
         width={80}
         height={80}  
          />
-              
-      <Image
-        src={record.laneIcon}
-        alt={record.position}
-        width={30}
-        height={30}  
-        />      
       <p>relative performance: {Math.round(record.performance)}%</p>
     </div>
-  })}
+  })}</div>
+        <h4>Jungle</h4>
+        <div className="lane-tile">{splitLanes[1].map(record => {
+    return <div key={record.id} className='record-tile'>
+      <p>{record.name}</p>
+      <Image
+        src={record.icon}
+        alt={record.heroId}
+        width={80}
+        height={80}  
+         />
+      <p>relative performance: {Math.round(record.performance)}%</p>
+    </div>
+  })}</div>
+        <h4>Mid lane</h4>
+        <div className="lane-tile">{splitLanes[2].map(record => {
+            return <div key={record.id} className='record-tile'>
+              <p>{record.name}</p>
+              <Image
+                src={record.icon}
+                alt={record.heroId}
+                width={80}
+                height={80}  
+                /> 
+              <p>relative performance: {Math.round(record.performance)}%</p>
+            </div>
+          })}</div>
+        <h4>Duo lane (carry)</h4>
+        <div className="lane-tile">{splitLanes[3].map(record => {
+                    return <div key={record.id} className='record-tile'>
+                      <p>{record.name}</p>
+                      <Image
+                        src={record.icon}
+                        alt={record.heroId}
+                        width={80}
+                        height={80}  
+                        />
+                      <p>relative performance: {Math.round(record.performance)}%</p>
+                    </div>
+                  })}</div>
+        <h4>Support</h4>          
+        <div className="lane-tile">{splitLanes[4].map(record => {
+          return <div key={record.id} className='record-tile'>
+            <p>{record.name}</p>
+            <Image
+              src={record.icon}
+              alt={record.heroId}
+              width={80}
+              height={80}  
+              />
+            <p>relative performance: {Math.round(record.performance)}%</p>
+          </div>
+        })}</div>
+      </>     
+    )
+  }
+
+
 
   
 
   return (
     <> 
     <div>
-      <h3 className='disclaimer'><u>Disclaimer:</u> Provided tierlist is automated and based upon relative (compared to other champions on the same line) champion perfomance across Diamond-Grandmaster ranks on China's national server and formed through statistics calculations. It does not consider the difficulty of a champion or any other specifics and rather represents the most recent META champions from chinese server. The only subjective part on author's side is a threshold that breaks characters by tiers. If you see a high win rate champion in low tiers, it means that "statistically" that champion is too niche or requires dedication and deep champion knowledge to be effective. Author believes that every champion is viable.</h3>
+      <h5 className='disclaimer'><u>Disclaimer:</u> Provided tierlist is automated and based upon relative (compared to other champions on the same line) champion perfomance across Diamond-Grandmaster ranks on China's national server and formed through statistics calculations. It does not consider the difficulty of a champion or any other specifics and rather represents the most recent META champions from chinese server. The only subjective part on author's side is a threshold that breaks characters by tiers. If you see a high win rate champion in low tiers, it means that "statistically" that champion is too niche or requires dedication and deep champion knowledge to be effective. Author believes that every champion is viable.</h5>
     </div>
 
-    <h1 id='splus' className='tier-mark'>S+</h1>
+    <div  id='fotm' className='tier-mark'>
+      <h1>FOTM</h1>
+      <p>Over the top performance. May be a target of next patch nerfs.</p>
+    </div>    
+    <div className="rank-tile">
+      {formTiles(tiers.FOTM)}
+    </div>
+
+    <div id='splus' className='tier-mark'>
+      <h1>S+</h1>
+      <p>Safe for blind pick, easy to get high output</p>
+    </div>    
     <div className="rank-tile">
       {formTiles(tiers.SS)}
     </div>
 
-    <h1 id='s' className='tier-mark'>S</h1>
+    <div id='s' className='tier-mark'>
+      <h1>S</h1>
+      <p>Solid choice in the current meta, more reliant on team composition.</p>
+    </div>     
     <div className="rank-tile">
       {formTiles(tiers.S)}
     </div>
 
-    <h1 id='a' className='tier-mark'>A</h1>
+    <div id='a' className='tier-mark'>
+      <h1>A</h1>
+      <p>Average, middle of the road performance.</p>
+    </div>
     <div className="rank-tile">
       {formTiles(tiers.A)}
     </div>
 
-    <h1 id='b' className='tier-mark'>B</h1>
+    <div id='b' className='tier-mark'>
+      <h1>B</h1>
+      <p>Results are more likely to get influenced by team composition.</p>
+    </div>   
     <div className="rank-tile">
       {formTiles(tiers.B)}
     </div>
 
-    <h1 id='c' className='tier-mark'>C</h1>
+    <div id='c' className='tier-mark'>
+      <h1>C</h1>
+      <p>Niche and situational picks or champion requires deep understanding to play</p>
+    </div>    
     <div className="rank-tile">
       {formTiles(tiers.C)}
+    </div>
+
+
+    <div id='d' className='tier-mark'>
+      <h1>D</h1>
+      <p>Champion struggles at current position. May be a target of upcoming patch buffs</p>
+    </div>     
+    <div className="rank-tile">
+      {formTiles(tiers.D)}
     </div>
     </>
   )

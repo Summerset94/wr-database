@@ -42,6 +42,11 @@ p {
   padding: 10px;
 }
 
+#fotm {
+  background: rgb(11,74,0);
+  background: linear-gradient(0deg, rgba(11,74,0,1) 0%, rgba(2,134,11,1) 52%);
+}
+
 #splus {
   background: rgb(227,25,0);
   background: linear-gradient(0deg, rgba(227,25,0,1) 0%, rgba(240,122,44,1) 50%);
@@ -65,4 +70,16 @@ p {
 #c{
   background: rgb(128,0,41);
   background: linear-gradient(0deg, rgba(128,0,41,1) 0%, rgba(33,0,8,1) 50%);
+}
+
+#d{
+  background: rgb(153,156,153);
+background: linear-gradient(0deg, rgba(153,156,153,1) 0%, rgba(18,17,17,1) 52%);
+}
+
+.lane-tile {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
 }
