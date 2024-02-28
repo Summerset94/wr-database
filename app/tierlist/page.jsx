@@ -3,7 +3,9 @@ import React from 'react';
 import winRateData from '../data/winRateData';
 import champions from '../data/Champions';
 import Image from 'next/image';
-import '../styles/tierlist.css'
+import '../styles/tierlist.css';
+
+export const dynamic = "force-dynamic";
 
 const page = () => {
 // output on the page
