@@ -2118,7 +2118,7 @@ const champions = [
     icon: '/images/portraits/TalonSquare.webp',
     rolePrim: roles.middle,
     roleSecond: roles.jungle,
-    healthBase: 630,
+    healthBase: 660,
     healthScale: 115,
     manaBase: 460,
     manaScale: 41,

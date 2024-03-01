@@ -5,15 +5,15 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
   const calculations = useMemo(() => {
     const passive = {      
       damage: {
-        base: 75,
-        growth: 10,
-        modifier: bonus.attack * 2
+        base: 80,
+        growth: 200 / 14 * Number(currentLevel - 1),
+        modifier: bonus.attack * 2.1
       }
     };
 
     const q = {
       cooldown: {
-        base: 8,
+        base: 6,
         growth: -0.5
       },
 
@@ -23,7 +23,7 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
       },
 
       damage: {
-        base: 65,
+        base: 95,
         growth: 25,
         modifier: bonus.attack * 100 / 100,
         critModifier: (atk.critMultiplier - 0.25)        
@@ -48,15 +48,15 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
 
       damage: {
         cast: {
-          base: 50,
+          base: 60,
           growth: 10,
-          modifier: (bonus.attack * 40 / 100)
+          modifier: (bonus.attack * 50 / 100)
         },
 
         recast: {
-          base: 50,
+          base: 60,
           growth: 40,
-          modifier: (bonus.attack * 80 / 100)
+          modifier: (bonus.attack * 90 / 100)
         }
       },
       
@@ -219,8 +219,8 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
 
         text: {
           damage: {
-            cast: <span className="stat--ad">{w.damage.cast.base} / {w.damage.cast.base + w.damage.cast.growth} / {w.damage.cast.base + w.damage.cast.growth * 2} / {w.damage.cast.base + w.damage.cast.growth * 3} (+40% bonus AD) Physical damage</span>,
-            recast: <span className="stat--ad">{w.damage.recast.base} / {w.damage.recast.base + w.damage.recast.growth} / {w.damage.recast.base + w.damage.recast.growth * 2} / {w.damage.recast.base + w.damage.recast.growth * 3} (+80% bonus AD) Physical damage</span>,
+            cast: <span className="stat--ad">{w.damage.cast.base} / {w.damage.cast.base + w.damage.cast.growth} / {w.damage.cast.base + w.damage.cast.growth * 2} / {w.damage.cast.base + w.damage.cast.growth * 3} (+50% bonus AD) Physical damage</span>,
+            recast: <span className="stat--ad">{w.damage.recast.base} / {w.damage.recast.base + w.damage.recast.growth} / {w.damage.recast.base + w.damage.recast.growth * 2} / {w.damage.recast.base + w.damage.recast.growth * 3} (+90% bonus AD) Physical damage</span>,
           },
           slow: <span className="stat--moveSpeed">Slowing them for {w.slow.base}% / {w.slow.base + w.slow.growth}% / {w.slow.base + w.slow.growth * 2}% / {w.slow.base + w.slow.growth * 3}%  for 1 second</span>
         }
