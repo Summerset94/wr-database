@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 
 function Leaderboards({champions, winRateData}) {
 
-  
+  const frustration = 'Workm you little shit!';
 
   const router = useRouter();
   const searchParams = useSearchParams();
