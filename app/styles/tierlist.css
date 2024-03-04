@@ -22,6 +22,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 5px;
   padding: 5px;
   border: 4px solid gray;
   border-radius: 8px;

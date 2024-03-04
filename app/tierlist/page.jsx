@@ -8,8 +8,6 @@ import '../styles/tierlist.css';
 export const dynamic = "force-dynamic";
 
 const page = () => {
-// output on the page
-  let outputRender = '';
 
   //  data from winrates
   const winRatesBase = JSON.parse(winRateData);
@@ -114,16 +112,16 @@ const page = () => {
 
   data.diamond.forEach(record => {
     record.compositeScore =
-      calculateZScore(record.winRate, means.diamond.winRate, stdDeviations.diamond.winRate) +
+      calculateZScore(record.winRate, means.diamond.winRate, stdDeviations.diamond.winRate) * 0.9 +
       calculateZScore(record.pickRate, means.diamond.pickRate, stdDeviations.diamond.pickRate) +
-      calculateZScore(record.banRate, means.diamond.banRate, stdDeviations.diamond.banRate);
+      calculateZScore(record.banRate, means.diamond.banRate, stdDeviations.diamond.banRate) * 1.1;
   });
 
   data.masters.forEach(record => {
     record.compositeScore =
-      calculateZScore(record.winRate, means.masters.winRate, stdDeviations.masters.winRate) +
+      calculateZScore(record.winRate, means.masters.winRate, stdDeviations.masters.winRate) * 0.9 +
       calculateZScore(record.pickRate, means.masters.pickRate, stdDeviations.masters.pickRate) +
-      calculateZScore(record.banRate, means.masters.banRate, stdDeviations.masters.banRate);
+      calculateZScore(record.banRate, means.masters.banRate, stdDeviations.masters.banRate) * 1.1;
   });
 
 
@@ -203,8 +201,7 @@ const page = () => {
         alt={record.heroId}
         width={80}
         height={80}  
-         />
-      <p>relative performance: {Math.round(record.performance)}%</p>
+         />      
     </div>
   })}</div>
         <h4>Jungle</h4>
@@ -216,8 +213,7 @@ const page = () => {
         alt={record.heroId}
         width={80}
         height={80}  
-         />
-      <p>relative performance: {Math.round(record.performance)}%</p>
+         />     
     </div>
   })}</div>
         <h4>Mid lane</h4>
@@ -229,8 +225,7 @@ const page = () => {
                 alt={record.heroId}
                 width={80}
                 height={80}  
-                /> 
-              <p>relative performance: {Math.round(record.performance)}%</p>
+                />               
             </div>
           })}</div>
         <h4>Duo lane (carry)</h4>
@@ -242,8 +237,7 @@ const page = () => {
                         alt={record.heroId}
                         width={80}
                         height={80}  
-                        />
-                      <p>relative performance: {Math.round(record.performance)}%</p>
+                        />                      
                     </div>
                   })}</div>
         <h4>Support</h4>          
@@ -255,8 +249,7 @@ const page = () => {
               alt={record.heroId}
               width={80}
               height={80}  
-              />
-            <p>relative performance: {Math.round(record.performance)}%</p>
+              />            
           </div>
         })}</div>
       </>     
@@ -270,12 +263,12 @@ const page = () => {
   return (
     <> 
     <div>
-      <h5 className='disclaimer'><u>Disclaimer:</u> Provided tierlist is automated and based upon relative (compared to other champions on the same line) champion perfomance across Diamond-Grandmaster ranks on China's national server and formed through statistics calculations. It does not consider the difficulty of a champion or any other specifics and rather represents the most recent META champions from chinese server. The only subjective part on author's side is a threshold that breaks characters by tiers. If you see a high win rate champion in low tiers, it means that "statistically" that champion is too niche or requires dedication and deep champion knowledge to be effective. Author believes that every champion is viable.</h5>
+      <h5 className='disclaimer'><u>Disclaimer:</u> Provided tierlist is automated and based upon relative (compared to other champions on the same line) champion perfomance across Diamond-Grandmaster ranks on China's national server and formed through statistics calculations and rather represents current hot picks on chinese server. The only subjective part on author's side is a threshold that breaks characters by tiers.</h5>
     </div>
 
     <div  id='fotm' className='tier-mark'>
       <h1>FOTM</h1>
-      <p>Over the top performance. May be a target of next patch nerfs.</p>
+      <p>Top picks with good performance.</p>
     </div>    
     <div className="rank-tile">
       {formTiles(tiers.FOTM)}
@@ -283,7 +276,7 @@ const page = () => {
 
     <div id='splus' className='tier-mark'>
       <h1>S+</h1>
-      <p>Safe for blind pick, easy to get high output</p>
+      <p>Top picks in their role though not good enough to be banned every game</p>
     </div>    
     <div className="rank-tile">
       {formTiles(tiers.SS)}
@@ -324,7 +317,7 @@ const page = () => {
 
     <div id='d' className='tier-mark'>
       <h1>D</h1>
-      <p>Champion struggles at current position. May be a target of upcoming patch buffs</p>
+      <p>Champion struggles at current position OR too unpopular to get into higher tier. May be a target of upcoming patch buffs</p>
     </div>     
     <div className="rank-tile">
       {formTiles(tiers.D)}

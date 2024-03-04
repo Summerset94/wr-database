@@ -8,8 +8,6 @@ export const dynamic = "force-dynamic";
 
 function Leaderboards({champions, winRateData}) {
 
-  const frustration = 'Workm you little shit!';
-
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -59,46 +57,54 @@ function Leaderboards({champions, winRateData}) {
   
 
 // Fetching cleaned up Winrate statistics from Chinese server
-  useEffect(() => {
-    const fetchData = async () => {
-      
+useEffect(() => {
+  const fetchData = async () => {
+    try {
       const fetchedWinRate = JSON.parse(winRateData);
-     
-      const stats = fetchedWinRate[searchParams.get('rank')][searchParams.get('lane')];   
-
+      const stats = fetchedWinRate[searchParams.get('rank')][searchParams.get('lane')];
 
       const results = await Promise.all(stats.map(async record => {
         const champion = getChamp(record.value.hero_id);
 
-        return (
-          <tr className='row' key={record.value.hero_id}>
-            <td>
-              <Image
-                src={champion.icon}
-                width={70}
-                height={70}
-                alt={champion.id}
-              />
-            </td>
-            <td>{champion.name}</td>
-            <td>{getFloat(record.value.win_rate)}%</td>
-            <td>{getFloat(record.value.appear_rate)}%</td>
-            <td>{getFloat(record.value.forbid_rate)}%</td>
-          </tr>
-        );
+        return {
+          id: record.value.hero_id,
+          championName: champion.name,
+          icon: champion.icon,
+          winRate: getFloat(record.value.win_rate) / 100,
+          pickRate: getFloat(record.value.appear_rate) / 100,
+          banRate: getFloat(record.value.forbid_rate) / 100,
+        };
       }));
 
-      const updateTime = () => setLatestUpdate(statsUpdateDate(stats))
-
-      
-      updateTime();
+      setLatestUpdate(statsUpdateDate(stats));
       setLeaderboards(results);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  fetchData();
+}, [searchParams, winRateData]);
 
 
-    };
-
-    fetchData();
-  }, [searchParams]);
+  const rankingsOutput = leaderboards.map(record => {  
+    return (
+      <tr className='row' key={record.id}>
+        <td>
+          <Image
+            src={record.icon}
+            width={70}
+            height={70}
+            alt={record.id}
+          />
+        </td>
+        <td>{record.championName}</td>
+        <td>{getFloat(record.winRate)}%</td>
+        <td>{getFloat(record.pickRate)}%</td>
+        <td>{getFloat(record.banRate)}%</td>
+      </tr>
+    );
+  });
 
   
 
@@ -137,7 +143,7 @@ function Leaderboards({champions, winRateData}) {
           </tr>
         </thead>
 
-        <tbody>{leaderboards}</tbody>
+        <tbody>{rankingsOutput}</tbody>
       </table>
     </div>
   );
