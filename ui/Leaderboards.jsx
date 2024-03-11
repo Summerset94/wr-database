@@ -22,7 +22,7 @@ function Leaderboards({champions, winRateData}) {
     }
   }
 
-
+const frustration = 'Why the hell it does not update???!!!111';
 
 // saved state with chosen rank/lane options to render
   const [leaderboards, setLeaderboards] = useState([]);
