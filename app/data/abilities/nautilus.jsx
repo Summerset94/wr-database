@@ -85,10 +85,10 @@ export default function nautilus({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--hp">
-                  {Math.round(((55)+(atk.health * 11 / 100)))} / 
-            {' '}{Math.round(((65)+(atk.health * 12 / 100)))} / 
-            {' '}{Math.round(((75)+(atk.health * 13 / 100)))} / 
-            {' '}{Math.round(((85)+(atk.health * 14 / 100)))}
+                  {Math.round(((55)+(atk.health * 12 / 100)))} / 
+            {' '}{Math.round(((65)+(atk.health * 13 / 100)))} / 
+            {' '}{Math.round(((75)+(atk.health * 14 / 100)))} / 
+            {' '}{Math.round(((85)+(atk.health * 15 / 100)))}
           </p>
 
           <h5 className="stat--ap">
@@ -96,25 +96,25 @@ export default function nautilus({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((40)+(atk.ap * 40 / 100)))} / 
             {' '}{Math.round(((50)+(atk.ap * 40 / 100)))} / 
             {' '}{Math.round(((60)+(atk.ap * 40 / 100)))} / 
-            {' '}{Math.round(((70)+(atk.ap * 40 / 100)))}
+            {' '}{Math.round(((70)+(atk.ap * 40 / 100)))} / 
+            {' '}{Math.round(((80)+(atk.ap * 40 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((40)+(atk.ap * 40 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((50)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((50)+(atk.ap * 40 / 100)) * (1 - mod.defMagRed))} / 
             {' '}{Math.round(((60)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((70)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((70)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((80)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Gains a shield that absorbs <span className="stat--hp">55 / 65 / 75 / 85 (+10 / 11 / 12 / 13% Max Health) damage</span> for 6 seconds.
+          Gains a shield that absorbs <span className="stat--hp">55 / 65 / 75 / 85 (+12 / 13 / 14 / 15% Max Health) damage</span> for 6 seconds.
           </p>
 
           <p>
-          While the shield holds, Nautilus attacks are empowered to deal an additional <span className="stat--ap">40 / 50 / 60 / 70 (+40% AP) magic damage</span> around the target.
+          While the shield holds, Nautilus attacks are empowered to deal an additional <span className="stat--ap">50 / 60 / 70 / 80 (+40% AP) magic damage</span> around the target.
           </p>
 
           <p>

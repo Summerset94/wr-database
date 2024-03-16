@@ -297,7 +297,7 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
           </p>
 
           <p>
-            Monsters receive 120% damage.
+            Monsters receive 90% damage.
           </p>
 
           <p>

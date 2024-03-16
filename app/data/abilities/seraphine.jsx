@@ -77,10 +77,10 @@ export default function seraphine({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
-            {' '}{(23*mod.atkcdr).toFixed(1)} / 
-            {' '}{(20*mod.atkcdr).toFixed(1)} / 
-            {' '}{(17*mod.atkcdr).toFixed(1)} / 
-            {' '}{(14*mod.atkcdr).toFixed(1)} 
+            {' '}{(22*mod.atkcdr).toFixed(1)} / 
+            {' '}{(19*mod.atkcdr).toFixed(1)} / 
+            {' '}{(16*mod.atkcdr).toFixed(1)} / 
+            {' '}{(13*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
@@ -95,18 +95,18 @@ export default function seraphine({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--hp">
-                {Math.round(((60)+(atk.ap * 40 / 100)))} / 
-            {' '}{Math.round(((80)+(atk.ap * 40 / 100)))} / 
-            {' '}{Math.round(((100)+(atk.ap * 40 / 100)))} / 
-            {' '}{Math.round(((120)+(atk.ap * 40 / 100)))}
+                {Math.round(((60)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((90)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((120)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((150)+(atk.ap * 35 / 100)))}
           </p>
     
           <p>
-            Shields all nearby ally champions for <span className="stat--hp">60 / 80 / 100 / 120 (<span className="stat--ap">+40% AP</span>) damage</span> for 2.5 seconds and grant them <span className="stat--moveSpeed">20% Movement Speed</span> for 2.5 seconds.
+            Shields all nearby ally champions for <span className="stat--hp">60 / 90 / 120 / 150 (<span className="stat--ap">+35% AP</span>) damage</span> for 2.5 seconds and grant them <span className="stat--moveSpeed">20 / 22.5 / 25 / 27.5% Movement Speed</span> for 2.5 seconds.
           </p>
 
           <p>
-            If Seraphine is already shielded, nearby allies are healed for <span className="stat--hp">6.5% (<span className="stat--ap">+0.01% AP</span>)</span>  of their missing Health, increased by 50% for each ally.
+            If Seraphine is already shielded, nearby allies are healed for <span className="stat--hp">7.5% (<span className="stat--ap">+0.01% AP</span>)</span>  of their missing Health, increased by 50% for each ally.
           </p>
         </div>
     },

@@ -102,7 +102,7 @@ export default function yuumi({currentLevel, mod, bonus, atk, def, champ, update
     
           <br />
           <p>
-           <b>Passive:</b> Increases <span className="stat--armor">Attached ally's</span> <span className="stat--magres">Adaptive Force</span> by <span className="stat--ad">8 / 14 / 20 / 26 (+5% + 0.25% per level ally's bonus AD)</span> or <span className="stat--ap">16 / 28 / 40 / 52 (+5% + 0.25% per level ally's AP)</span>.
+           <b>Passive:</b> Increases <span className="stat--armor">Attached ally's</span> <span className="stat--magres">Adaptive Force</span> by <span className="stat--ad">8 / 14 / 20 / 26 (+2% + 0.15% per level ally's bonus AD)</span> or <span className="stat--ap">16 / 28 / 40 / 52 (+2% + 0.15% per level ally's AP)</span>.
           </p>
 
           <p>
@@ -174,9 +174,9 @@ export default function yuumi({currentLevel, mod, bonus, atk, def, champ, update
     
           <h5>
           Cooldown: 
+            {' '}{(85*mod.atkcdr).toFixed(1)} / 
             {' '}{(75*mod.atkcdr).toFixed(1)} / 
-            {' '}{(65*mod.atkcdr).toFixed(1)} / 
-            {' '}{(55*mod.atkcdr).toFixed(1)}
+            {' '}{(65*mod.atkcdr).toFixed(1)}
           </h5>
             <h5 className="stat--mana">
           Cost: 
@@ -201,7 +201,7 @@ export default function yuumi({currentLevel, mod, bonus, atk, def, champ, update
     
           <br />
           <p>
-            Channels for 3.5 seconds, launching 7 waves dealing <span className="stat--ap">80 / 100 / 120 (+15% AP) magic damage</span> Waves after the first deal 50% magic damage. Champions hit by 3 waves are rooted for 1.75 seconds.
+            Channels for 3.5 seconds, launching 7 waves dealing <span className="stat--ap">80 / 100 / 120 (+15% AP) magic damage</span> Waves after the first deal 50% magic damage. Champions hit by 3 waves are rooted for 1.5 seconds.
           </p>
 
           <p>

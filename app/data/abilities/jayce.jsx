@@ -205,7 +205,7 @@ export default function jayce({currentLevel, mod, bonus, atk, def, champ}) {
           <p>
             <b className="stat--armor">MELEE:</b> Knocks a target and enemies near them backwards, dealing <span className="stat--ap">10% / 12.5% / 15% / 17.5% / 20% <span className="stat--hp">target's Maximum Health</span> <span className="stat--ad">(+100% bonus AD)</span> magic damage</span>. <br />
             <hr />
-            <b className="stat--magres">RANGED:</b> Deploys an Acceleration Gate that grants <span className="stat--moveSpeed">35% / 40% / 45% / 50% / 55% decaying Movement Speed</span> for 3 seconds to ally champions that pass through it. <br />
+            <b className="stat--magres">RANGED:</b> Deploys an Acceleration Gate that grants <span className="stat--moveSpeed">35% / 40% / 45% / 50% / 55% decaying Movement Speed</span> for 2.5 / 3 / 3.5 / 4 / 4.5 seconds to ally champions that pass through it. <br />
             <b>Shock Blasts</b> fired through the gate travel farther and faster, increasing their damage by <span className="stat--critChance">40%</span>.
           </p>
         </div>

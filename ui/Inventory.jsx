@@ -67,7 +67,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       attack: 50,
       ap: 0,
       as: 0,
-      moveSpeed: 0,
+      moveSpeed: (base.moveSpeed * 0.05),
       flatArmPen: 0,
       flatMagPen: 0,
       armPen: 0,
@@ -84,8 +84,13 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className="stat--ad">+45 Attack Damage</h3>
           <h3>+20 Ability Haste</h3>
           <p>
-            <b>Dargon Awakening</b>: Increases Ability Haste of basic abilities by 25% for 8 seconds after casting an Ultimate, and grants <span className="stat--moveSpeed">30% bonus Movement Speed</span> that decays over 3 seconds. Scoring a takedown within 8 seconds refreshes the ability's duration (20s cooldown).
+            <b>Dargon Awakening</b>: Increases Ability Haste of basic abilities by 25% for 10 seconds after casting an Ultimate, and grants <span className="stat--moveSpeed">25% bonus Movement Speed</span> that decays over 3 seconds. Scoring a takedown within 10 seconds refreshes the ability's duration (20s cooldown).
           </p>
+          <p>
+            <b>Rising Dragon:</b> <span className="stat--moveSpeed">+5% Movement Speed</span>
+          </p>
+
+          
          </div>
 
     },
@@ -682,7 +687,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
 
           <p><b>Fervor: </b>+{(base.moveSpeed * 0.05).toFixed(2)} Move Speed</p>
           <p><b>Spellblade:</b>After casting an ability next basic attack deals <abbr title="200% BASE, numbers are pre-post mitigation"><span className='stat--ad'>+{Math.round(base.attack * 2)} /  {Math.round((base.attack * 2) * (1- modifier))} Physical Damage</span></abbr> (1.5s Cooldown)</p>
-          <p><b>Rage:</b> Attacks grant <b>20 Move Speed</b> and kills grant <b>60 Move Speed</b> for 2 seconds. Bonuses do not stack. Effect halved for ranged heroes</p>
+          <p><b>Valor:</b> Attacks grant <b>20 Move Speed</b> and kills grant <b>60 Move Speed</b> for 2 seconds. Bonuses do not stack. Effect halved for ranged heroes</p>
         </div>,
     },
 
@@ -914,7 +919,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className="stat--critChance">+{25}% Critical Rate</h3>
           <h3 className="stat--as">+20% ({(base.asBase * 0.2).toFixed(3)}) Attack Speed</h3>
 
-          <p><b>Energized:</b> Moving and attacking generate Energized attack. Energized attack deals <abbr title="50 + 5 per level"><span className='stat--ap'>{50 + 5 * (currentLevel - 1)} bonus Magic Damage</span></abbr> and slow by 75% for 0.5 seconds</p>
+          <p><b>Energized:</b> Moving and attacking generate Energized attack. Energized attack deals <abbr title="65 + 5 per level"><span className='stat--ap'>{65 + 5 * (currentLevel - 1)} bonus Magic Damage</span></abbr> and slow by 75% for 0.5 seconds</p>
         </div>
     }, 
     
@@ -1176,7 +1181,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       icon: "/images/items/DivineSunderer.png",
 
 
-      health: 400,
+      health: 425,
       mana: 0,
       armor: 0,
       magres: 0,
@@ -1196,7 +1201,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       description: 
         <div className='itemDescription'>
 
-          <h3 className="stat--hp">+{400} Max Health</h3>
+          <h3 className="stat--hp">+{425} Max Health</h3>
           <h3 className='stat--ad'>+{25} Attack Damage</h3>
           <h3>+25 Ability Haste</h3>
 
@@ -3210,9 +3215,9 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         mana: 0,
         armor: 0,
         magres: 0,
-        attack: 18,
+        attack: 20,
         ap: 0,
-        as: (base.asBase * 30/100),
+        as: (base.asBase * 35/100),
         moveSpeed: 45,
         flatArmPen: 0,
         flatMagPen: 0,
@@ -3227,8 +3232,8 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         description: 
           <div className='itemDescription'>
 
-            <h3 className="stat--ad">+15 Attack Damage</h3>
-            <h3 className="stat--as">+30% ({(base.asBase * 30 / 100).toFixed(3)}) Attack Speed</h3>
+            <h3 className="stat--ad">+20 Attack Damage</h3>
+            <h3 className="stat--as">+35% ({(base.asBase * 35 / 100).toFixed(3)}) Attack Speed</h3>
             <h3 className="stat--moveSpeed">+45 Movement Speed</h3>
   
           </div>

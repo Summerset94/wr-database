@@ -99,7 +99,7 @@ export default function morgana({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p>
-          Tormented Soil deals 225% damage against monsters.
+          Tormented Soil deals 195% damage against monsters.
           Tormented Shadow's current cooldown is reduced by 5% of its maximum whenever Soul Siphon triggers. 
           </p>
         </div>
@@ -136,7 +136,7 @@ export default function morgana({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-          Places a barrier around an allied champion for 4 seconds, absorbing <span className="stat--magres">70 / 150 / 230 / 310 (<span className="stat--ap">+50% AP</span>) magic damage</span> and blocking disables while the shield holds.
+          Places a barrier around an allied champion for 5 seconds, absorbing <span className="stat--magres">70 / 150 / 230 / 310 (<span className="stat--ap">+50% AP</span>) magic damage</span> and blocking disables while the shield holds.
           </p>
         </div>
     },

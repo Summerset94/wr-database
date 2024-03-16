@@ -51,7 +51,7 @@ export default function syndra({currentLevel, mod, bonus, atk, def, champ, updat
 
     const w = {
       cooldown: {
-        base: 10,
+        base: 12,
         growth: 1
       },
       cost: {
@@ -61,9 +61,11 @@ export default function syndra({currentLevel, mod, bonus, atk, def, champ, updat
 
       damage: {
         base: 60,
-        growth: 45,
-        modifier: (atk.ap * 55 / 100),
-        TranscBonus: (12 + (atk.ap * 2 / 100))
+        growth: 40,
+        modifier: (atk.ap * 45 / 100),
+        textModifier: 45,
+        TranscBonus: (12 + (atk.ap * 2 / 100)),
+
       },
     };
 
@@ -175,7 +177,7 @@ export default function syndra({currentLevel, mod, bonus, atk, def, champ, updat
         },
 
         text: {
-          damage: <span className="stat--ap">{w.damage.base} / {w.damage.base + w.damage.growth} / {w.damage.base + w.damage.growth * 2} / {w.damage.base + w.damage.growth * 3} (+35% AP) Magic damage</span>,          
+          damage: <span className="stat--ap">{w.damage.base} / {w.damage.base + w.damage.growth} / {w.damage.base + w.damage.growth * 2} / {w.damage.base + w.damage.growth * 3} (+{w.damage.textModifier}% AP) Magic damage</span>,          
         }
       }, 
 

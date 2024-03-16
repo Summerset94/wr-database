@@ -8,7 +8,7 @@ export default function braum({currentLevel, mod, bonus, atk, def}) {
           </h4>
     
           <p>
-          Braum's basic attacks apply Concussive Blows. Once the first stack is applied, ally basic attacks also stack Concussive Blows. Upon reaching 4 stacks, the target is stunned for 1 second and takes <abbr title="32-200 based on level" className="stat--ap"> {Math.round((20+12*currentLevel))} ({Math.round((20+12*currentLevel)*(1 - mod.defMagRed))}) magic damage</abbr>. For the next 8 seconds they cannot receive new stacks, but take bonus <abbr title="7-40 based on level" className="stat--ap"> {Math.round((7+33/14*(currentLevel - 1)))} ({Math.round((7+33/14*(currentLevel - 1))*(1 - mod.defMagRed))})</abbr> magic damage from Braum's attacks.
+          Braum's basic attacks apply Concussive Blows. Once the first stack is applied, ally basic attacks also stack Concussive Blows. Upon reaching 4 stacks, the target is stunned for 1.25 -1.75 seconds and takes <abbr title="32-200 based on level" className="stat--ap"> {Math.round((20+12*currentLevel))} ({Math.round((20+12*currentLevel)*(1 - mod.defMagRed))}) magic damage</abbr>. For the next 8 seconds they cannot receive new stacks, but take bonus <abbr title="7-40 based on level" className="stat--ap"> {Math.round((7+33/14*(currentLevel - 1)))} ({Math.round((7+33/14*(currentLevel - 1))*(1 - mod.defMagRed))})</abbr> magic damage from Braum's attacks.
           </p>
         </div>
     },
@@ -124,7 +124,7 @@ export default function braum({currentLevel, mod, bonus, atk, def}) {
           </h5>
     
           <p>
-          Braum raises his shield in a target direction, intercepting projectiles for 4 seconds. Braum negates the first instance of damage and takes <span className="stat--armor">28% / 32% / 36% / 40% reduced damage</span> afterwards. Braum gains <span className="stat--moveSpeed">10% Movement Speed</span> while his shield is raised.
+          Braum raises his shield in a target direction, intercepting projectiles for 4 seconds. Braum negates the first instance of damage and takes <span className="stat--armor">35% / 40% / 45% / 50% reduced damage</span> afterwards. Braum gains <span className="stat--moveSpeed">15% Movement Speed</span> while his shield is raised.
           </p>
         </div>
     },

@@ -22,8 +22,6 @@ function Leaderboards({champions, winRateData}) {
     }
   }
 
-const frustration = 'Why the hell it does not update???!!!111';
-
 // saved state with chosen rank/lane options to render
   const [leaderboards, setLeaderboards] = useState([]);
   const [latestUpdate, setLatestUpdate] = useState('');
@@ -57,7 +55,11 @@ const frustration = 'Why the hell it does not update???!!!111';
   
 
 // Fetching cleaned up Winrate statistics from Chinese server
+
+
 useEffect(() => {
+  router.refresh();
+
   const fetchData = async () => {
     try {
       const fetchedWinRate = JSON.parse(winRateData);

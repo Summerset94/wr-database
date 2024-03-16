@@ -8,7 +8,7 @@ const useCombinedBonusStats = (itemBonus, championModifier, currentLevel, itemEf
       armor: itemBonus.armor + championModifier.armor + itemEffectsMemo.armor,
       magres: itemBonus.magres + championModifier.magres + itemEffectsMemo.magres,
       attack: itemBonus.attack + championModifier.attack + itemEffectsMemo.attack + runesEffects.attack,
-      ap: itemBonus.ap + championModifier.ap + itemEffectsMemo.ap + runesEffects.ap + (abilitiesBonus.syndraP ? (itemBonus.ap * 0.15) : 0),
+      ap: itemBonus.ap + championModifier.ap + itemEffectsMemo.ap + runesEffects.ap + (abilitiesBonus.syndraP ? (itemBonus.ap * 0.12) : 0),
   
       as: Math.max((championModifier.as - baseStats.as), 0),
   

@@ -204,19 +204,19 @@ export default function leesin({currentLevel, mod, bonus, atk, def, champ}) {
 
           <p className="stat--ad">Pre-mitigation: 
             {' '}{Math.round(((100)+(bonus.attack * 200 / 100)+(def.health * 10 / 100)))} / 
-            {' '}{Math.round(((300)+(bonus.attack * 200 / 100)+(def.health * 13 / 100)))} / 
-            {' '}{Math.round(((500)+(bonus.attack * 200 / 100)+(def.health * 16 / 100)))}
+            {' '}{Math.round(((250)+(bonus.attack * 200 / 100)+(def.health * 13 / 100)))} / 
+            {' '}{Math.round(((400)+(bonus.attack * 200 / 100)+(def.health * 16 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
             {' '}{Math.round(((100)+(bonus.attack * 200 / 100)+(def.health * 10 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((300)+(bonus.attack * 200 / 100)+(def.health * 13 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((500)+(bonus.attack * 200 / 100)+(def.health * 16 / 100))* (1 - mod.defPhysRed))}
+            {' '}{Math.round(((250)+(bonus.attack * 200 / 100)+(def.health * 13 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((400)+(bonus.attack * 200 / 100)+(def.health * 16 / 100))* (1 - mod.defPhysRed))}
           </p>        
 
 
           <p>
-          Launches a powerful roundhouse kick at an enemy champion, dealing <span className="stat--ad">100 / 300 / 500 (+200% bonus AD) (<span className="stat--hp">+10 / 13 / 16% of target's maximum Health</span>) physical damage</span> and knocking them back. Enemies the target collides with along the way are knocked Airborne for 1 second and take physical damage equal to <span className="stat--ad">100 / 300 / 500 (+200% bonus AD) (<span className="stat--hp">+10 / 13 / 16% of target's maximum Health</span>)</span>.
+          Launches a powerful roundhouse kick at an enemy champion, dealing <span className="stat--ad">100 / 250 / 400 (+200% bonus AD) (<span className="stat--hp">+10 / 13 / 16% of target's maximum Health</span>) physical damage</span> and knocking them back. Enemies the target collides with along the way are knocked Airborne for 1 second and take physical damage equal to <span className="stat--ad">100 / 250 / 400 (+200% bonus AD) (<span className="stat--hp">+10 / 13 / 16% of target's maximum Health</span>)</span>.
           </p>
           <p>
             Damage dealt to monsters is capped at 800.

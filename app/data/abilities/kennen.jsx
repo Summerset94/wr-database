@@ -157,21 +157,21 @@ export default function kennen({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((70)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((125)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((180)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((235)+(atk.ap * 70 / 100)))}
+            {' '}{Math.round(((60)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((110)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((160)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((210)+(atk.ap * 70 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((70)+(atk.ap * 70 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((125)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((180)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((235)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((60)+(atk.ap * 70 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((110)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((160)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((210)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-            Transform into an electric ball for 2 seconds, becoming unable to attack but gaining <span className="stat--moveSpeed">110% bonus Movement Speed</span>, and dealing <span className="stat--ap">70 / 125 / 180 / 235 (+70% AP) magic damage</span>  to enemies he passes through. The bonus Movement Speed is doubled during the first 0.5 seconds.
+            Transform into an electric ball for 2 seconds, becoming unable to attack but gaining <span className="stat--moveSpeed">100% bonus Movement Speed</span>, and dealing <span className="stat--ap">60 / 110 / 160 / 210 (+70% AP) magic damage</span>  to enemies he passes through. The bonus Movement Speed is doubled during the first 0.5 seconds.
           </p>
 
           <p>
@@ -207,19 +207,19 @@ export default function kennen({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((30)+(atk.ap * 15 / 100)))} / 
-            {' '}{Math.round(((60)+(atk.ap * 15 / 100)))} / 
-            {' '}{Math.round(((90)+(atk.ap * 15 / 100)))}
+            {' '}{Math.round(((20)+(atk.ap * 13 / 100)))} / 
+            {' '}{Math.round(((55)+(atk.ap * 13 / 100)))} / 
+            {' '}{Math.round(((90)+(atk.ap * 13 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((30)+(atk.ap * 15 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((60)+(atk.ap * 15 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((90)+(atk.ap * 15 / 100))* (1 - mod.defMagRed))}
+            {' '}{Math.round(((20)+(atk.ap * 13 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((55)+(atk.ap * 13 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((90)+(atk.ap * 13 / 100))* (1 - mod.defMagRed))}
           </p>
     
           <p>
-          Summons a storm that grants Kennen <b>20 / 40 / 60</b> <span className="stat--armor">Armor</span>  and <span className="stat--magres">Magic Resist</span>  and deals <span className="stat--ap">30 / 60 / 90 (+15% AP) magic damage</span>  every 0.5 seconds for 3 seconds.
+          Summons a storm that grants Kennen <b>20 / 40 / 60</b> <span className="stat--armor">Armor</span>  and <span className="stat--magres">Magic Resist</span>  and deals <span className="stat--ap">20 / 55 / 90 (+13% AP) magic damage</span>  every 0.5 seconds for 3 seconds.
           </p>
 
           <p>

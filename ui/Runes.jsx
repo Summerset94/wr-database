@@ -912,6 +912,10 @@ const mainRunes = [
           <p>While flash is on cooldown, it is replaced by <span className='stat--armor'>Hexflash</span>. You can blink to a new location after channeling for 2 seconds.</p>
 
           <p>
+          When channeled for less than 1s, you will dash the distance as if you channeled for 1s.
+          </p>
+
+          <p>
             Cooldown: 20 seconds.
           </p>
         </div>
@@ -923,7 +927,7 @@ const mainRunes = [
         id: '222ca439-41ff-4254-a563-b90b2f8c65e3',
         slot: 0,
         description: <div className='runeDescription'>
-          <p>Every 3 minutes you can buy 1 item outside of the buy zone at the additional cost of <span className='stat--armor'>150 gold</span></p>
+          <p>Every 3 minutes you can buy 1 item outside of the buy zone at the additional cost of <span className='stat--armor'>50 gold</span></p>
         </div>
       },
 
