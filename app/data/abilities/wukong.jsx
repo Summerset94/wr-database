@@ -9,7 +9,7 @@ export default function wukong({currentLevel, mod, bonus, atk, def, champ, updat
           </h4>
     
           <p>
-            Wukong and his clones's attacks and abilities apply Crushing Blows to champions and epic monsters for 5 seconds (max 5). For each stack, Wukong and his clones deal <span className="stat--ad">4% increased damage</span> to the target.
+            <b>Stone skin</b>: Wukong gains stacks of <b>Stone Skin</b> when he attacks enemy champions with base attacks and abilities. Each stack grants him <span className="stat--ad"> {Number(10 + Math.floor(0.5 * (currentLevel - 1)))} (10-18 based on level) Armor</span> and <span className="stat--hp">{(atk.health * 1.5/100).toFixed(1)} (1.5% max health)</span> regeneration every 5 seconds, up to 3 stacks.
           </p>
         </div>
     },
@@ -38,29 +38,18 @@ export default function wukong({currentLevel, mod, bonus, atk, def, champ, updat
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((40)+(atk.attack * 35 / 100)))} / 
-            {' '}{Math.round(((60)+(atk.attack * 40 / 100)))} / 
-            {' '}{Math.round(((80)+(atk.attack * 45 / 100)))} / 
-            {' '}{Math.round(((100)+(atk.attack * 50 / 100)))}
+            {' '}{Math.round(((50)+(atk.attack * 35 / 100)))} / 
+            {' '}{Math.round(((70)+(atk.attack * 40 / 100)))} / 
+            {' '}{Math.round(((90)+(atk.attack * 45 / 100)))} / 
+            {' '}{Math.round(((110)+(atk.attack * 50 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((40)+(atk.attack * 35 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((60)+(atk.attack * 40 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((80)+(atk.attack * 45 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((100)+(atk.attack * 50 / 100))* (1 - mod.defPhysRed))}          
-          </p>
-
-          <h5 className="stat--hp">
-            Healing:
-          </h5>
-
-          <p className="stat--hp">
-                {Math.round(((50)+(atk.attack * 40 / 100)+(bonus.health * 16 / 100)))} / 
-            {' '}{Math.round(((70)+(atk.attack * 40 / 100)+(bonus.health * 16 / 100)))} / 
-            {' '}{Math.round(((90)+(atk.attack * 40 / 100)+(bonus.health * 16 / 100)))} / 
-            {' '}{Math.round(((10)+(atk.attack * 40 / 100)+(bonus.health * 16 / 100)))}
-          </p>
+            {' '}{Math.round(((50)+(atk.attack * 35 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((70)+(atk.attack * 40 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((90)+(atk.attack * 45 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((110)+(atk.attack * 50 / 100))* (1 - mod.defPhysRed))}          
+          </p>          
     
           <br />
           <p>
@@ -68,13 +57,15 @@ export default function wukong({currentLevel, mod, bonus, atk, def, champ, updat
           </p>
 
           <p>
-            Empowers his next attack to deal an additional <span className="stat--ad">40 / 60 / 80 / 100 (+35 / 40 / 45 / 50% AD) physical damage</span> and heal Wukong for <span className="stat--hp">50 / 70 / 90 / 110 (<span className="stat--ad">+40% AD</span>) (+16% bonus Health)</span>.
+            Empowers his next attack to deal an additional <span className="stat--ad">50 / 70 / 99 / 110 (+35 / 40 / 45 / 50% AD) physical damage</span>.
           </p>
 
           <p>
-            Wukong and his clone's attacks reduce Golden Staff's cooldown by 0.5 seconds.
-            <br />
-            Heal is reduced by 50% against non-champions.
+            Wukong and his clone's attacks reduce Golden Staff's cooldown by 0.5 seconds.            
+          </p>
+
+          <p>
+            <b>Passive:</b> Golden Staff adds an empowering effect on Wukong’s base attacks every 12s. Takedowns will reduce Golden Staff’s passive Cooldown by 2s. The Cooldown of the passive will be reduced by 2s per level, and killing enemy champions will refresh the Cooldown.
           </p>
         </div>
     },
@@ -107,7 +98,7 @@ export default function wukong({currentLevel, mod, bonus, atk, def, champ, updat
           </p>
 
           <p>
-            The clone will mimic Wukong's <b>Golden Staff</b> and <b>Cyclone</b>.
+          Now the clone can move with the joystick control and can mimic Nimbus Strike to dash.
           </p>
         </div>
     },
@@ -135,22 +126,22 @@ export default function wukong({currentLevel, mod, bonus, atk, def, champ, updat
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((60)+(bonus.attack * 80 / 100)))} / 
-            {' '}{Math.round(((95)+(bonus.attack * 80 / 100)))} / 
-            {' '}{Math.round(((130)+(bonus.attack * 80 / 100)))} / 
-            {' '}{Math.round(((165)+(bonus.attack * 80 / 100)))}
+            {' '}{Math.round(((80)+(bonus.attack * 80 / 100)))} / 
+            {' '}{Math.round(((120)+(bonus.attack * 80 / 100)))} / 
+            {' '}{Math.round(((160)+(bonus.attack * 80 / 100)))} / 
+            {' '}{Math.round(((200)+(bonus.attack * 80 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((60)+(bonus.attack * 80 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((95)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((130)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((165)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((80)+(bonus.attack * 80 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((120)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((160)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((200)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <br />
           <p>
-            Dashes to a target while sending clones to 2 additional targets, dealing <span className="stat--ad">60 / 95 / 130 / 165 (+80% bonus AD) physical damage</span>. The clones strike the original target if there are no additional targets for <span className="stat--ad">15% damage</span>.
+            Dashes to a target dealing <span className="stat--ad">80 / 120 / 160 / 200 (+80% bonus AD) physical damage</span>. 
           </p>
 
           <p>
@@ -186,14 +177,14 @@ export default function wukong({currentLevel, mod, bonus, atk, def, champ, updat
           </p>
 
           <p className="stat--ad">Current target: 
-            {' '}{Math.round(((def.health * 8 / 100)+(atk.attack * 220 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((def.health * 12 / 100)+(atk.attack * 220 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((def.health * 16 / 100)+(atk.attack * 220 / 100))* (1 - mod.defPhysRed))}   
+            {' '}{Math.round(((def.health * 10 / 100)+(atk.attack * 220 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((def.health * 14 / 100)+(atk.attack * 220 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((def.health * 18 / 100)+(atk.attack * 220 / 100))* (1 - mod.defPhysRed))}   
           </p>
     
           <br />
           <p>
-            Extends his staff and spins to gain <span className="stat--moveSpeed">20% Movement Speed</span>, dealing  damage equal to <span className="stat--ad">(220% AD) (<span className="stat--hp">+8 / 12 / 16% of target's Max Health</span>) as physical damage</span> over 2 seconds. Enemies that are hit for the first time are knocked up.
+            Extends his staff and spins to gain <span className="stat--moveSpeed">20% Movement Speed</span>, dealing  damage equal to <span className="stat--ad">(220% AD) (<span className="stat--hp">+10 / 14 / 18% of target's Max Health</span>) as physical damage</span> over 2 seconds. Enemies that are hit for the first time are knocked up.
           </p>
 
           <p>
