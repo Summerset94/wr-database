@@ -65,7 +65,7 @@ export default function wukong({currentLevel, mod, bonus, atk, def, champ, updat
           </p>
 
           <p>
-            <b>Passive:</b> Golden Staff adds an empowering effect on Wukong’s base attacks every 12s. Takedowns will reduce Golden Staff’s passive Cooldown by 2s. The Cooldown of the passive will be reduced by 2s per level, and killing enemy champions will refresh the Cooldown.
+            <b>Passive:</b> Golden Staff adds an empowering effect (Q/S1 damage) on Wukong’s base attacks every 12s. Takedowns will reduce Golden Staff’s passive Cooldown by 2s. The Cooldown of the passive will be reduced by 2s per level, and killing enemy champions will refresh the Cooldown.
           </p>
         </div>
     },

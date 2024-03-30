@@ -37,3 +37,7 @@
 .stat--moveSpeed {
   color: rgb(50, 197, 255);
 }
+
+.stat--misc {
+  color: coral
+}
