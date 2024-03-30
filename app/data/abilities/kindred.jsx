@@ -119,7 +119,7 @@ export default function kindred({currentLevel, mod, bonus, atk, def, champ}) {
         
         text: {
           damage: <span className="stat--ad">{q.damage.base} / {q.damage.base + q.damage.growth} / {q.damage.base + q.damage.growth * 2} / {q.damage.base + q.damage.growth * 3} (+70% bonus AD) Physical damage</span>,
-          attackSpeed: <span><span className="stat--as">{q.attackSpeed.base + q.attackSpeed.bonus}% ({Math.round(champ.asBase * (q.attackSpeed.base + q.attackSpeed.bonus) / 100)}) Attack Speed</span> (35% + 5% per Mark)</span>
+          attackSpeed: <span><span className="stat--as">{q.attackSpeed.base + q.attackSpeed.bonus}% ({(champ.asBase * (q.attackSpeed.base + q.attackSpeed.bonus) / 100).toFixed(3)}) Attack Speed</span> (35% + 5% per Mark)</span>
         }
 
       },
@@ -332,7 +332,7 @@ export default function kindred({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p>
-            While inside <span className="stat--armor">W/S2: Worlf's Frenzy</span> area, this ability cooldown is reduced to <b>4 seconds</b>.
+            While inside <span className="stat--armor">W/S2: Wolf's Frenzy</span> area, this ability cooldown is reduced to <b>4 seconds</b>.
           </p>
         </div>
     },
