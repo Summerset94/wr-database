@@ -394,7 +394,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       mana: 0,
       armor: 0,
       magres: 0,
-      attack: (base.attack*0.5),
+      attack: 0,
       ap: 0,
       as: 0,
       moveSpeed: 0,
