@@ -19,7 +19,7 @@ export default function kindred({currentLevel, mod, bonus, atk, def, champ}) {
         growth: 0
       },
       damage: {
-        base: 65,
+        base: 50,
         growth: 25,
         modifier: (bonus.attack * 70 / 100)
       },
@@ -57,12 +57,12 @@ export default function kindred({currentLevel, mod, bonus, atk, def, champ}) {
       damage: {
         base: 80,
         growth: 25,
-        modifier: (bonus.attack * 70/100) + (def.health * (8 + marks) / 100)
+        modifier: (bonus.attack * 70/100) + (def.health * (8 + (marks * 0.5)) / 100)
       },
       damageEmp: {
         base: 80,
         growth: 25,
-        modifier: (bonus.attack * 70/100) + (def.health * (1 - (0.25 + atk.critChance * 0.4)) * (12 + marks * 1.5) / 100)
+        modifier: (bonus.attack * 70/100) + (def.health * (1 - (0.25 + atk.critChance * 0.4)) * (12 + marks * 0.75) / 100)
       },
     };
 
