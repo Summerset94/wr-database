@@ -182,6 +182,10 @@ const useChampionModifier = (champ, baseStats, itemBonus, currentLevel, abilitie
       case 'Yone':
         attackMod = Math.max(Math.round(((itemBonus.critChance * 2) - 1) * 40), 0) 
         break;
+
+      case 'Tryndamere':
+        attackMod = Math.max(Math.round((itemBonus.critChance - 1) * 40), 0) 
+        break;
         
       default:
         attackMod = 0;

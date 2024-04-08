@@ -200,6 +200,7 @@ const def = totalStats[index === 0 ? 1 : 0];
 
 const statsComparison = useStatsComparison(atk, def);
 
+// array of sub-pages for abilities/runes/inventory
 const [activePageIndex, setActivePageIndex] = useState(0);
 
   const pages = [

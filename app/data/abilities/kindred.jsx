@@ -203,8 +203,8 @@ export default function kindred({currentLevel, mod, bonus, atk, def, champ}) {
 
         text: {
           damage: {
-            base: <span className="stat--ad">{e.damage.base} / {e.damage.base + e.damage.growth} / {e.damage.base + e.damage.growth * 2} / {e.damage.base + e.damage.growth * 3} (+70% bonus AD) (<span className="stat--hp">+8% <span className="stat--armor">+1% per Mark</span> of target's missing Health</span> ) Physical damage</span>,
-            empowered: <span className="stat--ad">{e.damage.base} / {e.damage.base + e.damage.growth} / {e.damage.base + e.damage.growth * 2} / {e.damage.base + e.damage.growth * 3} (+70% bonus AD) (<span className="stat--hp">+12% <span className="stat--armor">+1.5% per Mark</span> of target's missing Health</span> ) Physical damage</span>
+            base: <span className="stat--ad">{e.damage.base} / {e.damage.base + e.damage.growth} / {e.damage.base + e.damage.growth * 2} / {e.damage.base + e.damage.growth * 3} (+70% bonus AD) (<span className="stat--hp">+8% <span className="stat--armor">+0.5% per Mark</span> of target's missing Health</span> ) Physical damage</span>,
+            empowered: <span className="stat--ad">{e.damage.base} / {e.damage.base + e.damage.growth} / {e.damage.base + e.damage.growth * 2} / {e.damage.base + e.damage.growth * 3} (+70% bonus AD) (<span className="stat--hp">+12% <span className="stat--armor">+0.75% per Mark</span> of target's missing Health</span> ) Physical damage</span>
           }
         }
       },
@@ -277,7 +277,7 @@ export default function kindred({currentLevel, mod, bonus, atk, def, champ}) {
             </li>
 
             <li>
-              <span className="stat--armor">E/S3: Mounting Dread</span>. Wolf's bonus <span className="stat--ad">physical damage</span> increases by <span className="stat--hp">1% of Target's <b>missing</b> health</span> per mark
+              <span className="stat--armor">E/S3: Mounting Dread</span>. Wolf's bonus <span className="stat--ad">physical damage</span> increases by <span className="stat--hp">0.5% of Target's <b>missing</b> health</span> per mark
             </li>
           </ul>
 

@@ -13,6 +13,10 @@ export default function tryndamere({currentLevel, mod, bonus, atk, def, champ, u
           </p>
 
           <p>
+            Every <span className="stat--critChance">4% Critical Rate</span> above 100% convert into <span className="stat--ad">1 bonus Attack Damage</span>
+          </p>
+
+          <p>
             Attacking a champion grants <abbr title="at ULT level 0/1/2/3" className="stat--as">55 ({(champ.asBase * 55 / 100).toFixed(3)}) / 60 ({(champ.asBase * 60 / 100).toFixed(3)}) / 65 ({(champ.asBase * 60 / 100).toFixed(3)}) / 70% ({(champ.asBase * 70 / 100).toFixed(3)}) Attack Speed</abbr> for 5 seconds. (6 second cooldown)
           </p>
 
