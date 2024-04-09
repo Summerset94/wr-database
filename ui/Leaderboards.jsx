@@ -5,7 +5,7 @@ import Image from 'next/image';
 import'../app/styles/leaderboards.css';
 import {useRouter, useSearchParams} from 'next/navigation';
 export const dynamic = "force-dynamic";
-// still can't fix the damn update bug
+const frustration = 'ugh'
 
 function Leaderboards({champions, winRateData}) {
 
