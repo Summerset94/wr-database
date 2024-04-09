@@ -11,9 +11,8 @@ const Page = () => {
 
   const pages = [
     {component: <ChampionPage index={0}/>, label: 'Champion 1' },
-    {component: <ChampionPage index={1}/>, label: 'Champion 2' },
-    // {component: <ChampionPage index={1}/>, label: 'Stats comparison' },
-  ]
+    {component: <ChampionPage index={1}/>, label: 'Champion 2' }
+]
 
   return (
     <div className='calculator-wrap'>
