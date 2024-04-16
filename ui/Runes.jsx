@@ -68,7 +68,7 @@ const turretArmor = useMemo(() => {
 // calculations of runes effects
 const runeFormulas = useRuneFormulas(atk, bonus, mod, currentLevel, runesEffects, turretArmor, champ, def);
 
-// push runes effects th character stats
+// push runes effects the character stats
 useEffect(() => {
   const payload = {
     attack: (runeFormulas.damagetype.type === 'physical' ? runeFormulas.conqueror.bonus + runesEffects.path.eyeballCollector + (runesEffects.path.zombieWard * 3) + (runeFormulas.gatheringStorm.bonus) : 0) + (runeFormulas.damagetype.type === 'physical' && runesEffects.path.eyeballCollector === 10 ? 10 : 0) + (runeFormulas.damagetype.type === 'physical' && runesEffects.path.zombieWard === 5 ? 10 : 0),

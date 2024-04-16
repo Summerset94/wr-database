@@ -54,8 +54,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 # Build calculator
 
+[Champions stats](#basic-champion-stats);
 
-## [Basic champion stats ]
+[Inventory system](#inventory);
+
+[Runes](#runes);
+
+[Color Coding](#color-coding);
+
+---
+
+
+## [Basic champion stats]
 
 Stored in: "app/data/Champions.jsx"
 
@@ -146,9 +156,12 @@ The main file that handles logic and serves as a collecting hub is
   >
   >`bootsPassive` - tracking the passive defence effects of 'Mercury Threads' and 'Plated Steelcaps'
 
+### [Runes Effects]
+
 - `runesEffects` tracks bonus stats from champion's equipped runes. Has same stats as `itemBonus`. Template for bonus stats is stored in "app/data/ChampTemplates.js -> `runesEffectsBonusTemplate`"
 
 - `abilitiesBonus` **tracks** the champion specific abilities that changes champions stats (like bonus Health from Sion's passive, number of Senna's soul stacks). 
+
 - `championModifier` **calculates** effects from champions passives, toggleable and stacked abilities. It has a set of stats with 'Mod' postfix i.e `attackMod` and updates stats as needed based on selected champion. Each stat is separated by "// Stat name" comment line with:
 
 ```
@@ -179,6 +192,8 @@ As an example:
 ```
 
 Part responsoble for bonus **Armor Penetration** (`//Armor Penetration`) stat that is provided by Nilah's (`case 'Nilah'`) passive ability. It provides bonus percentage Armor Penetration (`armPenMod`) equal to 35% of Critical Rate (`itemBonus.critChance * 35 / 100`). Only `itemBonus` is taken into account since Critical Rate doesn't grow naturally and is not provided through any rune effect. `break;` tells to stop iterating through other cases. `default: armPenMod = 0;` sets that natural Armor Penetration for champions is absent (or 0);
+
+###### [Item Effects]
 
 - `itemEffects` **tracks** some unique abilities of items like Rabadon's Deathcap or Twinguard effects. As of now this variable just tracks the state of effect: is it working or not? If it's auto activated like bonus AD from Muramana, the effect is turned on automatically if champion has item in inventory, otherwise items have buttons to toggle effects.
 
@@ -352,6 +367,8 @@ A template for champion's abilites is stored in "app/data/abilities/abilitiestem
 
 **!!!** MOST champions don't have the following method implemented and don't separate calculations into a separate variable. But since old variant is hardd to maintain and update all champions after Zyra uses the following schema.
 
+### [Abilities calculation template]
+
 - `const calculations`: contains calculations for abilities with examples stored in `const TEMPLATE` inside `calculations`
   - `base` - base value. Like ability cooldown/damage/whatever at level 1;
   - `growth` - **fixed** bonus that you get on ability level up. For Example if ability has 9 seconds cooldown on level 1 and 7 at level 2, growth would be `-2`; if **base** damage of ability is 55 at level 1 and 90 at level 2. growth will be 90 - 55 = `35`. All growth values are linear so far;
@@ -401,7 +418,7 @@ Same template (without post-mitigation part) may be applied to healing/shielding
   >
   > `{' '}{Math.round(calculations.q.shielding[1])}`;
 
-**!!!** don't forget to change the [color coding](color-coding) for various damage types, healing or shielding abilities!
+**!!!** don't forget to change the [color coding](#color-coding) for various damage types, healing or shielding abilities!
 
 Part
 
@@ -432,11 +449,226 @@ Part
 
  ## [Inventory]
 
- tbd
+ Inventory part of calculator is stored in "ui/Inventory.jsx" file.
+
+ Starting with a bit of "Why the hell is it even here?!" on the top (it's all legacy, that's why):
+
+ * `attacker`: Total stats of currently selected champion;
+ * `target`: Total stat of currently inactive champions;
+ * `modifier` and `modifierMres`: Physical and Magical damage reduction of **inactive** champion respectively;
+ * `sunFireEffect`: variable tracks the passive damage of Sunfire Aegis;
+ * `[heartsteelStacks, setHeartsteelStacks]`: tracks the stored bonus Health of Heartsteel (they are reset when you remove the item);
+ * `updateHeartsteel` and `heartSteelProc`: needed to update the stacks of HeartSteel and calculate the amount of stacks on proc against current **inactive** champion.
+
+ Records for items are spread between 5 variables separated by respective categories: `physicalItemData`, `magicalItemData`, `defenceItemData`, `supportItemData`, `bootsItemData`.
+
+ Each record follows the pattern: 
+
+ >* `name`: Name of the item;
+ >
+ >* `icon`: Image of the item;
+ >
+ >* `health`: Health;
+ >
+ >* `mana`: Mana;
+ >
+ >* `armor`: Armor;
+ >
+ >* `magres`: Magic Resistance;
+ >
+ >* `attack`: Attack Damage;
+ >
+ >* `ap`: Ability Power;
+ >
+ >* `as`: Attack Speed, converted into output numbers. as Example 45% bonus Attack Speed needs to be written as `base.asBase * 45 / 100` where `base` means that it takes base value of champion's Attack Speed (using `champ` is also fine, but stick to `base` for consistency) and multiplies value by `45/100` = 45%;
+ >
+ >* `moveSpeed`: Movement Speed;
+ >
+ >* `flatArmPen`: Flat Armor Penetration (Lethality);
+ >
+ >* `flatMagPen`: Flat Magic Penetration;
+ >
+ >* `armPen`: Percentage Armor Penetration, written in percent representation (for Example 15% = `15/100`);
+ >
+ >* `magPen`: Percentage Magic Penetration, written in percent representation (for Example 15% = `15/100`);
+ >
+ >* `critChance`: Critical Rate;
+ >
+ >* `critMultiplier`: Bonus Critical Multiplier, percentage representation (for Example 30% from Infinity Edge = `30/100`);
+ >
+ >* `ah`: Ability Haste, raw number;
+ >
+ >* `description`: output text that will be displayed on site. Basically uses React specific HTML markdown. Use `h3` element for separated ability scores and `p` for passives descriptions. Keep your description inside `<div className='itemDescription'>   </div>` element.
+
+ * `allData`: stores references to all items data in a shared variable for rendering the output.
+
+* `const [Items, setItems] = useState(Array.from({ length: 5 }, () => ({...physicalItemData[0]})));` creates an array to store character inventory and populates it with empty item object with 0 stats and no description;
+
+* `[currentSlot, setCurrentSlot]`: tracks the currently selected inventory slot for adding/removing items purposes;
+
+* `deleteItem`: functions that replaces item in active slot (`currentSlot`) with an empty item;
+
+* React's `useEffect` hook that is responsible for checking your equipped items (`Items`) and passing some of the unique items passives to the stats calculator (if an item is present in your inventory it signals the app to add item's effect into calculations). More on item effects in [stats section](#item-effects).
+
+```
+//  automated item effects
+  useEffect(() => {
+  const checkHeartsteel = Items.some((item) => item.name === 'Heartsteel');
+  const payload = {
+    rabadon: Items.some((item) => item.name === "Rabadon's Deathcap"),
+    steraks: Items.some((item) => item.name === 'Sterak\'s Gage'),
+    seraphs: Items.some((item) => item.name === 'Seraph\'s Embrace'),
+    fimbulwinter: Items.some((item) => item.name === 'Fimbulwinter'),
+    muramana: Items.some((item) => item.name === 'Muramana'),
+    lastWhisper:  Items.some((item) => item.name === 'Mortal Reminder' || item.name === 'Serylda\'s Grudge'),
+    heartsteel: checkHeartsteel ? heartsteelStacks : 0,
+    titanicHydra: Items.some((item) => item.name === 'Titanic Hydra'),
+  };
+
+  updateItemEffects(payload);
+}, [Items, currentLevel, heartsteelStacks]);
+```
+
+* `[selectedBoots, setSelectedBoots]`: separate slot for boots;
+
+* `addToInventory`: searches for empty slot in inventory and places a selected item in this slot;
+
+* `inventoryNums`: combines stats from all your equipped items into one single object, removes descriptions/names/icons;
+
+* `useEffect` hook that tracks whenever your items in inventory or character's level change and passes updated values into stats calculator: 
+```
+useEffect(() => {    
+    handleBonusChange(inventoryNums);
+  }, [inventoryNums, currentLevel]);
+```
+
+State trackers for preview of the selected items / specifically selected item from inventory: 
+
+```
+const [capturedItem, setCapturedItem] = useState(physicalItemData[0]);
+  const [focusItem, setFocusItem] = useState(Items[0]);
+
+```
+
 
  ## [Runes]
 
- tbd
+Runes system is stored in "ui/Runes.jsx"
+
+App uses `useReducer` hook for tracking the constant bonuses from equipped runes. This is one of the more confusing things in React so take your time with [official docs](https://react.dev/reference/react/useReducer) or ask the almighty ChatGPT.
+
+This hook is found in "hooks/useRunesEffects.js" 
+
+### [Initial Runes Values]
+
+* `initialRunesEffects` stores initial values for runes effects;
+  * `keystones`: tracks values for Keystone runes:
+    * `conqueror`: active stacks of "Conqueror" rune;
+    * `grasp`: amount of procs for "Grasp of the Undying" rune;
+    * `aftershock`: tracks the state of bonus ddefence from "Aftershock";
+    * `tempoType`: tracks the type of active bonus to Attack Speed from "Lethal Tempo" rune, switches between 'melee' and 'ranged';
+    * `tempo`: "Lethal Tempo" stacks;
+  
+  * `path`: tracks values for non-keystone runes;
+    * `suddenImpact`: state of Defence Penetration bonus from Domination -> "Sudden Impact" rune;
+    * `eyeballCollector`: number of stacks for Domination -> "Eyeball Collector";
+    * `zombieWard`: number of stacks for Domination -> "Zombie Ward";
+    * `gatheringStorm`: number of stacks for Precision -> "Gathering Storm" (they get converted to bonus AD or AP in the output);
+    * `legendAlacrity`: percentage bonus Attack Speed from Precision -> "Legend: Alacrity" rune;
+    * `loyalty`: on/off switch for Resolve -> "Loyalty";
+    * `overgrowth`: number of **stacks** (not health) for Resolve -> "Overgrowth";
+    * `perseverance`: active defence bonus from Resolve -> "Perseverance";
+    * `transcendence`: bonus Ability Haste from rune tracker (not the amount, just the state);
+    * `pathfinder`: bonus Movement Speed from Inspiration -> "Pathfinder" on/off switch;
+    * `turretPlates`: amount of plates on hypothetical turret for Inspiration -> "Demolish". Deprecated. Too many variables for calculation to be useful.
+    * `manaFlow`: amount of bonus Mana from Inspiration -> "Manaflow Band";
+
+* `runesEffectsReducer`: Main function that is responsible for changes in `initialRunesEffects` state. It's written in a form of [switch statement](https://www.w3schools.com/js/js_switch.asp).
+
+* **!!!** You need to dispatch a function with `() => {dispatch({type: 'your action'})}` where `your action` is one of `case` of `runesEffectsReducer`so any of [tracked values](#initial-runes-values) would change.
+
+Two most important cases are: 
+```
+    case 'reset-keystones':
+      return {
+        ...state,
+        keystones: {
+          ...initialRunesEffects.keystones
+        }        
+      };
+      
+    case 'reset-path':
+      return {
+        ...state,
+        path: {
+          ...initialRunesEffects.path
+        }        
+      };  
+```
+
+they are responsible for resetting to initial values whenever you change your keystone rune or choose a new **Rune Path** in your primary runes. Unfortunately logic is a bit flawed and whenever you change your **Secondary** rune, values in your **Primary** runes are also reset. But I don't want to repeat all runes logic and actions separately for primary and secondary runechoices.
+
+
+### [Runes effects calculations]
+
+* `runeFormulas`: hook that calculates the various numbers in runes like damage, stacks, cooldowns etc. File with logic is stored in "hooks/useRuneFormulas.js". Let's take a look at it.
+
+* `damagetype` small switch that compares champion's **Bonus Attack Damage** and **Ability Power** and switches the type of Adaptive Damage of runes based on what stat is bigger (as of now the criteria is what's more: 60% of your bonus AD or total AP);
+
+* most runes follow template similiar to [Ability damage and calculations logic](#Abilities-calculation-template);
+
+* Next, `useEffect` hook is used to track active runes and pass up numbers to [Runes Effects component](#runes-effects) part calculator:
+
+```
+// push runes effects the character stats
+useEffect(() => {
+  const payload = {
+    attack: (runeFormulas.damagetype.type === 'physical' ? runeFormulas.conqueror.bonus + runesEffects.path.eyeballCollector + (runesEffects.path.zombieWard * 3) + (runeFormulas.gatheringStorm.bonus) : 0) + (runeFormulas.damagetype.type === 'physical' && runesEffects.path.eyeballCollector === 10 ? 10 : 0) + (runeFormulas.damagetype.type === 'physical' && runesEffects.path.zombieWard === 5 ? 10 : 0),
+
+    ap: (runeFormulas.damagetype.type === 'magical' ? runeFormulas.conqueror.bonus + (runesEffects.path.eyeballCollector * 2) + (runesEffects.path.zombieWard * 6) + (runeFormulas.gatheringStorm.bonus) : 0) + (runeFormulas.damagetype.type === 'magical' && runesEffects.path.eyeballCollector === 10 ? 20 : 0) + (runeFormulas.damagetype.type === 'magical' && runesEffects.path.zombieWard === 5 ? 20 : 0),
+
+    health: (runesEffects.keystones.grasp * 5) + (runesEffects.path.overgrowth * 3) + (runesEffects.path.overgrowth > 29 ? (atk.health * 3.5 / 100) : 0),
+
+    mana: (runesEffects.path.manaflow * 30),
+
+    armor: (runesEffects.keystones.aftershock ? runeFormulas.aftershock.defence.armor : 0) + (runesEffects.path.loyalty ? 2 : 0) + (runesEffects.path.perseverance ? runeFormulas.perseverance : 0),
+
+    magres: (runesEffects.keystones.aftershock ? runeFormulas.aftershock.defence.magres : 0) + (runesEffects.path.loyalty ? 5 : 0) + (runesEffects.path.perseverance ? runeFormulas.perseverance : 0),
+
+    as: (runeFormulas.lethalTempo.as) + (runeFormulas.legendAlacrity.as),
+
+    flatArmPen: (runesEffects.path.suddenImpact ? 13 : 0),
+
+    flatMagPen: (runesEffects.path.suddenImpact ? 13 : 0),
+
+    ah: (runesEffects.path.transcendence ? runeFormulas.transcendence : 0),
+
+    moveSpeed: (runesEffects.path.pathfinder ? 50 : 0),
+  }
+
+  updateRunesEffects(payload)
+}, [runesEffects, currentLevel, champ])
+```
+
+#### [Keystones]
+
+* `keystones`: contains info about Keystone runes. Each rune is stored into a separate JS object with following structure:
+  * `name`: Display name;
+  * `id`: Unique ID for runes. App searches runes to render based on this parameter rather than name. I've used [random uuid generator](https://www.uuidgenerator.net/) but you can use whatever method you like;
+  * `icon`: rune icon;
+  * `description`: rendered description contained inside `<div className='runeDescription'>...</div>` element;
+
+#### [Main and secondary runes]
+
+* `mainRunes`: contains info about main runes. It has a bit different structure to `keystones`: 
+  * `path`: Rune Path (Domination / Precision/ Resolve/ Inspiration);
+  * `path_id`: unique **path** ID;
+  * `icon`: path icon;
+  * `runes`: **array** of objects that contains runes for specific path;
+    * objects inside  path have structure identical to [keystones](#keystones) but have one additional property
+    * `slot`: sorts rune in path to it's respective slot (0, 1, 2. We begin to count from 0 here).
+
+The rest of the code for runes have the purpose of each function commented out
 
 ## [Color coding]
 
