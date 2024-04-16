@@ -53,6 +53,54 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         <div className='itemDescription'>Empty slot</div>
 
     },  
+
+    {
+      name: 'Terminus (stacked)',
+
+      icon: '/images/items/Terminus.webp',
+
+
+      health: 0,
+      mana: 0,
+      armor: (5 + 1 * Math.floor((currentLevel -1)/4)) * 3,
+      magres: (5 + 1 * Math.floor((currentLevel -1)/4)) * 3,
+      attack: 40,
+      ap: 0,
+      as: (base.asBase * 0.30),
+      moveSpeed: 0,
+      flatArmPen: 0,
+      flatMagPen: 0,
+      armPen: 33/100,
+      magPen: 33/100,
+      critChance: 0,
+      critMultiplier: 0,
+      ah: 0,
+      armorReduction: 0,
+
+      description: 
+        <div className='itemDescription'>
+          <p>!!! Item doesn't stack with <span className="stat--armor">Last Whisper</span> items (<span className="stat--armor">Mortal Reminder and Serylda's Grudge</span>) and <span className="stat--armor">Black Cleaver</span>. </p>
+          <p>
+            <b>Shadow:</b> Attacks deal <span className="stat--ap">35</span> (<span className="stat--ap">{Math.round(35 * (1 - modifierMres))}</span> for current target) bonus <span className="stat--ap">magic damage</span> on hit.
+          </p>
+          <p>
+            <b>Juxtaposition:</b> lternate between Light and Dark on-hits when attacking.
+          </p>
+
+          <p>
+            <span className="stat--armor">Light attacks</span> grant <b>5-8</b> (scales at levels 5/ 9 / 13) <span className="stat--armor">Armor</span> and <span className="stat--magres">Magic Resist</span> for 5 seconds on hit.
+          </p>
+
+          <p>
+            <span className="stat--ap">Dark attacks</span> Dark attacks grant 11% <span className="stat--armor">Armor Pen</span>  and <span className="stat--magres"> Magic Pen</span> for 5 seconds on hit.
+          </p>
+
+          <p>
+            Each on-hit effect stacks up to 3 times.
+          </p>
+        </div>
+
+    },  
     
     {
       name: 'Spear of Shojin',
@@ -242,7 +290,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
 
       icon: "/images/items/Blade_of_the_Ruined_King.png",
       
-      health: 0,
+      health: -(10 + (90 / 14 * (currentLevel-1))),
       mana: 0,
       armor: 0,
       magres: 0,
@@ -265,7 +313,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         <h3 className='stat--as'>+35% ({Number(base.asBase * 0.35).toFixed(3)}) Attack Speed</h3>
   
         <p>
-          <b>Thirst:</b> <b className='stat--vamp'>+10% (<abbr title="Damage against 0 armor target / post mitigated for current target">{Math.round((total.attack * 0.1))} / {Math.round((total.attack * 0.1)* (1 - modifier))}</abbr>)  Physical Vamp</b>        </p>
+          <b>Thirst:</b> <b className='stat--vamp'>+12% (<abbr title="Damage against 0 armor target / post mitigated for current target">{Math.round((total.attack * 0.12))} / {Math.round((total.attack * 0.12)* (1 - modifier))}</abbr>)  Physical Vamp</b>        </p>
 
         
   
@@ -274,7 +322,11 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         </p>
   
         <p>
-          <b>Drain:</b> Hitting a champion with 3 consecutive attacks or ablilties deals <abbr title="30 + 5 per level" className='stats--ap'> {30 + 5 * (currentLevel - 1)} magic damage</abbr> and steals 25% of their Move Speed for 2 Seconds (60s Cooldown).
+          <b>Drain:</b> Hitting a champion with 3 consecutive attacks or ablilties deals <span className="stat--ap">{30 + 5 * (currentLevel - 1)} Magic Damage</span> (30 + 5 per champion level) and steals 40% of their Move Speed for 2 Seconds (60s Cooldown).
+        </p>
+
+        <p>
+          <b>Repetance:</b> Reduces your <span className="stat--hp">base Health by 10 - 100</span>  (based on level)
         </p>
   
       </div>
@@ -346,8 +398,8 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3>+{15} Ability Haste</h3>
           <h3>+{15} Lethality/flat armor penetration</h3>
   
-          <p>Moving builds up <b>Momentum</b> stacks, granting up to 40 movement speed at 100 stacks. Stacks decay when movement impaired. </p>
-          <p>Attacking with max <b>Momentum</b> consumes all stacks and grants <b className='stat--as'>25% ({Number(base.asBase*0.25).toFixed(3)}) Attack Speed</b> for 4 seconds.</p>
+          <p>Moving builds up <b>Momentum</b> stacks, granting up to 50 movement speed and {5 + Math.round(5 / 14 * (currentLevel - 1))} (5-10 based on level) <span className="stat--armor">Armor Penetration</span> at 100 stacks. Stacks decay when movement impaired. </p>
+          <p>Attacking with max <b>Momentum</b> consumes all stacks, grants <b className='stat--as'>25% ({Number(base.asBase*0.25).toFixed(3)}) Attack Speed</b> and saves <span className="stat--armor">Armor Penetration</span> bonus for 4 seconds.</p>
         </div>
     },
   
@@ -397,7 +449,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       attack: 0,
       ap: 0,
       as: 0,
-      moveSpeed: 0,
+      moveSpeed: -5,
       flatArmPen: 0,
       flatMagPen: 0,
       armPen: 0,
@@ -414,7 +466,11 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
   
           <p><b>Lifeline:</b> Damage that puts you under <abbr title="(35% MAX health)"><span className='stat--hp'>{Math.round(total.health*0.35)} health</span></abbr> triggers a <abbr title="(75% of BONUS health)" className="stat--hp">{bonus.health * 0.75} points </abbr> shield that decays Over 3 seconds (90 sec Cooldown)</p>
   
-          <p><b>Sterak's fury:</b> Triggering Lifeline also increases your size and grants <span className='stat--ap'>30% Tenacity</span> for 8 seconds.</p>
+          <p><b>Sterak's fury:</b> Triggering Lifeline also increases your size, empowers you, removes all crowd control effects on you (except Airborne), and grants <span className='stat--ap'>50% Tenacity</span> for 4 seconds.</p>
+
+          <p>
+            <b>Guilt Bearer:</b> reduces your <span className="stat--moveSpeed">Movement Speed by 5</span>
+          </p>
         </div>
     },
   
@@ -423,7 +479,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       
       icon: "/images/items/Infinity.png",
 
-      health: 0,
+      health: -(10 + (90 / 14 * (currentLevel-1))),
       mana: 0,
       armor: 0,
       magres: 0,
@@ -436,7 +492,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       armPen: 0,
       magPen: 0,
       critChance: 25 / 100,
-      critMultiplier: 30 / 100,
+      critMultiplier: 50 / 100,
       armorReduction: 0,
       ah: 0,      
   
@@ -446,7 +502,11 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className='stat--ad'>+{55} Attack Damage</h3>
           <h3 className='stat--critChance'>+{0.25*100}% Critical Rate</h3>
   
-          <p><b>Infinity:</b> Critical Strikes deal 30% more Critical Damage</p>
+          <p><b>Infinity:</b> Critical Strikes deal 50% more Critical Damage</p>
+
+          <p>
+            <b>Self-Destruction</b>: Reduces your <span className="stat--hp">base Health by 10 - 100</span>  (based on level)
+          </p>
         </div>
     },
 
@@ -1055,126 +1115,126 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         </div>
     },
     
-    {
-      name: 'Hullbreaker',
-      icon: "/images/items/Hullbreaker.png",
+    // {
+    //   name: 'Hullbreaker',
+    //   icon: "/images/items/Hullbreaker.png",
 
 
-      health: 325,
-      mana: 0,
-      armor: 0,
-      magres: 0,
-      attack: 55,
-      ap: 0,
-      as: 0,
-      moveSpeed: 0,
-      flatArmPen: 0,
-      flatMagPen: 0,
-      armPen: 0,
-      magPen: 0,
-      critChance: 0,
-      critMultiplier: 0,
-      ah: 0,
-      armorReduction: 0,
+    //   health: 325,
+    //   mana: 0,
+    //   armor: 0,
+    //   magres: 0,
+    //   attack: 55,
+    //   ap: 0,
+    //   as: 0,
+    //   moveSpeed: 0,
+    //   flatArmPen: 0,
+    //   flatMagPen: 0,
+    //   armPen: 0,
+    //   magPen: 0,
+    //   critChance: 0,
+    //   critMultiplier: 0,
+    //   ah: 0,
+    //   armorReduction: 0,
 
-      description: 
-        <div className='itemDescription'>
+    //   description: 
+    //     <div className='itemDescription'>
 
-          <h3 className='stat--hp'>+{325} Max Health</h3>
-          <h3 className='stat--ad'>+{55} Attack Damage</h3>
+    //       <h3 className='stat--hp'>+{325} Max Health</h3>
+    //       <h3 className='stat--ad'>+{55} Attack Damage</h3>
 
-          <p><b>Boarding Party:</b> When no allied champions are within 1200 units you get:</p>
-          <p><b><u>for Melee:</u> </b> <span className="stat--armor"><abbr title="4 + 46 / 14 * (level - 1)">{Math.round(4 + 46 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="4 + 16 / 14 * (level - 1)">{Math.round(4 + 16 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
-          <p><b><u>for Ranged:</u> </b> <span className="stat--armor"><abbr title="2 + 23 / 14 * (level - 1)">{Math.round(2 + 23 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="2 + 8 / 14 * (level - 1)">{Math.round(2 + 8 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
-          <p>And deal <b>20%</b> additional Damage to Structures</p>
+    //       <p><b>Boarding Party:</b> When no allied champions are within 1200 units you get:</p>
+    //       <p><b><u>for Melee:</u> </b> <span className="stat--armor"><abbr title="4 + 46 / 14 * (level - 1)">{Math.round(4 + 46 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="4 + 16 / 14 * (level - 1)">{Math.round(4 + 16 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
+    //       <p><b><u>for Ranged:</u> </b> <span className="stat--armor"><abbr title="2 + 23 / 14 * (level - 1)">{Math.round(2 + 23 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="2 + 8 / 14 * (level - 1)">{Math.round(2 + 8 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
+    //       <p>And deal <b>20%</b> additional Damage to Structures</p>
 
-          <p>Nearby Large Minions gain:</p>
-          <p><b>(for Melee) </b><span className='stat--ad'>{Math.round(40 + 130 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(20 + 65 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
-          <p><b>(for Ranged) </b><span className='stat--ad'>{Math.round(20 + 60 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(10 + 30 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
-          <p>Also 10% bonus size and deal 200% bonus damage to turrets</p>
-        </div>
-    },
+    //       <p>Nearby Large Minions gain:</p>
+    //       <p><b>(for Melee) </b><span className='stat--ad'>{Math.round(40 + 130 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(20 + 65 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
+    //       <p><b>(for Ranged) </b><span className='stat--ad'>{Math.round(20 + 60 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(10 + 30 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
+    //       <p>Also 10% bonus size and deal 200% bonus damage to turrets</p>
+    //     </div>
+    // },
 
-    {
-      name: 'Hullbreaker (Stacked Melee)',
-      icon: "/images/items/Hullbreaker.png",
+    // {
+    //   name: 'Hullbreaker (Stacked Melee)',
+    //   icon: "/images/items/Hullbreaker.png",
 
 
-      health: 325,
-      mana: 0,
-      armor: (Math.round(4 + 46 / 14 * (currentLevel - 1))),
-      magres: (Math.round(4 + 16 / 14 * (currentLevel - 1))),
-      attack: 55,
-      ap: 0,
-      as: 0,
-      moveSpeed: 0,
-      flatArmPen: 0,
-      flatMagPen: 0,
-      armPen: 0,
-      magPen: 0,
-      critChance: 0,
-      critMultiplier: 0,
-      ah: 0,
-      armorReduction: 0,
+    //   health: 325,
+    //   mana: 0,
+    //   armor: (Math.round(4 + 46 / 14 * (currentLevel - 1))),
+    //   magres: (Math.round(4 + 16 / 14 * (currentLevel - 1))),
+    //   attack: 55,
+    //   ap: 0,
+    //   as: 0,
+    //   moveSpeed: 0,
+    //   flatArmPen: 0,
+    //   flatMagPen: 0,
+    //   armPen: 0,
+    //   magPen: 0,
+    //   critChance: 0,
+    //   critMultiplier: 0,
+    //   ah: 0,
+    //   armorReduction: 0,
 
-      description: 
-        <div className='itemDescription'>
+    //   description: 
+    //     <div className='itemDescription'>
 
-          <h3 className='stat--hp'>+{325} Max Health</h3>
-          <h3 className='stat--ad'>+{55} Attack Damage</h3>
+    //       <h3 className='stat--hp'>+{325} Max Health</h3>
+    //       <h3 className='stat--ad'>+{55} Attack Damage</h3>
 
-          <p><b>Boarding Party:</b> When no allied champions are within 1200 units you get:</p>
-          <p><b><u>for Melee:</u> </b> <span className="stat--armor"><abbr title="4 + 46 / 14 * (level - 1)">{Math.round(4 + 46 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="4 + 16 / 14 * (level - 1)">{Math.round(4 + 16 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
-          <p><b><u>for Ranged:</u> </b> <span className="stat--armor"><abbr title="2 + 23 / 14 * (level - 1)">{Math.round(2 + 23 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="2 + 8 / 14 * (level - 1)">{Math.round(2 + 8 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
-          <p>And deal <b>20%</b> additional Damage to Structures</p>
+    //       <p><b>Boarding Party:</b> When no allied champions are within 1200 units you get:</p>
+    //       <p><b><u>for Melee:</u> </b> <span className="stat--armor"><abbr title="4 + 46 / 14 * (level - 1)">{Math.round(4 + 46 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="4 + 16 / 14 * (level - 1)">{Math.round(4 + 16 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
+    //       <p><b><u>for Ranged:</u> </b> <span className="stat--armor"><abbr title="2 + 23 / 14 * (level - 1)">{Math.round(2 + 23 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="2 + 8 / 14 * (level - 1)">{Math.round(2 + 8 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
+    //       <p>And deal <b>20%</b> additional Damage to Structures</p>
 
-          <p>Nearby Large Minions gain:</p>
-          <p><b>(for Melee) </b><span className='stat--ad'>{Math.round(40 + 130 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(20 + 65 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
-          <p><b>(for Ranged) </b><span className='stat--ad'>{Math.round(20 + 60 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(10 + 30 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
-          <p>Also 10% bonus size and deal 200% bonus damage to turrets</p>
-        </div>
-    },
+    //       <p>Nearby Large Minions gain:</p>
+    //       <p><b>(for Melee) </b><span className='stat--ad'>{Math.round(40 + 130 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(20 + 65 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
+    //       <p><b>(for Ranged) </b><span className='stat--ad'>{Math.round(20 + 60 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(10 + 30 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
+    //       <p>Also 10% bonus size and deal 200% bonus damage to turrets</p>
+    //     </div>
+    // },
 
-    {
-      name: 'Hullbreaker (Stacked Ranged)',
+    // {
+    //   name: 'Hullbreaker (Stacked Ranged)',
       
-      icon: "/images/items/Hullbreaker.png",
+    //   icon: "/images/items/Hullbreaker.png",
 
 
-      health: 325,
-      mana: 0,
-      armor: Math.round(2 + 23 / 14 * (currentLevel - 1)),
-      magres: Math.round(2 + 8 / 14 * (currentLevel - 1)),
-      attack: 55,
-      ap: 0,
-      as: 0,
-      moveSpeed: 0,
-      flatArmPen: 0,
-      flatMagPen: 0,
-      armPen: 0,
-      magPen: 0,
-      critChance: 0,
-      critMultiplier: 0,
-      ah: 0,
-      armorReduction: 0,
+    //   health: 325,
+    //   mana: 0,
+    //   armor: Math.round(2 + 23 / 14 * (currentLevel - 1)),
+    //   magres: Math.round(2 + 8 / 14 * (currentLevel - 1)),
+    //   attack: 55,
+    //   ap: 0,
+    //   as: 0,
+    //   moveSpeed: 0,
+    //   flatArmPen: 0,
+    //   flatMagPen: 0,
+    //   armPen: 0,
+    //   magPen: 0,
+    //   critChance: 0,
+    //   critMultiplier: 0,
+    //   ah: 0,
+    //   armorReduction: 0,
 
-      description: 
-        <div className='itemDescription'>
+    //   description: 
+    //     <div className='itemDescription'>
 
-          <h3 className='stat--hp'>+{325} Max Health</h3>
-          <h3 className='stat--ad'>+{55} Attack Damage</h3>
+    //       <h3 className='stat--hp'>+{325} Max Health</h3>
+    //       <h3 className='stat--ad'>+{55} Attack Damage</h3>
 
-          <p><b>Boarding Party:</b> When no allied champions are within 1200 units you get:</p>
-          <p><b><u>for Melee:</u> </b> <span className="stat--armor"><abbr title="4 + 46 / 14 * (level - 1)">{Math.round(4 + 46 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="4 + 16 / 14 * (level - 1)">{Math.round(4 + 16 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
-          <p><b><u>for Ranged:</u> </b> <span className="stat--armor"><abbr title="2 + 23 / 14 * (level - 1)">{Math.round(2 + 23 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="2 + 8 / 14 * (level - 1)">{Math.round(2 + 8 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
-          <p>And deal <b>20%</b> additional Damage to Structures</p>
+    //       <p><b>Boarding Party:</b> When no allied champions are within 1200 units you get:</p>
+    //       <p><b><u>for Melee:</u> </b> <span className="stat--armor"><abbr title="4 + 46 / 14 * (level - 1)">{Math.round(4 + 46 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="4 + 16 / 14 * (level - 1)">{Math.round(4 + 16 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
+    //       <p><b><u>for Ranged:</u> </b> <span className="stat--armor"><abbr title="2 + 23 / 14 * (level - 1)">{Math.round(2 + 23 / 14 * (currentLevel - 1))} Armor</abbr></span>, <span className="stat--magres"><abbr title="2 + 8 / 14 * (level - 1)">{Math.round(2 + 8 / 14 * (currentLevel - 1))} Magic Resistance</abbr></span></p>
+    //       <p>And deal <b>20%</b> additional Damage to Structures</p>
 
-          <p>Nearby Large Minions gain:</p>
-          <p><b>(for Melee) </b><span className='stat--ad'>{Math.round(40 + 130 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(20 + 65 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
-          <p><b>(for Ranged) </b><span className='stat--ad'>{Math.round(20 + 60 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(10 + 30 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
-          <p>Also 10% bonus size and deal 200% bonus damage to turrets</p>
-        </div>
-    },
+    //       <p>Nearby Large Minions gain:</p>
+    //       <p><b>(for Melee) </b><span className='stat--ad'>{Math.round(40 + 130 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(20 + 65 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
+    //       <p><b>(for Ranged) </b><span className='stat--ad'>{Math.round(20 + 60 / 14 * (currentLevel - 1))} Armor</span> and <span className='stat--magres'>{Math.round(10 + 30 / 14 * (currentLevel - 1))} Magic Resistance</span></p>
+    //       <p>Also 10% bonus size and deal 200% bonus damage to turrets</p>
+    //     </div>
+    // },
 
     {
       name: 'Divine Sunderer',
@@ -1434,12 +1494,12 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       icon: "/images/items/Rabadon.png",
 
 
-      health: 0,
+      health: -(10 + (90 / 14 * (currentLevel-1))),
       mana: 0,
       armor: 0,
       magres: 0,
       attack: 0,
-      ap: 100,
+      ap: 90,
       as: 0,
       moveSpeed: 0,
       flatArmPen: 0,
@@ -1454,9 +1514,12 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       description: 
         <div className='itemDescription'>
 
-          <h3 className='stat--ap'>+{100} Ability Power</h3>
-          <p><b>Overkill:</b> Increases <span className="stat--ap">Ability Power</span> by <abbr title="20-45% based on level">{Math.round(20 + (25/14 * (currentLevel - 1)))}%</abbr></p>          
-          
+          <h3 className='stat--ap'>+{90} Ability Power</h3>
+          <p><b>Overkill:</b> Increases <span className="stat--ap">Ability Power</span> by <b>20% - 55%</b> (based on level)</p>
+
+          <p>
+            <b>Cinders"</b> reduces your <span className="stat--hp">Health by 10-100</span> (based on level).
+          </p>    
         </div>       
 
     },
@@ -1769,7 +1832,10 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className='stat--mana'>+{300} Max Mana</h3>
           <h3>+{10} Ability Haste</h3>
 
-          <p><b>Harmonic Echo:</b> Moving and casting abilities build Harmony stacks. At 100 stacks your next healing / shielding ability coast on ally restores <abbr title="130 + 10% AP"><span className="stat--hp">{Math.round(130 + (total.ap * 10 / 100))} Health</span></abbr> to your target and up to 3 nearby allied champions</p>
+          <p><b>Harmonic Echo:</b> Moving and casting abilities build Harmony stacks. At 100 stacks your next healing / shielding ability coast on ally restores <abbr title="135 + 10% AP"><span className="stat--hp">{Math.round(135 + (total.ap * 10 / 100))} Health</span></abbr> to your target and up to 3 nearby allied champions</p>
+          <p>
+          Every 10 Ability Haste you have increases healing by 3%. (not implemented in calculator)
+          </p>
         </div>
 
     },
@@ -1938,7 +2004,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       armor: 0,
       magres: 0,
       attack: 0,
-      ap: 85,
+      ap: 95,
       as: 0,
       moveSpeed: (base.moveSpeed * 5 / 100),
       flatArmPen: 0,
@@ -1952,12 +2018,12 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
 
       description: 
         <div className='itemDescription'>
-          <h3 className="stat--ap">+85 Ability Power</h3>
+          <h3 className="stat--ap">+95 Ability Power</h3>
           <h3 className="stat--magres">+7% Magic Penetration</h3>
 
           <p><b>Destiny:</b> +5% ({Math.round(base.moveSpeed * 5 / 100)}) Movement Speed</p>
           <p><b>Balance:</b> <span className="stat--ap">+{15} Magic Penetration</span></p>
-          <p><b>Inevitable Demise: </b> Abilities and empowered attacks <span className="stat--vamp">Critically Strike</span> for 20% bonus damage against enemies below <span className='stat--hp'>35% <abbr title="For current target">({Math.round(target.health * 35 / 100)})</abbr> Health</span></p>
+          <p><b>Inevitable Demise: </b> Abilities and empowered attacks <span className="stat--vamp">Critically Strike</span> for 20% bonus damage against enemies below <span className='stat--hp'>45% <abbr title="For current target">({Math.round(target.health * 45 / 100)})</abbr> Health</span></p>
         </div>
 
     },
@@ -2111,7 +2177,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       armor: 0,
       magres: 0,
       attack: 0,
-      ap: 80,
+      ap: 90,
       as: 0,
       moveSpeed: 0,
       flatArmPen: 0,
@@ -2127,12 +2193,12 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         <div className='itemDescription'>
 
           <h3 className="stat--hp">+150 Max Health</h3>
-          <h3 className="stat--ap">+80 Ability Power</h3>
+          <h3 className="stat--ap">+90 Ability Power</h3>
           <h3>+15 Ability Haste</h3>
           <h3 className="stat--vamp">+12% Omnivamp</h3>
           <h3 className="stat--magres">+7% Magic Penetration</h3>
 
-          <p><b>Void Corruption:</b> When in combat with champions gain 1 stack of <b>Corruption</b> every 1 seconds. Every stacks increases the damage you deal by 3% up to 3 stacks. At 3 stacks additional damage becomes <b className="stat--vamp">true damage</b>.</p>
+          <p><b>Void Corruption:</b> When in combat with champions gain 1 stack of <b>Corruption</b> every 1 seconds. Every stacks increases the damage you deal by 2.5% up to 4 stacks. At 4 stacks additional damage becomes <b className="stat--vamp">true damage</b>.</p>
         </div>
 
     },
@@ -2141,12 +2207,12 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       name: 'Horizon Focus',
       icon: "/images/items/Horizon_Focus.webp",
 
-      health: 150,
+      health: 0,
       mana: 0,
       armor: 0,
       magres: 0,
       attack: 0,
-      ap: 80,
+      ap: 90,
       as: 0,
       moveSpeed: 0,
       flatArmPen: 0,
@@ -2155,18 +2221,25 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       magPen: 7/100,
       critChance: 0,
       critMultiplier: 0,
-      ah: 15,
+      ah: 20,
       armorReduction: 0,
 
       description: 
         <div className='itemDescription'>
 
-          <h3 className="stat--hp">+150 Max Health</h3>
-          <h3 className="stat--ap">+80 Ability Power</h3>
-          <h3>+15 Ability Haste</h3>
+          {/* <h3 className="stat--hp">+150 Max Health</h3> */}
+          <h3 className="stat--ap">+90 Ability Power</h3>
+          <h3>+20 Ability Haste</h3>
           <h3 className="stat--magres">+7% Magic Penetration</h3>
           
-          <p><b>Hypershot:</b> Apply 1 mark when you damage enemy champion with non-targeted ability from 500 units away; apply 2 marks for immobolizing. MArked enemies are revealed. At 3 stacks detonate them  to deal <abbr title="90 +25% AP; numbers are pre/post-mitigation"><span className="stat--ap">{Math.round(90 + (total.ap * 25 / 100))} / {Math.round((90 + (total.ap * 25 / 100)) * (1 - modifierMres))} Magic damage</span></abbr> to the target.</p>
+          {/* <p><b>Hypershot:</b> Apply 1 mark when you damage enemy champion with non-targeted ability from 500 units away; apply 2 marks for immobolizing. MArked enemies are revealed. At 3 stacks detonate them  to deal <abbr title="90 +25% AP; numbers are pre/post-mitigation"><span className="stat--ap">{Math.round(90 + (total.ap * 25 / 100))} / {Math.round((90 + (total.ap * 25 / 100)) * (1 - modifierMres))} Magic damage</span></abbr> to the target.</p> */}
+
+          <p>
+           <b>Hypershot:</b> Damaging an enemy champion with an ability from 600 units away reveals them for 6 seconds and increases damage dealt to them by 12%.
+          </p>
+          <p>
+            <b>Focus: </b> When Hypershot is triggered, it reveals all enemy champions within 1,200 units of the target for 2s. (15s cooldown)
+          </p>
         </div>
 
     },
@@ -2368,7 +2441,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       attack: 0,
       ap: 0,
       as: 0,
-      moveSpeed: 0,
+      moveSpeed: -5,
       flatArmPen: 0,
       flatMagPen: 0,
       armPen: 0,
@@ -2384,7 +2457,15 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className="stat--hp">+200% Health Regen</h3>
           <h3>+10 Ability Haste</h3>
 
-          <p><b>Warmog's Heart:</b> If you have at least <span className="stat--hp">950 bonus health</span>, and did not take any damage within last 6 seconds, restore <abbr title="5% Max health" className="stat--hp">{Math.round(total.health * 5 / 100)} Health</abbr> per second</p>
+          <p><b>Warmog's Heart:</b> If you have at least <span className="stat--hp">1150 bonus health</span>, and did not take any damage within last 4 seconds, restore <abbr title="5% Max health" className="stat--hp">{Math.round(total.health * 5 / 100)} Health</abbr> per second</p>
+
+          <p>
+            <b>Strength of Will:</b> Restores <span className="stat--hp">{Math.round(attacker.health * 3 / 1000)} (0.3%) max Health</span> per second
+          </p>
+
+          <p>
+            <b>Guilt Bearer:</b> reduces your <span className="stat--moveSpeed">Movement Speed by 5</span>
+          </p>
         </div>
 
     },
@@ -2778,7 +2859,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className="stat--magres">+30 Magic Resistance</h3>
 
           <p>
-            <b>Dawnbringer:</b> If you are within 400 units of enemy champion and you immobilize them or getting immobilized, reveal all nearby enemy champions and deal them <abbr title="80 + 5% BONUS HP; numbers are pre/post-mitigation" className="stat--ap">{Math.round(80 + bonus.health / 20 )} / {Math.round((80 + bonus.health / 20 ) * (1 - modifierMres))} Magic Damage</abbr>. (3 seconds Cooldown)
+            <b>Dawnbringer:</b> If you are within 400 units of enemy champion and you immobilize them or getting immobilized, reveal all nearby enemy champions and deal them <abbr title="80 + 5% BONUS HP; numbers are pre/post-mitigation" className="stat--ap">{Math.round(80 + bonus.health / 20 )} / {Math.round((80 + bonus.health / 20 ) * (1 - modifierMres))} Magic Damage</abbr> and heal yourself for the same amount for 3s. (3 seconds Cooldown)
           </p>
         </div>
 
@@ -2792,7 +2873,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       mana: 0,
       armor: 60,
       magres: 60,
-      attack: 0,
+      attack: -(1 * currentLevel),
       ap: 0,
       as: 0,
       moveSpeed: 0,
@@ -2818,10 +2899,14 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <p>Bonus defence: {itemEffects.twinguard ? <span className="stat--hp">Active</span> :  <span className="stat--vamp">Disabled</span>}</p>
           <p><sub>* please, disable bonus defence before changing items - it does not auto updates for now</sub></p>
           <p>
-            <b>Endurance:</b> Gain 1 stack every 1 seconds while in combat with Enemy Champions.
+            <b>Endurance:</b> Gain 1 stack every 1 seconds while in combat with Enemy Champions (3 stacks maximum).
           </p>
           <p>
-            At full stacks gain 20% size, 20% Tenacity, increase both <span className="stat--ad">Armor</span> and <span className="stat--magres">Magic resistance</span> by 30% until Out Of Combat with enemy champions
+            At full stacks gain 20% size, 20% Tenacity, increase both <span className="stat--ad">Armor</span> and <span className="stat--magres">Magic resistance</span> by 35% until Out Of Combat with enemy champions.
+          </p>
+
+          <p>
+            <b>Withering:</b> Reduces your <span className="stat--ad">Attack Damage</span> by 1-15 (based on level)
           </p>
         </div>
 

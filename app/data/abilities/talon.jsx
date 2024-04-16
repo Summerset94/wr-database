@@ -451,6 +451,10 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
           <p>
             Upon reaching maximum range, the daggers linger for 0.75 seconds before returning, dealing {calculations.w.text.damage.recast} to the enemies hit along the way and {calculations.w.text.slow}
           </p>
+
+          <p>
+            Damage to monsters: 70%
+          </p>
         </div>
     },
     {

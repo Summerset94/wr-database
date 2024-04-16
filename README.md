@@ -385,13 +385,13 @@ A template for champion's abilites is stored in "app/data/abilities/abilitiestem
       {' '}{Math.round(calculations.q.damage.raw[1])} /
       {' '}{Math.round(calculations.q.damage.raw[2])} /
       {' '}{Math.round(calculations.q.damage.raw[3])} /
-      {' '}{Math.round(calculations.q.damage.raw[4])} /
+      {' '}{Math.round(calculations.q.damage.raw[4])}
     </p>
     <p className="stat--ad">post-mitigation: 
       {' '}{Math.round(calculations.q.damage.mitigated[1])} /
       {' '}{Math.round(calculations.q.damage.mitigated[2])} /
       {' '}{Math.round(calculations.q.damage.mitigated[3])} /
-      {' '}{Math.round(calculations.q.damage.mitigated[4])} /
+      {' '}{Math.round(calculations.q.damage.mitigated[4])}
     </p>
   ```
 

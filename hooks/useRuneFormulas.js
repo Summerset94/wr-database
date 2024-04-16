@@ -17,6 +17,31 @@ const useRuneFormulas = (atk, bonus, mod, currentLevel, runesEffects, turretArmo
         growth: -7
       }
     };
+
+    const PTA = {
+      damage: {
+        base: 40,
+        growth: 10
+      },
+
+      trueDamage: {
+        base: 5,
+        growth: Number(currentLevel),
+      }
+    };
+
+    const arcaneComet = {
+      damage: {
+        base: 30,
+        growth: 5,
+        modifier: bonus.attack * 35 / 100 + atk.ap * 20 / 100
+      },
+  
+      cooldown: {
+        base: 16,
+        growth: -8
+      }
+    };
   
     const aery = {
       damage: {
@@ -105,6 +130,14 @@ const useRuneFormulas = (atk, bonus, mod, currentLevel, runesEffects, turretArmo
       base: 35,
       growth: 15,
     }
+
+    const psychicWave = {
+      damage: {
+        base: 22,
+        growth: 8,
+        modifier: bonus.attack * 15 / 100 + atk.ap * 7.5 / 100
+      },
+    }
   
     const GSformula = function(stacks, firstValue, incrementation) {
       return (stacks / 2) * (2 * firstValue + (stacks - 1) * incrementation);
@@ -136,7 +169,34 @@ const useRuneFormulas = (atk, bonus, mod, currentLevel, runesEffects, turretArmo
         damage: {
           raw: (electrocute.damage.base + electrocute.damage.growth/14*(currentLevel-1) + electrocute.damage.modifier),
           mitigated: ((electrocute.damage.base + electrocute.damage.growth/14*(currentLevel-1) + electrocute.damage.modifier) * (1 - (damagetype === 'physical' ? mod.defPhysRed : mod.defMagRed)))
-      }
+        }
+      },      
+
+      arcaneComet: {
+  
+        cooldown: (arcaneComet.cooldown.base + arcaneComet.cooldown.growth/14 * (currentLevel-1)),
+        damage: {
+          raw: (arcaneComet.damage.base + (arcaneComet.damage.growth*(currentLevel-1)) + arcaneComet.damage.modifier),
+          mitigated: ((arcaneComet.damage.base +( arcaneComet.damage.growth*(currentLevel-1)) + arcaneComet.damage.modifier) * (1 - (damagetype === 'physical' ? mod.defPhysRed : mod.defMagRed)))
+        }
+      },
+
+      psychicWave: {
+
+        damage: {
+          raw: (psychicWave.damage.base + (psychicWave.damage.growth*(currentLevel-1)) + psychicWave.damage.modifier),
+          mitigated: ((psychicWave.damage.base +( psychicWave.damage.growth*(currentLevel-1)) + psychicWave.damage.modifier) * (1 - (damagetype === 'physical' ? mod.defPhysRed : mod.defMagRed)))
+        }
+      },
+
+      PTA: { 
+        
+        damage: {
+          raw: (PTA.damage.base + (PTA.damage.growth *(currentLevel-1) )),
+          mitigated: ((PTA.damage.base + (PTA.damage.growth *(currentLevel-1) )) * (1 - (damagetype === 'physical' ? mod.defPhysRed : mod.defMagRed)))
+      },
+
+        trueDamage: PTA.trueDamage.base + PTA.trueDamage.growth/14*(currentLevel-1)
       },
   
       aery: {

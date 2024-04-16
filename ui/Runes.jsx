@@ -114,6 +114,43 @@ const keystones = [
   },
 
   {
+    name: 'Empowerment',    
+    id: '4c0dc300-9225-40c3-a209-b3c0d900d0f8',
+    icon: '../images/runes/PTA.webp',
+    description: <div className='runeDescription'>
+    <p>Hitting an enemy champion with 3 consecutive attacks deals <span className='stat--armor'>40-180 bonus adaptive damage</span> and makes them <span className='stat--armor'>Vulnerable</span>, increasing all damage they take by <span className='stat--armor'>8% for 6 seconds</span>. </p>
+
+    <p>
+    Once Vulnerable, your attacks to the target deal <span className='stat--vamp'>6-20 bonus true damage</span>. When the target exits the Vulnerable state, Vulnerability enters cooldown and cannot be applied to any enemy for the next 6 seconds.
+    </p>
+
+
+
+    <p title='Physical or magical based on your bonus attack and Ability Power'>Damage type: {runeFormulas.damagetype.description}</p>
+    <p>Damage (pre/post-mitigation): {Math.round(runeFormulas.PTA.damage.raw)} / {Math.round(runeFormulas.PTA.damage.mitigated)}</p>
+    <p>Damage formula: 40-180 (+10 per level)</p>
+    <p className='stat--vamp'>On-hit True Damage: {Math.round(runeFormulas.PTA.trueDamage)}</p>
+    <p>Damage formula: 6 + 1 per level</p>
+    
+  </div>
+  },
+
+  {
+    name: 'Arcane Comet',    
+    id: '1a8adad5-e8d8-4f71-afbe-58f5593289e2',
+    icon: '../images/runes/arcaneComet.webp',
+    description: <div className='runeDescription'>
+      <p>
+      Damaging a champion with an ability hurls a comet at their location. When a comet hits an enemy champion, the next comet's damage increases by 1.
+      </p>
+      <p title='Physical or magical based on your bonus attack and Ability Power'>Damage type: {runeFormulas.damagetype.description}</p>
+      <p>Base Damage (pre/post-mitigation): {Math.round(runeFormulas.arcaneComet.damage.raw)} / {Math.round(runeFormulas.arcaneComet.damage.mitigated)}</p>
+      <p>Damage formula: 30-100 (+5 per level) (<span className='stat--ad'>+35% bonus AD</span>) (<span className='stat--ap'>+20% AP</span> )</p>
+      <p>Cooldown: {(runeFormulas.arcaneComet.cooldown).toFixed(1)} (16-8 based on level) seconds.</p>
+  </div>
+  },
+
+  {
     name: 'Aery',
     id: 'ca422aab-6277-4784-8b52-8ea6a8a235d1',
     icon: '../images/runes/aery.webp',
@@ -186,23 +223,24 @@ const keystones = [
 </div>
  },
 
- {
-  name: 'Kraken Slayer',
-  id: 'c16ebe1e-8988-4178-b355-d3b65483f28e',
-  icon: "../images/runes/krakenSlayer.webp",
-  description: <div className='runeDescription'>
-  <p>Gain stacks when hitting a champion with attacks. When reaching 3 stacks. Upon reaching 3 stacks, deal bonus true damage on attack.</p>
+//  Kraken Slayer (removed)
+//  {
+//   name: 'Kraken Slayer',
+//   id: 'c16ebe1e-8988-4178-b355-d3b65483f28e',
+//   icon: "../images/runes/krakenSlayer.webp",
+//   description: <div className='runeDescription'>
+//   <p>Gain stacks when hitting a champion with attacks. When reaching 3 stacks. Upon reaching 3 stacks, deal bonus true damage on attack.</p>
 
-  <p>Stacks reset after not attacking enemy champion for 3 seconds.</p>
+//   <p>Stacks reset after not attacking enemy champion for 3 seconds.</p>
 
-  <p className='stat--vamp'>Damage: {Math.round(runeFormulas.krakenSlayer.damage)}</p>
+//   <p className='stat--vamp'>Damage: {Math.round(runeFormulas.krakenSlayer.damage)}</p>
 
-  <p>
-    Damage formula: 30-95 (based on level) (<span className='stat--ad'>+40% bonus AD</span>) (<span className='stat--ap'>+20% AP</span>)
-  </p>
+//   <p>
+//     Damage formula: 30-95 (based on level) (<span className='stat--ad'>+40% bonus AD</span>) (<span className='stat--ap'>+20% AP</span>)
+//   </p>
   
-</div>
- },
+// </div>
+//  },
 
  {
   name: 'Grasp of the Undying',
@@ -362,6 +400,29 @@ const mainRunes = [
       },
 
       {
+        name: 'Psychic Wave',
+        icon: '../images/runes/psychicWave.webp',
+        id: '0e0b4fe0-4739-4717-a1ec-a73bf49b67bc',
+        slot: 0,
+        description: <div className='runeDescription'>
+         <p>
+          The next attack after damaging a champion with ability / next ability after damaging champion with an attack creates an explosion that deals <span className='stat--armor'>Adaptive damage</span> in a small area.</p>
+          <p>
+            Ranged champions deal <span className='stat--vamp'>70% Damage when used</span>
+          </p>
+
+          <p>
+            Cooldown: 6 seconds.
+          </p>
+
+          <p title='Physical or magical based on your bonus attack and Ability Power'>Damage type: {runeFormulas.damagetype.description}</p>
+          <p>Damage (pre/post-mitigation): {Math.round(runeFormulas.psychicWave.damage.raw)} / {Math.round(runeFormulas.psychicWave.damage.mitigated)}</p>
+          <p>Damage <span className='stat--vamp'>ranged</span> (pre/post-mitigation): {Math.round(runeFormulas.psychicWave.damage.raw * 70 / 100)} / {Math.round(runeFormulas.psychicWave.damage.mitigated * 70 / 100)}</p>
+          <p>Damage formula: 22-50 (+2 per level) (<span className='stat--ad'>+15% bonus AD</span>) (<span className='stat--ap'>+7.5% AP</span>)</p>
+        </div>
+      },
+
+      {
         name: 'Shield Bash',
         icon: '../images/runes/shieldBash.webp',
         id: 'e1cf17ea-2aba-4e88-9d20-71640ca4871b',
@@ -405,7 +466,7 @@ const mainRunes = [
         id:'6a16395f-ef11-4565-8894-1545edb4e612',
         slot: 1,
         description: <div className='runeDescription'>
-          <p>Every 10 seconds the next attack will be empowered, dealing 35-50 (based on level) bonus adaptive damage</p>
+          <p>Every 8 seconds the next attack against an enemy champion will be empowered, dealing 35-50 (based on level) bonus adaptive damage</p>
 
           <p>
             Bonus (pre/post mitigation): {Math.round(runeFormulas.empoweredAA.raw)} / {Math.round(runeFormulas.empoweredAA.mitigated)} {runeFormulas.damagetype.description} damage
@@ -878,6 +939,18 @@ const mainRunes = [
           <p><button onClick={() => {dispatch({type: 'togglePerseverance'})}}>Switch defence bonus</button></p>
 
           <p>Gain 10% Tenacity. Gain <u className='stat--armor'>{Math.round(runeFormulas.perseverance)}</u>  (16-30 based on level) <span className='stat--armor'>Armor</span> and <span className='stat--magres'>Magic Resistance</span></p> for 1.5 seconds when immobilized. Refresh duration time when immobilized multiple times
+        </div>
+      },
+
+      {
+        name: 'Onslaught',
+        icon: '../images/runes/onslaught.png',
+        id: '356a1607-3771-42aa-9e23-1cd606270abb',
+        slot: 2,
+        description: <div className='runeDescription'>
+          <p>
+            Gain <span className='stat--moveSpeed'>5% Tenacity</span> plus additional Tenacity (up to 20%) based on number of surrounding enemy champions.
+          </p>
         </div>
       }
 

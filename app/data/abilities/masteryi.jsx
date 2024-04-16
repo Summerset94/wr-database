@@ -116,6 +116,10 @@ export default function masteryi({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p>
+          Damage reduction increases to 90% during the first 0.5s.
+          </p>
+
+          <p>
           Heal is increased the lower Master Yi's Health is, up to 100%.
           </p>
         </div>
@@ -153,7 +157,7 @@ export default function masteryi({currentLevel, mod, bonus, atk, def, champ}) {
            <b>PASSIVE:</b> gains <abbr title="8% AD" className="stat--ad">{Math.round((atk.attack)*8/100)} physical damage</abbr> while Wuju style is off cooldown
           </p>
           <p>
-            <b>ACTIVE:</b> Attacks deal <span className="stat--critChance">35 / 45 / 55 / 65 (<span className="stat--ad">+30% bonus AD</span>) bonus true damage</span> for 5 seconds.
+            <b>ACTIVE:</b>Resets Auto Attack timer on activation. Attacks deal <span className="stat--critChance">35 / 45 / 55 / 65 (<span className="stat--ad">+30% bonus AD</span>) bonus true damage</span> for 5 seconds.
           </p>
 
           <p>
@@ -181,7 +185,7 @@ export default function masteryi({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
     
           <p>
-            <b>PASSIVE:</b> Takedowns reduce Master Yi's basic ability cooldowns by 70%.
+            <b>PASSIVE:</b> Reduces Meditate's Cooldown by 90% and other basic abilities' Cooldown by 70% on takedown.
           </p>
 
           <p>

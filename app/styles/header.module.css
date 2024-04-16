@@ -16,3 +16,12 @@
 .p {
   color: white;
 }
+
+.link {
+  color: yellow;
+  
+}
+
+.link:hover {
+  color: orange;
+}

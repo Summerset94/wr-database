@@ -46,6 +46,10 @@ export default function blank({currentLevel, mod, bonus, atk, def, champ, update
           </p>
 
           <p>
+            Enemy champions deal 40% ability damage to Thorn Spitters.
+          </p>
+
+          <p>
             Deals 50% damage to monsters
           </p>
          

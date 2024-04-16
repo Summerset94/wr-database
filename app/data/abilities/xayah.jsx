@@ -71,19 +71,27 @@ export default function xayah({currentLevel, mod, bonus, atk, def, champ, update
     
           <h5>
           Cooldown: 
-            {' '}{(19*mod.atkcdr).toFixed(1)} / 
-            {' '}{(18*mod.atkcdr).toFixed(1)} / 
             {' '}{(17*mod.atkcdr).toFixed(1)} / 
-            {' '}{(16*mod.atkcdr).toFixed(1)} 
+            {' '}{(16*mod.atkcdr).toFixed(1)} / 
+            {' '}{(15*mod.atkcdr).toFixed(1)} / 
+            {' '}{(14*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
             {' '}{50}
           </h5>
+
+          <h5 className="stat--as">Bonus Attack Speed:</h5>
+          <p className="stat--as">
+          {' '}{(champ.asBase * 45 / 100).toFixed(3)} / 
+          {' '}{(champ.asBase * 50/ 100).toFixed(3)} / 
+          {' '}{(champ.asBase * 55 / 100).toFixed(3)} / 
+          {' '}{(champ.asBase * 60 / 100).toFixed(3)}
+          </p>
     
           <br />
           <p>
-            Create a storm of blades for 4s that grants <abbr title="35 / 40 / 45 / 50%" className="stat--as">{(champ.asBase * 35 / 100).toFixed(3)} / {(champ.asBase * 40 / 100).toFixed(3)} / {(champ.asBase * 45 / 100).toFixed(3)} / {(champ.asBase * 50 / 100).toFixed(3)} Attack Speed</abbr> and causes attacks to deal 20% more damage.
+            Create a storm of blades for 4s that grants Xayah <span className="stat--as">45% / 50% / 55% / 60% bonus Attack Speed</span> and causes attacks to deal 20% more damage.
           </p>
 
           <p>
@@ -119,17 +127,17 @@ export default function xayah({currentLevel, mod, bonus, atk, def, champ, update
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((60)+(bonus.attack * 80 / 100)))} / 
-            {' '}{Math.round(((70)+(bonus.attack * 80 / 100)))} / 
-            {' '}{Math.round(((80)+(bonus.attack * 80 / 100)))} / 
-            {' '}{Math.round(((90)+(bonus.attack * 80 / 100)))}
+            {' '}{Math.round(((60)+(bonus.attack * 90 / 100)))} / 
+            {' '}{Math.round(((70)+(bonus.attack * 90 / 100)))} / 
+            {' '}{Math.round(((80)+(bonus.attack * 90 / 100)))} / 
+            {' '}{Math.round(((90)+(bonus.attack * 90 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((60)+(bonus.attack * 80 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((70)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((80)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((90)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((60)+(bonus.attack * 90 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((70)+(bonus.attack * 90 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((80)+(bonus.attack * 90 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((90)+(bonus.attack * 90 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <br />

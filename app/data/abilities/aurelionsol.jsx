@@ -476,10 +476,10 @@ export default function aurelionsol({currentLevel, mod, bonus, atk, def, champ, 
             5 stacks of Stardust for every champion or epic monster killed;
             </li>
             <li>
-            3 stacks of Stardust for every siege minion or large monster killed;
+            5 stacks of Stardust for every siege minion or large monster killed;
             </li>
             <li>
-            2 stacks of Stardust for every minion or small monster killed.
+            1 stacks of Stardust for every minion or small monster killed.
             </li>
           </ul>
         </div>

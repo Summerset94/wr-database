@@ -14,7 +14,7 @@ export default function urgot({currentLevel, mod, bonus, atk, def, champ, update
 
           <br />
           <p>
-            Urgot's attacks and Purge periodically trigger blasts from his leg cannons, dealing <abbr title="50% AD + 15% AD per 4 levels" className="stat--ad">{Math.round(atk.attack * (50 + 15 * Math.floor((currentLevel - 1)/4))/100)}</abbr> plus <abbr title="2% + 1.5% per 4 levels" className="stat--hp">{Math.round((2 + 1.5 * Math.floor((currentLevel - 1)/4)))}% of target's Max Health</abbr> as <span className="stat--ad">physical damage</span>. <abbr title="at level 1 / 5 / 9 / 13">15 / 8 / 4 / 2 seconds cooldown per leg</abbr>.
+            Urgot's attacks and Purge periodically trigger blasts from his leg cannons, dealing <abbr title="50% AD + 15% AD per 4 levels" className="stat--ad">{Math.round(atk.attack * (50 + 15 * Math.floor((currentLevel - 1)/4))/100)}</abbr> plus <abbr title="2% + 1.5% per 4 levels" className="stat--hp">{Math.round((2 + 1 * Math.floor((currentLevel - 1)/4)))}% of target's Max Health</abbr> as <span className="stat--ad">physical damage</span>. <abbr title="at level 1 / 5 / 9 / 13">15 / 8 / 4 / 2 seconds cooldown per leg</abbr>.
           </p>
         </div>
     },

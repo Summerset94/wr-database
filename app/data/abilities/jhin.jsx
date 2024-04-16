@@ -15,7 +15,7 @@ export default function jhin({currentLevel, mod, bonus, atk, def, champ}) {
             Whenever Jhin critically strikes he gains <span className="stat--moveSpeed">{Math.round(atk.moveSpeed * (10 + ((bonus.as/champ.asBase) * 0.4))/100)} Movement Speed</span> (10% + 0.4% per 1% <span className="stat--as">bonus attack speed</span> ) for 2 seconds.
           </p>
           <p>
-            Jhin's <span className="stat--ad">Attack damage</span>  scales with <abbr className="stat--as" title='14-29% based on level'>{Math.round(14 + (15/14*(currentLevel - 1)))}% of bonus Attack Speed</abbr> and <abbr className="stat--critChance" title='23-49% based on level'>{Math.round(23 + (26/14*(currentLevel - 1)))}% of Critical rate</abbr>. Also Jhin receives <abbr title="5-60% based on level" className="stat--ad">{Math.round(5 + 55/14*(currentLevel-1))}% bonus Attack Damage</abbr> from items and level growth. Jhin has his basic <span className="stat--critChance">Critical multiplier</span> reduced to 150% (from 175%).
+            Jhin's <span className="stat--ad">Attack damage</span>  scales with <abbr className="stat--as" title='14-29% based on level'>{Math.round(14 + (15/14*(currentLevel - 1)))}% of bonus Attack Speed</abbr> and <abbr className="stat--critChance" title='23-49% based on level'>{Math.round(23 + (26/14*(currentLevel - 1)))}% of Critical rate</abbr>. Also Jhin receives <abbr title="5-75% based on level" className="stat--ad">{Math.round(5 *currentLevel-1)}% bonus Attack Damage</abbr> from items and level growth. Jhin has his basic <span className="stat--critChance">Critical multiplier</span> reduced to 150% (from 175%).
             </p>
         </div>
     },
