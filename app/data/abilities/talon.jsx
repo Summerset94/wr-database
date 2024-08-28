@@ -23,15 +23,15 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
       },
 
       damage: {
-        base: 95,
+        base: 75,
         growth: 25,
         modifier: bonus.attack * 100 / 100,
         critModifier: (atk.critMultiplier - 0.25)        
       },
 
       healing: {
-        base: 10,
-        growth: 60 / 14 * Number(currentLevel - 1)
+        base: 35,
+        growth: 35 / 14 * Number(currentLevel - 1)
       }
     };
 
@@ -48,9 +48,9 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
 
       damage: {
         cast: {
-          base: 60,
+          base: 35,
           growth: 10,
-          modifier: (bonus.attack * 50 / 100)
+          modifier: (bonus.attack * 45 / 100)
         },
 
         recast: {
@@ -68,8 +68,8 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
 
     const e = {
       cooldown: {
-        base: 110,
-        growth: -20
+        base: 135,
+        growth: -25
       }
     };
 
@@ -164,7 +164,7 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
         text: {
           damage: <span className="stat--ad">{q.damage.base} / {q.damage.base + q.damage.growth} / {q.damage.base + q.damage.growth * 2} / {q.damage.base + q.damage.growth * 3} (+100% BONUS Attack Damage) Physical damage</span>,
 
-          healing: <span className="stat--hp">{Math.round(q.healing.base + q.damage.growth)} Health</span>
+          healing: <span className="stat--hp">{Math.round(q.healing.base + q.healing.growth)} Health</span>
         }
       },
 
@@ -219,7 +219,7 @@ export default function talon({currentLevel, mod, bonus, atk, def, champ, update
 
         text: {
           damage: {
-            cast: <span className="stat--ad">{w.damage.cast.base} / {w.damage.cast.base + w.damage.cast.growth} / {w.damage.cast.base + w.damage.cast.growth * 2} / {w.damage.cast.base + w.damage.cast.growth * 3} (+50% bonus AD) Physical damage</span>,
+            cast: <span className="stat--ad">{w.damage.cast.base} / {w.damage.cast.base + w.damage.cast.growth} / {w.damage.cast.base + w.damage.cast.growth * 2} / {w.damage.cast.base + w.damage.cast.growth * 3} (+45% bonus AD) Physical damage</span>,
             recast: <span className="stat--ad">{w.damage.recast.base} / {w.damage.recast.base + w.damage.recast.growth} / {w.damage.recast.base + w.damage.recast.growth * 2} / {w.damage.recast.base + w.damage.recast.growth * 3} (+90% bonus AD) Physical damage</span>,
           },
           slow: <span className="stat--moveSpeed">Slowing them for {w.slow.base}% / {w.slow.base + w.slow.growth}% / {w.slow.base + w.slow.growth * 2}% / {w.slow.base + w.slow.growth * 3}%  for 1 second</span>

@@ -137,7 +137,7 @@ export default function pyke({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-           Dashes forward, leaving behind a phantom. After 1 second, the phantom returns to Pyke, dealing <span className="stat--ad">120 / 175 / 230 / 285 (+100% bonus AD) physical damage </span> to enemy champions and stunning for <b>1.5 (+1.5% flat armor pen)</b>  seconds.
+           Dashes forward, leaving behind a phantom. After 1 second, the phantom returns to Pyke, dealing <span className="stat--ad">120 / 175 / 230 / 285 (+100% bonus AD) physical damage </span> to enemy champions and stunning for <span className="stat--moveSpeed">{(1.25 + atk.flatArmPen/100).toFixed(2)}</span> (1.25 +1% flat armor pen)  seconds.
           </p>
 
           <p>

@@ -25,8 +25,8 @@ const useRuneFormulas = (atk, bonus, mod, currentLevel, runesEffects, turretArmo
       },
 
       trueDamage: {
-        base: 5,
-        growth: Number(currentLevel),
+        base: 8,
+        growth: 16/14 * (currentLevel - 1),
       }
     };
 

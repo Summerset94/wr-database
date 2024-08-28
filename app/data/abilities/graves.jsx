@@ -90,9 +90,9 @@ export default function graves({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
-            {' '}{(13*mod.atkcdr).toFixed(1)} / 
-            {' '}{(11*mod.atkcdr).toFixed(1)} / 
-            {' '}{(9*mod.atkcdr).toFixed(1)} / 
+            {' '}{(11.5*mod.atkcdr).toFixed(1)} / 
+            {' '}{(10*mod.atkcdr).toFixed(1)} / 
+            {' '}{(8.5*mod.atkcdr).toFixed(1)} / 
             {' '}{(7*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
@@ -108,17 +108,17 @@ export default function graves({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((45)+(bonus.attack * 80 / 100)))} / 
-            {' '}{Math.round(((65)+(bonus.attack * 80 / 100)))} / 
-            {' '}{Math.round(((85)+(bonus.attack * 80 / 100)))} / 
-            {' '}{Math.round(((105)+(bonus.attack * 80 / 100)))}
+            {' '}{Math.round(((70)+(bonus.attack * 80 / 100)))} / 
+            {' '}{Math.round(((90)+(bonus.attack * 80 / 100)))} / 
+            {' '}{Math.round(((110)+(bonus.attack * 80 / 100)))} / 
+            {' '}{Math.round(((130)+(bonus.attack * 80 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((45)+(bonus.attack * 80 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((65)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((85)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((105)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((70)+(bonus.attack * 80 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((90)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((110)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((130)+(bonus.attack * 80 / 100))* (1 - mod.defPhysRed))}          
           </p>
 
           <h5 className="stat--ad">
@@ -140,9 +140,15 @@ export default function graves({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-            Fires a powder round that deals <span className="stat--ad">45 / 65 / 85 / 105 (+80% bonus AD) physical damage</span> and then detonates after 1 second to deal an additional <span className="stat--ad">80 / 130 / 180 / 230 (+80% / 110% / 140% / 170% bonus AD) physical damage</span>. <br />
+            Fires a powder round that deals <span className="stat--ad">70/90/110/130 (+80% bonus AD) physical damage</span> and then detonates after 1 second to deal an additional <span className="stat--ad">80 / 130 / 180 / 230 (+80% / 110% / 140% / 170% bonus AD) physical damage</span>.
+          </p>
 
-            Detonates in 0.25 seconds if the round hits terrain, Deals 90% damage against monsters.
+          <p>
+            Detonates in 0.25 seconds if the round hits terrain.
+          </p>
+
+          <p>
+            Deals 120% damage against monsters. 
           </p>
         </div>
     },
@@ -218,8 +224,11 @@ export default function graves({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
     
           <p>
-          Dashes a fixed length in a target direction, reloading one shell and granting <b>True Grit</b> for 4 seconds. True Grit grants <span className="stat--armor">6 / 10 / 14 / 18 bonus armor</span>, stacks up to 8 times, and refreshes when damaging non-minions. <br />
-          Dashing towards an enemy champion grants 2 stacks of True Grit. Each bullet hit reduces Quickdraw's cooldown by 0.5 seconds.
+          Dashes a fixed length in a target direction, reloading one shell and granting <b>True Grit</b> for 4 seconds. True Grit grants <span className="stat--armor">8/14/20/26 bonus armor</span>, stacks up to 6 times, and refreshes when damaging non-minions.          
+          </p>
+
+          <p>
+            Dashing towards an enemy champion grants 2 stacks of True Grit. Each bullet hit reduces Quickdraw's cooldown by 0.5 seconds.
           </p>
         </div>
     },

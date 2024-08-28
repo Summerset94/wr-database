@@ -11,10 +11,10 @@ export default function lucian({currentLevel, mod, bonus, atk, def, champ}) {
         passive.modifier = 50;
         break;
       case currentLevel >= 6 && currentLevel  < 11:
-        passive.modifier = 55;
+        passive.modifier = 57.5;
         break;
       case currentLevel >= 11:
-        passive.modifier = 60;
+        passive.modifier = 65;
         break;
       default:
         passive.modifier = 50;
@@ -46,7 +46,7 @@ export default function lucian({currentLevel, mod, bonus, atk, def, champ}) {
           After using an Ability, Lucian's next attack within 3.5 seconds will fire two shots.
           </p>
           <p>
-          The second shot deals <abbr title="at level 1 / 6 /11" className="stat--ad">50% / 55% / 60% physical damage</abbr>, increased to <span className="stat--ad">100%</span>  against minions. The second shot is a separate Attack that deals on-hit effects and can <span className="stat--critChance">critical strike</span>.
+          The second shot deals <span className="stat--ad">50% / 57.5% / 65% physical damage</span> (at level 1 / 6 /11), increased to <span className="stat--ad">100%</span>  against minions. The second shot is a separate Attack that deals on-hit effects and can <span className="stat--critChance">critical strike</span>.
           </p>
         </div>
     },

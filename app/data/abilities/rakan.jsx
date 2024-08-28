@@ -89,10 +89,10 @@ export default function rakan({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
-            {' '}{(18*mod.atkcdr).toFixed(1)} / 
-            {' '}{(17*mod.atkcdr).toFixed(1)} / 
             {' '}{(16*mod.atkcdr).toFixed(1)} / 
-            {' '}{(15*mod.atkcdr).toFixed(1)} 
+            {' '}{(14.5*mod.atkcdr).toFixed(1)} / 
+            {' '}{(13*mod.atkcdr).toFixed(1)} / 
+            {' '}{(11.5*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
@@ -134,10 +134,10 @@ export default function rakan({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
-            {' '}{(20*mod.atkcdr).toFixed(1)} / 
             {' '}{(18*mod.atkcdr).toFixed(1)} / 
             {' '}{(16*mod.atkcdr).toFixed(1)} / 
-            {' '}{(14*mod.atkcdr).toFixed(1)} 
+            {' '}{(14*mod.atkcdr).toFixed(1)} / 
+            {' '}{(12*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
@@ -152,14 +152,14 @@ export default function rakan({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--hp">
-                {Math.round(((35)+(atk.ap * 65 / 100)))} / 
-            {' '}{Math.round(((70)+(atk.ap * 65 / 100)))} / 
-            {' '}{Math.round(((105)+(atk.ap * 65 / 100)))} / 
+                {Math.round(((50)+(atk.ap * 65 / 100)))} / 
+            {' '}{Math.round(((80)+(atk.ap * 65 / 100)))} / 
+            {' '}{Math.round(((110)+(atk.ap * 65 / 100)))} / 
             {' '}{Math.round(((140)+(atk.ap * 65 / 100)))}
           </p>
     
           <p>
-            Flies to an allied champion, granting them a shield that absorbs <span className="stat--hp">35 / 70 / 105 / 140 (<span className="stat--ap">+65% AP</span>) damage</span> for 3s. 
+            Flies to an allied champion, granting them a shield that absorbs <span className="stat--hp">50 / 80 / 110 / 140 (<span className="stat--ap">+65% AP</span>) damage</span> for 3s. 
           </p>
 
           <p>

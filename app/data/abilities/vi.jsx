@@ -9,11 +9,11 @@ export default function vi({currentLevel, mod, bonus, atk, def, champ, updateAbi
           </h4>
 
           <h5 className="stat--ad">
-            Damage agains current target: {Math.round((def.health * (4 + 0.2* currentLevel + (bonus.attack * 0.03)/100))/100 * (1 - mod.defPhysRed))}
+            Damage agains current target: {Math.round((def.health * (4 + 0.3* currentLevel + (bonus.attack * 0.03)/100))/100 * (1 - mod.defPhysRed))}
           </h5>
     
           <p>
-            Every 3rd attack on the same enemy deals <abbr title="4.2% + 0.2% per level + 0.03% bonus AD" className="stat--ad">{Math.round((4 + 0.2* currentLevel + (bonus.attack * 0.03)/100))}% </abbr> of their <span className="stat--hp">max Health</span> as <span className="stat--ad">bonus physical damage</span>, <span className="stat--armor">reduces their Armor by 20%</span> and grants Vi <abbr title="27% + 2% per level" className="stat--as">{(champ.asBase * (25 + currentLevel*2)/100).toFixed(3)} Attack Speed</abbr> for 4 seconds.
+            Every 3rd attack on the same enemy deals <abbr title="4.2% + 0.3% per level + 0.03% bonus AD" className="stat--ad">{Math.round((4 + 0.3* currentLevel + (bonus.attack * 0.03)/100))}% </abbr> of their <span className="stat--hp">max Health</span> as <span className="stat--ad">bonus physical damage</span>, <span className="stat--armor">reduces their Armor by 20%</span> and grants Vi <abbr title="27% + 2% per level" className="stat--as">{(champ.asBase * (25 + currentLevel*2)/100).toFixed(3)} Attack Speed</abbr> for 4 seconds.
           </p>
 
           <p>
@@ -31,10 +31,10 @@ export default function vi({currentLevel, mod, bonus, atk, def, champ, updateAbi
     
           <h5>
           Cooldown: 
-            {' '}{(9.5*mod.atkcdr).toFixed(1)} / 
-            {' '}{(8.5*mod.atkcdr).toFixed(1)} / 
-            {' '}{(7.5*mod.atkcdr).toFixed(1)} / 
-            {' '}{(6.5*mod.atkcdr).toFixed(1)} 
+            {' '}{(9*mod.atkcdr).toFixed(1)} / 
+            {' '}{(8*mod.atkcdr).toFixed(1)} / 
+            {' '}{(7*mod.atkcdr).toFixed(1)} / 
+            {' '}{(6*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
@@ -102,10 +102,10 @@ export default function vi({currentLevel, mod, bonus, atk, def, champ, updateAbi
     
           <h5>
           Cooldown: 
-            {' '}{(12*mod.atkcdr).toFixed(1)} / 
-            {' '}{(11*mod.atkcdr).toFixed(1)} / 
             {' '}{(10*mod.atkcdr).toFixed(1)} / 
-            {' '}{(9*mod.atkcdr).toFixed(1)} 
+            {' '}{(9*mod.atkcdr).toFixed(1)} / 
+            {' '}{(8*mod.atkcdr).toFixed(1)} / 
+            {' '}{(7*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
@@ -173,22 +173,22 @@ export default function vi({currentLevel, mod, bonus, atk, def, champ, updateAbi
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((10)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((35)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((60)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((85)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100)))}
+            {' '}{Math.round(((20)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((45)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((70)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((95)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((10)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((35)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((60)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((85)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((20)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((45)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((70)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((95)+(atk.attack * 15 / 100)+(atk.ap * 70 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <br />
           <p>
-            Empowers Vi's next attack to deal <span className="stat--ad">10 / 35 / 60 / 85 (+15% AD) (<span className="stat--ap">+70% AP</span>) bonus physical damage</span> to the target and enemies behind it.
+            Empowers Vi's next attack to deal <span className="stat--ad">20/45/70/95 (+15% AD) (<span className="stat--ap">+70% AP</span>) bonus physical damage</span> to the target and enemies behind it.
           </p>
 
           <p>

@@ -62,21 +62,21 @@ export default function jax({currentLevel, mod, bonus, atk, def, champ, updateAb
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((70)+(bonus.attack * 100 / 100)+(atk.ap * 60 / 100)))} / 
-            {' '}{Math.round(((125)+(bonus.attack * 100 / 100)+(atk.ap * 60 / 100)))} / 
-            {' '}{Math.round(((180)+(bonus.attack * 100 / 100)+(atk.ap * 60 / 100)))} / 
-            {' '}{Math.round(((235)+(bonus.attack * 100 / 100)+(atk.ap * 60 / 100)))}
+            {' '}{Math.round(((70)+(bonus.attack * 100 / 100)))} / 
+            {' '}{Math.round(((125)+(bonus.attack * 100 / 100)))} / 
+            {' '}{Math.round(((180)+(bonus.attack * 100 / 100)))} / 
+            {' '}{Math.round(((235)+(bonus.attack * 100 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((70)+(bonus.attack * 100 / 100)+(atk.ap * 60 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((125)+(bonus.attack * 100 / 100)+(atk.ap * 60 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((180)+(bonus.attack * 100 / 100)+(atk.ap * 60 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((235)+(bonus.attack * 100 / 100)+(atk.ap * 60 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((70)+(bonus.attack * 100 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((125)+(bonus.attack * 100 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((180)+(bonus.attack * 100 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((235)+(bonus.attack * 100 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
-          Leaps to a target unit, dealing <span className="stat--ad">70 / 125 / 180 / 235 (+100% bonus AD <span className="stat--ap">+60% AP</span>) physical damage</span>  if it is an enemy.
+          Leaps to a target unit, dealing <span className="stat--ad">70 / 125 / 180 / 235 (+100% bonus AD) physical damage</span>  if it is an enemy.
           </p>
         </div>
     },
@@ -124,6 +124,10 @@ export default function jax({currentLevel, mod, bonus, atk, def, champ, updateAb
           <p>
           Empowers the next attack or Leap Strike to deal an additional <span className="stat--ap">55 / 100 / 145 / 190 (+60% AP) magic damage</span>.
           </p>
+
+          <p>
+            Damage to monsters: 125%
+          </p>
         </div>
     },
 
@@ -149,22 +153,22 @@ export default function jax({currentLevel, mod, bonus, atk, def, champ, updateAb
             {' '}{90} 
           </h5>
 
-          <h5 className="stat--ad">
+          <h5 className="stat--ap">
            Base Damage:
           </h5>
 
-          <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((55)+(bonus.attack * 50 / 100)))} / 
-            {' '}{Math.round(((90)+(bonus.attack * 50 / 100)))} / 
-            {' '}{Math.round(((125)+(bonus.attack * 50 / 100)))} / 
-            {' '}{Math.round(((160)+(bonus.attack * 50 / 100)))}
+          <p className="stat--ap">Pre-mitigation: 
+            {' '}{Math.round(((35)+(def.health * 3/100 | 0) + (atk.ap*70/100)))} / 
+            {' '}{Math.round(((75)+(def.health * 3/100 | 0) + (atk.ap*70/100)))} / 
+            {' '}{Math.round(((115)+(def.health * 3/100 | 0) + (atk.ap*70/100)))} / 
+            {' '}{Math.round(((155)+(def.health * 3/100 | 0) + (atk.ap*70/100)))}
           </p>
 
-          <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((55)+(bonus.attack * 50 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((90)+(bonus.attack * 50 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((125)+(bonus.attack * 50 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((160)+(bonus.attack * 50 / 100))* (1 - mod.defPhysRed))}          
+          <p className="stat--ap">Post-mitigation: 
+            {' '}{Math.round(((35)+(def.health * 3/100 | 0) + (atk.ap*70/100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((75)+(def.health * 3/100 | 0) + (atk.ap*70/100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((115)+(def.health * 3/100 | 0) + (atk.ap*70/100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((155)+(def.health * 3/100 | 0) + (atk.ap*70/100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
@@ -172,7 +176,7 @@ export default function jax({currentLevel, mod, bonus, atk, def, champ, updateAb
           </p>
 
           <p>
-           After this duration, nearby enemies are stunned for 1 second and take <span className="stat--ad">55 / 90 / 125 / 160 (+50% bonus AD) physical damage</span>. 
+           After this duration, nearby enemies are stunned for 1 second and take <span className="stat--ap">35 / 75 / 115 / 155  <span className="stat--hp">(+ 3% target’s max Health)</span> (+70% AP) magic damage</span>. 
           </p>
            <p>
             Each attack dodged increases this damage by 20% (up to 100%).
@@ -209,36 +213,52 @@ export default function jax({currentLevel, mod, bonus, atk, def, champ, updateAb
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((100)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((140)+(atk.ap * 70 / 100)))} / 
-            {' '}{Math.round(((180)+(atk.ap * 70 / 100)))}
+            {' '}{Math.round(((60)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((110)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((160)+(atk.ap * 70 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((100)+(atk.ap * 70 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((140)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((180)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))}
+            {' '}{Math.round(((60)+(atk.ap * 70 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((110)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((160)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))}
           </p>
 
-          <h5 className="stat--armor">Defence bonus:</h5>
+          <h5 className="stat--ap">
+            Activation Damage:
+          </h5>
+
+          <p className="stat--ap">Pre-mitigation: 
+            {' '}{Math.round(((150)+(atk.ap * 100 / 100)))} / 
+            {' '}{Math.round(((200)+(atk.ap * 100 / 100)))} / 
+            {' '}{Math.round(((250)+(atk.ap * 100 / 100)))}
+          </p>
+
+          <p className="stat--ap">Post-mitigation: 
+            {' '}{Math.round(((150)+(atk.ap * 100 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((200)+(atk.ap * 100 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((250)+(atk.ap * 100 / 100))* (1 - mod.defMagRed))}
+          </p>
+
+          <h5 className="stat--armor">Defence bonus (base + bonus per champion hit):</h5>
           <p><span className="stat--armor">Armor:
-            {' '}{Math.round((30)+(bonus.attack * 50 / 100))} /
-            {' '}{Math.round((50)+(bonus.attack * 50 / 100))} /
-            {' '}{Math.round((70)+(bonus.attack * 50 / 100))}
+            {' '}{Math.round((30)+(bonus.attack * 40 / 100))} + {Math.round(10 + (bonus.attack * 10 / 100))} /
+            {' '}{Math.round((50)+(bonus.attack * 40 / 100))} + {Math.round(20 + (bonus.attack * 10 / 100))} /
+            {' '}{Math.round((70)+(bonus.attack * 40 / 100))} + {Math.round(25 + (bonus.attack * 10 / 100))}
             </span> <br />
             <span className="stat--magres"> Magic Resistance:
-            {' '}{Math.round((30)+(atk.ap * 20 / 100))} /
-            {' '}{Math.round((50)+(atk.ap * 20 / 100))} /
-            {' '}{Math.round((70)+(atk.ap * 20 / 100))}
+            {' '}{Math.round(((30)+(bonus.attack * 40 / 100))*0.6)} + {Math.round((10 + (bonus.attack * 10 / 100))*0.6)} /
+            {' '}{Math.round(((50)+(bonus.attack * 40 / 100))*0.6)} + {Math.round((20 + (bonus.attack * 10 / 100))*0.6)} /
+            {' '}{Math.round(((70)+(bonus.attack * 40 / 100))*0.6)} + {Math.round((25 + (bonus.attack * 10 / 100))*0.6)}
             </span> 
           </p>
     
           <p>
-          <b>PASSIVE:</b> Every thid consecutive attack deals an additional <span className="stat--ap">100 / 140 / 180 (+70% AP) magic damage</span>.
+          <b>PASSIVE:</b> Every thid consecutive attack within 3 seconds deals an additional <span className="stat--ap">60 / 110 / 160 (+70% AP) magic damage</span>.
           </p>
 
           <p>
-            <b>ACTIVE:</b> Jax stops holding back, gaining <span className="stat--armor">30 / 50 / 70 <span className="stat--ad">(+50% bonus AD)</span> Armor</span>  and <span className="stat--magres">30 / 50 / 70 <span className="stat--ap">(+20% AP)</span>  Magic Resist</span>  for 8 seconds.
+          <b>ACTIVE:</b> Swings his stave, dealing <span className="stat--ap">150 / 250 / 350 (+100% AP) magic damage</span> to nearby enemies. When hitting only one enemy champion, gains <span className="stat--armor">30 / 50 / 70 <span className="stat--ad">(+ 40% bonus AD)</span> Armor</span>  and <span className="stat--magres">Magic Resist equal to 60% of that Armor</span>. If he hits more than one champion, he gains bonus <span className="stat--armor">15 / 20 / 25 <span className="stat--ad">(+ 10% bonus AD)</span> Armor</span>  and <span className="stat--magres">Magic Resist equal to 60% of that Armor</span> for 8s per additional champion hit. During this time, his size increases by 10%, and he deals additional magic damage with every second attack.
           </p>
 
           <p>

@@ -9,11 +9,11 @@ export default function olaf({currentLevel, mod, bonus, atk, def, champ}) {
           </h4>
     
           <p>
-          Olaf gains <abbr title="0.9 - 1.4% based on level" className="stat--as">{(champ.asBase * (0.9 + (0.5/14*(currentLevel - 1)))/100).toFixed(3)} Attack Speed</abbr> and <abbr title="0.1-0.4% based on level" className="stat--vamp">{(0.1 + (0.3/14*(currentLevel - 1))).toFixed(2)}% Physical Vamp</abbr> per <span className="stat--hp">1% of missing Health.</span>
+          Olaf gains <abbr title="1 - 1.6% based on level" className="stat--as">{(champ.asBase * (1 + (0.57/14*(currentLevel - 1)))/100).toFixed(3)} Attack Speed</abbr> and <abbr title="0.2-0.43% based on level" className="stat--vamp">{(0.2 + (0.0164/14*(currentLevel - 1))).toFixed(2)}% Physical Vamp</abbr> per <span className="stat--hp">1% of missing Health.</span>
           </p>
 
           <p>
-            Capped with: <abbr title="60 - 100% based on level" className="stat--as">{(champ.asBase * (60 + (40/14*(currentLevel-1)))/100).toFixed(3)} Attack Speed</abbr> and <abbr title="10-25% based on level" className="stat--vamp">{(10 + (15/14*(currentLevel - 1))).toFixed(2)}% Physical Vamp</abbr> at <span className="stat--hp">70% of missing Health.</span>
+            Capped with: <abbr title="70 - 110% based on level" className="stat--as">{(champ.asBase * (70 + (40/14*(currentLevel-1)))/100).toFixed(3)} Attack Speed</abbr> and <abbr title="15-30% based on level" className="stat--vamp">{(15 + (15/14*(currentLevel - 1))).toFixed(2)}% Physical Vamp</abbr> at <span className="stat--hp">70% of missing Health.</span>
           </p>
         </div>
     },
@@ -71,7 +71,7 @@ export default function olaf({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
     
           <p>
-            Olaf gains <abbr title="35 / 50 / 65 / 80%" className="stat--as">{(champ.asBase*35/100).toFixed(3)} / {(champ.asBase*50/100).toFixed(3)} / {(champ.asBase*65/100).toFixed(3)} / {(champ.asBase*80/100).toFixed(3)} Attack Speed</abbr> for 4 seconds and grants himself a shield that absorbs <span className="stat--hp">30 / 60 / 90 / 120 (+ 17% missing Health)</span> for 2.5 seconds with an amount that is capped at <span className="stat--health">70% of missing health</span>.
+            Olaf gains <abbr title="35 / 50 / 65 / 80%" className="stat--as">{(champ.asBase*35/100).toFixed(3)} / {(champ.asBase*50/100).toFixed(3)} / {(champ.asBase*65/100).toFixed(3)} / {(champ.asBase*80/100).toFixed(3)} Attack Speed</abbr> for 4 seconds and grants himself a shield that absorbs <span className="stat--hp">35 / 70 / 105 / 140 (+ 15% missing Health)</span> for 2.5 seconds with an amount that is capped at <span className="stat--health">70% of missing health</span>.
           </p>
         </div>
     },
@@ -133,7 +133,7 @@ export default function olaf({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
     
           <p>
-           <b>Passive:</b> Gain <b>10 / 20 / 30</b> <span className="stat--armor">Armor</span> and <span className="stat--magres">Magic Resist</span>.
+           <b>Passive:</b> Gain <b>25 / 35 / 45</b> <span className="stat--armor">Armor</span> and <span className="stat--magres">Magic Resist</span>.
           </p>
 
           <p>

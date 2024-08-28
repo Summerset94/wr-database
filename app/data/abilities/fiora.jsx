@@ -8,12 +8,12 @@ export default function fiora({currentLevel, mod, bonus, atk, def, champ}) {
           </h4>
 
           <h5 className="stat--vamp">Damage:</h5>
-          <p className="stat--ad">{Math.round(def.health * ((3.5 + (bonus.attack * 0.055))/100))}</p>
+          <p className="stat--ad">{Math.round(def.health * ((4 + (bonus.attack * 0.06))/100))}</p>
 
     
           <p>
             Revelas Vitals on nearby enemy champions. <br />
-            Striking a Vital deals <span className="stat--vamp">3.5% <span className="stat--ad">(+0.055% bonus AD)</span>  of the target's max Health as true damage</span>, heals Fiora for <abbr title="45-115 based on level" className="stat--hp">{40 + (5*currentLevel)} health</abbr>, and grants her <abbr title="Based on ULT ability's rank" className="stat--moveSpeed"></abbr> Movement Speed (based on Grand Challenge's rank), decaying over 1.75 seconds. <br />
+            Striking a Vital deals <span className="stat--vamp">4% <span className="stat--ad">(+0.06% bonus AD)</span>  of the target's max Health as true damage</span>, heals Fiora for <abbr title="45-115 based on level" className="stat--hp">{40 + (5*currentLevel)} health</abbr>, and grants her <abbr title="Based on ULT ability's rank" className="stat--moveSpeed"></abbr> Movement Speed (based on Grand Challenge's rank), decaying over 1.75 seconds. <br />
             New Vitals are revealed after striking one, or after 15 seconds.
           </p>
         </div>
@@ -46,21 +46,21 @@ export default function fiora({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((85)+(bonus.attack * 100 / 100)))} / 
-            {' '}{Math.round(((95)+(bonus.attack * 105 / 100)))} / 
-            {' '}{Math.round(((105)+(bonus.attack * 110 / 100)))} / 
-            {' '}{Math.round(((115)+(bonus.attack * 115 / 100)))}
+            {' '}{Math.round(((85)+(bonus.attack * 110 / 100)))} / 
+            {' '}{Math.round(((95)+(bonus.attack * 112 / 100)))} / 
+            {' '}{Math.round(((105)+(bonus.attack * 120 / 100)))} / 
+            {' '}{Math.round(((115)+(bonus.attack * 125 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((85)+(bonus.attack * 100 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((95)+(bonus.attack * 105 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((105)+(bonus.attack * 11 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((115)+(bonus.attack * 115 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((85)+(bonus.attack * 110 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((95)+(bonus.attack * 115 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((105)+(bonus.attack * 120 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((115)+(bonus.attack * 125 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
-          Lunges and stabs a neaby enemy, dealing <span className="stat--ad"> 85 / 95 / 105 / 115 (+100% / 105% / 110% / 115% bonus AD) physical damage </span>in an area. Hitting an enemy refunds <b>50%</b> of the cooldown.
+          Lunges and stabs a neaby enemy, dealing <span className="stat--ad"> 85 / 95 / 105 / 115 (+110/115/120/125% bonus AD) physical damage </span>in an area. Hitting an enemy refunds <b>50%</b> of the cooldown.
           <br />
           Lunge prioritizes Vitals and enemies it will kill. Applies <span className="stat--ad">on-hit effects</span> to the primary target.
           </p>
@@ -131,10 +131,10 @@ export default function fiora({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
             <h5 className="stat--mana">
           Cost: 
+            {' '}{30} / 
+            {' '}{35} / 
             {' '}{40} / 
-            {' '}{45} / 
-            {' '}{50} / 
-            {' '}{55} 
+            {' '}{45} 
           </h5>
 
           <h5 className="stat--ad">

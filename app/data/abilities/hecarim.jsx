@@ -59,8 +59,8 @@ export default function hecarim({currentLevel, mod, bonus, atk, def, champ}) {
            <br />
            <b>CAST:</b> Hecarim swings his haleberd, dealing up to <span className="stat--ad">5 / 15 / 25 / 35 (+110% AD) physical damage </span>based on charge time. <br />
 
-           If Hecarim hits an enemy champion or a large monster with a full charge, he <span className="stat--critChance">critically strikes them for 120% damage</span>  and gains a <span className="stat--moveSpeed">40% Movement Speed</span> bonus that decays over 3 seconds. <br />
-           This also empowers Hecarim's next Rampage within the next 8 seconds to deal <span className="stat--ad">125% damage</span>.
+           If Hecarim hits an enemy champion or a large monster with a full charge, he <span className="stat--critChance">critically strikes them for 120% damage</span>  and gains a <span className="stat--moveSpeed">30% Movement Speed</span> bonus that decays over 3 seconds. <br />
+           This also empowers Hecarim's next Rampage within the next 8 seconds to deal <span className="stat--ad">120% damage</span>.
           </p>
         </div>
     },
@@ -162,7 +162,7 @@ export default function hecarim({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-            Gains <span className="stat--moveSpeed">25% ({Math.round(atk.moveSpeed * 25 / 100)}) Movement Speed, wich increases to 65% ({Math.round(atk.moveSpeed * 65 / 100)})</span>  over 4 seconds. <br />
+            Gains <span className="stat--moveSpeed">25% ({Math.round(atk.moveSpeed * 25 / 100)}) Movement Speed, wich increases to 55% ({Math.round(atk.moveSpeed * 55 / 100)})</span>  over 4 seconds. <br />
 
             Hecarim dashes toward the enemy if his next attack is withing 5 seconds, dealing <span className="stat--ad">5 / 10 / 15 / 20 (+30% bonus AD) physical damage</span> and kocking them back. <br />
 

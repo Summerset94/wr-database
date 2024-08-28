@@ -163,7 +163,7 @@ const itemEffectsMemo = useItemPassives(itemEffects, baseStats, itemBonus, champ
 const bonusStats = useCombinedBonusStats(itemBonus, championModifier, currentLevel, itemEffectsMemo, runesEffects, champ, abilitiesBonus, baseStats);
 
 // total stats
-const totalMemo = useTotalStats(baseStats, bonusStats, champ, championModifier, runesEffects, itemEffectsMemo);
+const totalMemo = useTotalStats(baseStats, bonusStats, champ, championModifier, runesEffects, itemEffectsMemo, currentLevel);
 
 // state setters for bonuses
 const updateRunesEffects = (updatedValues) => {

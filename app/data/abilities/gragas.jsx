@@ -13,7 +13,7 @@ export default function gragas({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>         
     
           <p>
-           Casting an ability restores <abbr title="7% of Max Health" className="stat--hp">{Math.round(atk.health * 7 / 100)}</abbr> Health.
+           Casting an ability restores <abbr title="8.5% of Max Health" className="stat--hp">{Math.round(atk.health * 8.5 / 100)}</abbr> Health.
           </p>
         </div>
     },
@@ -89,9 +89,9 @@ export default function gragas({currentLevel, mod, bonus, atk, def, champ}) {
 
           <h5 className="stat--armor">Damage reduction:</h5>
           <p className="stat--armor:">
-          {' '}{Math.round((8) + (atk.ap * 4 / 10000))}% /
           {' '}{Math.round((11) + (atk.ap * 4 / 10000))}% /
-          {' '}{Math.round((14) + (atk.ap * 4 / 10000))}% /
+          {' '}{Math.round((13) + (atk.ap * 4 / 10000))}% /
+          {' '}{Math.round((15) + (atk.ap * 4 / 10000))}% /
           {' '}{Math.round((17) + (atk.ap * 4 / 10000))}%
           </p>
 
@@ -100,23 +100,23 @@ export default function gragas({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((20)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))} / 
-            {' '}{Math.round(((60)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))} / 
-            {' '}{Math.round(((100)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))} / 
+            {' '}{Math.round(((50)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))} / 
+            {' '}{Math.round(((80)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))} / 
+            {' '}{Math.round(((110)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))} / 
             {' '}{Math.round(((140)+(atk.ap * 90 / 100) + (def.health * 7 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((20)+(atk.ap * 90 / 100) + (def.health * 7 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((60)+(atk.ap * 90 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((100)+(atk.ap * 90 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((50)+(atk.ap * 90 / 100) + (def.health * 7 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((80)+(atk.ap * 90 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((110)+(atk.ap * 90 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))} / 
             {' '}{Math.round(((140)+(atk.ap * 90 / 100) + (def.health * 7 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Reduces damage taken by <span className="stat--armor">8% / 11% / 14% / 17% (<span className="stat--ap">+0.04% AP</span>)</span>  for 2.5 seconds. <br />
+          Reduces damage taken by <span className="stat--armor">11% / 13% / 15% / 17% (<span className="stat--ap">+0.04% AP</span>)</span>  for 2.5 seconds. <br />
 
-        The next attack within 5 seconds after drinking is empowered to splash enemies for bonus <span className="stat--ap">20 / 60 / 100 /140 (+90% AP) <span className="stat--hp">(+7% target's Max Health)</span> magic damage</span>.
+        The next attack within 5 seconds after drinking is empowered to splash enemies for bonus <span className="stat--ap">50 / 80 / 110 /140 (+90% AP) <span className="stat--hp">(+7% target's Max Health)</span> magic damage</span>.
           </p>
         </div>
     },

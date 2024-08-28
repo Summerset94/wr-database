@@ -93,15 +93,15 @@ export default function jarvaniv({currentLevel, mod, bonus, atk, def, champ}) {
             Shield (bonus per enemy):
           </h5>
           <p className="stat--hp">
-            {Math.round((80)+(atk.health * 4/100))} ({Math.round(atk.health * 16 / 1000)}) /
-            {' '}{Math.round((120)+(atk.health * 4/100))} ({Math.round(atk.health * 19 / 1000)}) /
-            {' '}{Math.round((160)+(atk.health * 4/100))} ({Math.round(atk.health * 22 / 1000)}) /
-            {' '}{Math.round((200)+(atk.health * 4/100))} ({Math.round(atk.health * 25 / 1000)})
+            {Math.round((100)+(atk.health * 5/100))} ({Math.round(atk.health * 16 / 1000)}) /
+            {' '}{Math.round((140)+(atk.health * 5/100))} ({Math.round(atk.health * 19 / 1000)}) /
+            {' '}{Math.round((180)+(atk.health * 5/100))} ({Math.round(atk.health * 22 / 1000)}) /
+            {' '}{Math.round((220)+(atk.health * 5/100))} ({Math.round(atk.health * 25 / 1000)})
           </p>
     
           <p>
-          Unleashes a regal aura that slows surrounding enemies by <span className="stat--moveSpeed">20% / 25% / 30% / 35%</span> for 2 seconds; <br />
-          Grants a shiel that absorbs <span className="stat--hp">80 / 120 / 160 / 200 (+ 4% maximum Health ) damage</span>  for 5 seconds. <br />
+          Unleashes a regal aura that slows surrounding enemies by <span className="stat--moveSpeed">30% / 35% / 40% / 45%</span> for 2 seconds; <br />
+          Grants a shiel that absorbs <span className="stat--hp">100 / 140 / 180 / 220 (+ 5% maximum Health ) damage</span>  for 5 seconds. <br />
           Absorbs <span className="stat--hp">(1.6% / 1.9% / 2.2% / 2.5% Maximum Health) more damage</span> for each nearby enemy champion.
 
           </p>
@@ -118,9 +118,9 @@ export default function jarvaniv({currentLevel, mod, bonus, atk, def, champ}) {
           <h5>
           Cooldown: 
             {' '}{(11*mod.atkcdr).toFixed(1)} / 
-            {' '}{(11*mod.atkcdr).toFixed(1)} / 
-            {' '}{(11*mod.atkcdr).toFixed(1)} / 
-            {' '}{(11*mod.atkcdr).toFixed(1)} 
+            {' '}{(10.5*mod.atkcdr).toFixed(1)} / 
+            {' '}{(10*mod.atkcdr).toFixed(1)} / 
+            {' '}{(9.5*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
@@ -155,11 +155,19 @@ export default function jarvaniv({currentLevel, mod, bonus, atk, def, champ}) {
             {' '}{(champ.asBase * 30 / 100).toFixed(3)} /
             {' '}{(champ.asBase * 35 / 100).toFixed(3)}
           </p>
+
+          <h5 className="stat--as">Active Attack Speed:</h5>
+          <p className="stat--as">
+            {(champ.asBase * 30 / 100).toFixed(3)} /
+            {' '}{(champ.asBase * 35 / 100).toFixed(3)} /
+            {' '}{(champ.asBase * 40 / 100).toFixed(3)} /
+            {' '}{(champ.asBase * 45 / 100).toFixed(3)}
+          </p>
     
           <p>
             <b>PASSIVE:</b>  Gains <span className="stat--as">20% / 25% / 30% / 35% Attack Speed</span>. <br />
             <b>ACTIVE:</b> Throws a Demacian Standard that deals <span className="stat--ap">80 / 135 / 190 / 245 (+80% AP) magic damage</span> and remains in place for 8 seconds; <br />
-            Active standard grants nearby ally champions <span className="stat--as">20% / 25% / 30% / 35% Attack Speed</span>. <br />
+            Active standard grants nearby ally champions <span className="stat--as">30/35/40/45% Attack Speed</span>. <br />
             Casting <b>Dragon Strike</b> on Standard will drag Jarcan to Standadrd knocking up any enemy on it's path.
           </p>
         </div>

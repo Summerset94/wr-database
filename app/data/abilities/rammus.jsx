@@ -9,7 +9,7 @@ export default function rammus({currentLevel, mod, bonus, atk, def, champ}) {
           </h4>
     
           <p>
-            While out of combat gain <abbr title="32 + 2 per level" className="stat--moveSpeed">{30 + currentLevel * 2} Movement Speed</abbr> increased to <abbr title="37 + 2 per level" className="stat--moveSpeed">{35 + currentLevel*2}</abbr> during <b>Powerball</b>
+            While out of combat gain <abbr title="32 + 2 per level" className="stat--moveSpeed">{30 + currentLevel * 2} Movement Speed</abbr> increased to <abbr title="60 + 1 per level" className="stat--moveSpeed">{60 + currentLevel}</abbr> during <b>Powerball</b>
           </p>
           
         </div>
@@ -53,7 +53,7 @@ export default function rammus({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-            Enables Rolling Armordillo and accelerates up to <span className="stat--moveSpeed"> +110 / 120 / 130 / 140% bonus Movement Speed</span> over 6 seconds. Colliding with an enemy deals <span className="stat--ap">80 / 110 / 140 / 170 (+100% AP) magic damage</span> in an area, knocking back and <span className="stat--moveSpeed">slowing enemies by 40 / 50 / 60 / 70%</span> for 1 second.
+            Enables Rolling Armordillo and accelerates up to <span className="stat--moveSpeed"> +120% +5% per level bonus Movement Speed</span> over 6 seconds. Colliding with an enemy deals <span className="stat--ap">80 / 110 / 140 / 170 (+100% AP) magic damage</span> in an area, knocking back and <span className="stat--moveSpeed">slowing enemies by 40 / 50 / 60 / 70%</span> for 1 second.
           </p>
 
           <p>

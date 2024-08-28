@@ -12,7 +12,7 @@ export default function shyvana({currentLevel, mod, bonus, atk, def, champ}) {
             Slaying a Large Monster grants 8 stacks of Draconic Bloodline.
           </p>
           <p>
-            Champion takedowns or slaying the Rift Herald or Baron Nashor grants 12 stacks of Draconic Bloodline.
+            Champion takedowns or slaying the Rift Herald or Baron Nashor grants 15 stacks of Draconic Bloodline.
           </p>
           <p>
             Slaying a Dragon grants 35 Draconic Bloodline.
@@ -90,21 +90,21 @@ export default function shyvana({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((35)+(bonus.attack * 30 / 100)))} / 
-            {' '}{Math.round(((50)+(bonus.attack * 30 / 100)))} / 
-            {' '}{Math.round(((65)+(bonus.attack * 30 / 100)))} / 
-            {' '}{Math.round(((80)+(bonus.attack * 30 / 100)))}
+            {' '}{Math.round(((40)+(bonus.attack * 30 / 100)))} / 
+            {' '}{Math.round(((55)+(bonus.attack * 30 / 100)))} / 
+            {' '}{Math.round(((70)+(bonus.attack * 30 / 100)))} / 
+            {' '}{Math.round(((85)+(bonus.attack * 30 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((35)+(bonus.attack * 30 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((50)+(bonus.attack * 30 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((65)+(bonus.attack * 30 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((80)+(bonus.attack * 30 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((40)+(bonus.attack * 30 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((55)+(bonus.attack * 30 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((70)+(bonus.attack * 30 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((85)+(bonus.attack * 30 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-            Deals <span className="stat--ap">35 / 50 / 65 / 80 (<span className="stat--ad">+30% bonus AD</span>) magic damage</span>  per second to nearby enemies and hastes Shyvana <span className="stat--moveSpeed">by 30 / 35 / 40 / 45%, decaying over 3 seconds</span>. Attacking extends the duration of Burnout by 4 seconds.
+            Deals <span className="stat--ap">40 / 55 / 70 / 85 (<span className="stat--ad">+30% bonus AD</span>) magic damage</span>  per second to nearby enemies and hastes Shyvana <span className="stat--moveSpeed">by 30 / 35 / 40 / 45%, decaying over 3 seconds</span>. Attacking extends the duration of Burnout by 4 seconds.
           </p>
 
           <p>

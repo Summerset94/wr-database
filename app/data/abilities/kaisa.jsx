@@ -144,13 +144,31 @@ export default function kaisa({currentLevel, mod, bonus, atk, def, champ}) {
             {' '}{30} / 
             {' '}{30} 
           </h5>
+
+          <h5 className="stat--moveSpeed">Charging Movement Speed:</h5>
+
+          <p className="stat--moveSpeed">
+          {' '}{Math.round((atk.moveSpeed * 50 / 100)+(champ.asBase * 80 / 100))} /
+          {' '}{Math.round((atk.moveSpeed * 55 / 100)+(champ.asBase * 80 / 100))} /
+          {' '}{Math.round((atk.moveSpeed * 60 / 100)+(champ.asBase * 80 / 100))} /
+          {' '}{Math.round((atk.moveSpeed * 65 / 100)+(champ.asBase * 80 / 100))}
+          </p>
+          
+          <h5 className="stat--as">Bonus Attack Speed</h5>
+
+          <p className="stat--as">
+          {' '}{(champ.asBase * 40 / 100).toFixed(3)} /
+          {' '}{(champ.asBase * 50 / 100).toFixed(3)} / 
+          {' '}{(champ.asBase * 60 / 100).toFixed(3)} / 
+          {' '}{(champ.asBase * 70 / 100).toFixed(3)}
+          </p>
     
           <p>
-            Charges up for 1 second, gaining <abbr title='60% / 65% / 70% / 75% (+100% Attack Speed)' className="stat--moveSpeed">{Math.round((atk.moveSpeed * 60 / 100)+(bonus.as / champ.asBase / 100))} / {Math.round((atk.moveSpeed * 65 / 100)+(bonus.as / champ.asBase / 100))} / {Math.round((atk.moveSpeed * 70 / 100)+(bonus.as / champ.asBase / 100))} / {Math.round((atk.moveSpeed * 75 / 100)+(bonus.as / champ.asBase / 100))} Movement Speed</abbr>.
+            Charges up for 1 second, gaining <span className="stat--moveSpeed"> 50/55/60/65% <span className="stat--as">(+80% Attack Speed)</span> Movement Speed</span>.
           </p>
 
           <p>
-            For 4 seconds after charging gain <abbr title="45% / 55% / 65% / 75%" className="stat--as">{(champ.asBase * 45 / 100).toFixed(3)} / {(champ.asBase * 55 / 100).toFixed(3)} / {(champ.asBase * 65 / 100).toFixed(3)} / {(champ.asBase * 75 / 100).toFixed(3)} Attack speed</abbr>.
+            For 4 seconds after charging gain <span className="stat--as"> 40% / 50% / 60% / 70% Attack speed</span>.
           </p>
 
           <p>

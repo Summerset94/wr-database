@@ -106,21 +106,21 @@ export default function kennen({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((35)+(atk.ap * 30 / 100)+(bonus.attack * 70 / 100)))} / 
-            {' '}{Math.round(((45)+(atk.ap * 30 / 100)+(bonus.attack * 80 / 100)))} / 
-            {' '}{Math.round(((55)+(atk.ap * 30 / 100)+(bonus.attack * 90 / 100)))} / 
-            {' '}{Math.round(((65)+(atk.ap * 30 / 100)+(bonus.attack * 100 / 100)))}
+            {' '}{Math.round(((45)+(atk.ap * 30 / 100)+(bonus.attack * 70 / 100)))} / 
+            {' '}{Math.round(((55)+(atk.ap * 30 / 100)+(bonus.attack * 80 / 100)))} / 
+            {' '}{Math.round(((65)+(atk.ap * 30 / 100)+(bonus.attack * 90 / 100)))} / 
+            {' '}{Math.round(((75)+(atk.ap * 30 / 100)+(bonus.attack * 100 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((35)+(atk.ap * 30 / 100)+(bonus.attack * 70 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((45)+(atk.ap * 30 / 100)+(bonus.attack * 80 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((55)+(atk.ap * 30 / 100)+(bonus.attack * 90 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((65)+(atk.ap * 30 / 100)+(bonus.attack * 100 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((45)+(atk.ap * 30 / 100)+(bonus.attack * 70 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((55)+(atk.ap * 30 / 100)+(bonus.attack * 80 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((65)+(atk.ap * 30 / 100)+(bonus.attack * 90 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((75)+(atk.ap * 30 / 100)+(bonus.attack * 100 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-            <b>PASSIVE:</b> Passive: Every 5th attack deals <span className="stat--ap">35 / 45 / 55 / 65
+            <b>PASSIVE:</b> Passive: Every 5th attack deals <span className="stat--ap">35 / 55 / 65 / 75
             (<span className="stat--ad">+70% / 80% / 90% / 100% bonus AD</span> +30% AP) magic damage</span> and applies a Mark of the storm.
           </p>
 
@@ -139,9 +139,9 @@ export default function kennen({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
-            {' '}{(9*mod.atkcdr).toFixed(1)} / 
-            {' '}{(8*mod.atkcdr).toFixed(1)} / 
+            {' '}{(7.5*mod.atkcdr).toFixed(1)} / 
             {' '}{(7*mod.atkcdr).toFixed(1)} / 
+            {' '}{(6.5*mod.atkcdr).toFixed(1)} / 
             {' '}{(6*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--armor">

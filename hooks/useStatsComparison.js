@@ -45,11 +45,11 @@ export default function useStatsComparison(atk, def) {
   const postMitigationMresDefender = postMitigationMres(def ,atk);
 
   const physicalDamageReduction = (postMitigationArmor, champ) => {
-    return Math.round((1 - (100/(100 + (postMitigationArmor))))*100*(1 + (champ.bootsPassive === 'Steelcaps' ? 0.1 : 0)) );
+    return Math.round((1 - (100/(100 + (postMitigationArmor))))*100*(1 + (champ.bootsPassive === 'Steelcaps' ? 0.07 + (0.01 * Math.floor((champ.currentLevel - 1)/4)) : 0)) );
   };
 
   const magicalDamageReduction = (postMitigationMres, champ) => {
-    return Math.round((1 - (100/(100 + (postMitigationMres))))*100*((1 + (champ.bootsPassive === 'Mercury' ? 0.12 : 0) + (champ.forceOfNature ? 0.25 : 0))));
+    return Math.round((1 - (100/(100 + (postMitigationMres))))*100*((1 + (champ.bootsPassive === 'Mercury' ? 0.07 + (0.05/14 * (champ.currentLevel - 1))  : 0) + (champ.forceOfNature ? 0.25 : 0))));
   };
 
   const physicalReductionAttacker = physicalDamageReduction(postMitigationArmorAttacker, atk);

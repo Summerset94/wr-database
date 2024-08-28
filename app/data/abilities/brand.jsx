@@ -77,10 +77,10 @@ export default function brand({currentLevel, mod, bonus, atk, def}) {
           </h5>
             <h5 className="stat--mana">
           Cost: 
+            {' '}{65} / 
             {' '}{75} / 
             {' '}{85} / 
-            {' '}{95} / 
-            {' '}{105} 
+            {' '}{95} 
           </h5>
 
           <h5 className="stat--ap">
@@ -107,20 +107,20 @@ export default function brand({currentLevel, mod, bonus, atk, def}) {
 
           <p className="stat--ad">Pre-mitigation: 
             {' '}{Math.round(((70)+(atk.ap * 55 / 100))*1.3)} / 
-            {' '}{Math.round(((125)+(atk.ap * 55 / 100))*1.3)} / 
-            {' '}{Math.round(((180)+(atk.ap * 55 / 100))*1.3)} / 
-            {' '}{Math.round(((235)+(atk.ap * 55 / 100))*1.3)}
+            {' '}{Math.round(((120)+(atk.ap * 55 / 100))*1.3)} / 
+            {' '}{Math.round(((170)+(atk.ap * 55 / 100))*1.3)} / 
+            {' '}{Math.round(((220)+(atk.ap * 55 / 100))*1.3)}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
             {' '}{Math.round((((70)+(atk.ap * 55 / 100))*1.3) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round((((125)+(atk.ap * 55 / 100))*1.3)* (1 - mod.defMagRed))} / 
-            {' '}{Math.round((((180)+(atk.ap * 55 / 100))*1.3)* (1 - mod.defMagRed))} / 
-            {' '}{Math.round((((235)+(atk.ap * 55 / 100))*1.3)* (1 - mod.defMagRed))}          
+            {' '}{Math.round((((120)+(atk.ap * 55 / 100))*1.3)* (1 - mod.defMagRed))} / 
+            {' '}{Math.round((((170)+(atk.ap * 55 / 100))*1.3)* (1 - mod.defMagRed))} / 
+            {' '}{Math.round((((220)+(atk.ap * 55 / 100))*1.3)* (1 - mod.defMagRed))}          
           </p>          
     
           <p>
-           Target an area, after a short delay create a pillar of flame at targeted area that deals <span className="stat--ap">70 / 125 / 180/ 235 (+55% AP) magic damage</span> to enemies in the area. Units that ablaze take <b>30%</b> additional damage. 
+           Target an area, after a short delay create a pillar of flame at targeted area that deals <span className="stat--ap">70/120/170/220 (+55% AP) magic damage</span> to enemies in the area. Units that ablaze take <b>30%</b> additional damage. 
           </p>
         </div>
     },
@@ -141,10 +141,10 @@ export default function brand({currentLevel, mod, bonus, atk, def}) {
           </h5>
             <h5 className="stat--mana">
           Cost: 
+            {' '}{65} / 
+            {' '}{70} / 
             {' '}{75} / 
-            {' '}{80} / 
-            {' '}{85} / 
-            {' '}{90} 
+            {' '}{80} 
           </h5>
 
           <h5 className="stat--ap">
@@ -152,21 +152,21 @@ export default function brand({currentLevel, mod, bonus, atk, def}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((60)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((90)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((120)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((150)+(atk.ap * 50 / 100)))}
+            {' '}{Math.round(((60)+(45 / 100)))} / 
+            {' '}{Math.round(((90)+(45 / 100)))} / 
+            {' '}{Math.round(((120)+(45 / 100)))} / 
+            {' '}{Math.round(((150)+(45 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((60)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((90)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((120)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((150)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((60)+(45 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((90)+(45 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((120)+(45 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((150)+(45 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-            Set the target aflame and spread conflagration to all enemies near initial target, dealing <span className="stat--ap">60 / 90 / 120 / 150 (+50%AP) magic damage</span>. When initial target is <b>ablaze</b>, Conflagration's spread radius doubles.
+            Set the target aflame and spread conflagration to all enemies near initial target, dealing <span className="stat--ap">60 / 90 / 120 / 150 (+45% AP) magic damage</span>. When initial target is <b>ablaze</b>, Conflagration's spread radius doubles.
           </p>
         </div>
     },

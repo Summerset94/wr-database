@@ -37,10 +37,10 @@ export default function blitzcrank({currentLevel, mod, bonus, atk, def}) {
           </h5>
             <h5 className="stat--mana">
           Cost: 
-            {' '}{100} / 
-            {' '}{100} / 
-            {' '}{100} / 
-            {' '}{100} 
+            {' '}{80} / 
+            {' '}{80} / 
+            {' '}{80} / 
+            {' '}{80} 
           </h5>
 
           <h5 className="stat--ap">

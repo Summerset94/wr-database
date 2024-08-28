@@ -31,7 +31,7 @@ export default function riven({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
-            {' '}{(13*mod.atkcdr).toFixed(1)}
+            {' '}{(12*mod.atkcdr).toFixed(1)}
           </h5>
 
           <h5 className="stat--ad">
@@ -155,23 +155,27 @@ export default function riven({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((100)+(bonus.attack * 120 / 100 * 60 / 100)))} - {Math.round(((300)+(bonus.attack * 120 / 100 * 180 / 100)))} / 
-            {' '}{Math.round(((150)+(bonus.attack * 120 / 100 * 60 / 100)))} - {Math.round(((450)+(bonus.attack * 120 / 100 * 180 / 100)))} / 
-            {' '}{Math.round(((200)+(bonus.attack * 120 / 100 * 60 / 100)))} - {Math.round(((600)+(bonus.attack * 120 / 100 * 180 / 100)))}
+            {' '}{Math.round(((100)+(bonus.attack * 120 / 100 * 60 / 100)))} - {Math.round(((300)+(bonus.attack * 125 / 100 * 180 / 100)))} / 
+            {' '}{Math.round(((150)+(bonus.attack * 125 / 100 * 60 / 100)))} - {Math.round(((450)+(bonus.attack * 125 / 100 * 180 / 100)))} / 
+            {' '}{Math.round(((200)+(bonus.attack * 125 / 100 * 60 / 100)))} - {Math.round(((600)+(bonus.attack * 125 / 100 * 180 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((100)+(bonus.attack * 120 / 100 * 60 / 100)) * (1 - mod.defPhysRed))} - {Math.round(((300)+(bonus.attack * 120 / 100 * 180 / 100)) * (1 - mod.defPhysRed))}  / 
-            {' '}{Math.round(((150)+(bonus.attack * 120 / 100 * 60 / 100))* (1 - mod.defPhysRed))} - {Math.round(((450)+(bonus.attack * 120 / 100 * 180 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((200)+(bonus.attack * 120 / 100 * 60 / 100))* (1 - mod.defPhysRed))} - {Math.round(((600)+(bonus.attack * 120 / 100 * 180 / 100))* (1 - mod.defPhysRed))}
+            {' '}{Math.round(((100)+(bonus.attack * 125 / 100 * 60 / 100)) * (1 - mod.defPhysRed))} - {Math.round(((300)+(bonus.attack * 125 / 100 * 180 / 100)) * (1 - mod.defPhysRed))}  / 
+            {' '}{Math.round(((150)+(bonus.attack * 125 / 100 * 60 / 100))* (1 - mod.defPhysRed))} - {Math.round(((450)+(bonus.attack * 125 / 100 * 180 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((200)+(bonus.attack * 125 / 100 * 60 / 100))* (1 - mod.defPhysRed))} - {Math.round(((600)+(bonus.attack * 125 / 100 * 180 / 100))* (1 - mod.defPhysRed))}
           </p>
     
           <p>
-            Expand Riven's blade for 12 seconds, granting <span className="stat--ad">20% bonus Attack Damage ({Math.round(atk.attack * 20 / 100)})</span>, increasing the range of her attacks and damaging abilities, and granting a single cast of <b>Wind Slash</b>.
+            Expand Riven's blade for 12 seconds, granting <span className="stat--ad">25% bonus Attack Damage ({Math.round(atk.attack * 25 / 100)})</span>, increasing the range of her attacks and damaging abilities, and granting a single cast of <b>Wind Slash</b>.
           </p>
 
           <p>
           <b>Wind Slash:</b>  Launches a shockwave, dealing <span className="stat--ad">100 / 150 / 200 (+60% bonus AD)</span> to <span className="stat--ad">300 / 450 / 600 (+180% bonus AD) physical damage</span> based upon enemies' missing health.
+          </p>
+
+          <p>
+          During Blade of the Exile, every takedown of a target resets the number of Wind Slash casts she has and extends this ability's duration for 3s more, up to 12s.
           </p>
         </div>
     }

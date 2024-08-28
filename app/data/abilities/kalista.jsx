@@ -16,8 +16,8 @@ export default function kalista({currentLevel, mod, bonus, atk, def, champ, upda
         growth: 5
       },
       damage: {
-        base: 50,
-        growth: 60,
+        base: 60,
+        growth: 65,
         modifier: atk.attack * 105 / 100
       },
     };
@@ -49,15 +49,15 @@ export default function kalista({currentLevel, mod, bonus, atk, def, champ, upda
       },
       damage: {
         initial: {
-          base: 15,
+          base: 30,
           growth: 15,
-          modifier: atk.attack * 65 / 100
+          modifier: atk.attack * 70 / 100
         },
 
         secondary: {
-          base: 7,
-          growth: 3 + (atk.attack * 2 / 100),
-          modifier: atk.attack * 26 / 100
+          base: 10,
+          growth: 5 + (atk.attack * 4 / 100),
+          modifier: atk.attack * 30 / 100
         }        
       },
     };

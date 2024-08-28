@@ -39,7 +39,7 @@ export default function nasus({currentLevel, mod, bonus, atk, def, champ}) {
                 onChange={handleInputChange}
               />
             </label>            
-            <p><button onClick={updateStacks}>Update Stacks</button> Current bonus: <span className="stat--ad">{4 * stacks} damage</span> </p>
+            <p><button onClick={updateStacks}>Update Stacks</button> Current bonus: <span className="stat--ad">{5 * stacks} damage</span> </p>
           
         </div>
     },
@@ -86,11 +86,11 @@ export default function nasus({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p>
-          If Siphoning Strike kills the target, its damage is permanently increased by <span className="stat--ad">4</span>.
+          If Siphoning Strike kills the target, its damage is permanently increased by <span className="stat--ad">5</span>.
           </p>
 
           <p>
-          Killing champions, large minions and large monsters increases Siphoning Strike's damage by <span className="stat--ad">8</span> instead.
+          Killing champions, large minions and large monsters increases Siphoning Strike's damage by <span className="stat--ad">10</span> instead.
           </p>
 
         </div>

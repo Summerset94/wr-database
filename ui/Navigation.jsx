@@ -9,9 +9,9 @@ const Navigation = () => {
 
   return (
     <nav className={styles.nav}>
-      <Link href='/rankings/?rank=diamond&lane=top' className={styles.btn}>
+      {/* <Link href='/rankings/?rank=diamond&lane=top' className={styles.btn}>
         <button>Champions Win rates</button>
-      </Link>
+      </Link> */}
 
       <Link href='/tierlist' className={styles.btn}>
         <button>Champions tierlist</button>

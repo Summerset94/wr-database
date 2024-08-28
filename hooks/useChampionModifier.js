@@ -9,6 +9,7 @@ const useChampionModifier = (champ, baseStats, itemBonus, currentLevel, abilitie
     let critChanceMod;
     let moveSpeedMod;
     let armPenMod;
+    let magPenMod;
     let armorMod;
     let magresMod;
     let critMultiplierMod
@@ -41,11 +42,11 @@ const useChampionModifier = (champ, baseStats, itemBonus, currentLevel, abilitie
       if (abilitiesBonus.jaxR == 0) {
         armorMod = 0
       } else if (abilitiesBonus.jaxR == 1) {
-        armorMod = (30 + itemBonus.attack * 50 /100)
+        armorMod = (30 + itemBonus.attack * 40 /100)
       } else if (abilitiesBonus.jaxR == 2) {
-        armorMod = (50 + itemBonus.attack * 50 /100)
+        armorMod = (50 + itemBonus.attack * 40 /100)
       } else if (abilitiesBonus.jaxR == 3) {
-        armorMod = (70 + itemBonus.attack * 50 /100)
+        armorMod = (70 + itemBonus.attack * 40 /100)
       }
       break; 
 
@@ -93,11 +94,11 @@ const useChampionModifier = (champ, baseStats, itemBonus, currentLevel, abilitie
       if (abilitiesBonus.jaxR == 0) {
         magresMod = 0
       } else if (abilitiesBonus.jaxR == 1) {
-        magresMod = (30 + itemBonus.ap * 20 /100)
+        magresMod = (30 + itemBonus.attack * 40 /100) * 0.6
       } else if (abilitiesBonus.jaxR == 2) {
-        magresMod = (50 + itemBonus.ap * 20 /100)
+        magresMod = (50 + itemBonus.attack * 40 /100) * 0.6
       } else if (abilitiesBonus.jaxR == 3) {
-        magresMod = (70 + itemBonus.ap * 20 /100)
+        magresMod = (70 + itemBonus.attack * 40 /100) * 0.6
       }
       break; 
     default:
@@ -350,6 +351,16 @@ const useChampionModifier = (champ, baseStats, itemBonus, currentLevel, abilitie
       break;
 
   }
+
+  //Magic Penetration
+  switch (champ.name) {
+    case 'Mordekaiser':
+      magPenMod = 1/100 + Math.floor((currentLevel-1)/4) * 2/100
+      break;
+    default:
+      magPenMod = 0;
+      break;
+  }
   
     return {
       health: healthMod,
@@ -359,6 +370,7 @@ const useChampionModifier = (champ, baseStats, itemBonus, currentLevel, abilitie
       critChance: critChanceMod,
       moveSpeed: moveSpeedMod,
       armPen : armPenMod,
+      magPen: magPenMod,
       armor: armorMod,
       magres: magresMod,
       critMultiplier: critMultiplierMod,

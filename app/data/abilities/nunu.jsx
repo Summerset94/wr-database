@@ -8,7 +8,7 @@ export default function nunu({currentLevel, mod, bonus, atk, def, champ}) {
           </h4>
     
           <p>
-          Gains <abbr title="30%" className="stat--as">{(champ.asBase * 30 / 100).toFixed(3)} Attack Speed</abbr> and <abbr title="10%" className="stat--moveSpeed">{Math.round(atk.moveSpeed * 10 / 100)} Movement Speed</abbr>  for 4 seconds upon damaging an enemy champion, large monster or structure.
+          Gains <abbr title="40%" className="stat--as">{(champ.asBase * 40 / 100).toFixed(3)} Attack Speed</abbr> and <abbr title="15%" className="stat--moveSpeed">{Math.round(atk.moveSpeed * 15 / 100)} Movement Speed</abbr>  for 4 seconds upon damaging an enemy champion, large monster or structure.
           </p>
 
           <p>
@@ -45,10 +45,10 @@ export default function nunu({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--hp">
-                {Math.round(((80)+(atk.ap * 70 / 100)+(bonus.health * 9 / 100)))} / 
-            {' '}{Math.round(((115)+(atk.ap * 70 / 100)+(bonus.health * 9 / 100)))} / 
-            {' '}{Math.round(((150)+(atk.ap * 70 / 100)+(bonus.health * 9 / 100)))} / 
-            {' '}{Math.round(((185)+(atk.ap * 70 / 100)+(bonus.health * 9 / 100)))}
+                {Math.round(((80)+(atk.ap * 70 / 100)+(bonus.health * 11 / 100)))} / 
+            {' '}{Math.round(((115)+(atk.ap * 70 / 100)+(bonus.health * 11 / 100)))} / 
+            {' '}{Math.round(((150)+(atk.ap * 70 / 100)+(bonus.health * 11 / 100)))} / 
+            {' '}{Math.round(((185)+(atk.ap * 70 / 100)+(bonus.health * 11 / 100)))}
           </p>
 
           <h5 className="stat--ap">
@@ -70,7 +70,7 @@ export default function nunu({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-          Takes a bite out of the enemy, dealing <span className="stat--ap">55 / 110 / 165 / 220 (+65% AP) (<span className="stat--hp">+5% bonus Health</span>) magic damage</span> and healing for <span className="stat--hp">80 / 115 / 150 / 185 (<span className="stat--ap">+70% AP</span>) (+9% bonus Health)</span>. The healing is increased by 50% when Nunu and Willump are below 50% Maximum Health.
+          Takes a bite out of the enemy, dealing <span className="stat--ap">55 / 110 / 165 / 220 (+65% AP) (<span className="stat--hp">+5% bonus Health</span>) magic damage</span> and healing for <span className="stat--hp">80 / 115 / 150 / 185 (<span className="stat--ap">+70% AP</span>) (+11% bonus Health)</span>. The healing is increased by 50% when Nunu and Willump are below 50% Maximum Health.
           </p>
 
           <p>

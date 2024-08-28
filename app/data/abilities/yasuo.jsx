@@ -39,14 +39,14 @@ export default function yasuo({currentLevel, mod, bonus, atk, def, champ, update
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((20)+(atk.attack * 100 / 100)))} / 
+            {' '}{Math.round(((25)+(atk.attack * 100 / 100)))} / 
             {' '}{Math.round(((55)+(atk.attack * 100 / 100)))} / 
             {' '}{Math.round(((90)+(atk.attack * 100 / 100)))} / 
             {' '}{Math.round(((125)+(atk.attack * 100 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((20)+(atk.attack * 100 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((25)+(atk.attack * 100 / 100)) * (1 - mod.defPhysRed))} / 
             {' '}{Math.round(((55)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed))} / 
             {' '}{Math.round(((90)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed))} / 
             {' '}{Math.round(((125)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed))}          
@@ -57,22 +57,22 @@ export default function yasuo({currentLevel, mod, bonus, atk, def, champ, update
           </h5>
 
           <p className="stat--critChance">Pre-mitigation: 
-          {' '}{Math.round(((20)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
-            {' '}{Math.round(((55)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
-            {' '}{Math.round(((90)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
-            {' '}{Math.round(((125)+(atk.attack * 100 / 100))*atk.critMultiplier)}
+          {' '}{Math.round(((25)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
+            {' '}{Math.round(((60)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
+            {' '}{Math.round(((95)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
+            {' '}{Math.round(((130)+(atk.attack * 100 / 100))*atk.critMultiplier)}
           </p>
 
           <p className="stat--critChance">Post-mitigation: 
-          {' '}{Math.round(((20)+(atk.attack * 100 / 100)) * (1 - mod.defPhysRed)*atk.critMultiplier)} / 
-            {' '}{Math.round(((55)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed)*atk.critMultiplier)} / 
-            {' '}{Math.round(((90)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed)*atk.critMultiplier)} / 
-            {' '}{Math.round(((125)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed)*atk.critMultiplier)}         
+          {' '}{Math.round(((25)+(atk.attack * 100 / 100)) * (1 - mod.defPhysRed)*atk.critMultiplier)} / 
+            {' '}{Math.round(((60)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed)*atk.critMultiplier)} / 
+            {' '}{Math.round(((95)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed)*atk.critMultiplier)} / 
+            {' '}{Math.round(((130)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed)*atk.critMultiplier)}         
           </p>
     
           <br />
           <p>
-            Thrusts forward, dealing <span className="stat--ad">20 / 55 / 90 / 125 (+100% AD) physical damage</span>.
+            Thrusts forward, dealing <span className="stat--ad">25 / 60 / 95 / 130 (+100% AD) physical damage</span>.
           </p>
 
           <p>
@@ -84,7 +84,7 @@ export default function yasuo({currentLevel, mod, bonus, atk, def, champ, update
           </p>
 
           <p>
-            Steel Tempest is treated as an attack: it can <span className="stat--critCHance">Critically Strike for 65%</span> bonus damage and applies on-hit effects on the first unit hit. Cooldown and cast time are reduced by Attack Speed.
+            Steel Tempest is treated as an attack: it can <span className="stat--critChance">Critically Strike for 65%</span> bonus damage and applies on-hit effects on the first unit hit. Cooldown and cast time are reduced by Attack Speed.
           </p>
         </div>
     },
@@ -165,10 +165,23 @@ export default function yasuo({currentLevel, mod, bonus, atk, def, champ, update
             {' '}{(40*mod.atkcdr).toFixed(1)} / 
             {' '}{(30*mod.atkcdr).toFixed(1)}
           </h5>
+
+          <h5 className="stat--ad">Damage</h5>
+          <p className="stat--ap">Pre-mitigation: 
+            {' '}{Math.round(((250)+(bonus.attack * 160 / 100)))} / 
+            {' '}{Math.round(((350)+(bonus.attack * 160 / 100)))} / 
+            {' '}{Math.round(((550)+(bonus.attack * 160 / 100)))}
+          </p>
+
+          <p className="stat--ap">Post-mitigation: 
+            {' '}{Math.round(((250)+(bonus.attack * 160 / 100)) * (1 - mod.defPhysred))} / 
+            {' '}{Math.round(((350)+(bonus.attack * 160 / 100))* (1 - mod.defPhysred))} / 
+            {' '}{Math.round(((550)+(bonus.attack * 160 / 100))* (1 - mod.defPhysred))}      
+          </p>
     
           <br />
           <p>
-            Blinks to an <b>Airborne</b> enemy champion, dealing <span className="stat--ad">250 / 350  /550 (+150% bonus AD) physical damage</span> and holding all Airborne enemies in the area in the air for an additional 1.25s. Grants maximum Flow but resets all stacks of Gathering Storm.
+            Blinks to an <b>Airborne</b> enemy champion, dealing <span className="stat--ad">250 / 350 / 550 (+160% bonus AD) physical damage</span> and holding all Airborne enemies in the area in the air for an additional 1.25s. Grants maximum Flow but resets all stacks of Gathering Storm.
           </p>
 
           <p>

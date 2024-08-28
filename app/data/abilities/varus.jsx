@@ -38,25 +38,25 @@ export default function varus({currentLevel, mod, bonus, atk, def, champ, update
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((20)+(atk.attack * 115 / 100)))} -
-            {' '}{Math.round(((30)+(atk.attack * 172.5 / 100)))} / 
-            {' '}{Math.round(((70)+(atk.attack * 115 / 100)))} -
-            {' '}{Math.round(((105)+(atk.attack * 172.5 / 100)))} / 
-            {' '}{Math.round(((120)+(atk.attack * 115 / 100)))} -
-            {' '}{Math.round(((180)+(atk.attack * 172.5 / 100)))} / 
-            {' '}{Math.round(((170)+(atk.attack * 115 / 100)))} -
-            {' '}{Math.round(((255)+(atk.attack * 172.5 / 100)))}
+            {' '}{Math.round(((20)+(atk.attack * 125 / 100)))} -
+            {' '}{Math.round(((30)+(atk.attack * 187.5 / 100)))} / 
+            {' '}{Math.round(((70)+(atk.attack * 125 / 100)))} -
+            {' '}{Math.round(((105)+(atk.attack * 187.5 / 100)))} / 
+            {' '}{Math.round(((120)+(atk.attack * 125 / 100)))} -
+            {' '}{Math.round(((180)+(atk.attack * 187.5 / 100)))} / 
+            {' '}{Math.round(((170)+(atk.attack * 125 / 100)))} -
+            {' '}{Math.round(((255)+(atk.attack * 187.5 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((20)+(atk.attack * 115 / 100)) * (1 - mod.defPhysRed))} -
-            {' '}{Math.round(((30)+(atk.attack * 172.5 / 100)) * (1 - mod.defPhysRed))} /  
-            {' '}{Math.round(((70)+(atk.attack * 115 / 100))* (1 - mod.defPhysRed))} - 
-            {' '}{Math.round(((105)+(atk.attack * 172.5 / 100)) * (1 - mod.defPhysRed))} /  
-            {' '}{Math.round(((120)+(atk.attack * 115 / 100))* (1 - mod.defPhysRed))} - 
-            {' '}{Math.round(((180)+(atk.attack * 172.5 / 100)) * (1 - mod.defPhysRed))} /  
-            {' '}{Math.round(((170)+(atk.attack * 115 / 100))* (1 - mod.defPhysRed))}  - 
-            {' '}{Math.round(((255)+(atk.attack * 172.5 / 100)) * (1 - mod.defPhysRed))}   
+            {' '}{Math.round(((20)+(atk.attack * 125 / 100)) * (1 - mod.defPhysRed))} -
+            {' '}{Math.round(((30)+(atk.attack * 187.5 / 100)) * (1 - mod.defPhysRed))} /  
+            {' '}{Math.round(((70)+(atk.attack * 125 / 100))* (1 - mod.defPhysRed))} - 
+            {' '}{Math.round(((105)+(atk.attack * 187.5 / 100)) * (1 - mod.defPhysRed))} /  
+            {' '}{Math.round(((120)+(atk.attack * 125 / 100))* (1 - mod.defPhysRed))} - 
+            {' '}{Math.round(((180)+(atk.attack * 187.5 / 100)) * (1 - mod.defPhysRed))} /  
+            {' '}{Math.round(((170)+(atk.attack * 125 / 100))* (1 - mod.defPhysRed))}  - 
+            {' '}{Math.round(((255)+(atk.attack * 187.5 / 100)) * (1 - mod.defPhysRed))}   
           </p>
     
           <br />
@@ -65,7 +65,7 @@ export default function varus({currentLevel, mod, bonus, atk, def, champ, update
           </p>
 
           <p>
-            <b>Release:</b> Fires the arrow, dealing <span className="stat--ad">20 / 70 / 120 / 170 (+115% AD) to 30 / 105 / 180 / 255 (+172.5% AD) physical damage</span> based on draw time, reduced by 15% per enemy hit (minimum 33%).
+            <b>Release:</b> Fires the arrow, dealing <span className="stat--ad">20 / 70 / 120 / 170 (+125% AD) to 30 / 105 / 180 / 255 (+187.5% AD) physical damage</span> based on draw time, reduced by 15% per enemy hit (minimum 33%).
           </p>
 
           <p>

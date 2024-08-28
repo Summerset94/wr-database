@@ -80,26 +80,26 @@ export default function swain({currentLevel, mod, bonus, atk, def, champ, update
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((50)+(atk.ap * 38 / 100)))} - {Math.round(((50)+(atk.ap * 38 / 100)+(((10)+(atk.ap * 5 / 100))*4)))} / 
-            {' '}{Math.round(((80)+(atk.ap * 38 / 100)))} - {Math.round(((80)+(atk.ap * 38 / 100))+(((20)+(atk.ap * 5 / 100))*4))} / 
-            {' '}{Math.round(((110)+(atk.ap * 38 / 100)))} - {Math.round(((110)+(atk.ap * 38 / 100)+(((30)+(atk.ap * 5 / 100))*4)))} / 
-            {' '}{Math.round(((140)+(atk.ap * 38 / 100)))} - {Math.round(((140)+(atk.ap * 38 / 100)+(((40)+(atk.ap * 5 / 100))*4)))}
+            {' '}{Math.round(((55)+(atk.ap * 42 / 100)))} - {Math.round(((55)+(atk.ap * 42 / 100)+(((10)+(atk.ap * 7 / 100))*4)))} / 
+            {' '}{Math.round(((85)+(atk.ap * 42 / 100)))} - {Math.round(((85)+(atk.ap * 42 / 100))+(((20)+(atk.ap * 7 / 100))*4))} / 
+            {' '}{Math.round(((115)+(atk.ap * 42 / 100)))} - {Math.round(((115)+(atk.ap * 42 / 100)+(((30)+(atk.ap * 7 / 100))*4)))} / 
+            {' '}{Math.round(((145)+(atk.ap * 42 / 100)))} - {Math.round(((145)+(atk.ap * 42 / 100)+(((40)+(atk.ap * 7 / 100))*4)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((50)+(atk.ap * 38 / 100)) * (1 - mod.defMagRed))} -  {Math.round(((50)+(atk.ap * 38 / 100)+(((10)+(atk.ap * 5 / 100))* (4))) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((80)+(atk.ap * 38 / 100))* (1 - mod.defMagRed))} -  {Math.round(((80)+(atk.ap * 38 / 100)+(((20)+(atk.ap * 5 / 100))* (4)))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((110)+(atk.ap * 38 / 100))* (1 - mod.defMagRed))} - {Math.round(((110)+(atk.ap * 38 / 100)+(((30)+(atk.ap * 5 / 100))* (4)))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((140)+(atk.ap * 38 / 100))* (1 - mod.defMagRed))} - {Math.round(((140)+(atk.ap * 38 / 100)+(((40)+(atk.ap * 5 / 100))* (4)))* (1 - mod.defMagRed))}         
+            {' '}{Math.round(((55)+(atk.ap * 42 / 100)) * (1 - mod.defMagRed))} -  {Math.round(((55)+(atk.ap * 42 / 100)+(((10)+(atk.ap * 7 / 100))* (4))) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((85)+(atk.ap * 42 / 100))* (1 - mod.defMagRed))} -  {Math.round(((85)+(atk.ap * 42 / 100)+(((20)+(atk.ap * 7 / 100))* (4)))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((115)+(atk.ap * 42 / 100))* (1 - mod.defMagRed))} - {Math.round(((115)+(atk.ap * 42 / 100)+(((30)+(atk.ap * 7 / 100))* (4)))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((145)+(atk.ap * 42 / 100))* (1 - mod.defMagRed))} - {Math.round(((145)+(atk.ap * 42 / 100)+(((40)+(atk.ap * 7 / 100))* (4)))* (1 - mod.defMagRed))}         
           </p>
           <br />
     
           <p>
-            Swain extends his demonic arm to launch eldritch bots at enemies, dealing <span className="stat--ap">50 / 80 / 110 / 140 (+38% AP) magic damage</span> to enemies within range.
+            Swain extends his demonic arm to launch eldritch bots at enemies, dealing <span className="stat--ap">55 / 85 / 115 / 145 (+42% AP) magic damage</span> to enemies within range.
           </p>
 
           <p>
-            Each bolt after the first deals <span className="stat--ap">10 / 20 / 30 / 40 (+5% AP) magic damage</span>.
+            Each bolt after the first deals <span className="stat--ap">10 / 20 / 30 / 40 (+7% AP) magic damage</span>.
           </p>
         </div>
     },

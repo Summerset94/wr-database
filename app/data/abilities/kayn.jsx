@@ -112,21 +112,21 @@ export default function kayn({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((90)+(bonus.attack * 130 / 100)))} / 
-            {' '}{Math.round(((150)+(bonus.attack * 130 / 100)))} / 
-            {' '}{Math.round(((210)+(bonus.attack * 130 / 100)))} / 
-            {' '}{Math.round(((270)+(bonus.attack * 130 / 100)))}
+            {' '}{Math.round(((90)+(bonus.attack * 110 / 100)))} / 
+            {' '}{Math.round(((150)+(bonus.attack * 110 / 100)))} / 
+            {' '}{Math.round(((210)+(bonus.attack * 110 / 100)))} / 
+            {' '}{Math.round(((270)+(bonus.attack * 110 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((90)+(bonus.attack * 130 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((150)+(bonus.attack * 130 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((210)+(bonus.attack * 130 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((270)+(bonus.attack * 130 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((90)+(bonus.attack * 110 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((150)+(bonus.attack * 110 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((210)+(bonus.attack * 110 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((270)+(bonus.attack * 110 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
-            Swipes the scythe upward, dealing <span className="stat--ad">90 / 150 / 210 / 270 (+130% bonus AD) physical damage</span> and slowing enemies hit by <span className="stat--moveSpeed">90%</span> decaying over 1.5 seconds.
+            Swipes the scythe upward, dealing <span className="stat--ad">90 / 150 / 210 / 270 (+110% bonus AD) physical damage</span> and slowing enemies hit by <span className="stat--moveSpeed">90%</span> decaying over 1.5 seconds.
           </p>
 
           <p>
@@ -214,15 +214,15 @@ export default function kayn({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((200)+(bonus.attack * 175 / 100)))} / 
-            {' '}{Math.round(((300)+(bonus.attack * 175 / 100)))} / 
-            {' '}{Math.round(((400)+(bonus.attack * 175 / 100)))}
+            {' '}{Math.round(((200)+(bonus.attack * 165 / 100)))} / 
+            {' '}{Math.round(((300)+(bonus.attack * 165 / 100)))} / 
+            {' '}{Math.round(((400)+(bonus.attack * 165 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((200)+(bonus.attack * 175 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((300)+(bonus.attack * 175 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((400)+(bonus.attack * 175 / 100))* (1 - mod.defPhysRed))}
+            {' '}{Math.round(((200)+(bonus.attack * 165 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((300)+(bonus.attack * 165 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((400)+(bonus.attack * 165 / 100))* (1 - mod.defPhysRed))}
           </p>
 
           <h5 className="stat--critChance">
@@ -243,7 +243,7 @@ export default function kayn({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-          Infests an enemy champion for 2.5 seconds, becoming untargetable. When the infestation ends, the target receives <span className="stat--ad">200 / 300 / 400 (+175% bonus AD) physical damage</span>.
+          Infests an enemy champion for 2.5 seconds, becoming untargetable. When the infestation ends, the target receives <span className="stat--ad">200 / 300 / 400 (+165% bonus AD) physical damage</span>.
           </p>
           <p>
             <b>Re-cast:</b> Ends infestation early.

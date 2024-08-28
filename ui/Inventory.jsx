@@ -52,7 +52,88 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       description: 
         <div className='itemDescription'>Empty slot</div>
 
-    },  
+    },
+    
+    {
+      name: 'Sundered Sky',
+
+      icon: '/images/items/Sundered_Sky.webp',
+
+
+      health: 300,
+      mana: 0,
+      armor: 0,
+      magres: 0,
+      attack: 40,
+      ap: 0,
+      as: 0,
+      moveSpeed: 0,
+      flatArmPen: 0,
+      flatMagPen: 0,
+      armPen: 0,
+      magPen: 0,
+      critChance: 0,
+      critMultiplier: 0,
+      ah: 15,
+      armorReduction: 0,
+
+      description: 
+        <div className='itemDescription'>
+          <ul>
+            <li className="stat--hp">300 Max Health</li>
+            <li className="stat--ad">40 Attack Damage</li>
+            <li>15 Ability Haste</li>
+          </ul>
+
+          <p className="stat--ad">Current target pre / post-mitigation damage: {Math.round(atk.attack * 160/100)} / {Math.round(atk.attack * 160/100 * modifier)}</p>
+          <p className="stat--hp">base healing: {Math.round(base.attack * 140 / 100)}</p>
+
+          <p>
+            <b>Lightshield Strike:</b> The first attack against an enemy champion <span className="stat--critChance">Critically Strikes</span> (6s cooldown per target), dealing <span className="stat--ad">160% damage</span> and restoring Health (equal to <span className="stat--ad">140% of base Attack Damage</span> <span className="stat--hp">+ 6% of missing Health</span>) to you.
+          </p>
+        </div>
+
+    },
+    
+    {
+      name: 'Eclipse',
+
+      icon: '/images/items/Eclipse.webp',
+
+
+      health: 0,
+      mana: 0,
+      armor: 0,
+      magres: 0,
+      attack: 60,
+      ap: 0,
+      as: 0,
+      moveSpeed: 0,
+      flatArmPen: 0,
+      flatMagPen: 0,
+      armPen: 0,
+      magPen: 0,
+      critChance: 0,
+      critMultiplier: 0,
+      ah: 20,
+      armorReduction: 0,
+
+      description: 
+        <div className='itemDescription'>
+          <ul>
+            <li className="stat--ad">+60 Attack Damage</li>
+            <li>+20 Ability Haste</li>
+          </ul>
+
+          <p className="stat--ad">Damage Melee / Ranged (current target): {Math.round(def.health * 6/100 * modifier)} / {Math.round(def.health * 3/100 * modifier)}</p>
+          <p className="stat--armor">Shield Melee / Ranged: {Math.round(160 + bonus.attack * 40 / 100)} / {Math.round(80 + bonus.attack * 20 / 100)}</p>
+
+          <p>
+            <b>Ever Rising Moon:</b> Hitting an enemy champion with 2 separate attacks or abilities within <b>1.8</b> seconds deals <span className="stat--ad">bonus physical damage</span> equal to <span className="stat--ad">6% of the target's Max Health (3% for ranged champions)</span>, and grants you a shield that absorbs damage equal to <span className="stat--armor">160</span>  <span className="stat--ad">+ 40% bonus Attack Damage</span> (80 + 20% bonus Attack Damage for ranged champions) for 2 seconds. (6s cooldown)
+          </p>
+        </div>
+
+    },
 
     {
       name: 'Terminus (stacked)',
@@ -148,7 +229,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
 
       icon: '/images/items/Titanic_Hydra.webp',
       
-      health: 550,
+      health: 450,
       mana: 0,
       armor: 0,
       magres: 0,
@@ -165,7 +246,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       armorReduction: 0,
       
       description: <div className='itemDescription'>               
-        <h3 className="stat--hp">+550 Health</h3>
+        <h3 className="stat--hp">+450 Health</h3>
 
         <p>
           <b>Colossus:</b> Gain <span className="stat--ad">Attack Damage</span> equal to <span className="stat--ad">15</span> + <span className="stat--hp">2.5% bonus Health</span>
@@ -290,11 +371,11 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
 
       icon: "/images/items/Blade_of_the_Ruined_King.png",
       
-      health: -(10 + (90 / 14 * (currentLevel-1))),
+      health: 0,
       mana: 0,
       armor: 0,
       magres: 0,
-      attack: 20,
+      attack: 25,
       ap: 0,
       as: (base.asBase * 0.35),
       moveSpeed: 0,
@@ -309,26 +390,20 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
   
       description: <div className='itemDescription'>
       
-        <h3 className='stat--ad'>+{20} Attack Damage</h3>
+        <h3 className='stat--ad'>+{25} Attack Damage</h3>
         <h3 className='stat--as'>+35% ({Number(base.asBase * 0.35).toFixed(3)}) Attack Speed</h3>
   
         <p>
-          <b>Thirst:</b> <b className='stat--vamp'>+12% (<abbr title="Damage against 0 armor target / post mitigated for current target">{Math.round((total.attack * 0.12))} / {Math.round((total.attack * 0.12)* (1 - modifier))}</abbr>)  Physical Vamp</b>        </p>
-
-        
+          <b>Thirst:</b> <b className='stat--vamp'>+12% (<abbr title="Damage against 0 armor target / post mitigated for current target">{Math.round((total.attack * 0.12))} / {Math.round((total.attack * 0.12)* (1 - modifier))}</abbr>)  Physical Vamp</b>
+        </p>        
   
         <p>
           <b>Ruined Strikes:</b> Attacks deal <span className='stats--ad'>bonus physical damage</span> equal to the <span className='stats--ad'>6% ({Math.round(Math.max(target.health * (6 / 100) * (1 - modifier), 15))})</span>( <span>9% ({Math.round(Math.max(target.health * (9 / 100) * (1 - modifier), 15))})</span> for Melee) current target Health on-hit. Min damage: 15. Max damage vs monsters: 90
         </p>
   
         <p>
-          <b>Drain:</b> Hitting a champion with 3 consecutive attacks or ablilties deals <span className="stat--ap">{30 + 5 * (currentLevel - 1)} Magic Damage</span> (30 + 5 per champion level) and steals 40% of their Move Speed for 2 Seconds (60s Cooldown).
-        </p>
-
-        <p>
-          <b>Repetance:</b> Reduces your <span className="stat--hp">base Health by 10 - 100</span>  (based on level)
-        </p>
-  
+          <b>Drain:</b> Hitting a champion with 3 consecutive attacks or ablilties deals <span className="stat--ap">{30 + 5 * (currentLevel - 1)} Magic Damage</span> (30 + 5 per champion level) and steals 25% of their Move Speed for 2 Seconds (60s Cooldown).
+        </p>  
       </div>
     },
     
@@ -398,8 +473,8 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3>+{15} Ability Haste</h3>
           <h3>+{15} Lethality/flat armor penetration</h3>
   
-          <p>Moving builds up <b>Momentum</b> stacks, granting up to 50 movement speed and {5 + Math.round(5 / 14 * (currentLevel - 1))} (5-10 based on level) <span className="stat--armor">Armor Penetration</span> at 100 stacks. Stacks decay when movement impaired. </p>
-          <p>Attacking with max <b>Momentum</b> consumes all stacks, grants <b className='stat--as'>25% ({Number(base.asBase*0.25).toFixed(3)}) Attack Speed</b> and saves <span className="stat--armor">Armor Penetration</span> bonus for 4 seconds.</p>
+          <p>Moving builds up <b>Momentum</b> stacks, granting up to 40 movement speed at 100 stacks. Attacking removes all <b>Momentum</b> Stacks decay when movement impaired. </p>
+          <p>Attacking with max <b>Momentum</b> consumes all stacks, grants <b className='stat--as'>25% ({Number(base.asBase*0.25).toFixed(3)}) Attack Speed</b> for 4 seconds.</p>
         </div>
     },
   
@@ -449,7 +524,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       attack: 0,
       ap: 0,
       as: 0,
-      moveSpeed: -5,
+      moveSpeed: 0,
       flatArmPen: 0,
       flatMagPen: 0,
       armPen: 0,
@@ -462,15 +537,11 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       description:
         <div className='itemDescription'>           
           <h3 className='stat--hp'>+{400} Max Health</h3>
-          <h3>Heavy Handed: <abbr title="(50% of BASE attack damage)"><span className='stat--ad'>+{base.attack*0.5} Attack Damage</span></abbr> as BONUS attack damage</h3>
+          <h3>Heavy Handed: <span className='stat--ad'>+{base.attack*0.5} (50% of BASE AD) Attack Damage</span> as BONUS attack damage</h3>
   
-          <p><b>Lifeline:</b> Damage that puts you under <abbr title="(35% MAX health)"><span className='stat--hp'>{Math.round(total.health*0.35)} health</span></abbr> triggers a <abbr title="(75% of BONUS health)" className="stat--hp">{bonus.health * 0.75} points </abbr> shield that decays Over 3 seconds (90 sec Cooldown)</p>
+          <p><b>Lifeline:</b> Damage that puts you under <span className='stat--hp'>{Math.round(total.health*0.35)} (35% MAX ) health</span> triggers a <span className="stat--armor"> {bonus.health * 0.75} <span className="stat--hp">(75% of BONUS HP)</span> points shield</span>  that decays Over 3 seconds (90 sec Cooldown)</p>
   
-          <p><b>Sterak's fury:</b> Triggering Lifeline also increases your size, empowers you, removes all crowd control effects on you (except Airborne), and grants <span className='stat--ap'>50% Tenacity</span> for 4 seconds.</p>
-
-          <p>
-            <b>Guilt Bearer:</b> reduces your <span className="stat--moveSpeed">Movement Speed by 5</span>
-          </p>
+          <p><b>Sterak's fury:</b> Triggering Lifeline also  grants <span className='stat--ap'>30% Tenacity</span> for 8 seconds.</p>
         </div>
     },
   
@@ -479,11 +550,11 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       
       icon: "/images/items/Infinity.png",
 
-      health: -(10 + (90 / 14 * (currentLevel-1))),
+      health: 0,
       mana: 0,
       armor: 0,
       magres: 0,
-      attack: 55,
+      attack: 60,
       ap: 0,
       as: 0,
       moveSpeed: 0,
@@ -492,21 +563,17 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       armPen: 0,
       magPen: 0,
       critChance: 25 / 100,
-      critMultiplier: 50 / 100,
+      critMultiplier: 30 / 100,
       armorReduction: 0,
       ah: 0,      
   
       description:
         <div className='itemDescription'>
 
-          <h3 className='stat--ad'>+{55} Attack Damage</h3>
+          <h3 className='stat--ad'>+{60} Attack Damage</h3>
           <h3 className='stat--critChance'>+{0.25*100}% Critical Rate</h3>
   
-          <p><b>Infinity:</b> Critical Strikes deal 50% more Critical Damage</p>
-
-          <p>
-            <b>Self-Destruction</b>: Reduces your <span className="stat--hp">base Health by 10 - 100</span>  (based on level)
-          </p>
+          <p><b>Infinity:</b> Critical Strikes deal 30% more Critical Damage</p>
         </div>
     },
 
@@ -569,7 +636,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className='stat--mana'>+{300} Max mana</h3>
           <h3>+{20} Ability Haste</h3>
 
-          <p><b>Awe:</b> grants <abbr title="1.5% of maximum mana"><span className="stat--mana">{Math.round(total.mana * 0.015)}</span></abbr> Attacks damage, refunds <span className='stat--mana'>15%</span> of all Mana spent</p>
+          <p><b>Awe:</b> grants <abbr title="2% of maximum mana"><span className="stat--mana">{Math.round(total.mana * 0.02)}</span></abbr> Attacks damage, refunds <span className='stat--mana'>15%</span> of all Mana spent</p>
 
 
           <p><b>Mana Charge:</b> Increase max Mana by <span className='stat--mana'>10</span> every attack or when Mana is spent. Triggers up to 3 times every 12 seconds Caps at <span className='stat--mana'>700</span> bonus Mana and transforms into <b>Manamune</b> </p>
@@ -606,7 +673,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className='stat--mana'>+{1000} Max mana</h3>
           <h3>+{20} Ability Haste</h3>
 
-          <p><b>Awe:</b> grants <abbr title="1.5% of maximum mana"><span className="stat--mana">{Math.round(total.mana * 0.015)}</span></abbr> Attacks damage, refunds <span className='stat--mana'>15%</span> of all Mana spent</p>
+          <p><b>Awe:</b> grants <abbr title="2% of maximum mana"><span className="stat--mana">{Math.round(total.mana * 0.02)}</span></abbr> Attacks damage, refunds <span className='stat--mana'>15%</span> of all Mana spent</p>
 
 
           <p><b>Shock:</b> When an <b>attack</b> hits an enemy champion drains <abbr title="2.5% "><span>{Math.round(total.mana * 0.025)}</span></abbr> and deals it as <span className='stat--ad'>Physical damage</span>.</p>
@@ -780,7 +847,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         <h3>+10 Ability Haste</h3>
 
         <p>
-         <b>Demonbane:</b> <span className="stat--critChance">20% of the damage dealt by attacks or 15% physical damage dealt by abilities</span>  is converted into a magic shield that absorbs up to <abbr title="60-400 based on level" className="stat--magres">{Math.round(60 + (340/14*(currentLevel-1)))} magic damage</abbr>. The shield decays by 5% per second.
+         <b>Demonbane:</b> <span className="stat--critChance">20% of the damage dealt by attacks or 15% physical damage dealt by abilities</span>  is converted into a magic shield that absorbs up to <abbr title="60-400 based on level" className="stat--magres">{Math.round(60 + (340/14*(currentLevel-1)))} magic damage</abbr>.
         </p>
 
       </div>
@@ -1379,6 +1446,50 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
 
   let magicalItemData = [
     {
+      name: 'Psychic Projector',
+      icon: "/images/items/Psychic_Projector.webp",
+
+
+      health: 300,
+      mana: 0,
+      armor: 0,
+      magres: 0,
+      attack: 0,
+      ap: 60,
+      as: 0,
+      moveSpeed: 0,
+      flatArmPen: 0,
+      flatMagPen: 0,
+      armPen: 0,
+      magPen: 7/100,
+      critChance: 0,
+      critMultiplier: 0,
+      ah: 15,
+      armorReduction: 0,
+
+      description: 
+        <div className='itemDescription'>
+          <ul>
+            <li className="stat--hp">+300 Max Health</li>
+            <li className="stat--ap">+60 Ability Power</li>
+            <li className="stat--magres">+7% Magic Penetration</li>
+            <li>+15 Ability Haste</li>
+          </ul>
+
+          <p className="stat--armor">Shield (Melee / Ranged): {Math.round(30 + atk.ap * 10 / 100 + bonus.health * 5 / 100)} / {Math.round((30 + atk.ap * 10 / 100 + bonus.health * 5 / 100) * 60/100)}</p>
+
+          <p>
+            <b>Conversion:</b> Gain <span className="stat--ap">Ability Power</span> equal to <span className="stat--hp">3% of bonus Health.</span> 
+          </p>
+
+          <p>
+            <b>Projection:</b> When taking champion damage, gain a non-stacking shield that absorbs damage equal to <span className="stat--armor">30 <span className="stat--ap">(+10% AP)</span> <span className="stat--hp">(+5% of bonus Health)</span> for 3 seconds (for ranged champions, the shield absorbs damage equal to 60% of this value)</span> . Triggers every 3 seconds.
+          </p>
+        </div>
+
+    },
+
+    {
       name: 'Luden\'s Echo',
       icon: "/images/items/Ludens.png",
 
@@ -1494,7 +1605,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       icon: "/images/items/Rabadon.png",
 
 
-      health: -(10 + (90 / 14 * (currentLevel-1))),
+      health: 0,
       mana: 0,
       armor: 0,
       magres: 0,
@@ -1515,11 +1626,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         <div className='itemDescription'>
 
           <h3 className='stat--ap'>+{90} Ability Power</h3>
-          <p><b>Overkill:</b> Increases <span className="stat--ap">Ability Power</span> by <b>20% - 55%</b> (based on level)</p>
-
-          <p>
-            <b>Cinders"</b> reduces your <span className="stat--hp">Health by 10-100</span> (based on level).
-          </p>    
+          <p><b>Overkill:</b> Increases <span className="stat--ap">Ability Power</span> by <b>20% - 45%</b> (based on level)</p>          
         </div>       
 
     },
@@ -1586,7 +1693,9 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className="stat--ap">+{75} Ability Power</h3>
           <h3 className="stat--magres">+7% Magic Penetration</h3>
 
-          <p><b>Torment:</b> Damaging Abilities or empowered attacks deal <abbr title="(0.5% + 0.005% AP) of enemy Max HP. Shows pre/post-mitigated damage"><span className="stat--ap">{Math.round((5/100 + 5/1000)*target.health)} / {Math.round((5/100 + 5/1000)*target.health * (1 - modifierMres))} bonus magic damage</span></abbr> each second over 3 seconds</p>
+          <p className="stat--ap">Damage per tick (pre/ post-mitigation): {Math.round(def.health * (0.004 + atk.ap * 0.005/100))} / {Math.round((def.health * (0.004 + atk.ap * 0.005/100)) * modifierMres)} </p>
+
+          <p><b>Torment:</b> Damaging Abilities or empowered attacks deal <span className="stat--ap"> <span className="stat--hp">0.4% </span> (+0.005% AP) of enemy Max HP bonus magic damage</span> each second over 3 seconds</p>
         </div>
 
     },
@@ -1622,7 +1731,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className="stat--magres">+7% Magic Penetration</h3>       
 
           <p><b>Eternity:</b> restore <span className="stat--mana">Mana</span> equal to 15% damage taken from champions. Regen <span className="stat--hp">Health</span> equal to 20% of mana spent Capped at 25 health per cast.</p>
-          <p><b>Veteran:</b> Each stack provides <span className="stat--hp">20 Health (up to 200)</span>, <span className="stat--mana">10 Mana (up to 100)</span> and <span className="stat--ap">6 Ability Power (up to 60)</span>. Gain 1 stack each 45 seconds. 10 stacks maximum</p>
+          <p><b>Veteran:</b> Each stack provides <span className="stat--hp">25 Health (up to 250)</span>, <span className="stat--mana">10 Mana (up to 100)</span> and <span className="stat--ap">6 Ability Power (up to 60)</span>. Gain 1 stack each 45 seconds. 10 stacks maximum</p>
         </div>
 
     },
@@ -1632,7 +1741,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       icon: "/images/items/ROA.png",
 
 
-      health: 450,
+      health: 500,
       mana: 400,
       armor: 0,
       magres: 0,
@@ -1658,7 +1767,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className="stat--magres">+7% Magic Penetration</h3>      
 
           <p><b>Eternity:</b> restore <span className="stat--mana">Mana</span> equal to 15% damage taken from champions. Regen <span className="stat--hp">Health</span> equal to 20% of mana spent Capped at 25 health per cast.</p>
-          <p><b>Veteran:</b> Each stack provides <span className="stat--hp">20 Health (up to 200)</span>, <span className="stat--mana">10 Mana (up to 100)</span> and <span className="stat--ap">6 Ability Power (up to 60)</span>. Gain 1 stack each 45 seconds. 10 stacks maximum</p>
+          <p><b>Veteran:</b> Each stack provides <span className="stat--hp">25 Health (up to 250)</span>, <span className="stat--mana">10 Mana (up to 100)</span> and <span className="stat--ap">6 Ability Power (up to 60)</span>. Gain 1 stack each 45 seconds. 10 stacks maximum</p>
         </div>
 
     },
@@ -1833,9 +1942,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3>+{10} Ability Haste</h3>
 
           <p><b>Harmonic Echo:</b> Moving and casting abilities build Harmony stacks. At 100 stacks your next healing / shielding ability coast on ally restores <abbr title="135 + 10% AP"><span className="stat--hp">{Math.round(135 + (total.ap * 10 / 100))} Health</span></abbr> to your target and up to 3 nearby allied champions</p>
-          <p>
-          Every 10 Ability Haste you have increases healing by 3%. (not implemented in calculator)
-          </p>
+          
         </div>
 
     },
@@ -2004,7 +2111,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       armor: 0,
       magres: 0,
       attack: 0,
-      ap: 95,
+      ap: 85,
       as: 0,
       moveSpeed: (base.moveSpeed * 5 / 100),
       flatArmPen: 0,
@@ -2018,12 +2125,14 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
 
       description: 
         <div className='itemDescription'>
-          <h3 className="stat--ap">+95 Ability Power</h3>
-          <h3 className="stat--magres">+7% Magic Penetration</h3>
+        <ul>
+          <li className="stat--ap">+85 Ability Power</li>
+          <li className="stat--magres">+7% Magic Penetration</li>
+          <li className="stat--moveSpeed"><b>Destiny:</b> +5% ({Math.round(base.moveSpeed * 5 / 100)}) Movement Speed</li>
+          <li className="stat--magres"><b>Balance:</b> +{15} Magic Penetration</li>
+        </ul>
 
-          <p><b>Destiny:</b> +5% ({Math.round(base.moveSpeed * 5 / 100)}) Movement Speed</p>
-          <p><b>Balance:</b> <span className="stat--ap">+{15} Magic Penetration</span></p>
-          <p><b>Inevitable Demise: </b> Abilities and empowered attacks <span className="stat--vamp">Critically Strike</span> for 20% bonus damage against enemies below <span className='stat--hp'>45% <abbr title="For current target">({Math.round(target.health * 45 / 100)})</abbr> Health</span></p>
+          <p><b>Inevitable Demise: </b> Abilities and empowered attacks <span className="stat--vamp">Critically Strike</span> for 20% bonus damage against enemies below <span className='stat--hp'>35% ({Math.round(target.health * 35 / 100)} for current target) Health</span></p>
         </div>
 
     },
@@ -2177,7 +2286,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       armor: 0,
       magres: 0,
       attack: 0,
-      ap: 90,
+      ap: 80,
       as: 0,
       moveSpeed: 0,
       flatArmPen: 0,
@@ -2193,12 +2302,12 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         <div className='itemDescription'>
 
           <h3 className="stat--hp">+150 Max Health</h3>
-          <h3 className="stat--ap">+90 Ability Power</h3>
+          <h3 className="stat--ap">+80 Ability Power</h3>
           <h3>+15 Ability Haste</h3>
-          <h3 className="stat--vamp">+12% Omnivamp</h3>
+          <h3 className="stat--vamp">+13% Omnivamp</h3>
           <h3 className="stat--magres">+7% Magic Penetration</h3>
 
-          <p><b>Void Corruption:</b> When in combat with champions gain 1 stack of <b>Corruption</b> every 1 seconds. Every stacks increases the damage you deal by 2.5% up to 4 stacks. At 4 stacks additional damage becomes <b className="stat--vamp">true damage</b>.</p>
+          <p><b>Void Corruption:</b> When in combat with champions gain 1 stack of <b>Corruption</b> every 1 seconds. Every stacks increases the damage you deal by 2.5% up to 3 stacks. At 3 stacks additional damage becomes <b className="stat--vamp">true damage</b>.</p>
         </div>
 
     },
@@ -2235,7 +2344,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           {/* <p><b>Hypershot:</b> Apply 1 mark when you damage enemy champion with non-targeted ability from 500 units away; apply 2 marks for immobolizing. MArked enemies are revealed. At 3 stacks detonate them  to deal <abbr title="90 +25% AP; numbers are pre/post-mitigation"><span className="stat--ap">{Math.round(90 + (total.ap * 25 / 100))} / {Math.round((90 + (total.ap * 25 / 100)) * (1 - modifierMres))} Magic damage</span></abbr> to the target.</p> */}
 
           <p>
-           <b>Hypershot:</b> Damaging an enemy champion with an ability from 600 units away reveals them for 6 seconds and increases damage dealt to them by 12%.
+           <b>Hypershot:</b> Damaging an enemy champion with an ability from 600 units away reveals them for 6 seconds and increases damage dealt to them by 9%.
           </p>
           <p>
             <b>Focus: </b> When Hypershot is triggered, it reveals all enemy champions within 1,200 units of the target for 2s. (15s cooldown)
@@ -2272,8 +2381,8 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className="stat--hp">+500 Max Health</h3>
           <h3>+15 Ability Haste</h3>
 
-          <p><b>Immolate:</b> deals <abbr title="(16 + 9 / 14 * (level - 1)) + 0.8% of BONUS hp; pre/post mitigation numbers"><span className="stat--ap">{Math.round(sunFireEffect)} / {Math.round((sunFireEffect * (1 - modifierMres)))} Magic Damage</span></abbr> per second to nearby enemies. <span className="stat--ap">Immolate</span> increases it's damage by 7% for 5s, stacking up to 6 times to: <span className="stat--ap">{Math.round((sunFireEffect) + (sunFireEffect * 7 / 100 * 6))} / {Math.round((((sunFireEffect) + (sunFireEffect * 7 / 100 * 6)) * (1 - modifierMres)))}</span></p> 
-          <p><b>Flametouch:</b> At max stacks <span className="stat--ap">Immolate</span> stacks attacks burn enemies for <abbr title="50% of immolates damage" className="stat--ap">{Math.round(((sunFireEffect) + (sunFireEffect * 7 / 100 * 6))/2)} / {Math.round(((((sunFireEffect) + (sunFireEffect * 7 / 100 * 6)) * (1 - modifierMres)))/2)} Magic Damage</abbr>. Immolate deals <abbr title="130%" className="stat--ap">{Math.round(((sunFireEffect) + (sunFireEffect * 7 / 100 * 6))*(130/100))} Damage to monsters</abbr> and <abbr title="175% + 75% / 14 * (level - 1)" className="stat--ap">{Math.round(sunFireEffect * (1.75 + 0.75 / 14 * (currentLevel - 1)))} Damage</abbr> to minions</p>         
+          <p><b>Immolate:</b> deals <abbr title="(16 + 9 / 14 * (level - 1)) + 0.8% of BONUS hp; pre/post mitigation numbers"><span className="stat--ap">{Math.round(sunFireEffect)} / {Math.round((sunFireEffect * (1 - modifierMres)))} Magic Damage</span></abbr> per second to nearby enemies. <span className="stat--ap">Immolate</span> increases it's damage by 11% for 5s, stacking up to 4 times to: <span className="stat--ap">{Math.round((sunFireEffect) + (sunFireEffect * 11 / 100 * 4))} / {Math.round((((sunFireEffect) + (sunFireEffect * 11 / 100 * 4)) * (1 - modifierMres)))}</span></p> 
+          <p><b>Flametouch:</b> At max stacks <span className="stat--ap">Immolate</span> stacks attacks burn enemies for <abbr title="50% of immolates damage" className="stat--ap">{Math.round(((sunFireEffect) + (sunFireEffect * 11 / 100 * 4))/2)} / {Math.round(((((sunFireEffect) + (sunFireEffect * 11 / 100 * 4)) * (1 - modifierMres)))/2)} Magic Damage</abbr>. Immolate deals <abbr title="130%" className="stat--ap">{Math.round(((sunFireEffect) + (sunFireEffect * 11 / 100 * 4))*(130/100))} Damage to monsters</abbr> and <abbr title="175% + 75% / 14 * (level - 1)" className="stat--ap">{Math.round(sunFireEffect * (1.75 + 0.75 / 14 * (currentLevel - 1)))} Damage</abbr> to minions</p>         
         </div>
 
     },
@@ -2401,7 +2510,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       name: 'Thornmail',
       icon: "/images/items/Thornmail.webp",
 
-      health: 100,
+      health: 200,
       mana: 0,
       armor: 75,
       magres: 0,
@@ -2421,11 +2530,11 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       description: 
         <div className='itemDescription'>
 
-          <h3 className="stat--hp">+100 Max Health</h3>
+          <h3 className="stat--hp">+200 Max Health</h3>
           <h3 className="stat--armor">+75 Armor</h3>
 
-          <p><b>Thorns: </b>When struck by attack deal <abbr title="20 + 6% bonus armor + 1% bonus HP; numbers are pre/post-mitigation" className='stat--vamp'>{Math.round((20 + (bonus.armor * 6 / 100) + (bonus.health /100)))}
-          / {Math.round((20 + (bonus.armor * 6 / 100) + (bonus.health /100)) * (1 - modifierMres))} Magic Damage</abbr> to the attacker and apply <span className="stat--vamp">50% Grievous Wounds</span>.</p>
+          <p><b>Thorns: </b>When struck by attack deal <abbr title="20 + 6% bonus armor + 1% bonus HP; numbers are pre/post-mitigation" className='stat--vamp'>{Math.round((20 + (bonus.armor * 6 / 100) + (bonus.health * 2 /100)))}
+          / {Math.round((20 + (bonus.armor * 6 / 100) + (bonus.health * 2 /100)) * (1 - modifierMres))} Magic Damage</abbr> to the attacker and apply <span className="stat--vamp">50% Grievous Wounds</span>.</p>
         </div>
 
     },
@@ -2441,7 +2550,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       attack: 0,
       ap: 0,
       as: 0,
-      moveSpeed: -5,
+      moveSpeed: 0,
       flatArmPen: 0,
       flatMagPen: 0,
       armPen: 0,
@@ -2457,15 +2566,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className="stat--hp">+200% Health Regen</h3>
           <h3>+10 Ability Haste</h3>
 
-          <p><b>Warmog's Heart:</b> If you have at least <span className="stat--hp">1150 bonus health</span>, and did not take any damage within last 4 seconds, restore <abbr title="5% Max health" className="stat--hp">{Math.round(total.health * 5 / 100)} Health</abbr> per second</p>
-
-          <p>
-            <b>Strength of Will:</b> Restores <span className="stat--hp">{Math.round(attacker.health * 3 / 1000)} (0.3%) max Health</span> per second
-          </p>
-
-          <p>
-            <b>Guilt Bearer:</b> reduces your <span className="stat--moveSpeed">Movement Speed by 5</span>
-          </p>
+          <p><b>Warmog's Heart:</b> If you have at least <span className="stat--hp">950 bonus health</span>, and did not take any damage within last 6 seconds, restore <span className="stat--hp"> 5% Max health ({Math.round(total.health * 5 / 100)})</span> per second</p>
         </div>
 
     },
@@ -2672,7 +2773,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className="stat--mana">+500 Max Mana</h3>
           <h3>+15 Ability Haste</h3>
 
-          <p><b>Awe:</b> Grants <abbr title="8% of Max mana" className="stat--hp">{Math.round(total.mana * 8 / 100)} bonus Health</abbr> and refunds <span className="stat--mana">15%</span> of Mana spent</p>
+          <p><b>Awe:</b> Grants <abbr title="10% of Max mana" className="stat--hp">{Math.round(total.mana * 10 / 100)} bonus Health</abbr> and refunds <span className="stat--mana">15%</span> of Mana spent</p>
           <p><b>Mana Charge:</b> Increases <span className="stat--mana">Max mana by 12</span> every Attack, when mana is spent or on taking damage from champions/minions/monsters. Generates up to 3 stacks every 12 seconds. Caps at <span className="stat--mana">700 mana</span> and transforms into <b>Fimbulwinter</b></p>
         </div>
 
@@ -2706,7 +2807,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       <h3 className="stat--mana">+1200 Max Mana</h3>
       <h3>+15 Ability Haste</h3>
 
-      <p><b>Awe:</b> Grants <abbr title="8% of Max mana" className="stat--hp">{Math.round(total.mana * 8 / 100)} bonus Health</abbr> and refunds <span className="stat--mana">15%</span> of Mana spent</p>
+      <p><b>Awe:</b> Grants <abbr title="10% of Max mana" className="stat--hp">{Math.round(total.mana * 10 / 100)} bonus Health</abbr> and refunds <span className="stat--mana">15%</span> of Mana spent</p>
       <p><b>Frozen Colossus:</b> Immobilizing or slowing an enemy champion consumes <span className="stat--mana">3% ({Math.round(total.mana * 3/100)}) current Mana</span> and grants a shield for 3 seconds, absorbing <span className="stat--hp">{Math.round(100 + 100 / 14 * (currentLevel - 1) + total.mana * 5/100)}</span>, icreased by <b>80%</b> if there are more than 1 enemy champion nearby. Shield triggers when above <abbr title="20% Max" className="stat--mana">{Math.round(total.mana / 5)} Mana</abbr> (8s Cooldown).</p>
     </div>
 
@@ -2753,7 +2854,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       health: 350,
       mana: 0,
       armor: 0,
-      magres: 50,
+      magres: 55,
       attack: 0,
       ap: 0,
       as: 0,
@@ -2771,7 +2872,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         <div className='itemDescription'>
 
           <h3 className="stat--hp">+350 Max Health</h3>
-          <h3 className="stat--magres">+50 Magic resistance</h3>
+          <h3 className="stat--magres">+55 Magic resistance</h3>
           <h3>+5% ({Math.round(base.moveSpeed * 5 / 100)}) Movement Speed</h3>
 
           
@@ -2786,7 +2887,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           </p>
 
           <p>
-            <b>Absorb:</b> Taking ability damage from enemy champions grants 1 stack of Steadfast for 7 seconds, max 6 stacks. Dealing damage to enemy champions refresh effect duration. at maximum stacks gain 10% ({Math.round(base.moveSpeed /10)}) Movement Speed and reduce all incoming magic damage by 25%.
+            <b>Absorb:</b> Taking ability damage from enemy champions grants 1 stack of Steadfast for 7 seconds, max 4 stacks. Dealing damage to enemy champions refresh effect duration. at maximum stacks gain 10% ({Math.round(base.moveSpeed /10)}) Movement Speed and reduce all incoming magic damage by 25%.
           </p>
         </div>
 
@@ -2853,13 +2954,15 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
 
       description: 
         <div className='itemDescription'>
+          <ul>
+            <li className="stat--hp">+250 Max Health</li>
+            <li className="stat--armor">+50 Armor</li>
+            <li className="stat--magres">+30 Magic Resistance</li>
+          </ul>
 
-          <h3 className="stat--hp">+250 Max Health</h3>
-          <h3 className="stat--armor">+50 Armor</h3>
-          <h3 className="stat--magres">+30 Magic Resistance</h3>
-
+          <p className="stat--ap">Damage (pre / post-mitigation): {Math.round(80 + (bonus.health * 5 / 100) )} / {Math.round((80 + (bonus.health * 5 / 100) ) * (1 - modifierMres))} Magic Damage</p>  
           <p>
-            <b>Dawnbringer:</b> If you are within 400 units of enemy champion and you immobilize them or getting immobilized, reveal all nearby enemy champions and deal them <abbr title="80 + 5% BONUS HP; numbers are pre/post-mitigation" className="stat--ap">{Math.round(80 + bonus.health / 20 )} / {Math.round((80 + bonus.health / 20 ) * (1 - modifierMres))} Magic Damage</abbr> and heal yourself for the same amount for 3s. (3 seconds Cooldown)
+            <b>Dawnbringer:</b> If you are within 400 units of enemy champion and you immobilize them or getting immobilized, reveal all nearby enemy champions for 3 seconds and deal them <span className="stat--ap">80 <span className="stat--hp">(+5% bonus HP)</span> Magic Damage</span>. (3 seconds Cooldown)
           </p>
         </div>
 
@@ -2873,7 +2976,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       mana: 0,
       armor: 60,
       magres: 60,
-      attack: -(1 * currentLevel),
+      attack: 0,
       ap: 0,
       as: 0,
       moveSpeed: 0,
@@ -2902,11 +3005,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
             <b>Endurance:</b> Gain 1 stack every 1 seconds while in combat with Enemy Champions (3 stacks maximum).
           </p>
           <p>
-            At full stacks gain 20% size, 20% Tenacity, increase both <span className="stat--ad">Armor</span> and <span className="stat--magres">Magic resistance</span> by 35% until Out Of Combat with enemy champions.
-          </p>
-
-          <p>
-            <b>Withering:</b> Reduces your <span className="stat--ad">Attack Damage</span> by 1-15 (based on level)
+            At full stacks gain 20% size, 20% Tenacity, increase both <span className="stat--armor">Armor</span> and <span className="stat--magres">Magic resistance</span> by 30% until Out Of Combat with enemy champions.
           </p>
         </div>
 
@@ -3356,7 +3455,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
             <h3 className="stat--moveSpeed">+45 Movement Speed</h3>
 
             <p>
-              <b>Dissolve:</b> reduces <span className="stat--ap">magic damage</span> taken by 12% 
+              <b>Dissolve:</b> reduces <span className="stat--ap">magic damage</span> taken by 7-12% (based on level)
             </p>  
           </div>
   
@@ -3393,7 +3492,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
             <h3 className="stat--moveSpeed">+45 Movement Speed</h3>
 
             <p>
-              <b>Block:</b> reduces <span className="stat--ad">physical damage</span> taken by 10% 
+              <b>Block:</b> reduces <span className="stat--ad">physical damage</span> taken by 7-10% (+1% at level 5/9/13) 
             </p>    
           </div>
   
@@ -3525,9 +3624,11 @@ const [Items, setItems] = useState(Array.from({ length: 5 }, () => ({...physical
     seraphs: Items.some((item) => item.name === 'Seraph\'s Embrace'),
     fimbulwinter: Items.some((item) => item.name === 'Fimbulwinter'),
     muramana: Items.some((item) => item.name === 'Muramana'),
-    lastWhisper:  Items.some((item) => item.name === 'Mortal Reminder' || item.name === 'Serylda\'s Grudge'),
+    lastWhisper:  Items.some((item) => item.name === 'Mortal Reminder' || item.name === 'Serylda\'s Grudge') && !Items.some((item) => item.name === 'Terminus (stacked)'),
     heartsteel: checkHeartsteel ? heartsteelStacks : 0,
     titanicHydra: Items.some((item) => item.name === 'Titanic Hydra'),
+    terminus: Items.some((item) => item.name === 'Terminus (stacked)'),
+    psychicProjector: Items.some((item) => item.name === 'Psychic Projector')
   };
 
   updateItemEffects(payload);

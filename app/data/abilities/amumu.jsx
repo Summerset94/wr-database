@@ -95,21 +95,21 @@ export default function amumu({currentLevel, mod, bonus, atk, def}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((15)+(def.health *(1 + atk.ap * 0.6) / 100)))} / 
-            {' '}{Math.round(((20)+(def.health *(1.2 + atk.ap * 0.6) / 100)))} / 
-            {' '}{Math.round(((25)+(def.health *(1.4 + atk.ap * 0.6) / 100)))} / 
-            {' '}{Math.round(((30)+(def.health *(1.6 + atk.ap * 0.6) / 100)))}
+            {' '}{Math.round(((20)+(def.health *(1.4 + atk.ap * 0.6) / 100)))} / 
+            {' '}{Math.round(((25)+(def.health *(1.6 + atk.ap * 0.6) / 100)))} / 
+            {' '}{Math.round(((30)+(def.health *(1.8 + atk.ap * 0.6) / 100)))} / 
+            {' '}{Math.round(((35)+(def.health *(2 + atk.ap * 0.6) / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((15)+(def.health * (1 + atk.ap * 0.6)/ 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((20)+(def.health * (1.2 + atk.ap * 0.6) / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((25)+(def.health * (1.4 + atk.ap * 0.6) / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((30)+(def.health * (1.6 + atk.ap * 0.6) / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((20)+(def.health * (1.4 + atk.ap * 0.6)/ 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((25)+(def.health * (1.6 + atk.ap * 0.6) / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((30)+(def.health * (1.8 + atk.ap * 0.6) / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((35)+(def.health * (2 + atk.ap * 0.6) / 100))* (1 - mod.defMagRed))}          
           </p>
 
           <p>
-            Amumu begins weeping to deal <span className="stat--ap">15 / 20 / 25 / 30 <span className="stat--hp">(+1 / 1.2 / 1.4 / 1.6% <span className="stat--ap">(+0.6% per 100 AP)</span> of the target's maximum health)</span> Magic Damage</span> to nearby enemies every second
+            Amumu begins weeping to deal <span className="stat--ap">15 / 25 / 30 / 35 <span className="stat--hp">(+1.4 / 1.6 / 1.8 / 2% <span className="stat--ap">(+0.6% per 100 AP)</span> of the target's maximum health)</span> Magic Damage</span> to nearby enemies every second
           </p>
         </div>
     },

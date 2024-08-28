@@ -7,16 +7,18 @@ export default function katarina({currentLevel, mod, bonus, atk, def, champ}) {
           <span className="marker--ability">P</span> VORACITY
           </h4>  
 
-          <h5 className="stat--ap">Damage pre-/post-mitigation</h5>
+          <h5 className="stat--ap">Damage pre-/ post-mitigation</h5>
           <p className="stat--ap">
-            {Math.round(((40 + currentLevel * 10)+(atk.ap * (30 + currentLevel * 3) / 100)+(bonus.attack * 100 / 100)))} / {Math.round(((40 + currentLevel * 10)+(atk.ap * (30 + currentLevel * 3) / 100)+(bonus.attack * 100 / 100))* (1 - mod.defMagRed))} </p>
+            {' '}{Math.round(40 + (13 * currentLevel) + (bonus.attack * 100/100) + (atk.ap * 30 / 100) + (atk.ap * 3 / 100 * currentLevel))} / 
+            {' '} {Math.round((40 + (13 * currentLevel) + (bonus.attack * 100/100) + (atk.ap * 30 / 100) + (atk.ap * 3 / 100 * currentLevel)) * (1 - mod.defMagRed))}
+            </p>
     
           <p>
             Champion takedowns reduce ability cooldowns by 15 seconds.
           </p>
 
           <p>
-          Katarina slashes at nearby enemies whenever she picks up a <b>Dagger</b>, dealing <span className="stat--ap"><abbr title="40 + 10 per level">50-190 (based on level)</abbr> <abbr title="30% + 3% per level">(+33%-75% AP based on level)</abbr> <span className="stat--ad">(+100% bonus AD)</span> magic damage</span>.
+          Katarina slashes at nearby enemies whenever she picks up a <b>Dagger</b>, dealing <span className="stat--ap">40 + 13 per level <span className="stat--ad">(+100% bonus AD)</span> (+33% AP) (+3%AP per level) magic damage</span>.           
           </p>
         </div>
     },
@@ -105,22 +107,22 @@ export default function katarina({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((20)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))} / 
-            {' '}{Math.round(((45)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))} / 
-            {' '}{Math.round(((70)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))} / 
-            {' '}{Math.round(((95)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)))}
+            {' '}{Math.round(((20)+(atk.ap * 30 / 100)+(atk.attack * 50 / 100)))} / 
+            {' '}{Math.round(((50)+(atk.ap * 30 / 100)+(atk.attack * 50 / 100)))} / 
+            {' '}{Math.round(((80)+(atk.ap * 30 / 100)+(atk.attack * 50 / 100)))} / 
+            {' '}{Math.round(((110)+(atk.ap * 30 / 100)+(atk.attack * 50 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((20)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((45)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((70)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((95)+(atk.ap * 25 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((20)+(atk.ap * 30 / 100)+(atk.attack * 50 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((50)+(atk.ap * 30 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((80)+(atk.ap * 30 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((110)+(atk.ap * 30 / 100)+(atk.attack * 50 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Blink to a location near a Dagger or unit, dealing <span className="stat--ap">20 / 45 / 70 / 95
-          (<span className="stat--ad">+50% AD</span> +25% AP) magic damage</span>  to the nearest enemy.
+          Blink to a location near a Dagger or unit, dealing <span className="stat--ap"> 20/50/80/110
+          <span className="stat--ad">(+50% AD)</span> (+30% AP) magic damage</span> to the nearest enemy.
           </p>
 
           <p>

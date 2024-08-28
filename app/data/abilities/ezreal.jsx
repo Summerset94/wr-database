@@ -46,21 +46,21 @@ export default function ezreal({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((35)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((70)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((105)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((140)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100)))}
+            {' '}{Math.round(((50)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100)))} / 
+            {' '}{Math.round(((85)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100)))} / 
+            {' '}{Math.round(((120)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100)))} / 
+            {' '}{Math.round(((155)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((35)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((70)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((105)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((140)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((50)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((85)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((120)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((155)+(atk.attack * 120 / 100)+(atk.ap * 30 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
-          Fires a bolt, dealing <span className="stat--ad">35 / 70 / 105 / 140 (+120% AD <span className="stat--ap">+30% AP</span> ) physical damage</span>. Hitting a target reduces Ezreal's other ability cooldowns by 1.5 seconds. Applies on-hit effects.
+          Fires a bolt, dealing <span className="stat--ad">50 / 85 / 120 / 155 (+120% AD <span className="stat--ap">+30% AP</span> ) physical damage</span>. Hitting a target reduces Ezreal's other ability cooldowns by 1.5 seconds. Applies on-hit effects.
           </p>
         </div>
     },
@@ -121,10 +121,10 @@ export default function ezreal({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
-            {' '}{(28*mod.atkcdr).toFixed(1)} / 
             {' '}{(24*mod.atkcdr).toFixed(1)} / 
-            {' '}{(20*mod.atkcdr).toFixed(1)} / 
-            {' '}{(16*mod.atkcdr).toFixed(1)} 
+            {' '}{(21*mod.atkcdr).toFixed(1)} / 
+            {' '}{(18*mod.atkcdr).toFixed(1)} / 
+            {' '}{(15*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 

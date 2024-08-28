@@ -56,21 +56,21 @@ export default function ahri({currentLevel, mod, bonus, atk, def}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((35)+(atk.ap * 35 / 100)))} + {Math.round(((35)+(atk.ap * 35 / 100)))} / 
-            {' '}{Math.round(((70)+(atk.ap * 35 / 100)))} + {Math.round(((70)+(atk.ap * 35 / 100)))}  / 
-            {' '}{Math.round(((105)+(atk.ap * 35 / 100)))} + {Math.round(((105)+(atk.ap * 35 / 100)))}  / 
-            {' '}{Math.round(((140)+(atk.ap * 35 / 100)))} + {Math.round(((140)+(atk.ap * 35 / 100)))} 
+            {' '}{Math.round(((40)+(atk.ap * 40 / 100)))} + {Math.round(((40)+(atk.ap * 40 / 100)))} / 
+            {' '}{Math.round(((75)+(atk.ap * 40 / 100)))} + {Math.round(((75)+(atk.ap * 40 / 100)))}  / 
+            {' '}{Math.round(((110)+(atk.ap * 40 / 100)))} + {Math.round(((110)+(atk.ap * 40 / 100)))}  / 
+            {' '}{Math.round(((145)+(atk.ap * 40 / 100)))} + {Math.round(((145)+(atk.ap * 40 / 100)))} 
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((35)+(atk.ap * 35 / 100)) * (1 - mod.defMagRed))} + {Math.round(((35)+(atk.ap * 35 / 100)))}  / 
-            {' '}{Math.round(((70)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))} + {Math.round(((70)+(atk.ap * 35 / 100)))}  / 
-            {' '}{Math.round(((105)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))} + {Math.round(((105)+(atk.ap * 35 / 100)))}  / 
-            {' '}{Math.round(((140)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))} + {Math.round(((140)+(atk.ap * 35 / 100)))}           
+            {' '}{Math.round(((40)+(atk.ap * 40 / 100)) * (1 - mod.defMagRed))} + {Math.round(((40)+(atk.ap * 40 / 100)))}  / 
+            {' '}{Math.round(((75)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} + {Math.round(((75)+(atk.ap * 40 / 100)))}  / 
+            {' '}{Math.round(((110)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} + {Math.round(((110)+(atk.ap * 40 / 100)))}  / 
+            {' '}{Math.round(((145)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} + {Math.round(((145)+(atk.ap * 40 / 100)))}           
           </p>
 
           <p>
-            Ahri sends out and pulls back her orb, dealing <span className="stat--ap">35 / 70 / 105 / 140 (+35% AP) magic damage</span> on the way out and <span className="stat--ap">35 / 70 / 105 / 140 (+35% AP)</span> <b>true damage</b> on the way back.
+            Ahri sends out and pulls back her orb, dealing <span className="stat--ap">40/75/110/145 (+40% AP) magic damage</span> on the way out and <span className="stat--ap"> 40/75/110/145 (+40% AP)</span> <b>true damage</b> on the way back.
           </p>
         </div>
     },
@@ -84,10 +84,10 @@ export default function ahri({currentLevel, mod, bonus, atk, def}) {
 
           <h5>
           Cooldown: 
-            {' '}{(9*mod.atkcdr).toFixed(1)} / 
             {' '}{(8*mod.atkcdr).toFixed(1)} / 
             {' '}{(7*mod.atkcdr).toFixed(1)} / 
-            {' '}{(6*mod.atkcdr).toFixed(1)} 
+            {' '}{(6*mod.atkcdr).toFixed(1)} / 
+            {' '}{(5*mod.atkcdr).toFixed(1)} 
           </h5>
            <h5 className="stat--mana">
           Cost: 
@@ -102,22 +102,22 @@ export default function ahri({currentLevel, mod, bonus, atk, def}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((40)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((75)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((110)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((145)+(atk.ap * 30 / 100)))}
+            {' '}{Math.round(((45)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((80)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((115)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((150)+(atk.ap * 35 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((40)+(atk.ap * 30 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((75)+(atk.ap * 30 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((110)+(atk.ap * 30 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((145)+(atk.ap * 30 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((45)+(atk.ap * 35 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((80)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((115)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((150)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))}          
           </p>
 
           <p>
           <b>ACTIVE:</b> Ahri gains <abbr title="40%" className="stat--moveSpeed">{Math.round(atk.moveSpeed * 45 / 100)} bonus movement speed</abbr> that decays over 1.5 seconds and summons three flames which orbit her for up to 5 seconds. <br />
-          Each flame chases a nearby enemy, dealing magic damage, reduced to 30% for enemies taking flames beyond the first. <br />
+          Each flame chases a nearby enemy, dealing <span className="stat--ap">45/80/115/150 (+35% AP) magic damage</span> , reduced to 30% for enemies taking flames beyond the first. <br />
           Flames prioritize targeting enemies hit by <span className="stat--ap">Charm</span>, then the last enemy Ahri attacked, and then the nearest enemy.
           </p>
         </div>

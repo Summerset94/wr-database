@@ -75,7 +75,7 @@ useEffect(() => {
 
     ap: (runeFormulas.damagetype.type === 'magical' ? runeFormulas.conqueror.bonus + (runesEffects.path.eyeballCollector * 2) + (runesEffects.path.zombieWard * 6) + (runeFormulas.gatheringStorm.bonus) : 0) + (runeFormulas.damagetype.type === 'magical' && runesEffects.path.eyeballCollector === 10 ? 20 : 0) + (runeFormulas.damagetype.type === 'magical' && runesEffects.path.zombieWard === 5 ? 20 : 0),
 
-    health: (runesEffects.keystones.grasp * 5) + (runesEffects.path.overgrowth * 3) + (runesEffects.path.overgrowth > 29 ? (atk.health * 3.5 / 100) : 0),
+    health: (runesEffects.keystones.grasp * 5) + (runesEffects.path.overgrowth * 3) + (runesEffects.path.overgrowth > 29 ? (atk.health * 3 / 100) : 0),
 
     mana: (runesEffects.path.manaflow * 30),
 
@@ -117,11 +117,11 @@ const keystones = [
     name: 'Empowerment',    
     id: '4c0dc300-9225-40c3-a209-b3c0d900d0f8',
     icon: '../images/runes/PTA.webp',
-    description: <div className='runeDescription'>
+    description: <div className='runeDescription'>    
     <p>Hitting an enemy champion with 3 consecutive attacks deals <span className='stat--armor'>40-180 bonus adaptive damage</span> and makes them <span className='stat--armor'>Vulnerable</span>, increasing all damage they take by <span className='stat--armor'>8% for 6 seconds</span>. </p>
 
     <p>
-    Once Vulnerable, your attacks to the target deal <span className='stat--vamp'>6-20 bonus true damage</span>. When the target exits the Vulnerable state, Vulnerability enters cooldown and cannot be applied to any enemy for the next 6 seconds.
+    Once Vulnerable, your attacks to the target deal <span className='stat--vamp'>8-24 bonus true damage</span>. When the target exits the Vulnerable state, Vulnerability enters cooldown and cannot be applied to any enemy for the next 4 seconds.
     </p>
 
 
@@ -141,7 +141,7 @@ const keystones = [
     icon: '../images/runes/arcaneComet.webp',
     description: <div className='runeDescription'>
       <p>
-      Damaging a champion with an ability hurls a comet at their location. When a comet hits an enemy champion, the next comet's damage increases by 1.
+      Damaging a champion with an ability hurls a comet at their location. When a comet hits an enemy champion, the next comet's damage increases by 2.
       </p>
       <p title='Physical or magical based on your bonus attack and Ability Power'>Damage type: {runeFormulas.damagetype.description}</p>
       <p>Base Damage (pre/post-mitigation): {Math.round(runeFormulas.arcaneComet.damage.raw)} / {Math.round(runeFormulas.arcaneComet.damage.mitigated)}</p>
@@ -349,7 +349,7 @@ const keystones = [
   id: '08831f5d-b7e5-4165-a589-017cf388f924',
   description: <div>
     <p>
-      Dealing damage to an enemy champions within 0.25 seconds of engaging them in combat grants <span className='stat--armor'>5 Gold</span> and enables First Strike for 3 seconds. While the effect is active you deal 9% of <strong>post-mitigation</strong> damage inflicted as <span className='stat--vamp'>true damage</span>.
+      Dealing damage to an enemy champions within 0.25 seconds of engaging them in combat grants <span className='stat--armor'>5 Gold</span> and enables First Strike for 3 seconds. While the effect is active you deal 7% of <strong>post-mitigation</strong> damage inflicted as <span className='stat--vamp'>true damage</span>.
     </p>
     <p>
       After the effect ends gain gold equal to 100% (for melee characters) / 85% (for ranged characters) of <strong>bonus damage</strong>.
@@ -690,7 +690,7 @@ const mainRunes = [
       slot: 1,
       description: <div className='runeDescription'>
         <p>
-          Deal 7% increased damage (excluding <span className='stat--vamp'>true damage</span>) to enemy champions beolw <span className='stat--hp'>40% maximum Health</span>.
+          Deal 8% increased damage (excluding <span className='stat--vamp'>true damage</span>) to enemy champions below <span className='stat--hp'>40% maximum Health</span>.
         </p>
       </div>
     },
@@ -913,7 +913,7 @@ const mainRunes = [
             </label>     
 
           <p>
-            When 2 enemies or 1 monster dies near your champion, permanently gain <span className='stat--hp'>3 Maximum Health</span>. Can be gained infinitely. Gain a <span className='stat--hp'>3.5% Maximum health</span> bonus upon reaching 30 stacks.
+            When 2 enemies or 1 monster dies near your champion, permanently gain <span className='stat--hp'>3 Maximum Health</span>. Can be gained infinitely. Gain a <span className='stat--hp'>3% Maximum health</span> bonus upon reaching 30 stacks.
           </p>
         </div>
       },
@@ -989,7 +989,7 @@ const mainRunes = [
           </p>
 
           <p>
-            Cooldown: 20 seconds.
+            Cooldown: 25 seconds.
           </p>
         </div>
       },

@@ -44,25 +44,25 @@ export default function lillia({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((35)+(atk.ap * 35 / 100)))} + <span className="stat--critChance">{Math.round(((35)+(atk.ap * 35 / 100)))}</span> / 
-            {' '}{Math.round(((50)+(atk.ap * 35 / 100)))} + <span className="stat--critChance">{Math.round(((55)+(atk.ap * 35 / 100)))}</span> / 
-            {' '}{Math.round(((65)+(atk.ap * 35 / 100)))} + <span className="stat--critChance">{Math.round(((75)+(atk.ap * 35 / 100)))}</span> / 
-            {' '}{Math.round(((80)+(atk.ap * 35 / 100)))} + <span className="stat--critChance">{Math.round(((95)+(atk.ap * 35 / 100)))}</span>
+            {' '}{Math.round(((35)+(atk.ap * 40 / 100)))} + <span className="stat--critChance">{Math.round(((40)+(atk.ap * 40 / 100)))}</span> / 
+            {' '}{Math.round(((55)+(atk.ap * 40 / 100)))} + <span className="stat--critChance">{Math.round(((55)+(atk.ap * 40 / 100)))}</span> / 
+            {' '}{Math.round(((75)+(atk.ap * 40 / 100)))} + <span className="stat--critChance">{Math.round(((75)+(atk.ap * 40 / 100)))}</span> / 
+            {' '}{Math.round(((95)+(atk.ap * 40 / 100)))} + <span className="stat--critChance">{Math.round(((95)+(atk.ap * 40 / 100)))}</span>
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((35)+(atk.ap * 35 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((50)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((65)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((80)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((35)+(atk.ap * 40 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((55)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((75)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((95)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-            <b>PASSIVE: </b> Lillia's Ability hits grant <span className="stat--moveSpeed">3 / 4 / 5 / 6 (<span className="stat--ap">+2% AP</span>) Movement Speed</span> for 6 seconds, stacking up to 4 times.
+            <b>PASSIVE: </b> Lillia's Ability hits grant <span className="stat--moveSpeed">4.5 / 5.5 / 6.5 / 7.5 (<span className="stat--ap">+2% AP</span>) Movement Speed</span> for 6 seconds, stacking up to 4 times.
           </p>
 
           <p>
-            <b>ACTIVE:</b> Lillia whirls her censer, dealing <span className="stat--ap">35 / 50 / 65 / 80 (+35% AP) magic damage</span>, plus additional <span className="stat--critChance">35 / 55 / 75 / 95 (<span className="stat--ap">+35% AP</span>) true damage</span> at the outer edge.
+            <b>ACTIVE:</b> Lillia whirls her censer, dealing <span className="stat--ap">35 / 55 / 75 / 95 (+40% AP) magic damage</span>, plus additional <span className="stat--critChance">35 / 55 / 75 / 95 (<span className="stat--ap">+40% AP</span>) true damage</span> at the outer edge.
           </p>
 
           <p>
@@ -94,17 +94,17 @@ export default function lillia({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((60)+(atk.ap * 40 / 100)))} / 
-            {' '}{Math.round(((100)+(atk.ap * 40 / 100)))} / 
-            {' '}{Math.round(((140)+(atk.ap * 40 / 100)))} / 
-            {' '}{Math.round(((180)+(atk.ap * 40 / 100)))}
+            {' '}{Math.round(((70)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((110)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((150)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((190)+(atk.ap * 35 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((60)+(atk.ap * 40 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((100)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((140)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((180)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((70)+(atk.ap * 35 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((110)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((150)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((190)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))}          
           </p>
 
           <h5 className="stat--critChance">
@@ -112,22 +112,22 @@ export default function lillia({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((60)+(atk.ap * 40 / 100))*2)} / 
-            {' '}{Math.round(((100)+(atk.ap * 40 / 100)*2))} / 
-            {' '}{Math.round(((140)+(atk.ap * 40 / 100)*2))} / 
-            {' '}{Math.round(((180)+(atk.ap * 40 / 100)*2))}
+            {' '}{Math.round(((70)+(atk.ap * 35 / 100))*2)} / 
+            {' '}{Math.round(((110)+(atk.ap * 35 / 100)*2))} / 
+            {' '}{Math.round(((150)+(atk.ap * 35 / 100)*2))} / 
+            {' '}{Math.round(((190)+(atk.ap * 35 / 100)*2))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((60)+(atk.ap * 40 / 100)) * (1 - mod.defMagRed))*2} / 
-            {' '}{Math.round(((100)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))*2} / 
-            {' '}{Math.round(((140)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))*2} / 
-            {' '}{Math.round(((180)+(atk.ap * 40 / 100))* (1 - mod.defMagRed))*2}          
+            {' '}{Math.round(((70)+(atk.ap * 35 / 100)) * (1 - mod.defMagRed))*2} / 
+            {' '}{Math.round(((110)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))*2} / 
+            {' '}{Math.round(((150)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))*2} / 
+            {' '}{Math.round(((190)+(atk.ap * 35 / 100))* (1 - mod.defMagRed))*2}          
           </p>
 
     
           <p>
-          Lillia winds up a huge strike, dealing <span className="stat--ap">60 / 100 / 140 / 180 (+40% AP) magic damage</span>. Enemies in the center take <span className="stat--ap">120 / 200 / 280 / 360 (+80% AP) magic damage</span> instead.
+          Lillia winds up a huge strike, dealing <span className="stat--ap">70 / 110 / 150 / 190 (+35% AP) magic damage</span>. Enemies in the center take <span className="stat--ap">140 / 220 / 300 / 380 (+70% AP) magic damage</span> instead.
           </p>
           <p>
             Deals 50% damage to minions.

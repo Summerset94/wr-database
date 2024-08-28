@@ -13,7 +13,7 @@ const useCombinedBonusStats = (itemBonus, championModifier, currentLevel, itemEf
       as: Math.max((championModifier.as - baseStats.as), 0),
   
       armPen: itemBonus.armPen + itemEffectsMemo.armPen + championModifier.armPen,
-      magPen: itemBonus.magPen,
+      magPen: itemBonus.magPen + championModifier.magPen,
       flatArmPen: itemBonus.flatArmPen + runesEffects.flatArmPen,
       flatMagPen: itemBonus.flatMagPen + runesEffects.flatMagPen,
       armorReduction: itemBonus.armorReduction,

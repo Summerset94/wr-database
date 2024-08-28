@@ -130,17 +130,17 @@ export default function evelynn({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((55)+(def.health * (3 + atk.ap * 0.015) / 100)))} / 
-            {' '}{Math.round(((75)+(def.health * (3 + atk.ap * 0.015) / 100)))} / 
-            {' '}{Math.round(((95)+(def.health * (3 + atk.ap * 0.015) / 100)))} / 
-            {' '}{Math.round(((115)+(def.health * (3 + atk.ap * 0.015) / 100)))}
+            {' '}{Math.round(((55)+(def.health * (2 + atk.ap * 0.01) / 100)))} / 
+            {' '}{Math.round(((75)+(def.health * (2 + atk.ap * 0.01) / 100)))} / 
+            {' '}{Math.round(((95)+(def.health * (2 + atk.ap * 0.01) / 100)))} / 
+            {' '}{Math.round(((115)+(def.health * (2 + atk.ap * 0.01) / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((55)+(def.health * (3 + atk.ap * 0.015) / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((75)+(def.health * (3 + atk.ap * 0.015) / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((95)+(def.health * (3 + atk.ap * 0.015) / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((115)+(def.health * (3 + atk.ap * 0.015) / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((55)+(def.health * (2 + atk.ap * 0.01) / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((75)+(def.health * (2 + atk.ap * 0.01) / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((95)+(def.health * (2 + atk.ap * 0.01) / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((115)+(def.health * (2 + atk.ap * 0.01) / 100))* (1 - mod.defMagRed))}          
           </p>
 
           <h5 className="stat--ap">
@@ -148,23 +148,23 @@ export default function evelynn({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((75)+(def.health * (5 + atk.ap * 0.02) / 100)))} / 
-            {' '}{Math.round(((110)+(def.health * (5 + atk.ap * 0.02) / 100)))} / 
-            {' '}{Math.round(((145)+(def.health * (5 + atk.ap * 0.02) / 100)))} / 
-            {' '}{Math.round(((180)+(def.health * (5 + atk.ap * 0.02) / 100)))}
+            {' '}{Math.round(((80)+(def.health * (4 + atk.ap * 0.015) / 100)))} / 
+            {' '}{Math.round(((110)+(def.health * (4 + atk.ap * 0.015) / 100)))} / 
+            {' '}{Math.round(((140)+(def.health * (4 + atk.ap * 0.015) / 100)))} / 
+            {' '}{Math.round(((170)+(def.health * (4 + atk.ap * 0.015) / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((75)+(def.health * (5 + atk.ap * 0.02) / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((110)+(def.health * (5 + atk.ap * 0.02) / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((145)+(def.health * (5 + atk.ap * 0.02) / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((180)+(def.health * (5 + atk.ap * 0.02) / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((80)+(def.health * (4 + atk.ap * 0.015) / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((110)+(def.health * (4 + atk.ap * 0.015) / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((140)+(def.health * (4 + atk.ap * 0.015) / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((170)+(def.health * (4 + atk.ap * 0.015) / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Whips a target with Lashers, applying on-hit effects and dealing <span className="stat--ap">55 / 75 / 95 / 115 (+ 3% (+0.015% AP) of their max Health) magic damage</span> . Then gain 30% Movement Speed for 2 seconds.
+          Whips a target with Lashers, applying on-hit effects and dealing <span className="stat--ap">55 / 75 / 95 / 115 (+ 2% (+0.01% AP) of their max Health) magic damage</span> . Then gain 30% Movement Speed for 2 seconds.
 
-          Entering Demon Shade enhances the next cast to pull Evelynn to her target, dealing <span className="stat--ap">75/110/145/180 plus 5% (+ 0.02% AP) of their max Health magic damage</span> to all enemies in the way.
+          Entering Demon Shade enhances the next cast to pull Evelynn to her target, dealing <span className="stat--ap">80/110/140/170 plus 4% (+ 0.015% AP) of their max Health magic damage</span> to all enemies in the way.
           </p>
         </div>
     },

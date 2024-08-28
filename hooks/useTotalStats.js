@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-const useTotalStats = (baseStats, bonusStats, champ, championModifier, runesEffects, itemEffectsMemo) => {
+const useTotalStats = (baseStats, bonusStats, champ, championModifier, runesEffects, itemEffectsMemo, currentLevel) => {
   const totalMemo = useMemo(() => {
     const combiner = {
       health: champ.name !== 'Pyke' ? championModifier.health + itemEffectsMemo.health : baseStats.health,
@@ -26,9 +26,10 @@ const useTotalStats = (baseStats, bonusStats, champ, championModifier, runesEffe
       critChance: bonusStats.critChance,
       critMultiplier: bonusStats.critMultiplier,
       critDamage: ((baseStats.attack + bonusStats.attack))*(champ.name != 'Ashe' ? baseStats.critMultiplier + bonusStats.critMultiplier : 1),
-
+      
       forceOfNature: itemEffectsMemo.forceOfNature,
-      bootsPassive: itemEffectsMemo.bootsPassive
+      bootsPassive: itemEffectsMemo.bootsPassive,
+      terminus: itemEffectsMemo.terminus
     }
 
     return {
@@ -51,8 +52,8 @@ const useTotalStats = (baseStats, bonusStats, champ, championModifier, runesEffe
 
       flatArmPen: combiner.flatArmPen,
       flatMagPen: combiner.flatMagPen,
-      armPen: combiner.armPen,
-      magPen: combiner.magPen,
+      armPen: combiner.terminus ? Math.min(40/100, combiner.armPen) : combiner.armPen,
+      magPen:  combiner.terminus ? Math.min(40/100, combiner.magPen) : combiner.magPen,
       armorReduction: combiner.armorReduction,
       magResReduction: combiner.magResReduction,
       
@@ -64,6 +65,8 @@ const useTotalStats = (baseStats, bonusStats, champ, championModifier, runesEffe
       
       ah: combiner.ah,
       cdr: (1-(1/(1+combiner.ah/100))),
+
+      currentLevel: currentLevel,
       
       forceOfNature: combiner.forceOfNature,
       bootsPassive: combiner.bootsPassive

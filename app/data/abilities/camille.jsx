@@ -8,7 +8,7 @@ export default function camille({currentLevel, mod, bonus, atk, def, champ}) {
           </h4>
 
           <h5>
-          <abbr title="based on level. Changes on 1 / 5 / 9 / 13"></abbr>  Cooldown: 
+          Cooldown (Changes on 1 / 5 / 9 / 13): 
             {' '}{(18*mod.atkcdr).toFixed(1)} / 
             {' '}{(16*mod.atkcdr).toFixed(1)} / 
             {' '}{(14*mod.atkcdr).toFixed(1)} / 
@@ -51,21 +51,21 @@ export default function camille({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((0)+(atk.attack * 120 / 100)))} / 
             {' '}{Math.round(((0)+(atk.attack * 130 / 100)))} / 
             {' '}{Math.round(((0)+(atk.attack * 140 / 100)))} / 
-            {' '}{Math.round(((0)+(atk.attack * 150 / 100)))}
+            {' '}{Math.round(((0)+(atk.attack * 150 / 100)))} / 
+            {' '}{Math.round(((0)+(atk.attack * 160 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((0)+(atk.attack * 120 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((0)+(atk.attack * 130 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((0)+(atk.attack * 130 / 100)) * (1 - mod.defPhysRed))} / 
             {' '}{Math.round(((0)+(atk.attack * 140 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((0)+(atk.attack * 150 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((0)+(atk.attack * 150 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((0)+(atk.attack * 160 / 100))* (1 - mod.defPhysRed))}          
           </p>         
     
           <p>
-          Empowers the next attack to deal <span className="stat--ad">120% / 130% / 140% / 150% physical damage</span> and grant <span className="stat--moveSpeed">25% Movement Speed</span> for 1.5 seconds. <br />
+          Empowers the next attack to deal <span className="stat--ad">130% / 140% / 150% / 160% physical damage</span> and grant <span className="stat--moveSpeed">25% Movement Speed</span> for 1.5 seconds. <br />
 
           1.6 seconds after the first attack, Precision Protocol automatically empowers another basic attack, dealing <abbr className="stat--critChance" title='at level 1 /5 / 9 / 13'>40% / 60% / 80% / 100%</abbr> of its damage as <span className="stat--critChance">true damage</span> instead.
           </p>
@@ -88,10 +88,10 @@ export default function camille({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
             <h5 className="stat--mana">
           Cost: 
-            {' '}{50} / 
-            {' '}{55} / 
+            {' '}{50}
+            {/* {' '}{55} / 
             {' '}{60} / 
-            {' '}{65} 
+            {' '}{65}  */}
           </h5>
 
           <h5 className="stat--ad">
@@ -99,32 +99,32 @@ export default function camille({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((90)+(bonus.attack * 110 / 100)+(def.health * 4 / 100)))} / 
-            {' '}{Math.round(((120)+(bonus.attack * 110 / 100)+(def.health * 6 / 100)))} / 
-            {' '}{Math.round(((150)+(bonus.attack * 110 / 100)+(def.health * 8 / 100)))} / 
-            {' '}{Math.round(((180)+(bonus.attack * 110 / 100)+(def.health * 10 / 100)))}
+            {' '}{Math.round(((100)+(bonus.attack * 110 / 100)+(def.health * 4 / 100)))} / 
+            {' '}{Math.round(((130)+(bonus.attack * 110 / 100)+(def.health * 6 / 100)))} / 
+            {' '}{Math.round(((160)+(bonus.attack * 110 / 100)+(def.health * 8 / 100)))} / 
+            {' '}{Math.round(((190)+(bonus.attack * 110 / 100)+(def.health * 10 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((90)+(bonus.attack * 110 / 100)+(def.health * 4 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((120)+(bonus.attack * 110 / 100)+(def.health * 6 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((150)+(bonus.attack * 110 / 100)+(def.health * 8 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((180)+(bonus.attack * 110 / 100)+(def.health * 10 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((100)+(bonus.attack * 110 / 100)+(def.health * 4 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((130)+(bonus.attack * 110 / 100)+(def.health * 6 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((160)+(bonus.attack * 110 / 100)+(def.health * 8 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((190)+(bonus.attack * 110 / 100)+(def.health * 10 / 100))* (1 - mod.defPhysRed))}          
           </p>
 
           <h5 className="stat--hp">
             Healing:
           </h5>
           <p className="stat--hp">VS current target: 
-            {' '}{Math.round((((90)+(bonus.attack * 110 / 100)+(def.health * 4 / 100)) * (1 - mod.defPhysRed))*0.4)} / 
-            {' '}{Math.round((((120)+(bonus.attack * 110 / 100)+(def.health * 6 / 100))* (1 - mod.defPhysRed))*0.4)} / 
-            {' '}{Math.round((((150)+(bonus.attack * 110 / 100)+(def.health * 8 / 100))* (1 - mod.defPhysRed))*0.4)} / 
-            {' '}{Math.round((((180)+(bonus.attack * 110 / 100)+(def.health * 10 / 100))* (1 - mod.defPhysRed))*0.4)}          
+            {' '}{Math.round((((100)+(bonus.attack * 110 / 100)+(def.health * 4 / 100)) * (1 - mod.defPhysRed))*0.5)} / 
+            {' '}{Math.round((((130)+(bonus.attack * 110 / 100)+(def.health * 6 / 100))* (1 - mod.defPhysRed))*0.5)} / 
+            {' '}{Math.round((((160)+(bonus.attack * 110 / 100)+(def.health * 8 / 100))* (1 - mod.defPhysRed))*0.5)} / 
+            {' '}{Math.round((((190)+(bonus.attack * 110 / 100)+(def.health * 10 / 100))* (1 - mod.defPhysRed))*0.5)}          
           </p>
     
           <p>
-            Slices in a direction dealing <span className="stat--ad">90 / 120 / 150 / 180 (+110% bonus AD) <span className="stat--hp">(+4% / 6% / 8% / 10% of target's Max Health)</span> as physical damage</span>, <br />
-            Enemies hit by the outer half are slowed by <span className="stat--moveSpeed">80%</span> decaying over 2 seconds, healing Camille for <span className="stat--hp">40%</span> of the damage dealt to Champions. 
+            Slices in a direction dealing <span className="stat--ad"> 100/130/160/190 (+110% bonus AD) <span className="stat--hp">(+4% / 6% / 8% / 10% of target's Max Health)</span> as physical damage</span>, <br />
+            Enemies hit by the outer half are slowed by <span className="stat--moveSpeed">80%</span> decaying over 2 seconds, healing Camille for <span className="stat--hp">50%</span> of the damage dealt to Champions. 
           </p>
         </div>
     },

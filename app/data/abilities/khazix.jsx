@@ -44,25 +44,25 @@ export default function khazix({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((55)+(bonus.attack * 130 / 100)))} / 
-            {' '}{Math.round(((90)+(bonus.attack * 130 / 100)))} / 
-            {' '}{Math.round(((125)+(bonus.attack * 130 / 100)))} / 
-            {' '}{Math.round(((160)+(bonus.attack * 130 / 100)))}
+            {' '}{Math.round(((65)+(bonus.attack * 130 / 100)))} / 
+            {' '}{Math.round(((100)+(bonus.attack * 130 / 100)))} / 
+            {' '}{Math.round(((135)+(bonus.attack * 130 / 100)))} / 
+            {' '}{Math.round(((170)+(bonus.attack * 130 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((55)+(bonus.attack * 130 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((90)+(bonus.attack * 130 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((125)+(bonus.attack * 130 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((160)+(bonus.attack * 130 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((65)+(bonus.attack * 130 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((100)+(bonus.attack * 130 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((135)+(bonus.attack * 130 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((170)+(bonus.attack * 130 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
-          Slashes with his claws, dealing <span className="stat--ad ">55 / 90 / 125 / 160 (+130% bonus AD) physical damage</span>. If the target is <b>isolated</b>, damage is increased by <span className="stat--critChance">100%</span>.
+          Slashes with his claws, dealing <span className="stat--ad ">65/100/135/170 (+130% bonus AD) physical damage</span>. If the target is <b>isolated</b>, damage is increased by <span className="stat--critChance">100%</span>.
           </p>
 
           <p>
-          <b>Evolve:</b> Attacks and Taste Their Fear gain 50 range and 30% of Taste Their Fear's cooldown is refunded against isolated target.
+          <b>Evolve:</b> Attacks and Taste Their Fear gain 50 range and 40% of Taste Their Fear's cooldown is refunded against isolated target.
           </p>          
         </div>
     },

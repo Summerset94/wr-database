@@ -7,13 +7,13 @@ export default function missfortune({currentLevel, mod, bonus, atk, def, champ})
           <span className="marker--ability">P</span> LOVE TAP
           </h4>
     
-          <p>
+          {/* <p>
             First attack against an enemy deal <abbr title="49 - 150% AD based on level" className="stat--ad">{Math.round(atk.attack * (49 + 101/14 * (Number(currentLevel)-1)) /100)} ({Math.round((atk.attack * (49 + 101/14 * (Number(currentLevel)-1)) /100)* (1 - mod.defPhysRed))} post-mitigation) bonus physical damage</abbr>
-          </p>
+          </p> */}
 
           <p>
-            Deals 50% damage to minions and monsters.
-          </p>
+          Applies Love Tap when attacking enemy champions or epic monsters. At 3 stacks, increases Miss Fortune's damage to the target by {(7.6 + 0.4*currentLevel).toFixed(1)}% (8% + 0.4% per level)
+          </p>         
         </div>
     },
 
@@ -44,17 +44,17 @@ export default function missfortune({currentLevel, mod, bonus, atk, def, champ})
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((30)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100)))} / 
-            {' '}{Math.round(((60)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100)))} / 
-            {' '}{Math.round(((90)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100)))} / 
-            {' '}{Math.round(((120)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100)))}
+            {' '}{Math.round(((60)+(atk.attack * 115 / 100)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((95)+(atk.attack * 120 / 100)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((130)+(atk.attack * 125 / 100)+(atk.ap * 35 / 100)))} / 
+            {' '}{Math.round(((165)+(atk.attack * 130 / 100)+(atk.ap * 35 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((30)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((60)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((90)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((120)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((60)+(atk.attack * 115 / 100)+(atk.ap * 35 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((95)+(atk.attack * 120 / 100)+(atk.ap * 35 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((130)+(atk.attack * 125 / 100)+(atk.ap * 35 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((165)+(atk.attack * 130 / 100)+(atk.ap * 35 / 100))* (1 - mod.defPhysRed))}          
           </p>
 
           <h5 className="stat--critChance">
@@ -62,25 +62,25 @@ export default function missfortune({currentLevel, mod, bonus, atk, def, champ})
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((30)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))*1.3)} / 
-            {' '}{Math.round(((60)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))*1.4)} / 
-            {' '}{Math.round(((90)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))*1.5)} / 
-            {' '}{Math.round(((120)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))*1.6)}
+            {' '}{Math.round(((60)+(atk.attack * 115 / 100)+(atk.ap * 35 / 100))*1.3)} / 
+            {' '}{Math.round(((95)+(atk.attack * 120 / 100)+(atk.ap * 35 / 100))*1.4)} / 
+            {' '}{Math.round(((130)+(atk.attack * 125 / 100)+(atk.ap * 35 / 100))*1.5)} / 
+            {' '}{Math.round(((165)+(atk.attack * 130 / 100)+(atk.ap * 35 / 100))*1.6)}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round((((30)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))*1.3) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round((((60)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))*1.4)* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round((((90)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))*1.5)* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round((((120)+(atk.attack * 110 / 100)+(atk.ap * 35 / 100))*1.6)* (1 - mod.defPhysRed))}          
+            {' '}{Math.round((((60)+(atk.attack * 115 / 100)+(atk.ap * 35 / 100))*1.3) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round((((95)+(atk.attack * 120 / 100)+(atk.ap * 35 / 100))*1.4)* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round((((130)+(atk.attack * 125 / 100)+(atk.ap * 35 / 100))*1.5)* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round((((165)+(atk.attack * 130 / 100)+(atk.ap * 35 / 100))*1.6)* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
-          Fires a shot that ricochets behind the first enemy hit, dealing <span className="stat--ad">30 / 60 / 90 / 120 (+110% AD) (<span className="stat--ap">+35% AP</span>) physical damage</span>. 
+          Fires a shot that ricochets behind the first enemy hit, dealing <span className="stat--ad">60 / 95 / 130 / 165 (+115% / 120% / 125% / 130% AD) (<span className="stat--ap">+35% AP</span>) physical damage</span>. 
           </p>
 
           <p>
-          The second hit will Critically Strike for <span className="stat--critChance">130/140/150/160%</span>  damage.
+          The second hit will Critically Strike for <span className="stat--critChance">130/140/150/160%</span>  damage and apply <b>Love Tap</b>.
           </p>
         </div>
     },
@@ -102,11 +102,11 @@ export default function missfortune({currentLevel, mod, bonus, atk, def, champ})
           </h5>
     
           <p>
-            <b>PASSIVE: </b>After 4 seconds of not taking damage, gain <span className="stat--moveSpeed">25 Movement Speed</span>. After another 3 seconds, this bonus increases to <span className="stat--moveSpeed">80/85/90/95</span>.
+            <b>PASSIVE: </b>After 4 seconds of not taking damage, gain <span className="stat--moveSpeed">30/35/40/45 Movement Speed</span>. After another 3 seconds, this bonus increases to <span className="stat--moveSpeed">80/90/100/110</span>.
           </p>
 
           <p>
-            <b>ACTIVE:</b> Fully activates Strut's Movement Speed and grants <abbr title="45 / 60 / 75 / 90%" className="stat--as">{(champ.asBase * 45 / 100).toFixed(3)} / {(champ.asBase * 60 / 100).toFixed(3)} / {(champ.asBase * 75 / 100).toFixed(3)} / {(champ.asBase * 90 / 100).toFixed(3)} Attack Speed</abbr>   for 4 seconds. Love Taps reduce the cooldown of Strut by 2 seconds.
+            <b>ACTIVE:</b> Fully activates Strut's Movement Speed and grants <abbr title="45 / 60 / 75 / 90%" className="stat--as">{(champ.asBase * 45 / 100).toFixed(3)} / {(champ.asBase * 60 / 100).toFixed(3)} / {(champ.asBase * 75 / 100).toFixed(3)} / {(champ.asBase * 90 / 100).toFixed(3)} Attack Speed</abbr>   for 4 seconds. attacked targets with full stacks of <b>Love Tap</b> reduces the cooldown of Strut by 2 seconds.
           </p>
         </div>
     },
@@ -120,13 +120,16 @@ export default function missfortune({currentLevel, mod, bonus, atk, def, champ})
     
           <h5>
           Cooldown: 
-            {' '}{(16*mod.atkcdr).toFixed(1)} / 
-            {' '}{(14*mod.atkcdr).toFixed(1)} / 
-            {' '}{(12*mod.atkcdr).toFixed(1)} / 
+            {' '}{(14.5*mod.atkcdr).toFixed(1)} / 
+            {' '}{(13*mod.atkcdr).toFixed(1)} / 
+            {' '}{(11.5*mod.atkcdr).toFixed(1)} / 
             {' '}{(10*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
+            {' '}{65} / 
+            {' '}{70} /
+            {' '}{75} /
             {' '}{80}
           </h5>
 
@@ -135,21 +138,21 @@ export default function missfortune({currentLevel, mod, bonus, atk, def, champ})
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((10)+(atk.ap * 10 / 100)))} / 
-            {' '}{Math.round(((16)+(atk.ap * 12 / 100)))} / 
-            {' '}{Math.round(((22)+(atk.ap * 14 / 100)))} / 
-            {' '}{Math.round(((28)+(atk.ap * 16 / 100)))}
+            {' '}{Math.round(((15)+(atk.ap * 10 / 100)))} / 
+            {' '}{Math.round(((20)+(atk.ap * 11 / 100)))} / 
+            {' '}{Math.round(((25)+(atk.ap * 12 / 100)))} / 
+            {' '}{Math.round(((30)+(atk.ap * 13 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((10)+(atk.ap * 10 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((16)+(atk.ap * 12 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((22)+(atk.ap * 14 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((28)+(atk.ap * 16 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((15)+(atk.ap * 10 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((20)+(atk.ap * 11 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((25)+(atk.ap * 12 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((30)+(atk.ap * 13 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Rains down bullets on an area for 2 seconds, dealing <span className="stat--ap">10 / 16 / 22 / 28 (+10 / 12 / 14 / 16% AP) magic damage</span> every quarter second and slowing enemies by
+          Rains down bullets on an area for 2 seconds, dealing <span className="stat--ap">15 / 20 / 25 / 30 (+10 / 11 / 12 / 13% AP) magic damage</span> every quarter second and slowing enemies.
           </p>
         </div>
     },

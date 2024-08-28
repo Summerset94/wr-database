@@ -98,22 +98,22 @@ export default function twitch({currentLevel, mod, bonus, atk, def, champ, updat
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((20)+(bonus.attack * 33 / 100)+(atk.ap * 20 / 100)))} / 
-            {' '}{Math.round(((25)+(bonus.attack * 33 / 100)+(atk.ap * 20 / 100)))} / 
-            {' '}{Math.round(((30)+(bonus.attack * 33 / 100)+(atk.ap * 20 / 100)))} / 
-            {' '}{Math.round(((35)+(bonus.attack * 33 / 100)+(atk.ap * 20 / 100)))}
+            {' '}{Math.round(((15)+(bonus.attack * 33 / 100)+(atk.ap * 18 / 100)))} / 
+            {' '}{Math.round(((20)+(bonus.attack * 33 / 100)+(atk.ap * 18 / 100)))} / 
+            {' '}{Math.round(((25)+(bonus.attack * 33 / 100)+(atk.ap * 18 / 100)))} / 
+            {' '}{Math.round(((30)+(bonus.attack * 33 / 100)+(atk.ap * 18 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((20)+(bonus.attack * 33 / 100)+(atk.ap * 20 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((25)+(bonus.attack * 33 / 100)+(atk.ap * 20 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((30)+(bonus.attack * 33 / 100)+(atk.ap * 20 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((35)+(bonus.attack * 33 / 100)+(atk.ap * 20 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((15)+(bonus.attack * 33 / 100)+(atk.ap * 18 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((20)+(bonus.attack * 33 / 100)+(atk.ap * 18 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((25)+(bonus.attack * 33 / 100)+(atk.ap * 18 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((30)+(bonus.attack * 33 / 100)+(atk.ap * 18 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <br />
           <p>
-            Deals <span className="stat--ad">30 / 40 / 50 / 60 physical damage</span> to all enemies affected by DEADLY VENOM, each stack deals <span className="stat--ad">20 / 25 / 30 / 35 (+33% bonus AD) (<span className="stat--ap">+20% AP</span>) damage</span> to enemies.
+            Deals <span className="stat--ad">25 / 35 / 45 / 55 physical damage</span> to all enemies affected by DEADLY VENOM, each stack deals <span className="stat--ad">15 / 20 / 25 / 30 (+33% bonus AD) (<span className="stat--ap">+18% AP</span>) damage</span> to enemies.
           </p>
 
           <p>
@@ -154,7 +154,7 @@ export default function twitch({currentLevel, mod, bonus, atk, def, champ, updat
           </p>
 
           <p>
-            Subsequent targets take 10% less damage, down to a minimum of 60%.
+            Subsequent targets take 15% less damage, down to a minimum of 40%.
           </p>
         </div>
     }

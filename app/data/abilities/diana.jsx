@@ -32,17 +32,17 @@ export default function diana({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
-            {' '}{(9*mod.atkcdr).toFixed(1)} / 
             {' '}{(8*mod.atkcdr).toFixed(1)} / 
             {' '}{(7*mod.atkcdr).toFixed(1)} / 
-            {' '}{(6*mod.atkcdr).toFixed(1)} 
+            {' '}{(6*mod.atkcdr).toFixed(1)} / 
+            {' '}{(5*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
+            {' '}{50} / 
             {' '}{55} / 
-            {' '}{65} / 
-            {' '}{75} / 
-            {' '}{85} 
+            {' '}{60} / 
+            {' '}{65} 
           </h5>
 
           <h5 className="stat--ap">
@@ -96,32 +96,32 @@ export default function diana({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((25)+(atk.ap * 20 / 100)))} / 
-            {' '}{Math.round(((40)+(atk.ap * 20 / 100)))} / 
-            {' '}{Math.round(((55)+(atk.ap * 20 / 100)))} / 
-            {' '}{Math.round(((70)+(atk.ap * 20 / 100)))}
+            {' '}{Math.round(((25)+(atk.ap * 25 / 100)))} / 
+            {' '}{Math.round(((40)+(atk.ap * 25 / 100)))} / 
+            {' '}{Math.round(((55)+(atk.ap * 25 / 100)))} / 
+            {' '}{Math.round(((70)+(atk.ap * 25 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((25)+(atk.ap * 20 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((40)+(atk.ap * 20 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((55)+(atk.ap * 20 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((70)+(atk.ap * 20 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((25)+(atk.ap * 25 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((40)+(atk.ap * 25 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((55)+(atk.ap * 25 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((70)+(atk.ap * 25 / 100))* (1 - mod.defMagRed))}          
           </p>
 
           <h5 className="stat--hp">Shield:</h5>
 
           <p className="stat--hp">
-            {Math.round(40)+(atk.ap * 40 / 100)} /
-            {' '}{Math.round(60)+(atk.ap * 40 / 100)} /
-            {' '}{Math.round(80)+(atk.ap * 40 / 100)} /
-            {' '}{Math.round(100)+(atk.ap * 40 / 100)}
+            {Math.round(50)+(atk.ap * 40 / 100)} /
+            {' '}{Math.round(70)+(atk.ap * 40 / 100)} /
+            {' '}{Math.round(90)+(atk.ap * 40 / 100)} /
+            {' '}{Math.round(110)+(atk.ap * 40 / 100)}
           </p>
     
           <p>
-          Creates 3 spheres that orbit Diana for 5 seconds. Upon contact with enemies the spheres detonate, dealing <span className="stat--ap">25 / 40 / 55 / 70 (+20% AP) magic damage</span>.
+          Creates 3 spheres that orbit Diana for 5 seconds. Upon contact with enemies the spheres detonate, dealing <span className="stat--ap">25 / 40 / 55 / 70 (+25% AP) magic damage</span>.
 
-          Also grants a shield that absorbs <span className="stat--hp"> 40 / 60 / 80 / 100 (+40% AP) damage</span>. If the third sphere detonates, the shield is increased by <span className="stat--hp"> 40 / 60 / 80 / 100 (+40% AP)</span>.
+          Also grants a shield that absorbs <span className="stat--hp"> 50 / 70 / 90 / 110 (+40% AP) damage</span>. If the third sphere detonates, the shield is increased by <span className="stat--hp"> 50 / 70 / 90 / 110 (+40% AP)</span>.
           </p>
         </div>
     },

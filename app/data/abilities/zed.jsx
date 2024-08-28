@@ -42,17 +42,17 @@ export default function zed({currentLevel, mod, bonus, atk, def, champ, updateAb
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((70)+(bonus.attack * 100 / 100)))} / 
-            {' '}{Math.round(((120)+(bonus.attack * 100 / 100)))} / 
-            {' '}{Math.round(((170)+(bonus.attack * 100 / 100)))} / 
-            {' '}{Math.round(((220)+(bonus.attack * 100 / 100)))}
+            {' '}{Math.round(((70)+(bonus.attack * 110 / 100)))} / 
+            {' '}{Math.round(((120)+(bonus.attack * 110 / 100)))} / 
+            {' '}{Math.round(((170)+(bonus.attack * 110 / 100)))} / 
+            {' '}{Math.round(((220)+(bonus.attack * 110 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((70)+(bonus.attack * 100 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((120)+(bonus.attack * 100 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((170)+(bonus.attack * 100 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((220)+(bonus.attack * 100 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((70)+(bonus.attack * 110 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((120)+(bonus.attack * 110 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((170)+(bonus.attack * 110 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((220)+(bonus.attack * 110 / 100))* (1 - mod.defPhysRed))}          
           </p>
           
           <h5 className="stat--ad">
@@ -60,23 +60,23 @@ export default function zed({currentLevel, mod, bonus, atk, def, champ, updateAb
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((42)+(bonus.attack * 60 / 100)))} / 
-            {' '}{Math.round(((72)+(bonus.attack * 60 / 100)))} / 
-            {' '}{Math.round(((102)+(bonus.attack * 60 / 100)))} / 
-            {' '}{Math.round(((132)+(bonus.attack * 60 / 100)))}
+            {' '}{Math.round(((42)+(bonus.attack * 66 / 100)))} / 
+            {' '}{Math.round(((72)+(bonus.attack * 66 / 100)))} / 
+            {' '}{Math.round(((102)+(bonus.attack * 66 / 100)))} / 
+            {' '}{Math.round(((132)+(bonus.attack * 66 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((42)+(bonus.attack * 60 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((72)+(bonus.attack * 60 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((102)+(bonus.attack * 60 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((132)+(bonus.attack * 60 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((42)+(bonus.attack * 66 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((72)+(bonus.attack * 66 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((102)+(bonus.attack * 66 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((132)+(bonus.attack * 66 / 100))* (1 - mod.defPhysRed))}          
           </p>
 
     
           <br />
           <p>
-           Zed and his shadows throw their shurikens, each dealing <span className="stat--ad">70 / 120 / 170 / 220 (+100 bonus AD)</span> to the first enemy they hit and <span className="stat--ad">42 / 72 / 102 / 132 (+60% bonus AD)</span> to other enemies in their path.
+           Zed and his shadows throw their shurikens, each dealing <span className="stat--ad">70 / 120 / 170 / 220 (+110 bonus AD)</span> to the first enemy they hit and <span className="stat--ad">42 / 72 / 102 / 132 (+66% bonus AD)</span> to other enemies in their path.
           </p>
         </div>
     },
@@ -142,17 +142,17 @@ export default function zed({currentLevel, mod, bonus, atk, def, champ, updateAb
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((70)+(bonus.attack * 70 / 100)))} / 
-            {' '}{Math.round(((100)+(bonus.attack * 70 / 100)))} / 
-            {' '}{Math.round(((130)+(bonus.attack * 70 / 100)))} / 
-            {' '}{Math.round(((160)+(bonus.attack * 70 / 100)))}
+            {' '}{Math.round(((70)+(bonus.attack * 75 / 100)))} / 
+            {' '}{Math.round(((100)+(bonus.attack * 75 / 100)))} / 
+            {' '}{Math.round(((130)+(bonus.attack * 75 / 100)))} / 
+            {' '}{Math.round(((160)+(bonus.attack * 75 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((70)+(bonus.attack * 70 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((100)+(bonus.attack * 70 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((130)+(bonus.attack * 70 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((160)+(bonus.attack * 70 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((70)+(bonus.attack * 75 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((100)+(bonus.attack * 75 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((130)+(bonus.attack * 75 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((160)+(bonus.attack * 75 / 100))* (1 - mod.defPhysRed))}          
           </p>
 
           <h5 className="stat--ad">
@@ -160,22 +160,22 @@ export default function zed({currentLevel, mod, bonus, atk, def, champ, updateAb
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((70)+(bonus.attack * 70 / 100))*0.6)} / 
-            {' '}{Math.round(((100)+(bonus.attack * 70 / 100))*0.6)} / 
-            {' '}{Math.round(((130)+(bonus.attack * 70 / 100))*0.6)} / 
-            {' '}{Math.round(((160)+(bonus.attack * 70 / 100))*0.6)}
+            {' '}{Math.round(((70)+(bonus.attack * 75 / 100))*0.6)} / 
+            {' '}{Math.round(((100)+(bonus.attack * 75 / 100))*0.6)} / 
+            {' '}{Math.round(((130)+(bonus.attack * 75 / 100))*0.6)} / 
+            {' '}{Math.round(((160)+(bonus.attack * 75 / 100))*0.6)}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((70)+(bonus.attack * 70 / 100)) * (1 - mod.defPhysRed)*0.6)} / 
-            {' '}{Math.round(((100)+(bonus.attack * 70 / 100))* (1 - mod.defPhysRed)*0.6)} / 
-            {' '}{Math.round(((130)+(bonus.attack * 70 / 100))* (1 - mod.defPhysRed)*0.6)} / 
-            {' '}{Math.round(((160)+(bonus.attack * 70 / 100))* (1 - mod.defPhysRed)*0.6)}          
+            {' '}{Math.round(((70)+(bonus.attack * 75 / 100)) * (1 - mod.defPhysRed)*0.6)} / 
+            {' '}{Math.round(((100)+(bonus.attack * 75 / 100))* (1 - mod.defPhysRed)*0.6)} / 
+            {' '}{Math.round(((130)+(bonus.attack * 75 / 100))* (1 - mod.defPhysRed)*0.6)} / 
+            {' '}{Math.round(((160)+(bonus.attack * 75 / 100))* (1 - mod.defPhysRed)*0.6)}          
           </p>
     
           <br />
           <p>
-            Zed and his shadows slash, each dealing <span className="stat--ad">70 / 100 / 130 / 160 (+70% bonus AD) physical damage</span> to nearby enemies and <span className="stat--moveSpeed">slowing them by 25 / 30 / 35 / 40% for 1.5 seconds</span>. Slashes beyond the first striking the same enemy deal <span className="stat--ad">60% damage</span> and increase the <span className="stat--moveSpeed">slow by 50%</span>.
+            Zed and his shadows slash, each dealing <span className="stat--ad">70 / 100 / 130 / 160 (+75% bonus AD) physical damage</span> to nearby enemies and <span className="stat--moveSpeed">slowing them by 25 / 30 / 35 / 40% for 1.5 seconds</span>. Slashes beyond the first striking the same enemy deal <span className="stat--ad">60% damage</span> and increase the <span className="stat--moveSpeed">slow by 50%</span>.
           </p>
 
           <p>
@@ -204,7 +204,7 @@ export default function zed({currentLevel, mod, bonus, atk, def, champ, updateAb
     
           <br />
           <p>
-            Zed becomes untargetable and dashes to target enemy champion, making them. After 3.5 seconds, the mark triggers, dealing physical damage equal to <span className="stat--ad">100% AD</span> plus <span className="stat--ad">25 / 40 / 55% </span> of all damage dealt to the target by Zed while the mark was active.
+            Zed becomes untargetable and dashes to target enemy champion, making them. After 3.5 seconds, the mark triggers, dealing physical damage equal to <span className="stat--ad">100% AD</span> plus <span className="stat--ad">30 / 42.5 / 55% </span> of all damage dealt to the target by Zed while the mark was active.
           </p>
 
           <p>

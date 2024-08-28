@@ -76,17 +76,17 @@ export default function darius({currentLevel, mod, bonus, atk, def, champ, updat
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((14)+(atk.attack * 35 / 100)))} / 
-            {' '}{Math.round(((28)+(atk.attack * 40 / 100)))} / 
-            {' '}{Math.round(((42)+(atk.attack * 45 / 100)))} / 
-            {' '}{Math.round(((56)+(atk.attack * 50 / 100)))}
+            {' '}{Math.round(((18)+(atk.attack * 35 / 100)))} / 
+            {' '}{Math.round(((32)+(atk.attack * 40 / 100)))} / 
+            {' '}{Math.round(((46)+(atk.attack * 45 / 100)))} / 
+            {' '}{Math.round(((60)+(atk.attack * 50 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((14)+(atk.attack * 35 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((28)+(atk.attack * 40 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((42)+(atk.attack * 45 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((56)+(atk.attack * 50 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((18)+(atk.attack * 35 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((32)+(atk.attack * 40 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((46)+(atk.attack * 45 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((60)+(atk.attack * 50 / 100))* (1 - mod.defPhysRed))}          
           </p>
 
           <h5 className="stat--ad">
@@ -94,22 +94,22 @@ export default function darius({currentLevel, mod, bonus, atk, def, champ, updat
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((40)+(atk.attack * 100 / 100)))} / 
-            {' '}{Math.round(((80)+(atk.attack * 115 / 100)))} / 
-            {' '}{Math.round(((120)+(atk.attack * 130 / 100)))} / 
-            {' '}{Math.round(((160)+(atk.attack * 145 / 100)))}
+            {' '}{Math.round(((50)+(atk.attack * 100 / 100)))} / 
+            {' '}{Math.round(((90)+(atk.attack * 115 / 100)))} / 
+            {' '}{Math.round(((130)+(atk.attack * 130 / 100)))} / 
+            {' '}{Math.round(((170)+(atk.attack * 145 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((40)+(atk.attack * 100 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((80)+(atk.attack * 115 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((120)+(atk.attack * 130 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((160)+(atk.attack * 145 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((50)+(atk.attack * 100 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((90)+(atk.attack * 115 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((130)+(atk.attack * 130 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((170)+(atk.attack * 145 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
-          Swings his axe after a delay, dealing <span className="stat--ad">14 / 28 / 42 / 56 (+35% / 40% / 45% / 50% AD) physical damage</span>. <br />
-          Hitting enemies with the blade of the axe deals <span className="stat--ad">40 / 80 / 120 / 160 (+100% / 115% / 130% / 145% AD)</span>, heals Darius for <span className="stat--hp">15% of his missing Health</span>  for each champion or large monster hit <span className="stat--hp">(max 45%)</span> and applies <b>Hemorrhage</b>.
+          Swings his axe after a delay, dealing <span className="stat--ad">18/32/46/60 (+35% / 40% / 45% / 50% AD) physical damage</span>. <br />
+          Hitting enemies with the blade of the axe deals <span className="stat--ad">50/90/130/170 (+100% / 115% / 130% / 145% AD)</span>, heals Darius for <span className="stat--hp">15% of his missing Health</span>  for each champion or large monster hit <span className="stat--hp">(max 45%)</span> and applies <b>Hemorrhage</b>.
           </p>
         </div>
     },
@@ -219,20 +219,20 @@ export default function darius({currentLevel, mod, bonus, atk, def, champ, updat
           </h5>
 
           <p className="stat--ad">Minimum: 
-            {' '}{Math.round(((100)+(atk.attack * 75 / 100)))} / 
-            {' '}{Math.round(((200)+(atk.attack * 75 / 100)))} / 
-            {' '}{Math.round(((300)+(atk.attack * 75 / 100)))}
+            {' '}{Math.round(((125)+(bonus.attack * 75 / 100)))} / 
+            {' '}{Math.round(((250)+(bonus.attack * 75 / 100)))} / 
+            {' '}{Math.round(((375)+(bonus.attack * 75 / 100)))}
           </p>
 
           <p className="stat--ad">Maximum: 
-            {' '}{Math.round(((100)+(atk.attack * 75 / 100))*2)} / 
-            {' '}{Math.round(((200)+(atk.attack * 75 / 100))*2)} / 
-            {' '}{Math.round(((300)+(atk.attack * 75 / 100))*2)}   
+            {' '}{Math.round(((125)+(bonus.attack * 75 / 100))*2)} / 
+            {' '}{Math.round(((250)+(bonus.attack * 75 / 100))*2)} / 
+            {' '}{Math.round(((375)+(bonus.attack * 75 / 100))*2)}   
           </p>
 
     
           <p>
-            Leaps to execute a champion. Deals <span className="stat--critChance">100 / 200 / 300 <span className="stat--ad">(+75% AD)</span> true damage</span> , increased by 20% per Hemorrhage stack, and applies Hemorrhage. <br />
+            Leaps to execute a champion. Deals <span className="stat--critChance">125/250/375 <span className="stat--ad">(+75% bonus AD)</span> true damage</span> , increased by 20% per Hemorrhage stack, and applies Hemorrhage. <br />
             Killing the target with Noxian Guillotine refreshes its cooldown, mana cost, and grants Noxian Might for 5 seconds and causes nearby minions and monsters to flee for 1.5 seconds.
           </p>
 

@@ -41,21 +41,21 @@ export default function nautilus({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((60)+(atk.ap * 90 / 100)))} / 
-            {' '}{Math.round(((120)+(atk.ap * 90 / 100)))} / 
-            {' '}{Math.round(((180)+(atk.ap * 90 / 100)))} / 
-            {' '}{Math.round(((240)+(atk.ap * 90 / 100)))}
+            {' '}{Math.round(((60)+(atk.ap * 80 / 100)))} / 
+            {' '}{Math.round(((120)+(atk.ap * 80 / 100)))} / 
+            {' '}{Math.round(((180)+(atk.ap * 80 / 100)))} / 
+            {' '}{Math.round(((240)+(atk.ap * 80 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((60)+(atk.ap * 90 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((120)+(atk.ap * 90 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((180)+(atk.ap * 90 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((240)+(atk.ap * 90 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((60)+(atk.ap * 80 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((120)+(atk.ap * 80 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((180)+(atk.ap * 80 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((240)+(atk.ap * 80 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Hurls his anchor forward, dealing <span className="stat--ap">60 / 120 / 180 / 240 (+90% AP) magic damage</span> to the first target hit and pulling them and Nautilus together.
+          Hurls his anchor forward, dealing <span className="stat--ap">60 / 120 / 180 / 240 (+80% AP) magic damage</span> to the first target hit and pulling them and Nautilus together.
           </p>
 
           <p>
@@ -168,9 +168,9 @@ export default function nautilus({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
+            {' '}{(70*mod.atkcdr).toFixed(1)} / 
             {' '}{(60*mod.atkcdr).toFixed(1)} / 
-            {' '}{(50*mod.atkcdr).toFixed(1)} / 
-            {' '}{(40*mod.atkcdr).toFixed(1)}
+            {' '}{(50*mod.atkcdr).toFixed(1)}
           </h5>
             <h5 className="stat--mana">
           Cost: 
@@ -182,19 +182,19 @@ export default function nautilus({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((150)+(atk.ap * 80 / 100)))} / 
-            {' '}{Math.round(((275)+(atk.ap * 80 / 100)))} / 
-            {' '}{Math.round(((400)+(atk.ap * 80 / 100)))}
+            {' '}{Math.round(((150)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((275)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((400)+(atk.ap * 70 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((150)+(atk.ap * 80 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((275)+(atk.ap * 80 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((400)+(atk.ap * 80 / 100))* (1 - mod.defMagRed))}
+            {' '}{Math.round(((150)+(atk.ap * 70 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((275)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((400)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))}
           </p>
     
           <p>
-          Nautilus fires a <b>DEPTH CHARGE</b> that locks up on enemy champion and slowly travels towards the target, dealing <span className="stat--ap">150 / 275 / 400 (+80% AP) magic damage</span>, knocking them Up and Stunning them for 1/1.5/2 seconds.
+          Nautilus fires a <b>DEPTH CHARGE</b> that locks up on enemy champion and slowly travels towards the target, dealing <span className="stat--ap">150 / 275 / 400 (+70% AP) magic damage</span>, knocking them Up and Stunning them for 1/1.5/2 seconds.
           </p>
 
           <p>

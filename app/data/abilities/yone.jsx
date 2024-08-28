@@ -45,16 +45,16 @@ export default function yone({currentLevel, mod, bonus, atk, def, champ, updateA
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((25)+(atk.attack * 100 / 100)))} / 
+            {' '}{Math.round(((30)+(atk.attack * 100 / 100)))} / 
             {' '}{Math.round(((50)+(atk.attack * 100 / 100)))} / 
-            {' '}{Math.round(((75)+(atk.attack * 100 / 100)))} / 
+            {' '}{Math.round(((80)+(atk.attack * 100 / 100)))} / 
             {' '}{Math.round(((100)+(atk.attack * 100 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((25)+(atk.attack * 100 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((30)+(atk.attack * 100 / 100)) * (1 - mod.defPhysRed))} / 
             {' '}{Math.round(((50)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((75)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((80)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed))} / 
             {' '}{Math.round(((100)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed))}          
           </p>
 
@@ -63,22 +63,22 @@ export default function yone({currentLevel, mod, bonus, atk, def, champ, updateA
           </h5>
 
           <p className="stat--critChance">Pre-mitigation: 
-          {' '}{Math.round(((25)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
+          {' '}{Math.round(((30)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
             {' '}{Math.round(((50)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
-            {' '}{Math.round(((75)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
+            {' '}{Math.round(((70)+(atk.attack * 100 / 100))*atk.critMultiplier)} / 
             {' '}{Math.round(((100)+(atk.attack * 100 / 100))*atk.critMultiplier)}
           </p>
 
           <p className="stat--critChance">Post-mitigation: 
-          {' '}{Math.round(((25)+(atk.attack * 100 / 100)) * (1 - mod.defPhysRed)*atk.critMultiplier)} / 
+          {' '}{Math.round(((30)+(atk.attack * 100 / 100)) * (1 - mod.defPhysRed)*atk.critMultiplier)} / 
             {' '}{Math.round(((50)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed)*atk.critMultiplier)} / 
-            {' '}{Math.round(((75)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed)*atk.critMultiplier)} / 
+            {' '}{Math.round(((70)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed)*atk.critMultiplier)} / 
             {' '}{Math.round(((100)+(atk.attack * 100 / 100))* (1 - mod.defPhysRed)*atk.critMultiplier)}         
           </p>
     
           <br />
           <p>
-           Thursts forward, dealing <span className="stat--">25 / 50 / 75 / 100 (+100% AD) physical damage</span>.
+           Thursts forward, dealing <span className="stat--">30 / 50 / 70 / 100 (+100% AD) physical damage</span>.
           </p>
 
           <p>
@@ -90,7 +90,7 @@ export default function yone({currentLevel, mod, bonus, atk, def, champ, updateA
           </p>
 
           <p>
-            Deals 80% damage to monsters.
+            Deals 70% damage to monsters.
           </p>
         </div>
     },

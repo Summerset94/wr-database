@@ -66,15 +66,15 @@ export default function zoe({currentLevel, mod, bonus, atk, def, champ, updateAb
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((35)+(atk.ap * 60 / 100)+(qDamage)))} / 
+            {' '}{Math.round(((30)+(atk.ap * 60 / 100)+(qDamage)))} / 
             {' '}{Math.round(((75)+(atk.ap * 60 / 100)+(qDamage)))} / 
             {' '}{Math.round(((115)+(atk.ap * 60 / 100)+(qDamage)))} / 
             {' '}{Math.round(((155)+(atk.ap * 60 / 100)+(qDamage)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((35)+(atk.ap * 60 / 100)+(qDamage)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((75)+(atk.ap * 60 / 100)+(qDamage))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((30)+(atk.ap * 60 / 100)+(qDamage)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((65)+(atk.ap * 60 / 100)+(qDamage))* (1 - mod.defMagRed))} / 
             {' '}{Math.round(((115)+(atk.ap * 60 / 100)+(qDamage))* (1 - mod.defMagRed))} / 
             {' '}{Math.round(((155)+(atk.ap * 60 / 100)+(qDamage))* (1 - mod.defMagRed))}          
           </p>
@@ -84,22 +84,22 @@ export default function zoe({currentLevel, mod, bonus, atk, def, champ, updateAb
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((35)+(atk.ap * 60 / 100)+(qDamage)) * 2.5)} / 
-            {' '}{Math.round(((75)+(atk.ap * 60 / 100)+(qDamage)) * 2.5)} / 
-            {' '}{Math.round(((115)+(atk.ap * 60 / 100)+(qDamage)) * 2.5)} / 
-            {' '}{Math.round(((155)+(atk.ap * 60 / 100)+(qDamage)) * 2.5)}
+            {' '}{Math.round(((30)+(atk.ap * 60 / 100)+(qDamage)) * 2.5)} / 
+            {' '}{Math.round(((65)+(atk.ap * 60 / 100)+(qDamage)) * 2.5)} / 
+            {' '}{Math.round(((100)+(atk.ap * 60 / 100)+(qDamage)) * 2.5)} / 
+            {' '}{Math.round(((135)+(atk.ap * 60 / 100)+(qDamage)) * 2.5)}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((35)+(atk.ap * 60 / 100)+(qDamage)) * (1 - mod.defMagRed) * 2.5)} / 
-            {' '}{Math.round(((75)+(atk.ap * 60 / 100)+(qDamage))* (1 - mod.defMagRed) * 2.5)} / 
-            {' '}{Math.round(((115)+(atk.ap * 60 / 100)+(qDamage))* (1 - mod.defMagRed) * 2.5)} / 
-            {' '}{Math.round(((155)+(atk.ap * 60 / 100)+(qDamage))* (1 - mod.defMagRed) * 2.5)}          
+            {' '}{Math.round(((30)+(atk.ap * 60 / 100)+(qDamage)) * (1 - mod.defMagRed) * 2.5)} / 
+            {' '}{Math.round(((65)+(atk.ap * 60 / 100)+(qDamage))* (1 - mod.defMagRed) * 2.5)} / 
+            {' '}{Math.round(((100)+(atk.ap * 60 / 100)+(qDamage))* (1 - mod.defMagRed) * 2.5)} / 
+            {' '}{Math.round(((135)+(atk.ap * 60 / 100)+(qDamage))* (1 - mod.defMagRed) * 2.5)}          
           </p>
     
           <br />
           <p>
-           Zoe fires a star that deals increasing damage the further it travels to the first enemy hit dealing <span className="stat--ap">35 / 75 / 115 / 155 <abbr title="3 + 2 / 3 / 4 / 5, number grows each 4 levels" className="stat--critChance">(+{qDamage} damage)</abbr> (+60% AP) magic damage</span> and grows to deal <span className="stat--ap">150% bonus damage</span> based on the distance travelled.
+           Zoe fires a star that deals increasing damage the further it travels to the first enemy hit dealing <span className="stat--ap">30 / 65 / 100 / 135 <abbr title="3 + 2 / 3 / 4 / 5, number grows each 4 levels" className="stat--critChance">(+{qDamage} damage)</abbr> (+60% AP) magic damage</span> and grows to deal <span className="stat--ap">150% bonus damage</span> based on the distance travelled.
           </p>
 
           <p>
@@ -165,7 +165,7 @@ export default function zoe({currentLevel, mod, bonus, atk, def, champ, updateAb
       description:
         <div className="abilityDescription">
           <h4>
-          <span className="marker--ability">3</span> LEEPY TROUBLE BUBBLE
+          <span className="marker--ability">3</span> SLEEPY TROUBLE BUBBLE
           </h4>
     
           <h5>
@@ -185,17 +185,17 @@ export default function zoe({currentLevel, mod, bonus, atk, def, champ, updateAb
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((40)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((95)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((150)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((205)+(atk.ap * 50 / 100)))}
+            {' '}{Math.round(((30)+(atk.ap * 50 / 100)))} / 
+            {' '}{Math.round(((80)+(atk.ap * 50 / 100)))} / 
+            {' '}{Math.round(((130)+(atk.ap * 50 / 100)))} / 
+            {' '}{Math.round(((180)+(atk.ap * 50 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((40)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((95)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((150)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((205)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((30)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((80)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((130)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((180)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))}          
           </p>
 
           <h5 className="stat--vamp">
@@ -203,21 +203,21 @@ export default function zoe({currentLevel, mod, bonus, atk, def, champ, updateAb
           </h5>
 
           <p className="stat--vamp">Pre-mitigation: 
-            {' '}{Math.round(((40)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((95)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((150)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((205)+(atk.ap * 50 / 100)))}
+            {' '}{Math.round(((30)+(atk.ap * 50 / 100)))} / 
+            {' '}{Math.round(((80)+(atk.ap * 50 / 100)))} / 
+            {' '}{Math.round(((130)+(atk.ap * 50 / 100)))} / 
+            {' '}{Math.round(((180)+(atk.ap * 50 / 100)))}
           </p>
 
          
     
           <br />
           <p>
-            Zoe dropkick a bubble that deals <span className="stat--ap">40 / 95 / 150 / 205 (+50% AP) magic damage</span>, lingering as a trap if it doesn't hit anything. The <b>bubble's</b> range is increased when flying over terrain
+            Zoe dropkick a bubble that deals <span className="stat--ap">30 / 80 / 130 / 180 (+50% AP) magic damage</span>, lingering as a trap if it doesn't hit anything. The <b>bubble's</b> range is increased when flying over terrain
           </p>
 
           <p>
-            After a delay, the victim falls Asleep for 2 seconds. Attacks and Ability hits wake them up, dealing 200% bonus true damage up to <span className="stat--vamp">40 / 95 / 150 / 205 (+50% AP) true damage</span>
+            After a delay, the victim falls Asleep for 2 seconds. Attacks and Ability hits wake them up, dealing 200% bonus true damage up to <span className="stat--vamp">30 / 95 / 130 / 180 (+50% AP) true damage</span>
           </p>
 
           <p>
@@ -235,8 +235,8 @@ export default function zoe({currentLevel, mod, bonus, atk, def, champ, updateAb
     
           <h5>
           Cooldown: 
-            {' '}{(10*mod.atkcdr).toFixed(1)} / 
-            {' '}{(8*mod.atkcdr).toFixed(1)} / 
+            {' '}{(12*mod.atkcdr).toFixed(1)} / 
+            {' '}{(9*mod.atkcdr).toFixed(1)} / 
             {' '}{(6*mod.atkcdr).toFixed(1)}
           </h5>
             <h5 className="stat--mana">

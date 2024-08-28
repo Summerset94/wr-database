@@ -213,20 +213,20 @@ export default function irelia({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((100)+(atk.ap * 700 / 100)))} / 
-            {' '}{Math.round(((150)+(atk.ap * 700 / 100)))} / 
-            {' '}{Math.round(((200)+(atk.ap * 700 / 100)))}
+            {' '}{Math.round(((100)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((175)+(atk.ap * 70 / 100)))} / 
+            {' '}{Math.round(((250)+(atk.ap * 70 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((100)+(atk.ap * 700 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((150)+(atk.ap * 700 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((200)+(atk.ap * 700 / 100))* (1 - mod.defMagRed))}
+            {' '}{Math.round(((100)+(atk.ap * 70 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((175)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((250)+(atk.ap * 70 / 100))* (1 - mod.defMagRed))}
           </p>
     
           <p>
           Fires a storm of blades that deals <span className="stat--ap">125 / 250 / 375 (+70% AP) magic damage</span> and <b>Marks</b> enemy champions and Large Monsters for 5 seconds. <br />
-          The blades explode into a wall for 3 seconds upon hitting an enemy champion, The bladewall deals <span className="stat--ap">100 / 150 / 200 (+70% AP) magic damage</span>  and <span className="stat--moveSpeed">slows by 90%</span> for 1 second.
+          The blades explode into a wall for 3 seconds upon hitting an enemy champion, The bladewall deals <span className="stat--ap">100 / 175 / 250 (+70% AP) magic damage</span>  and <span className="stat--moveSpeed">slows by 90%</span> for 1 second.
           </p>
         </div>
     }

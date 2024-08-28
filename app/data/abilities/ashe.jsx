@@ -51,10 +51,10 @@ export default function ashe({currentLevel, mod, bonus, atk, def, champ}) {
 
           <h5 className="stat--as">Attack Speed Bonus</h5>
           <p className="stat--as">
-            {' '}{(champ.asBase * 30 / 100).toFixed(3)} /
-            {' '}{(champ.asBase * 40 / 100).toFixed(3)} /
-            {' '}{(champ.asBase * 50 / 100).toFixed(3)} /
-            {' '}{(champ.asBase * 60 / 100).toFixed(3)}
+            {' '}{(champ.asBase * 25 / 100).toFixed(3)} /
+            {' '}{(champ.asBase * 35 / 100).toFixed(3)} /
+            {' '}{(champ.asBase * 45 / 100).toFixed(3)} /
+            {' '}{(champ.asBase * 55 / 100).toFixed(3)}
           </p>
 
           <h5 className="stat--ad">
@@ -62,23 +62,23 @@ export default function ashe({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
+            {' '}{Math.round(((atk.attack * 115 / 100)))} / 
             {' '}{Math.round(((atk.attack * 120 / 100)))} / 
             {' '}{Math.round(((atk.attack * 125 / 100)))} / 
-            {' '}{Math.round(((atk.attack * 130 / 100)))} / 
-            {' '}{Math.round(((atk.attack * 135 / 100)))}
+            {' '}{Math.round(((atk.attack * 130 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((atk.attack * 120 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((atk.attack * 115 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((atk.attack * 120 / 100))* (1 - mod.defPhysRed))} / 
             {' '}{Math.round(((atk.attack * 125 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((atk.attack * 130 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((atk.attack * 135 / 100))* (1 - mod.defPhysRed))}
+            {' '}{Math.round(((atk.attack * 130 / 100))* (1 - mod.defPhysRed))}
           </p>
     
           <p>
             <b>PASSIVE:</b> While Ranger's Focus is not active, Ashe stores 2 stacks of Focus and her basic attacks grant an additional one for 4 seconds, up to 6 at a time. Stacks decay one at a time after expiring. <br />
 
-            <b>ACTIVE:</b> Ashe empower her bow for 6 seconds, gaining <span className="stat--as">30% / 40% / 50% / 60% Attack Speed</span> and barrage target with flurry of arrows. Each flurry consumes 1 stack and deals <span className="stat--ad">120% / 125% / 130% / 135% physical damage</span>
+            <b>ACTIVE:</b> Ashe empower her bow for 6 seconds, gaining <span className="stat--as">25% / 35% / 45% / 55% Attack Speed</span> and barrage target with flurry of arrows. Each flurry consumes 1 stack and deals <span className="stat--ad">115% / 120% / 125% / 130% physical damage</span>
           </p>
         </div>
     },

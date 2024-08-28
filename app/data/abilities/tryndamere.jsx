@@ -7,6 +7,15 @@ export default function tryndamere({currentLevel, mod, bonus, atk, def, champ, u
           <h4>
           <span className="marker--ability">P</span> BATTLE FURY
           </h4>
+
+          <h5 className="stat--as">Bonus Attack Speed</h5>
+
+          <p className="stat--as">
+            {'  '}{(champ.asBase * 35 / 100).toFixed(3)} /
+            {'  '}{(champ.asBase * 45 / 100).toFixed(3)} /
+            {'  '}{(champ.asBase * 55 / 100).toFixed(3)} /
+            {'  '}{(champ.asBase * 65 / 100).toFixed(3)}
+          </p>
     
           <p>
             Gain <abbr title="0.32-0.5% based on level" className="stat--critChance">{(0.32+ (0.18/14*(currentLevel -1 ))).toFixed(2)} Critical Rate</abbr> for each point of Fury
@@ -17,7 +26,7 @@ export default function tryndamere({currentLevel, mod, bonus, atk, def, champ, u
           </p>
 
           <p>
-            Attacking a champion grants <abbr title="at ULT level 0/1/2/3" className="stat--as">55 ({(champ.asBase * 55 / 100).toFixed(3)}) / 60 ({(champ.asBase * 60 / 100).toFixed(3)}) / 65 ({(champ.asBase * 60 / 100).toFixed(3)}) / 70% ({(champ.asBase * 70 / 100).toFixed(3)}) Attack Speed</abbr> for 5 seconds. (6 second cooldown)
+            Attacking a champion grants <span className="stat--as">35% / 45% / 55% / 65% Attack Speed</span> (scales with Ultimate Ability level) for 5 seconds (6 seconds cooldown).        
           </p>
 
           <p>
@@ -56,7 +65,7 @@ export default function tryndamere({currentLevel, mod, bonus, atk, def, champ, u
     
           <br />
           <p>
-            <b>Passive:</b> Gains <span className="stat--ad">10 / 15 / 20 / 25 Attack Damage</span>  plus an additional <span className="stat--ad"> 0.25 / 0.30 / 0.35 / 0.4 Attack Damage</span> per 1% of missing Health.
+            <b>Passive:</b> Gains <span className="stat--ad">7 / 12 / 17 / 22 Attack Damage</span>  plus an additional <span className="stat--ad"> 0.25 / 0.30 / 0.35 / 0.4 Attack Damage</span> per 1% of missing Health.
           </p>
 
           <p>
@@ -144,7 +153,7 @@ export default function tryndamere({currentLevel, mod, bonus, atk, def, champ, u
     
           <br />
           <p>
-            <b>Passive:</b> Increases Battle Fury's bonus Attack Speed
+            <b>Passive:</b> Increases Battle Fury's bonus Attack Speed.
           </p>
 
           <p>

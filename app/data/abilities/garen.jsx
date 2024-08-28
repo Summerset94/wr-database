@@ -4,8 +4,8 @@ export default function garen({currentLevel, mod, bonus, atk, def, champ}) {
   const calculations = useMemo(() => {
     const q = {
       cooldown: {
-        base: 8,
-        growth: 0
+        base: 9,
+        growth: -0.5
       },
 
       damage: {
@@ -24,7 +24,7 @@ export default function garen({currentLevel, mod, bonus, atk, def, champ}) {
       damage: {
         base: 12,
         growth: 4,
-        modifier: atk.attack * 30 /100,
+        modifier: atk.attack * 35 /100,
         modifierGrowth: atk.attack * 5 /100
       }
     };
@@ -32,7 +32,10 @@ export default function garen({currentLevel, mod, bonus, atk, def, champ}) {
     return {
       q: {
         cooldown: {
-          1: q.cooldown.base
+          1: q.cooldown.base,
+          2: q.cooldown.base + q.cooldown.growth,
+          3: q.cooldown.base + q.cooldown.growth * 2,
+          4: q.cooldown.base + q.cooldown.growth * 3,
         },
         damage: {
           raw: {
@@ -87,12 +90,13 @@ export default function garen({currentLevel, mod, bonus, atk, def, champ}) {
           <h4>
           <span className="marker--ability">P</span> PERSEVERANCE
           </h4> 
-
+          
           <p>
-            Garen regenerates <abbr title="1.2% - 4% (based on level)" className="stat--hp">{(1 + 0.2 * currentLevel).toFixed(1)}% of his missing health</abbr> per second. <br />
+            Garen regenerates <span className="stat--hp"> {(1 + 0.3 * currentLevel).toFixed(1)}% (1% + 0.3% per level) of his missing health</span> per second.            
+          </p>
+          <p>
             Perseverance is disabled for 5 seconds whenever Garen takes damage from enemy champions, turrets, or epic monsters, or is hit by attacks or abilities, refreshing on subsequent damage and hits against him.
           </p>
-
           <p>
             When casting Demacian Justice and the target dies, moves out of range, becomes untargetable, or activates Zhonya’s Hourglass or Guardian Angel, spell will go on a 5s Cooldown.
           </p>
@@ -108,7 +112,10 @@ export default function garen({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
-            {' '}{(calculations.q.cooldown[1]).toFixed(1)} 
+            {' '}{(calculations.q.cooldown[1]).toFixed(1)} /
+            {' '}{(calculations.q.cooldown[2]).toFixed(1)} /
+            {' '}{(calculations.q.cooldown[3]).toFixed(1)} /
+            {' '}{(calculations.q.cooldown[4]).toFixed(1)} 
           </h5>
 
           <h5 className="stat--ad">
@@ -130,9 +137,11 @@ export default function garen({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-          Breaks free from all slows, becoming immune to them for 0.5 seconds and gaining <span className="stat--moveSpeed">35% Movement Speed</span> for 3 seconds. <br />
+          Breaks free from all slows, becoming immune to them for 0.5 seconds and gaining <span className="stat--moveSpeed">35% ({Math.round(atk.moveSpeed * 35 / 100)}) Movement Speed</span> for 3 seconds.          
+          </p>
 
-          The next attack within 3 seconds is empowered to deal an additional {calculations.q.text.damage} and silence the target for 1.5 seconds.
+          <p>
+            The next attack within 2/2.5/3/3.5 seconds is empowered to deal an additional {calculations.q.text.damage} and silence the target for 1.5 seconds.
           </p>
         </div>
     },
@@ -153,7 +162,7 @@ export default function garen({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
     
           <p>
-          Reduce damage taken for <b>2 / 3 / 4 / 5 seconds</b>. For the 1 second, damage is reduced by <b className="stat--armor">70%</b> and Garen gains 70% Tenacity. <br />
+          Reduce damage taken for <b>4 seconds</b>. For the 1 second, damage is reduced by <b className="stat--armor">70%</b> and Garen gains 70% Tenacity. <br />
           Damage is reduced by <b className="stat--armor">30%</b> for the remaining duration.
           <br />
           Tenacity reduces the duration of most movement impairing effects.
@@ -234,8 +243,8 @@ export default function garen({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
     
           <p>
-          Calls forth the might of Demacia to execute an enemy champion, dealing <span className="stat--critChance">150 / 250 / 350 +15% (<span className="stat--ad"> +0.12% bonus AD</span>) true damage of the target's missing health</span>. <br />
-           Nearby enemies take <span className="stat--critChance">75 +7.5% (<span className="stat--ad">+0.06% AD</span>) true damage of their missing health</span>. <br />
+          Calls forth the might of Demacia to execute an enemy champion, dealing <span className="stat--critChance">150 / 250 / 350 (+15% of the target's missing health) (<span className="stat--ad"> +0.12% bonus AD</span>) true damage </span>. <br />
+           Nearby enemies take <span className="stat--critChance">75 (+7.5% of their missing health) (<span className="stat--ad">+0.06% AD</span>) true damage </span>. <br />
           Deals a max of 600 damage to epic monsters.
           </p>
         </div>

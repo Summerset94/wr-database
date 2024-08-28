@@ -29,8 +29,8 @@ export default function sivir({currentLevel, mod, bonus, atk, def, champ, update
       base: 8,
       growth: 2,
 
-      mod: (atk.attack * 15/100),
-      growthmod:(atk.attack * 2 / 100),
+      mod: (atk.attack * 17/100),
+      growthmod:(atk.attack * 3 / 100),
     };
 
     const E = {
@@ -253,7 +253,7 @@ export default function sivir({currentLevel, mod, bonus, atk, def, champ, update
     
           <br />
           <p>
-            Gains <span className='stat--as'>25% / 30% / 35% /40% Attack Speed</span> for 4 seconds. Sivir's attacks bounce to nearby enemies dealing <span className='stat--ad'>8 / 10 / 12 / 14 (+15% / 17% / 19% / 21% AD) physical damage</span>.
+            Gains <span className='stat--as'>25% / 30% / 35% /40% Attack Speed</span> for 4 seconds. Sivir's attacks bounce to nearby enemies dealing <span className='stat--ad'>8 / 10 / 12 / 14 (+17/20/23/26% AD) physical damage</span>.
           </p>
           <p>
             If the first attack <span className='stat--critChance'>crits</span>, so does all the bounces from this attack.

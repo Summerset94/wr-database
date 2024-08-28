@@ -22,7 +22,7 @@ export default function ekko({currentLevel, mod, bonus, atk, def, champ}) {
           Every third attack or damaging ability agains the same target deals an additional <abbr className="stat--ap" title='30-142 based on level'> {22+8*currentLevel} (+70% AP) magic damage</abbr>. If the target was a champion, Ekko gains <abbr className="stat--moveSpeed" title='at level 1 / 5 / 9 / 13'>40% / 50% / 60% / 70%  Movement Speed</abbr>  for 2.5 seconds. <br />
           cannot effect the same target fo 5 seconds after the effect procs.
 
-          Deals 140% damage to monsters. Cannot affect the same target for 5 seconds.
+          Deals 155% damage to monsters. Cannot affect the same target for 5 seconds.
           </p>
         </div>
     },
@@ -54,17 +54,17 @@ export default function ekko({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((70)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((90)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((110)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((130)+(atk.ap * 30 / 100)))}
+            {' '}{Math.round(((85)+(atk.ap * 30 / 100)))} / 
+            {' '}{Math.round(((105)+(atk.ap * 30 / 100)))} / 
+            {' '}{Math.round(((125)+(atk.ap * 30 / 100)))} / 
+            {' '}{Math.round(((145)+(atk.ap * 30 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((70)+(atk.ap * 30 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((90)+(atk.ap * 30 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((110)+(atk.ap * 30 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((130)+(atk.ap * 30 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((85)+(atk.ap * 30 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((105)+(atk.ap * 30 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((125)+(atk.ap * 30 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((145)+(atk.ap * 30 / 100))* (1 - mod.defMagRed))}          
           </p>
 
           <h5 className="stat--ap">
@@ -86,7 +86,7 @@ export default function ekko({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-          Throw a temporal device, dealing <span className="stat--ap">70 / 90 / 110 / 130 (+30% AP) magic damage</span>. On hitting a champion or the distance limit, it expands into a field that slows by <span className="stat--moveSpeed">30% / 40% / 50% / 60%</span>. The device then returns to Ekko, dealing <span className="stat--ap">50 / 85 / 120 / 155 (+60% AP) magic damage</span>.
+          Throw a temporal device, dealing <span className="stat--ap">85 / 105 / 125 / 145 (+30% AP) magic damage</span>. On hitting a champion or the distance limit, it expands into a field that slows by <span className="stat--moveSpeed">30% / 40% / 50% / 60%</span>. The device then returns to Ekko, dealing <span className="stat--ap">50 / 85 / 120 / 155 (+60% AP) magic damage</span>.
           </p>
         </div>
     },
@@ -202,9 +202,9 @@ export default function ekko({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--hp"> 
-            {' '}{Math.round(((100)+(atk.ap * 50 / 100)))} / 
             {' '}{Math.round(((150)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((200)+(atk.ap * 50 / 100)))}
+            {' '}{Math.round(((200)+(atk.ap * 50 / 100)))} / 
+            {' '}{Math.round(((250)+(atk.ap * 50 / 100)))}
           </p>
 
           <h5 className="stat--ap">
@@ -224,7 +224,7 @@ export default function ekko({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p>
-            Becomes untargetable and returns to his position 3.5 seconds ago and heals for <span className="stat--hp">100 / 150 / 200 (+50% AP)</span> increased by 3% per 1% of health lost within 3.5 seconds.
+            Becomes untargetable and returns to his position 3.5 seconds ago and heals for <span className="stat--hp">150 / 200 / 250 (+50% AP)</span> increased by 3% per 1% of health lost within 3.5 seconds.
 
             Upon arrival, Ekko deals <span className="stat--ap">200 / 350 / 500 (+150% AP) magic damage</span> to nearby enemies.
           </p>

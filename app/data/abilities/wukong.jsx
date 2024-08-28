@@ -38,17 +38,17 @@ export default function wukong({currentLevel, mod, bonus, atk, def, champ, updat
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((50)+(atk.attack * 35 / 100)))} / 
-            {' '}{Math.round(((70)+(atk.attack * 40 / 100)))} / 
-            {' '}{Math.round(((90)+(atk.attack * 45 / 100)))} / 
-            {' '}{Math.round(((110)+(atk.attack * 50 / 100)))}
+            {' '}{Math.round(((60)+(atk.attack * 35 / 100)))} / 
+            {' '}{Math.round(((80)+(atk.attack * 40 / 100)))} / 
+            {' '}{Math.round(((100)+(atk.attack * 45 / 100)))} / 
+            {' '}{Math.round(((120)+(atk.attack * 50 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((50)+(atk.attack * 35 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((70)+(atk.attack * 40 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((90)+(atk.attack * 45 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((110)+(atk.attack * 50 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((60)+(atk.attack * 35 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((80)+(atk.attack * 40 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((100)+(atk.attack * 45 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((120)+(atk.attack * 50 / 100))* (1 - mod.defPhysRed))}          
           </p>          
     
           <br />
@@ -57,7 +57,7 @@ export default function wukong({currentLevel, mod, bonus, atk, def, champ, updat
           </p>
 
           <p>
-            Empowers his next attack to deal an additional <span className="stat--ad">50 / 70 / 99 / 110 (+35 / 40 / 45 / 50% AD) physical damage</span>.
+            Empowers his next attack to deal an additional <span className="stat--ad">60 / 80 / 100 / 120 (+35 / 40 / 45 / 50% AD) physical damage</span>.
           </p>
 
           <p>
@@ -79,10 +79,10 @@ export default function wukong({currentLevel, mod, bonus, atk, def, champ, updat
     
           <h5>
           Cooldown: 
-            {' '}{(17*mod.atkcdr).toFixed(1)} / 
-            {' '}{(16*mod.atkcdr).toFixed(1)} / 
-            {' '}{(15*mod.atkcdr).toFixed(1)} / 
-            {' '}{(14*mod.atkcdr).toFixed(1)} 
+            {' '}{(14*mod.atkcdr).toFixed(1)} / 
+            {' '}{(13.5*mod.atkcdr).toFixed(1)} / 
+            {' '}{(13*mod.atkcdr).toFixed(1)} / 
+            {' '}{(12.5*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 

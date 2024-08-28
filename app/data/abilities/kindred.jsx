@@ -24,8 +24,8 @@ export default function kindred({currentLevel, mod, bonus, atk, def, champ}) {
         modifier: (bonus.attack * 70 / 100)
       },
       attackSpeed: {
-        base: 35,
-        bonus: marks * 5
+        base: 20,
+        bonus: marks * 3
       }
     };
 
@@ -76,13 +76,13 @@ export default function kindred({currentLevel, mod, bonus, atk, def, champ}) {
         growth: 0
       },      
       healing: {
-        base: 100,
-        growth: 25,
+        base: 50,
+        growth: 0,
         modifier: 0
       },
       restoration: {
-        base: 200,
-        growth: 75
+        base: 150,
+        growth: 50
       }
     };
 
@@ -269,7 +269,7 @@ export default function kindred({currentLevel, mod, bonus, atk, def, champ}) {
             </li>
 
             <li>
-              <span className="stat--armor">Q/S1: Dance of Arrows</span>. <span className="stat--as">Attack Speed bonus</span> of ability increases by <span className="stat--as">5%</span> per mark.
+              <span className="stat--armor">Q/S1: Dance of Arrows</span>. <span className="stat--as">Attack Speed bonus</span> of ability increases by <span className="stat--as">3%</span> per mark.
             </li>
 
             <li>

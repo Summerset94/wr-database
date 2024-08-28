@@ -162,7 +162,7 @@ export default function kayle({currentLevel, mod, bonus, atk, def, champ}) {
 
           <p>
             <b>ACTIVE:</b> Empowers her next attack to become ranged and deal <span className="stat--ap">bonus
-            8% / 9% / 10% / 11% (+0.02% AP) magic damage of the targets missing health</span>.
+            9% / 10% / 11% / 12% (+0.02% AP) magic damage of the targets missing health</span>.
           </p>
 
           <p>
