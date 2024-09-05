@@ -602,7 +602,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
         <div className='itemDescription'>           
           <h3 className='stat--ad'>+{30} Attack Damage</h3>
           <h3 className="stat--critChance">+25% Critical Chance</h3>
-          <h3>Last Whisper: <abbr title="15 + your current level">+{(15 + Number(currentLevel))}%</abbr> Armor Penetration</h3>
+          <h3>Last Whisper: 16-33% Armor Penetration</h3>
 
           <p><b>Sepsis:</b> Dealing <span className='stat--ad'>Physical Damage</span> to enemy champions apply 40% <abbr title="Reduces healing and regeneration" className="stat--vamp">Grievous wounds</abbr> to target for 3 seconds.</p>      
         </div>
@@ -1077,7 +1077,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
  
           <h3 className='stat--ad'>+{40} Attack Damage</h3>
           <h3>+{15} Ability Haste</h3>
-          <h3>Last Whisper: <abbr title="15 + your current level"> +{(15 + Number(currentLevel))}%</abbr> Armor Penetration</h3>
+          <h3>Last Whisper: 16-33% Armor Penetration</h3>
 
           <p><b>Icy:</b> Damaging and active abilities and empowered attacks slow enemies by 30% for 1 second</p>
         </div>
@@ -1403,7 +1403,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
           <h3 className='stat--as'>+15% ({(base.asBase * 0.15).toFixed(3)}) Attack Speed</h3>
           <h3 className="stat--vamp">+5% (<abbr title="Damage against 0 armor target / post mitigated for current target">{Math.round(total.attack* 0.05)}/{Math.round((total.attack * 0.05)* (1 - modifier))}</abbr> ) Physical Vamp</h3>
 
-          <p><b>Lifeline:</b> Damage that puts you under <abbr title="35% of Max Health"><span className='stat--hp'>{Math.round(total.health * 0.35)} Health</span></abbr> grants a shield that will absorb <span className='stat--armor'><abbr title="200 + 3 per 1% of critical chance">{Math.round(300 + 3 * (total.critChance * 100))}</abbr> damage</span> for 5 seconds (90 seconds cooldown).</p>
+          <p><b>Lifeline:</b> Damage that puts you under <span className='stat--hp'>{Math.round(total.health * 0.35)} (35% of Max) Health</span> grants a shield that will absorb <span className="stat--armor">{Math.round(250 + 300/14*(currentLevel - 1))} (250-550 based on level) damage</span> for 5 seconds (90 seconds cooldown).</p>
           <p><b>Battle Furor:</b> Triggering lifeline grants <span className='stat--vamp'><abbr title="5% Physical">{Math.round(total.attack * 0.05)} (Current target: {Math.round((total.attack * 0.05)* (1 - modifier))})</abbr>Physical Vamp</span> for 8 seconds</p>
         </div>
     },
@@ -1887,7 +1887,7 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       armor: 0,
       magres: 0,
       attack: 0,
-      ap: 60,
+      ap: 55,
       as: 0,
       moveSpeed: (base.moveSpeed * 5 / 100),
       flatArmPen: 0,
@@ -1896,18 +1896,24 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       magPen: 0,
       critChance: 0,
       critMultiplier: 0,
-      ah: 10,
+      ah: 20,
       armorReduction: 0,
 
       description: 
         <div className='itemDescription'>
+          <ul>
+            <li className="stat--hp">+{250} Max Health</li>
+            <li className="stat--ap">+{55} Ability Power</li>
+            <li>+{10} Ability Haste</li>
+            <li className="stat--moveSpeed">+5% ({Math.round(base.moveSpeed * 5 / 100)}) Movement Speed</li>
+          </ul>
 
-          <h3 className='stat--hp'>+{250} Max Health</h3>
-          <h3 className='stat--ap'>+{60} Ability Power</h3>
-          <h3>+{10} Ability Haste</h3>
-
-          <p><b>Ardent:</b>+5% ({Math.round(base.moveSpeed * 5 / 100)}) Movement Speed</p>
-          <p><b>Censer:</b> When you <span className="stat--hp">heal / shield</span> an allied champion both of you gain <span className="stat--as"><abbr title="10-30%; 10% + 20% / 14 * (level - 1); numbers are for your character">{(((10/100) + (20/100) / 14 * (currentLevel - 1)) * 100).toFixed(2)}%  ({(base.asBase * ((10/100) + (20/100) / 14 * (currentLevel - 1))).toFixed(3)})</abbr> Attack Speed</span> And your Attacks deal <abbr title="15 + level"><span className='stat--ap'>{15 + Number(currentLevel)} bonus Magic Damage</span></abbr> for 6 seconds. Regen effects do not trigger this effect.</p>
+          <p>
+            <b>Ardent:</b>+5% Movement Speed.
+          </p>
+          <p>
+            <b>Censer</b>: When you heal or shield an allied champion other than yourself, they gain <span className="stat--as">15-40% Attack Speed</span>, and their basic attacks deal <span className="stat--ap">20–40 bonus magic damage</span> (based on level).
+          </p>
         </div>
 
     },
@@ -1937,11 +1943,14 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
       description: 
         <div className='itemDescription'>
 
-          <h3 className="stat--ap">+{75} Ability Power</h3>
-          <h3 className='stat--mana'>+{300} Max Mana</h3>
-          <h3>+{10} Ability Haste</h3>
+          <ul>
+            <li className="stat--ap">+{75} Ability Power</li>
+            <li className="stat--mana">+{300} Max Mana</li>
+            <li >+{10} Ability Haste</li>
+            <li className="stat--hp">Healing Effect: {Math.round(135 + (total.ap * 10 / 100))}</li>
+          </ul>          
 
-          <p><b>Harmonic Echo:</b> Moving and casting abilities build Harmony stacks. At 100 stacks your next healing / shielding ability coast on ally restores <abbr title="135 + 10% AP"><span className="stat--hp">{Math.round(135 + (total.ap * 10 / 100))} Health</span></abbr> to your target and up to 3 nearby allied champions</p>
+          <p><b>Harmonic Echo:</b> Moving and casting abilities build Harmony stacks. At 100 stacks your next healing / shielding ability coast on ally restores <span className="stat--hp">135 <span className="stat--ap">(+10% AP)</span> Health</span> to your target and up to 3 nearby allied champions</p>
           
         </div>
 
@@ -2355,6 +2364,47 @@ const Inventory = ({index, champ, currentLevel, base, bonus, total, mod, atk, de
   ];
 
   let defenceItemData = [
+    {
+      name: 'Redemption',
+      icon: "/images/items/Redemption.webp",
+
+      health: 400,
+      mana: 300,
+      armor: 0,
+      magres: 0,
+      attack: 0,
+      ap: 0,
+      as: 0,
+      moveSpeed: 0,
+      flatArmPen: 0,
+      flatMagPen: 0,
+      armPen: 0,
+      magPen: 0,
+      critChance: 0,
+      critMultiplier: 0,
+      ah: 20,
+      armorReduction: 0,
+
+      description: 
+        <div className='itemDescription'>
+          <ul>
+            <li className="stat--hp">+400 Max Health</li>
+            <li className="stat--mana">+300 Max Mana</li>
+            <li>+20 Ability Haste</li>
+            <li className="stat--hp">Healing effect: {Math.round(50 + bonus.health*6/100)}</li>
+          </ul>
+
+          <p>
+            <b>Salvation</b>: <span className="stat--hp">Heal</span> ally units in the range of 350 for <span className="stat--hp">(50 + 6% bonus health)</span>  every 8s. If no allied champions are around, Salvation will not be triggered.
+          </p>
+
+          <p>
+            <b>Eternity</b>: Restore <span className="stat--mana">Mana</span>  equal to 15% of the damage taken from champions. When consuming Mana, restore health equal to  20% of mana consumed. Every cast restores Maximum 15 Health
+          </p>
+        </div>
+
+    },
+
     {
       name: 'Sunfire Aegis',
       icon: "/images/items/Sunfire_Aegis.png",

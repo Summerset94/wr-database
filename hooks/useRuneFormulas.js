@@ -112,9 +112,9 @@ const useRuneFormulas = (atk, bonus, mod, currentLevel, runesEffects, turretArmo
     };
   
     const lethalTempo = {
-      base: runesEffects.keystones.tempoType === 'ranged' ? 4 : 7,
-      growth: 6,
-      bonus: runesEffects.keystones.tempo === 6 ? 40 : 0,
+      base: runesEffects.keystones.tempoType === 'ranged' ? 7 : 10,
+      growth: 8,
+      bonus: 0,
       stacks: runesEffects.keystones.tempo
     }
   

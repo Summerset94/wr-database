@@ -90,22 +90,22 @@ export default function urgot({currentLevel, mod, bonus, atk, def, champ, update
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((12)+(atk.attack * 20 / 100)))} / 
-            {' '}{Math.round(((12)+(atk.attack * 25 / 100)))} / 
-            {' '}{Math.round(((12)+(atk.attack * 30 / 100)))} / 
-            {' '}{Math.round(((12)+(atk.attack * 35 / 100)))}
+            {' '}{Math.round(((6)+(atk.attack * 20 / 100)))} / 
+            {' '}{Math.round(((6)+(atk.attack * 25 / 100)))} / 
+            {' '}{Math.round(((6)+(atk.attack * 30 / 100)))} / 
+            {' '}{Math.round(((6)+(atk.attack * 35 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((12)+(atk.attack * 20 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((12)+(atk.attack * 25 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((12)+(atk.attack * 30 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((12)+(atk.attack * 35 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((6)+(atk.attack * 20 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((6)+(atk.attack * 25 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((6)+(atk.attack * 30 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((6)+(atk.attack * 35 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <br />
           <p>
-           Shoots the nearest enemy rapidly for 4 seconds, dealing <span className="stat--ad">12 (+20 / 25 / 30 / 35% AD) physical damage</span> and applying on-hits at 70% effectiveness. During this time <span className="stat--moveSpeed">Urgot's Movement Speed is reduced by 125 / 110 / 95 / 80</span> and he gains <b>40% Slow Resist</b>.
+           Shoots the nearest enemy rapidly for 4 seconds, dealing <span className="stat--ad">6 (+20 / 25 / 30 / 35% AD) physical damage</span> and applying on-hits at 70% effectiveness. During this time <span className="stat--moveSpeed">Urgot's Movement Speed is reduced by 125 / 110 / 95 / 80</span> and he gains <b>40% Slow Resist</b>.
           </p>
 
           <p>

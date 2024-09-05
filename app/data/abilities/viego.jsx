@@ -16,11 +16,11 @@ export default function viego({currentLevel, mod, bonus, atk, def, champ, update
       },
 
       passiveDamage: {
-        base: atk.attack * 20/100 + atk.ap * 15/100       
+        base: atk.attack * 15/100 + atk.ap * 15/100       
       },
 
       passiveMaxHp: {
-        base: def.health * 4/100,
+        base: def.health * 3/100,
         growth: def.health * 1/100
       },
 
@@ -28,7 +28,7 @@ export default function viego({currentLevel, mod, bonus, atk, def, champ, update
         base: 25,
         growth: 20,
         modifier: atk.attack * 80/100,
-        specialmod: 1 + atk.critChance * 0.75,
+        specialmod: 1 + atk.critChance * 0.5,
       },
 
       minimalDamage: {
@@ -69,13 +69,13 @@ export default function viego({currentLevel, mod, bonus, atk, def, champ, update
 
     const r = {
       cooldown: {
-        base: 80,
-        growth: -10
+        base: 90,
+        growth: -15
       },
 
       damagePrimary: {
         base: atk.attack * 120/100,        
-        modifier: atk.attack * (90/100 * atk.critChance)
+        modifier: atk.attack * (60/100 * atk.critChance)
       },
     };
 
@@ -140,9 +140,9 @@ export default function viego({currentLevel, mod, bonus, atk, def, champ, update
         },
 
         text: {
-          passivePrimary: <span className="stat--hp"> 4% / 5% / 6% / 7% of target's current HP</span>,
-          passiveSecondary: <span className="stat--ad">20% AD + <span className="stat--ap">15% AP</span> physical damage</span>,
-          damage: <span className="stat--ad">{q.damage.base} / {q.damage.base + q.damage.growth} / {q.damage.base + q.damage.growth * 2} / {q.damage.base + q.damage.growth * 3} (+80% AD) * <span className="stat--critChance">(1 + 75% of Critical Rate)</span> physical Damage</span>,
+          passivePrimary: <span className="stat--hp"> 3% / 4% / 5% / 6% of target's current HP</span>,
+          passiveSecondary: <span className="stat--ad">15% AD + <span className="stat--ap">15% AP</span> physical damage</span>,
+          damage: <span className="stat--ad">{q.damage.base} / {q.damage.base + q.damage.growth} / {q.damage.base + q.damage.growth * 2} / {q.damage.base + q.damage.growth * 3} (+80% AD) * <span className="stat--critChance">(1 + 50% of Critical Rate)</span> physical Damage</span>,
           bonus: <b>{q.minimalDamage.base} / {q.minimalDamage.base + q.minimalDamage.growth} / {q.minimalDamage.base + q.minimalDamage.growth * 2} / {q.minimalDamage.base + q.minimalDamage.growth * 3}</b>,          
         }
       },
@@ -218,7 +218,7 @@ export default function viego({currentLevel, mod, bonus, atk, def, champ, update
         },
 
         text: {
-          damagePrimary: <span className="stat--ad">120% - 210% AD <span className="stat--critChance">(based on Critical Rate)</span> physical damage</span>,
+          damagePrimary: <span className="stat--ad">120% - 180% AD <span className="stat--critChance">(based on Critical Rate)</span> physical damage</span>,
           damageSecondary: <span className="stat--ad"><span className="stat--hp">12% / 16% / 20%</span> (+6% bonus AD) <span className="stat--hp">of target's missing Health</span> as physical damage</span>
         }
       },

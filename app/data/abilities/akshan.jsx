@@ -49,20 +49,24 @@ export default function akshan({currentLevel, mod, bonus, atk, def}) {
 
         <p className="stat--ad">Pre-mitigation: 
           {' '}{Math.round(((5)+(atk.attack * 80 / 100)))} / 
-          {' '}{Math.round(((30)+(atk.attack * 80 / 100)))} / 
-          {' '}{Math.round(((55)+(atk.attack * 80 / 100)))} / 
-          {' '}{Math.round(((80)+(atk.attack * 80 / 100)))}
+          {' '}{Math.round(((35)+(atk.attack * 80 / 100)))} / 
+          {' '}{Math.round(((65)+(atk.attack * 80 / 100)))} / 
+          {' '}{Math.round(((95)+(atk.attack * 80 / 100)))}
         </p>
 
         <p className="stat--ad">Post-mitigation: 
           {' '}{Math.round(((5)+(atk.attack * 80 / 100)) * (1 - mod.defPhysRed))} / 
-          {' '}{Math.round(((30)+(atk.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
-          {' '}{Math.round(((55)+(atk.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
-          {' '}{Math.round(((80)+(atk.attack * 80 / 100))* (1 - mod.defPhysRed))}          
+          {' '}{Math.round(((35)+(atk.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
+          {' '}{Math.round(((65)+(atk.attack * 80 / 100))* (1 - mod.defPhysRed))} / 
+          {' '}{Math.round(((95)+(atk.attack * 80 / 100))* (1 - mod.defPhysRed))}          
         </p>
 
           <p>
-            Akshan throws a boomerang that deals <span className="stat--ad">5 / 3 / 55 / 80 (+80% AD) Physical Damage</span> to enemies it passes through and revealing them, granting sight of the area along its path, as well as extending its range every time it hits an enemy. If the boomerang hits an enemy champion, Akshan gains bonus <abbr title="40%" className="stat--moveSpeed">{Math.round(atk.moveSpeed * 40 / 100)} Movement Speed</abbr> decaying over time. Upon reaching maximum range, the boomerang returns to Akshan, applying the same effects to enemies hit along the way. Avengerang's damage is reduced against non-champions.
+            Akshan throws a boomerang that deals <span className="stat--ad">5/35/65/95 (+80% AD) Physical Damage</span> to enemies it passes through and revealing them, granting sight of the area along its path, as well as extending its range every time it hits an enemy. If the boomerang hits an enemy champion, Akshan gains bonus <abbr title="40%" className="stat--moveSpeed">{Math.round(atk.moveSpeed * 40 / 100)} Movement Speed</abbr> decaying over time. Upon reaching maximum range, the boomerang returns to Akshan, applying the same effects to enemies hit along the way.
+          </p>
+
+          <p>
+          Damage ratio to minions: 60/70/80/90%
           </p>
         </div>
     },
@@ -138,7 +142,7 @@ export default function akshan({currentLevel, mod, bonus, atk, def}) {
           <p>
           Fires a hook to attach and swing around terrain, attacking the nearest enemy dealing <span className="stat--ad">30 / 70 / 110 / 150 (bonus +15% AD) physical damage</span> per shot. <br />
           If Akshan collides with an enemy champion or terrain, he will jump off the rope. <br />
-          Champion takedowns refresh Heroic Swing's cooldown. Heroic Swing prioritizes champions recently damaged by Akshan and applies On-hit effects at 25% effectiveness. Each shot can critically strike for <span className="stat--critChance">125%</span> damage.
+          Champion takedowns refresh Heroic Swing's cooldown. Heroic Swing prioritizes champions recently damaged by Akshan and applies On-hit effects at 25% effectiveness. Each shot can critically strike for <span className="stat--critChance">150%</span> damage.
           </p>
         </div>
     },

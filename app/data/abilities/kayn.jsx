@@ -62,17 +62,17 @@ export default function kayn({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((0)+(atk.attack * 60 / 100)))} + <span className="stat--hp">{((def.health * (6 + bonus.attack * 0.06)/100)).toFixed(1)}</span> / 
-            {' '}{Math.round(((0)+(atk.attack * 65 / 100)))} + <span className="stat--hp">{((def.health * (6 + bonus.attack * 0.06)/100)).toFixed(1)}</span> / 
-            {' '}{Math.round(((0)+(atk.attack * 70 / 100)))} + <span className="stat--hp">{((def.health * (6 + bonus.attack * 0.06)/100)).toFixed(1)}</span> / 
-            {' '}{Math.round(((0)+(atk.attack * 75 / 100)))} + <span className="stat--hp">{((def.health * (6 + bonus.attack * 0.06)/100)).toFixed(1)}</span> 
+            {' '}{Math.round(((0)+(atk.attack * 60 / 100)))} + <span className="stat--hp">{((def.health * (7 + bonus.attack * 0.06)/100)).toFixed(1)}</span> / 
+            {' '}{Math.round(((0)+(atk.attack * 65 / 100)))} + <span className="stat--hp">{((def.health * (7 + bonus.attack * 0.06)/100)).toFixed(1)}</span> / 
+            {' '}{Math.round(((0)+(atk.attack * 70 / 100)))} + <span className="stat--hp">{((def.health * (7 + bonus.attack * 0.06)/100)).toFixed(1)}</span> / 
+            {' '}{Math.round(((0)+(atk.attack * 75 / 100)))} + <span className="stat--hp">{((def.health * (7 + bonus.attack * 0.06)/100)).toFixed(1)}</span> 
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((0)+(atk.attack * 60 / 100)) * (1 - mod.defPhysRed))} + <span className="stat--hp">{((def.health * (6 + bonus.attack * 0.06)/100)* (1 - mod.defPhysRed)).toFixed(1)}</span> / 
-            {' '}{Math.round(((0)+(atk.attack * 65 / 100))* (1 - mod.defPhysRed))} + <span className="stat--hp">{((def.health * (6 + bonus.attack * 0.06)/100)* (1 - mod.defPhysRed)).toFixed(1)}</span> / 
-            {' '}{Math.round(((0)+(atk.attack * 70 / 100))* (1 - mod.defPhysRed))} + <span className="stat--hp">{((def.health * (6 + bonus.attack * 0.06)/100)* (1 - mod.defPhysRed)).toFixed(1)}</span> / 
-            {' '}{Math.round(((0)+(atk.attack * 75 / 100))* (1 - mod.defPhysRed))} + <span className="stat--hp">{((def.health * (6 + bonus.attack * 0.06)/100)* (1 - mod.defPhysRed)).toFixed(1)}</span>          
+            {' '}{Math.round(((0)+(atk.attack * 60 / 100)) * (1 - mod.defPhysRed))} + <span className="stat--hp">{((def.health * (7 + bonus.attack * 0.06)/100)* (1 - mod.defPhysRed)).toFixed(1)}</span> / 
+            {' '}{Math.round(((0)+(atk.attack * 65 / 100))* (1 - mod.defPhysRed))} + <span className="stat--hp">{((def.health * (7 + bonus.attack * 0.06)/100)* (1 - mod.defPhysRed)).toFixed(1)}</span> / 
+            {' '}{Math.round(((0)+(atk.attack * 70 / 100))* (1 - mod.defPhysRed))} + <span className="stat--hp">{((def.health * (7 + bonus.attack * 0.06)/100)* (1 - mod.defPhysRed)).toFixed(1)}</span> / 
+            {' '}{Math.round(((0)+(atk.attack * 75 / 100))* (1 - mod.defPhysRed))} + <span className="stat--hp">{((def.health * (7 + bonus.attack * 0.06)/100)* (1 - mod.defPhysRed)).toFixed(1)}</span>          
           </p>
     
           <p>
@@ -80,7 +80,7 @@ export default function kayn({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p>
-            <b>Red:</b> Deals <span className="stat--ad">60% / 65% / 70% / 75% AD</span> plus <span className="stat--hp">6% of target's maximum health (<span className="stat--ad">+0.06% AD</span> )</span> as <span className="stat--ad">Physical damage</span>
+            <b>Red:</b> Deals <span className="stat--ad">60% / 65% / 70% / 75% AD</span> plus <span className="stat--hp">7% of target's maximum health (<span className="stat--ad">+0.06% AD</span> )</span> as <span className="stat--ad">Physical damage</span>
           </p>
         </div>
     },
@@ -239,7 +239,7 @@ export default function kayn({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--hp">
-          {Math.round((def.health * (10 + bonus.attack * 0.1) / 100))}
+          {Math.round((def.health * (12 + bonus.attack * 0.1) / 100))}
           </p>
     
           <p>
@@ -254,7 +254,7 @@ export default function kayn({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p>
-            <b>Red:</b> deals <span className="stat--ad"><span className="stat--hp">15%</span> (+0.13% bonus Ad) target's Max Health physical damage</span> and heals Kayn for <span className="stat--hp">10% (<span className="stat--ad">+0.1% bonus AD</span> ) target's Max Health</span>.
+            <b>Red:</b> deals <span className="stat--ad"><span className="stat--hp">15%</span> (+0.13% bonus Ad) target's Max Health physical damage</span> and heals Kayn for <span className="stat--hp">12% (<span className="stat--ad">+0.1% bonus AD</span> ) target's Max Health</span>.
           </p>
         </div>
     }

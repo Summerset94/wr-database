@@ -78,9 +78,9 @@ export default function seraphine({currentLevel, mod, bonus, atk, def, champ}) {
           <h5>
           Cooldown: 
             {' '}{(22*mod.atkcdr).toFixed(1)} / 
-            {' '}{(19*mod.atkcdr).toFixed(1)} / 
-            {' '}{(16*mod.atkcdr).toFixed(1)} / 
-            {' '}{(13*mod.atkcdr).toFixed(1)} 
+            {' '}{(20*mod.atkcdr).toFixed(1)} / 
+            {' '}{(18*mod.atkcdr).toFixed(1)} / 
+            {' '}{(16*mod.atkcdr).toFixed(1)} 
           </h5>
             <h5 className="stat--mana">
           Cost: 
@@ -106,7 +106,7 @@ export default function seraphine({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p>
-            If Seraphine is already shielded, nearby allies are healed for <span className="stat--hp">7.5% (<span className="stat--ap">+0.01% AP</span>)</span>  of their missing Health, increased by 50% for each ally.
+            If Seraphine is already shielded, nearby allies are healed for <span className="stat--hp">5% (<span className="stat--ap">+0.01% AP</span>)</span>  of their missing Health, increased by 50% for each ally.
           </p>
         </div>
     },

@@ -322,7 +322,7 @@ const keystones = [
   id: '0dce20df-c3ce-42a9-b0c2-d2acea2b62e0',
   description: <div className='runeDescription'>
     <p>
-      Gain stacks of attack speed when attacking enemy champions. Stacks up to 6 times, stacks lasts for 6 seconds. When fully stacked, you gain Bonus Attack Speed and can exceed <strong title='2.5 attacks per second'>*Attack Speed Cap</strong>.
+      Gain stacks of attack speed when attacking enemy champions. Each stack increases <span className='stat--as'>Attack Speed</span>  by <span className='stat--as'>10–18%</span> (melee) or <span className='stat--as'>7–15%</span> (ranged). Stacks up to 6 times, stacks lasts for 6 seconds. When fully stacked, you gain 50 (melee) or 75 (ranged) Attack Distance.
     </p>
     <p>
       Stacks: {runesEffects.keystones.tempo}
@@ -678,7 +678,7 @@ const mainRunes = [
       slot: 1,
       description: <div className='runeDescription'>
         <p>
-          Deal bonus damage based on enemy Champion's <span className='stat--hp'>bonus Health</span> (+1% per 50 bonus hp) up to 14% at <span className='stat--hp'>700 bonus Health</span>
+          Deal bonus damage based on enemy Champion's <span className='stat--hp'>bonus Health</span> (+1% per 100 bonus hp) up to 16% at <span className='stat--hp'>1600 bonus Health</span>
         </p>        
       </div>
     },

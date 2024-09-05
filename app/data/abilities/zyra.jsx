@@ -13,13 +13,13 @@ export default function blank({currentLevel, mod, bonus, atk, def, champ, update
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((5 * currentLevel)+(atk.ap * 10 / 100)))} / 
-            {' '}{Math.round(((5 * currentLevel)+(atk.ap * 10 / 100))*2)}
+            {' '}{Math.round(((10 + 75/14*(currentLevel-1))+(atk.ap * 13 / 100)))} / 
+            {' '}{Math.round(((10 + 75/14*(currentLevel-1))+(atk.ap * 13 / 100))*2)}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((5 * currentLevel)+(atk.ap * 10 / 100)) * (1 - mod.defMagRed))}  /
-            {' '}{Math.round(((5 * currentLevel)+(atk.ap * 10 / 100)) * 2 * (1 - mod.defMagRed))}
+            {' '}{Math.round(((10 + 75/14*(currentLevel-1))+(atk.ap * 13 / 100)) * (1 - mod.defMagRed))}  /
+            {' '}{Math.round(((10 + 75/14*(currentLevel-1))+(atk.ap * 13 / 100)) * 2 * (1 - mod.defMagRed))}
           </p>
 
           <p className="stat--hp">Thorn Spitter Health: {Math.round(20 + (252/14*(Number(currentLevel)-1)) + (atk.ap * 25/100))}</p>.
@@ -32,7 +32,7 @@ export default function blank({currentLevel, mod, bonus, atk, def, champ, update
 
           <ul>
             <li>Lifetime: 6 seconds;</li>
-            <li>Damage: <span className="stat--ap">5</span> per level (<span className="stat--ap">+10% AP</span>) magic damage;</li>
+            <li>Damage: <span className="stat--ap">10-80 based on level</span> (<span className="stat--ap">+13% AP</span>) magic damage;</li>
             <li>Attack Speed (empirically tested): <span className="stat--as">~0.8</span>;</li>
             <li>Health: <span className="stat--hp"> 20-260</span> (based on level) (<span className="stat--ap">+35% AP</span>)</li>
           </ul>          
@@ -83,22 +83,22 @@ export default function blank({currentLevel, mod, bonus, atk, def, champ, update
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((70)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((125)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((180)+(atk.ap * 50 / 100)))} / 
-            {' '}{Math.round(((235)+(atk.ap * 50 / 100)))}
+            {' '}{Math.round(((70)+(atk.ap * 60 / 100)))} / 
+            {' '}{Math.round(((125)+(atk.ap * 60 / 100)))} / 
+            {' '}{Math.round(((180)+(atk.ap * 60 / 100)))} / 
+            {' '}{Math.round(((235)+(atk.ap * 60 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((70)+(atk.ap * 50 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((125)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((180)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((235)+(atk.ap * 50 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((70)+(atk.ap * 60 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((125)+(atk.ap * 60 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((180)+(atk.ap * 60 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((235)+(atk.ap * 60 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <br />
           <p>
-           Vines spread out and burst into spines dealing <span className="stat--ap">70 / 125 / 180 / 235 (+50%AP) magic damage</span> and sprouting 1 <b className="stat--armor">Thorn Spitter</b>
+           Vines spread out and burst into spines dealing <span className="stat--ap">70 / 125 / 180 / 235 (+60%AP) magic damage</span> and sprouting 1 <b className="stat--armor">Thorn Spitter</b>
           </p>
         </div>
     },

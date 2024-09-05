@@ -164,15 +164,15 @@ const useChampionModifier = (champ, baseStats, itemBonus, currentLevel, abilitie
         if (abilitiesBonus.rengarP == 0) {
           attackMod = 0
         } else if (abilitiesBonus.rengarP == 1) {
-          attackMod = ((baseStats.attack + itemBonus.attack + runesEffects.attack) * 1/100)
-        } else if (abilitiesBonus.rengarP == 2) {
           attackMod = ((baseStats.attack + itemBonus.attack + runesEffects.attack) * 4/100)
+        } else if (abilitiesBonus.rengarP == 2) {
+          attackMod = ((baseStats.attack + itemBonus.attack + runesEffects.attack) * 8/100)
         } else if (abilitiesBonus.rengarP == 3) {
-          attackMod = ((baseStats.attack + itemBonus.attack + runesEffects.attack) * 9/100)
+          attackMod = ((baseStats.attack + itemBonus.attack + runesEffects.attack) * 12/100)
         } else if (abilitiesBonus.rengarP == 4) {
           attackMod = ((baseStats.attack + itemBonus.attack + runesEffects.attack) * 16/100)
         } else if (abilitiesBonus.rengarP == 5) {
-          attackMod = ((baseStats.attack + itemBonus.attack + runesEffects.attack) * 25/100)
+          attackMod = ((baseStats.attack + itemBonus.attack + runesEffects.attack) * 20/100)
         };
         break;
       case 'Aatrox':
