@@ -2781,7 +2781,7 @@ const champions = [
     attackScale: 3.6,
     apBase: 0,
     asBase: 0.667,
-    asBaseBonus: 0.667*0.23,
+    asBaseBonus: 0.667*0.2,
     asScale: 0.667*0.032,
     id:'yone',
     heroId: 10069 
