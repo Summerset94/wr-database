@@ -425,7 +425,7 @@ export default function milio({currentLevel, mod, bonus, atk, def, champ, update
     
           <br />
           <p>
-            Wraps himself or an allied champion in protective flames absorbing {calculations.e.text.shiled} and granting {calculations.e.text.moveSpeed} for 2.5 seconds.
+            Wraps himself or an allied champion in protective flames absorbing {calculations.e.text.shield} and granting {calculations.e.text.moveSpeed} for 2.5 seconds.
           </p>
 
           <p>
