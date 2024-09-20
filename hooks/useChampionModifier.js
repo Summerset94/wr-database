@@ -150,8 +150,11 @@ const useChampionModifier = (champ, baseStats, itemBonus, currentLevel, abilitie
       case 'Zeri':
         attackMod = baseStats.as + itemBonus.as + runesEffects.as >= 1.5 ? Math.floor((baseStats.as + itemBonus.as + runesEffects.as - 1.5) * (50 / champ.asBase)) : 0;
         break;
+      // case 'Jhin':
+      //   attackMod = Math.round((baseStats.attack + itemBonus.attack + runesEffects.attack)*((5+55/14*(currentLevel-1))/100 + ((itemBonus.as+ runesEffects.as)*(14 + (17/14*(currentLevel - 1))))/(champ.asBase*100) + (itemBonus.critChance*(23 + (26/14*(currentLevel - 1))))/100));
+      //   break;
       case 'Jhin':
-        attackMod = Math.round((baseStats.attack + itemBonus.attack + runesEffects.attack)*((5+55/14*(currentLevel-1))/100 + ((itemBonus.as+ runesEffects.as)*(14 + (17/14*(currentLevel - 1))))/(champ.asBase*100) + (itemBonus.critChance*(23 + (26/14*(currentLevel - 1))))/100));
+        attackMod = Math.round((baseStats.attack + itemBonus.attack + runesEffects.attack)*(currentLevel*0.045 + (itemBonus.as+ runesEffects.as)/(champ.asBase*100)*0.3 + itemBonus.critChance*0.45));
         break;
       case 'Hecarim':
         attackMod = Math.round((itemBonus.moveSpeed + runesEffects.moveSpeed) * 12 / 100);

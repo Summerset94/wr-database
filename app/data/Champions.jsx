@@ -1463,6 +1463,31 @@ const champions = [
   },
 
   {
+    name: 'Milio',
+    title: 'The Gentle Flame',
+    icon: '/images/portraits/MilioSquare.webp',
+    rolePrim: roles.support,
+    roleSecond: false,
+    healthBase: 570,
+    healthScale: 96,
+    manaBase: 420,
+    manaScale: 60,
+    armorBase: 34,
+    armorScale: 4,
+    magresBase: 28,
+    magresScale: 1,
+    moveSpeed: 340,
+    attackBase: 50,
+    attackScale: 2.5,
+    apBase: 0,
+    asBase: 0.667,
+    asBaseBonus: 0.667*0.2,
+    asScale: 0,
+    id:'milio',
+    heroId: 10108
+  },
+
+  {
     name: 'Miss Fortune',
     title: 'The Bounty Hunter',
     icon: '/images/portraits/MissFortuneSquare.webp',

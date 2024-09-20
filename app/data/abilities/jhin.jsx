@@ -12,13 +12,22 @@ export default function jhin({currentLevel, mod, bonus, atk, def, champ}) {
           The final bullet will critically strike and deal additional <span className="stat--ad">10%-25% (based on level) of target's missing health physical damage</span>. 
           </p>
           <p>
-            Whenever Jhin critically strikes he gains <span className="stat--moveSpeed">{Math.round(atk.moveSpeed * (10 + ((bonus.as/champ.asBase) * 0.4))/100)} Movement Speed</span> (10% + 0.4% per 1% <span className="stat--as">bonus attack speed</span> ) for 2 seconds.
+            Whenever Jhin critically strikes he gains <span className="stat--moveSpeed">{Math.round(atk.moveSpeed * (15 + ((bonus.as/champ.asBase) * 0.55))/100)} Movement Speed</span> (15% + 0.55% per 1% <span className="stat--as">bonus attack speed</span> ) for 2 seconds.
           </p>
 
-          <h5 className="stat--vamp">NEVERMIND THE TEXT BELOW. JHIN'S MATH IS BROKEN AND SHOWS WRONG AD AFTER 5.2B UNTIL FIX</h5>
           <p>
-            Jhin's <span className="stat--ad">Attack damage</span>  scales with <abbr className="stat--as" title='14-29% based on level'>{Math.round(14 + (15/14*(currentLevel - 1)))}% of bonus Attack Speed</abbr> and <abbr className="stat--critChance" title='23-49% based on level'>{Math.round(23 + (26/14*(currentLevel - 1)))}% of Critical rate</abbr>. Also Jhin receives <abbr title="5-75% based on level" className="stat--ad">{Math.round(5 *currentLevel-1)}% bonus Attack Damage</abbr> from items and level growth. Jhin has his basic <span className="stat--critChance">Critical multiplier</span> reduced to 150% (from 175%).
-            </p>
+            Jhin receive <span className="stat--ad">bonus Attack Damage</span> that is equal to <span>Attack Damage</span> from base stats, item and runes multiplied by:
+          </p>
+
+          <ul>
+            <li>4.5% of Champion level</li>
+            <li>30% of bonus Attack Speed</li>
+            <li>45% of Critical Chance</li>
+          </ul>
+
+          <p>
+          Jhin has his basic <span className="stat--critChance">Critical multiplier</span> reduced to 150% (from 175%).
+          </p>
 
             
         </div>
@@ -211,7 +220,7 @@ export default function jhin({currentLevel, mod, bonus, atk, def, champ}) {
             Channels to fire 4 super shots at extreme range in a cone. The shots stop on the first champion hit, slowing it by <span className="stat--moveSpeed">80% for 0.75 seconds</span>;
           </p>
           <p>Each shot deals <span className="stat--ad">75 / 150 / 225 (+25% AD) physical damage</span>, increased by 3% for each 1% health the target is missing.
-          </p>
+          </p>  
           <p>
             The 4th shot crits for <span className="stat--critChance">200% Damage</span>
           </p>
