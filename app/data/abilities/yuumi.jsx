@@ -9,7 +9,7 @@ export default function yuumi({currentLevel, mod, bonus, atk, def, champ, update
           </h4>
     
           <p>
-            Yuumi's attacks against champions grant her <abbr title="50 + 10 per Level +25% AP" className="stat--hp">{Math.round(40 + (10 * currentLevel)+ (atk.ap * 25 / 100))} damage shield</abbr>. This effect has a 18 second cooldown.
+            Yuumi's attacks against champions grant her <span className="stat--hp">{Math.round(35 + (10 * currentLevel)+ (atk.ap * 15 / 100))} (35 + 10 per Level + 15% AP) damage shield</span>. This effect has a 18 second cooldown.
           </p>
 
           <p>
@@ -153,7 +153,7 @@ export default function yuumi({currentLevel, mod, bonus, atk, def, champ, update
     
           <br />
           <p>
-            Yuumi restores <span className="stat--hp">20 / 30 / 40 / 50 (<span className="stat--ap">+10% AP</span>) Health</span> to herself and gains <span className="stat--moveSpeed">15 (<span className="stat--ap">+5% AP</span>) Movement Speed</span> and <abbr className="stat--as" title='bonus Attack Speed is calculated based on Champions basic Attack Speed. So no way to calculate how much you give for now.'>30 / 35 / 40 / 45% Attack Speed</abbr> for 3 seconds.
+            Yuumi restores <span className="stat--hp">20 / 30 / 40 / 50 (<span className="stat--ap">+10% AP</span>) Health</span> to herself and gains <span className="stat--moveSpeed">15% (<span className="stat--ap">+0.03% AP</span>) Movement Speed</span> and <abbr className="stat--as" title='bonus Attack Speed is calculated based on Champions basic Attack Speed. So no way to calculate how much you give for now.'>20 / 25 / 30 / 35% Attack Speed</abbr> for 3 seconds.
           </p>
           <p>
             Her next 3 attacks and abilities hits heal for <span className="stat--hp">20 / 30 / 40 / 50 (+10% AP)</span> within 5 seconds.

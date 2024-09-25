@@ -8,7 +8,7 @@ export default function lulu({currentLevel, mod, bonus, atk, def, champ}) {
           </h4>         
     
           <p>
-          Pix fires a barrage of 3 bolts that deal a total of <abbr title="15 + 7.5 per level + 15% AP" className="stat--ap">{Math.round((7.5)+(7.5 * currentLevel)+(atk.ap * 15 / 100))} magic damage</abbr> at whatever Lulu attacks. These bolts can be blocked by other units.
+          Pix fires a barrage of 3 bolts that deal a total of <span className="stat--ap">{Math.round((6)+(6 * currentLevel)+(atk.ap * 15 / 100))}  (6 + 6 per level + 15% AP) magic damage</span> at whatever Lulu attacks. These bolts can be blocked by other units.
           </p>
 
           <p>
@@ -164,9 +164,9 @@ export default function lulu({currentLevel, mod, bonus, atk, def, champ}) {
     
           <h5>
           Cooldown: 
-            {' '}{(75*mod.atkcdr).toFixed(1)} / 
-            {' '}{(60*mod.atkcdr).toFixed(1)} / 
-            {' '}{(45*mod.atkcdr).toFixed(1)}
+            {' '}{(80*mod.atkcdr).toFixed(1)} / 
+            {' '}{(70*mod.atkcdr).toFixed(1)} / 
+            {' '}{(60*mod.atkcdr).toFixed(1)}
           </h5>
             <h5 className="stat--mana">
           Cost: 

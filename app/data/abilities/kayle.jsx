@@ -23,11 +23,11 @@ export default function kayle({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p>
-            <b>Level 10:</b> Attacks fire waves of flame at max stacks, dealing the passive damage of <b>Starfire SpellBlade</b>.
+            <b>Level 9:</b> Attacks fire waves of flame at max stacks, dealing the passive damage of <b>Starfire SpellBlade</b>.
           </p>
 
           <p>
-            <b>Level 15:</b>  Attack range is increased to 575. The bonus from reaching max stacks becomes permanent.
+            <b>Level 13:</b>  Attack range is increased to 575. The bonus from reaching max stacks becomes permanent.
           </p>
         </div>
     },
@@ -59,21 +59,21 @@ export default function kayle({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ap">Pre-mitigation: 
-            {' '}{Math.round(((60)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100)))} / 
-            {' '}{Math.round(((110)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100)))} / 
-            {' '}{Math.round(((160)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100)))} / 
-            {' '}{Math.round(((210)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100)))}
+            {' '}{Math.round(((70)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100)))} / 
+            {' '}{Math.round(((120)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100)))} / 
+            {' '}{Math.round(((170)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100)))} / 
+            {' '}{Math.round(((220)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100)))}
           </p>
 
           <p className="stat--ap">Post-mitigation: 
-            {' '}{Math.round(((60)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100)) * (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((110)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((160)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100))* (1 - mod.defMagRed))} / 
-            {' '}{Math.round(((210)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100))* (1 - mod.defMagRed))}          
+            {' '}{Math.round(((70)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100)) * (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((120)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((170)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100))* (1 - mod.defMagRed))} / 
+            {' '}{Math.round(((220)+(atk.ap * 50 / 100)+(bonus.attack * 60 / 100))* (1 - mod.defMagRed))}          
           </p>
     
           <p>
-          Launches a celestial sword, dealing <span className="stat--ap">60 / 110 / 160 / 210 (<span className="stat--ad">+60% bonus AD</span> +50% AP) magic damage</span>. Enemies hit are slowed by <span className="stat--moveSpeed">26% / 34% / 42% / 50% for 2 seconds</span>  and thier <span className="stat--armor">Armor</span> and <span className="stat--magres">Magic Resist</span> is reduced by <b>15%</b> for 4 seconds.
+          Launches a celestial sword, dealing <span className="stat--ap">70 / 120 / 170 / 220 (<span className="stat--ad">+60% bonus AD</span> +50% AP) magic damage</span>. Enemies hit are slowed by <span className="stat--moveSpeed">26% / 34% / 42% / 50% for 2 seconds</span>  and thier <span className="stat--armor">Armor</span> and <span className="stat--magres">Magic Resist</span> is reduced by <b>20%</b> for 4 seconds.
           </p>
         </div>
     },
@@ -104,10 +104,10 @@ export default function kayle({currentLevel, mod, bonus, atk, def, champ}) {
             Healing:
           </h5>
 
-          <p className="stat--hp">{Math.round(((70)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((110)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((150)+(atk.ap * 30 / 100)))} / 
-            {' '}{Math.round(((190)+(atk.ap * 30 / 100)))}
+          <p className="stat--hp">{Math.round(((80)+(atk.ap * 40 / 100)))} / 
+            {' '}{Math.round(((120)+(atk.ap * 40 / 100)))} / 
+            {' '}{Math.round(((160)+(atk.ap * 40 / 100)))} / 
+            {' '}{Math.round(((200)+(atk.ap * 40 / 100)))}
           </p>
 
           <h5 className="stat--moveSpeed">Bonus Movement Speed:</h5>
@@ -118,7 +118,7 @@ export default function kayle({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
     
           <p>
-            Heals herself and an allied champion for <span className="stat--hp">70 / 110 / 150 / 190 (<span className="stat--ap">+30% AP</span>)</span>  and grants them  <span className="stat--moveSpeed">25% / 30% / 35% / 40% (<span className="stat--ap">+0.08% AP</span>) Movement Speed</span>  for 2 seconds.
+            Heals herself and an allied champion for <span className="stat--hp">80 / 120 / 160 / 200 (<span className="stat--ap">+40% AP</span>)</span>  and grants them  <span className="stat--moveSpeed">25% / 30% / 35% / 40% (<span className="stat--ap">+0.08% AP</span>) Movement Speed</span>  for 2 seconds.
           </p>
         </div>
     },
@@ -167,6 +167,10 @@ export default function kayle({currentLevel, mod, bonus, atk, def, champ}) {
 
           <p>
           When Kayle reaches level 10, <b>Starfire Spellbalde</b> affects all nearby enemies. 
+          </p>
+
+          <p>
+          Deal 60% damage to monsters
           </p>
         </div>
     },

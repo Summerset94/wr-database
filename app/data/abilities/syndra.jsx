@@ -98,7 +98,7 @@ export default function syndra({currentLevel, mod, bonus, atk, def, champ, updat
 
       damage: {
         base: 60,
-        growth: 45,
+        growth: 50,
         modifier: (atk.ap * 15 / 100),
       },
     };
@@ -276,7 +276,7 @@ export default function syndra({currentLevel, mod, bonus, atk, def, champ, updat
           </p>
 
           <p>
-            Syndra gains 2 <span className="stat--armor"> Splinters of Wrath</span> every time she levels up. Up to 120 <span className="stat--armor"> Splinters</span> can be collected.
+            Syndra gains 4 <span className="stat--armor"> Splinters of Wrath</span> every time she levels up. Up to 120 <span className="stat--armor"> Splinters</span> can be collected.
           </p>
 
           <p>

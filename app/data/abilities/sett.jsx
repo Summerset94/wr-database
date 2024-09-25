@@ -9,11 +9,11 @@ export default function sett({currentLevel, mod, bonus, atk, def, champ}) {
           </h4>
     
           <p>
-            Sett's Attacks alternate between left and right punches. Right punches follow the left quickly and deal an additional <abbr title="7 x Level +50% bonus AD" className="stat--ad">{Math.round((7*currentLevel) + (bonus.attack * 50 / 100))} physical damage</abbr> 
+            Sett's Attacks alternate between left and right punches. Right punches follow the left quickly and deal an additional <span className="stat--ad">{Math.round((7*currentLevel) + (bonus.attack * 50 / 100))} (7 per level + 50% bonus AD) physical damage</span> 
           </p>
 
           <p>
-            Sett gains <abbr title="at level 1 / 5 / 9 / 13" className="stat--hp"> 0.25 / 0.5 / 1 / 2 Health per second Regeneration</abbr> for each 5% missing Health.
+            Sett gains <span className="stat--hp"> 0.25 / 0.5 / 1 / 2 (at level 1 / 5 / 9 / 13) Health per second Regeneration</span> for each 5% missing Health.
           </p>
 
           <p>
@@ -81,7 +81,7 @@ export default function sett({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--hp">
-            {Math.round(((def.health * 45 / 100)))}
+            {Math.round(((atk.health * 50 / 100)))}
           </p>
 
           <h5 className="stat--ad">
@@ -89,25 +89,25 @@ export default function sett({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((80)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100)))} / 
-            {' '}{Math.round(((105)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100)))} / 
-            {' '}{Math.round(((130)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100)))} / 
-            {' '}{Math.round(((155)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100)))}
+            {' '}{Math.round(((80)+((atk.health * 50 / 100) * (25 + bonus.attack * 0.275)/100)))} / 
+            {' '}{Math.round(((105)+((atk.health * 50 / 100) * (25 + bonus.attack * 0.275)/100)))} / 
+            {' '}{Math.round(((130)+((atk.health * 50 / 100) * (25 + bonus.attack * 0.275)/100)))} / 
+            {' '}{Math.round(((155)+((atk.health * 50 / 100) * (25 + bonus.attack * 0.275)/100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((80)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((105)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((130)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((155)+((def.health * 45 / 100) * (25 + bonus.attack * 25/100)/100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((80)+((atk.health * 50 / 100) * (25 + bonus.attack * 0.275)/100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((105)+((atk.health * 50 / 100) * (25 + bonus.attack * 0.275)/100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((130)+((atk.health * 50 / 100) * (25 + bonus.attack * 0.275)/100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((155)+((atk.health * 50 / 100) * (25 + bonus.attack * 0.275)/100))* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
-           <b>Passive:</b> Stores 100% of post-mitigated damage taken as Grit, up to <abbr className="stat--hp" title='45% Max Health'>{Math.round(atk.health * 45 / 100)} damage</abbr>. Grit decays quickly 4 seconds after the damage was taken.
+           <b>Passive:</b> Stores 100% of post-mitigated damage taken as Grit, up to <abbr className="stat--hp" title='50% Max Health'>{Math.round(atk.health * 50 / 100)} damage</abbr>. Grit decays quickly 4 seconds after the damage was taken.
           </p>
 
           <p>
-            <b>Active: </b> Consumes all Grits, gaining shield equal to <span className="stat--hp">100% Grit consumed</span> that decays over 3 seconds. Sett then delivers a massive punch, dealing <span className="stat--ad">80 / 105 / 130 / 155 (<span className="stat--armor">+25% (<span className="stat--ad">+25% bonus AD</span>) </span> Grit consumed) physical damage</span>  in arc before him. Enemies in the center take <span className="stat--vamp">true damage instead</span>
+            <b>Active: </b> Consumes all Grits, gaining shield equal to <span className="stat--hp">100% Grit consumed</span> that decays over 3 seconds. Sett then delivers a massive punch, dealing <span className="stat--ad">80 / 105 / 130 / 155 (<span className="stat--armor">+25% (<span className="stat--ad">+27.5% bonus AD</span>) </span> Grit consumed) physical damage</span>  in arc before him. Enemies in the center take <span className="stat--vamp">true damage instead</span>
           </p>
         </div>
     },

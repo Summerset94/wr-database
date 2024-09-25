@@ -46,21 +46,21 @@ export default function ornn({currentLevel, mod, bonus, atk, def, champ}) {
           </h5>
 
           <p className="stat--ad">Pre-mitigation: 
-            {' '}{Math.round(((15)+(atk.attack * 110 / 100)))} / 
-            {' '}{Math.round(((50)+(atk.attack * 110 / 100)))} / 
-            {' '}{Math.round(((85)+(atk.attack * 110 / 100)))} / 
-            {' '}{Math.round(((120)+(atk.attack * 110 / 100)))}
+            {' '}{Math.round(((25)+(atk.attack * 110 / 100)))} / 
+            {' '}{Math.round(((60)+(atk.attack * 110 / 100)))} / 
+            {' '}{Math.round(((95)+(atk.attack * 110 / 100)))} / 
+            {' '}{Math.round(((130)+(atk.attack * 110 / 100)))}
           </p>
 
           <p className="stat--ad">Post-mitigation: 
-            {' '}{Math.round(((15)+(atk.attack * 110 / 100)) * (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((50)+(atk.attack * 110 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((85)+(atk.attack * 110 / 100))* (1 - mod.defPhysRed))} / 
-            {' '}{Math.round(((120)+(atk.attack * 110 / 100))* (1 - mod.defPhysRed))}          
+            {' '}{Math.round(((25)+(atk.attack * 110 / 100)) * (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((60)+(atk.attack * 110 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((95)+(atk.attack * 110 / 100))* (1 - mod.defPhysRed))} / 
+            {' '}{Math.round(((130)+(atk.attack * 110 / 100))* (1 - mod.defPhysRed))}          
           </p>
     
           <p>
-          Ornn slams the ground, creating a fissure dealing <span className="stat--ad">15 / 50 / 85 / 120 (+110% AD) physical damage</span> and <span className="stat--moveSpeed">slowing by 55% for 2 seconds</span>. A pillar of rock forms at the fissure's end for 4 seconds.
+          Ornn slams the ground, creating a fissure dealing <span className="stat--ad">25/60/95/130 (+110% AD) physical damage</span> and <span className="stat--moveSpeed">slowing by 55% for 2 seconds</span>. A pillar of rock forms at the fissure's end for 4 seconds.
           </p>
 
           <p>
@@ -100,7 +100,7 @@ export default function ornn({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p className="stat--ap">Brittle damage: 
-            {' '}{Math.round((def.health * (5+(15/14*(currentLevel - 1))))/100 * (1 - mod.defMagRed))}
+            {' '}{Math.round((def.health * (7+(15/14*(currentLevel - 1))))/100 * (1 - mod.defMagRed))}
           </p>
 
     
@@ -109,11 +109,11 @@ export default function ornn({currentLevel, mod, bonus, atk, def, champ}) {
           </p>
 
           <p>
-          Immobilizing effects on Brittle targets have their duration increased by 30% and deal an additional <abbr title="5-20% based on level" className="stat--ap">5 - 20% max Health magic damage</abbr>. Ornn's Attacks against <b>Brittle</b> targets Knock them Back, dealing additional damage.
+          Immobilizing effects on Brittle targets have their duration increased by 30% and deal an additional <abbr title="5-20% based on level" className="stat--ap">7 - 22% max Health magic damage</abbr>. Ornn's Attacks against <b>Brittle</b> targets Knock them Back, dealing additional damage.
           </p>
 
           <p>
-          Deals a minimum of <span className="stat--ap">80 / 130 / 180 / 230 magic damage</span>  to minions, and a max of <span className="stat--ap">155 / 190 / 225 / 260 magic damage</span> to jungle monsters, Immobilizing deals a maximum of 250 damage to monsters.
+          Deals a minimum of <span className="stat--ap">90/140/190/240 magic damage</span>  to minions, and a max of <span className="stat--ap">155 / 190 / 225 / 260 magic damage</span> to jungle monsters, Immobilizing deals a maximum of 250 damage to monsters.
           </p>
         </div>
     },
