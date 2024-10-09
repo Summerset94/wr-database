@@ -31,7 +31,7 @@ const useItemPassives = (itemEffects, baseStats, itemBonus, championModifier, cu
     armPen: lastWhisper,
     forceOfNature: forceOfNature,
     bootsPassive: bootsPassive,
-    terminus: terminus
+    terminus: terminus,
 
   }
 }, [itemEffects, baseStats, itemBonus, championModifier])
